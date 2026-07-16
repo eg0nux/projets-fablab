@@ -113,21 +113,72 @@ a.internal:hover {
    ========================================================================== */
 
 article table {
-  font-size: 0.85rem;
-  border-collapse: collapse;
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  margin: 1.6em 0;
+  font-size: 0.86rem;
+  line-height: 1.4;
+  border: 1px solid var(--lightgray);
+  border-radius: 8px;
+  overflow: hidden;
 }
-article th {
+
+article thead th {
   font-family: var(--headerFont);
   font-weight: 600;
-  border-bottom: 2px solid var(--gray);
-}
-article tbody tr:nth-child(odd) {
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: var(--dark);
   background-color: var(--lightgray);
+  border-bottom: 1px solid var(--gray);
+  padding: 0.6em 0.7em;
 }
-article td,
-article th {
-  padding: 0.35em 0.6em;
-  border: none;
+
+article tbody td {
+  padding: 0.5em 0.7em;
+  border-bottom: 1px solid var(--lightgray);
+  vertical-align: middle;
+}
+article tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* Zébrure très légère + surbrillance au survol */
+article tbody tr:nth-child(even) {
+  background-color: color-mix(in srgb, var(--lightgray) 45%, transparent);
+}
+article tbody tr:hover {
+  background-color: color-mix(in srgb, var(--secondary) 12%, transparent);
+}
+
+/* Colonne « Projet » : alignée à gauche, un peu plus marquée */
+article tbody td:first-child {
+  text-align: left;
+  font-weight: 500;
+}
+
+/* Colonne « Vol. » discrète, chiffres alignés */
+article tbody td:nth-child(2) {
+  color: var(--gray);
+  font-variant-numeric: tabular-nums;
+}
+
+/* Colonnes d'étoiles : dorées et espacées */
+article tbody td:nth-child(n + 3) {
+  color: #d4a53a;
+  letter-spacing: 0.14em;
+  white-space: nowrap;
+}
+
+/* Petit écran : défilement horizontal propre */
+@media (max-width: 800px) {
+  article table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
 }
 
 /* ==========================================================================
