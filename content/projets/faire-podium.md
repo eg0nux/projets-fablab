@@ -1,5 +1,5 @@
 ---
-title: « Faire Podium »
+title: Faire Podium
 ---
 
 > [!abstract] La fabrique des trophées du territoire

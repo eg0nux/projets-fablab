@@ -1,5 +1,5 @@
 ---
-title: « Grandeur nature »
+title: Grandeur nature
 ---
 
 > [!abstract] La malle aux jeux géants

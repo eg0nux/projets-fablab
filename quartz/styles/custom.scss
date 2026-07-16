@@ -173,3 +173,17 @@ article th {
 .callout .callout-content > :last-child {
   margin-bottom: 0;
 }
+
+/* ==========================================================================
+   Bloc « Repères » (ligne d'étoiles juste après l'accroche) :
+   encadré par deux filets fins pour le distinguer du reste
+   ========================================================================== */
+
+article .callout + p {
+  margin: 1.6em 0;
+  padding: 0.7em 0;
+  border-top: 1px solid var(--lightgray);
+  border-bottom: 1px solid var(--lightgray);
+  font-size: 0.9rem;
+  color: var(--darkgray);
+}

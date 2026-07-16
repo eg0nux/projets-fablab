@@ -1,5 +1,5 @@
 ---
-title: « Les Veilleuses »
+title: Les Veilleuses
 ---
 
 > [!abstract] Des lampes pour les nuits difficiles

@@ -1,5 +1,5 @@
 ---
-title: « Du bout des doigts »
+title: Du bout des doigts
 ---
 
 > [!abstract] Planches d'éveil et coussins sensoriels

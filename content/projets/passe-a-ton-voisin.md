@@ -1,5 +1,5 @@
 ---
-title: « Passe à ton voisin »
+title: Passe à ton voisin
 ---
 
 > [!abstract] Boîtes à livres, grainothèques et boîtes à dons

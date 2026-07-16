@@ -1,5 +1,5 @@
 ---
-title: « Sous la halle »
+title: Sous la halle
 ---
 
 > [!abstract] Ardoises, enseignes et présentoirs pour les marchés

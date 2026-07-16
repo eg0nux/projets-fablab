@@ -1,5 +1,5 @@
 ---
-title: « Ombres et merveilles »
+title: Ombres et merveilles
 ---
 
 > [!abstract] Kamishibaïs et théâtres d'ombres

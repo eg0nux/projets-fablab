@@ -12,31 +12,31 @@ Tous partagent la même ossature — celle du modèle « Faire Récif » — mai
 
 ## Tous les projets
 
-- [[lumiere-sur-le-quartier|Lumière sur le quartier]] — Mobilier et signalétique urbaine
-- [[reparer-le-vivant|Réparer le vivant]] — Biodiversité fabriquée
 - [[autonomie|Autonomie]] — Objets d'assistance sur mesure
-- [[la-fresque-jouable|La fresque jouable]] — Jeu de société du territoire
 - [[basse-tension|Basse tension]] — Low-tech et sobriété énergétique
-- [[sur-mesure|Sur mesure]] — Textile, réemploi et confection
-- [[radio-fab|Radio Fab]] — Média fabriqué
-- [[manger-local|Manger local]] — De la graine à l'assiette
-- [[essaimer|Essaimer]] — Abris à pollinisateurs et rucher pédagogique
-- [[remonter-le-courant|Remonter le courant]] — Le laboratoire flottant de la Dordogne
-- [[les-mains-negatives|Les mains négatives]] — La grotte portative
-- [[veilleurs-de-vignes|Veilleurs de vignes]] — Sentinelles antigel
-- [[reparer-la-nuit|Réparer la nuit]] — Le ciel étoilé, bien commun
-- [[papiers-d-identite|Papiers d'identité]] — Micro-papeterie de la Couze
 - [[changer-de-braquet|Changer de braquet]] — Vélothèque solidaire
-- [[memoire-vive|Mémoire vive]] — Les bancs qui racontent
-- [[tenir-debout|Tenir debout]] — Pierre sèche & patrimoine 3D
-- [[les-veilleuses|Les Veilleuses]] — Des lampes pour les nuits difficiles
 - [[du-bout-des-doigts|Du bout des doigts]] — Planches d'éveil & coussins sensoriels
-- [[passe-a-ton-voisin|Passe à ton voisin]] — Boîtes à livres & grainothèques
-- [[grandeur-nature|Grandeur nature]] — La malle aux jeux géants
-- [[ombres-et-merveilles|Ombres et merveilles]] — Kamishibaïs & théâtres d'ombres
+- [[essaimer|Essaimer]] — Abris à pollinisateurs et rucher pédagogique
 - [[faire-podium|Faire Podium]] — La fabrique des trophées
-- [[sous-la-halle|Sous la halle]] — Ardoises & présentoirs de marché
+- [[grandeur-nature|Grandeur nature]] — La malle aux jeux géants
+- [[la-fresque-jouable|La fresque jouable]] — Jeu de société du territoire
+- [[les-mains-negatives|Les mains négatives]] — La grotte portative
+- [[les-veilleuses|Les Veilleuses]] — Des lampes pour les nuits difficiles
 - [[l-herbier-des-trottoirs|L'Herbier des trottoirs]] — Le sauvage sous nos pieds
+- [[lumiere-sur-le-quartier|Lumière sur le quartier]] — Mobilier et signalétique urbaine
+- [[manger-local|Manger local]] — De la graine à l'assiette
+- [[memoire-vive|Mémoire vive]] — Les bancs qui racontent
+- [[ombres-et-merveilles|Ombres et merveilles]] — Kamishibaïs & théâtres d'ombres
+- [[papiers-d-identite|Papiers d'identité]] — Micro-papeterie de la Couze
+- [[passe-a-ton-voisin|Passe à ton voisin]] — Boîtes à livres & grainothèques
+- [[radio-fab|Radio Fab]] — Média fabriqué
+- [[remonter-le-courant|Remonter le courant]] — Le laboratoire flottant de la Dordogne
+- [[reparer-la-nuit|Réparer la nuit]] — Le ciel étoilé, bien commun
+- [[reparer-le-vivant|Réparer le vivant]] — Biodiversité fabriquée
+- [[sous-la-halle|Sous la halle]] — Ardoises & présentoirs de marché
+- [[sur-mesure|Sur mesure]] — Textile, réemploi et confection
+- [[tenir-debout|Tenir debout]] — Pierre sèche & patrimoine 3D
+- [[veilleurs-de-vignes|Veilleurs de vignes]] — Sentinelles antigel
 
 ---
 

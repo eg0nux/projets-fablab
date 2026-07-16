@@ -1,5 +1,5 @@
 ---
-title: « L'Herbier des trottoirs »
+title: L'Herbier des trottoirs
 ---
 
 > [!abstract] Le sauvage sous nos pieds
