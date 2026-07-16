@@ -28,13 +28,14 @@ title: Passe à ton voisin
 ## Métiers à faire découvrir
 Agent et médiateur de médiathèque, agent technique communal, menuisier-poseur, métiers du livre et de la vie associative locale : les collectivités rurales recrutent des profils polyvalents, dont ce projet est la démonstration grandeur nature.
 
-## Le temps fort
-La tournée de pose : en une seule journée, le groupe équipe trois ou quatre villages et la carte du Bergeracois se constelle de leurs boîtes. Chaque binôme est photographié devant la sienne, avec le maire et le parrain d'entretien : la preuve que dix jours peuvent laisser une trace durable sur tout un territoire.
+> [!quote] Le temps fort
+> La tournée de pose : en une seule journée, le groupe équipe trois ou quatre villages et la carte du Bergeracois se constelle de leurs boîtes. Chaque binôme est photographié devant la sienne, avec le maire et le parrain d'entretien : la preuve que dix jours peuvent laisser une trace durable sur tout un territoire.
 
 ## En pratique
 - **Budget matière indicatif** : 480 à 600 €.
 - **Saison idéale** : du printemps à l'automne, pour la pose en extérieur et l'ensachage des semences.
-- **Points de vigilance** :
-  - L'étanchéité fait la durée de vie : toit débordant, plexi posé sur joint, pieds hors sol, à tester à l'arrosoir avant la pose.
-  - Un accord écrit simple par commune (emplacement, entretien, responsabilité) et un parrain d'entretien local par boîte, dès le départ.
-  - Trier les dons de livres avec la médiathèque : une boîte à livres n'est pas une poubelle à livres.
+
+> [!warning] Points de vigilance
+> - L'étanchéité fait la durée de vie : toit débordant, plexi posé sur joint, pieds hors sol, à tester à l'arrosoir avant la pose.
+> - Un accord écrit simple par commune (emplacement, entretien, responsabilité) et un parrain d'entretien local par boîte, dès le départ.
+> - Trier les dons de livres avec la médiathèque : une boîte à livres n'est pas une poubelle à livres.

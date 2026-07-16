@@ -28,13 +28,14 @@ title: Radio Fab
 ## Métiers à faire découvrir
 Technicien son, journaliste, animateur radio, monteur, podcasteur, community manager, médiateur numérique, plus tous les métiers des invités interviewés, ce qui fait de ce projet le plus « multiplicateur » du volume.
 
-## Le temps fort
-L'émission finale en direct et en public, depuis le studio que le groupe a construit de ses mains. Les épisodes restent en ligne : c'est le seul projet dont le temps fort est réécoutable à volonté, et la remise du « Micro d'Or » se fait à l'antenne.
+> [!quote] Le temps fort
+> L'émission finale en direct et en public, depuis le studio que le groupe a construit de ses mains. Les épisodes restent en ligne : c'est le seul projet dont le temps fort est réécoutable à volonté, et la remise du « Micro d'Or » se fait à l'antenne.
 
 ## En pratique
 - **Budget matière indicatif** : 500 à 950 € (le studio reste un équipement durable du FabLab)
 - **Saison idéale** : toute l'année (projet en intérieur)
-- **Points de vigilance** :
-  - Traiter l'acoustique de la pièce avant tout enregistrement : c'est elle qui fait la qualité perçue.
-  - Droits : musiques libres uniquement ; autorisation écrite de diffusion pour chaque invité.
-  - Trac et exposition de soi : progressivité (voix off, puis duo, puis direct) et droit de retrait sur la diffusion.
+
+> [!warning] Points de vigilance
+> - Traiter l'acoustique de la pièce avant tout enregistrement : c'est elle qui fait la qualité perçue.
+> - Droits : musiques libres uniquement ; autorisation écrite de diffusion pour chaque invité.
+> - Trac et exposition de soi : progressivité (voix off, puis duo, puis direct) et droit de retrait sur la diffusion.

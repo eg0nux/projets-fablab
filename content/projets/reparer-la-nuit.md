@@ -28,13 +28,14 @@ title: Réparer la nuit
 ## Métiers à faire découvrir
 Électricien de réseaux et d'éclairage public, technicien territorial, éclairagiste, monteur-câbleur, animateur scientifique, métiers de l'énergie et de la maintenance. Le SDE et les entreprises de réseaux recrutent des profils formés en continu.
 
-## Le temps fort
-La Nuit des étoiles : des familles font la queue devant un télescope construit en dix jours par des personnes qu'on disait « éloignées de l'emploi », et c'est Saturne qui apparaît dans l'oculaire. La carte de pollution lumineuse est remise officiellement aux maires présents.
+> [!quote] Le temps fort
+> La Nuit des étoiles : des familles font la queue devant un télescope construit en dix jours par des personnes qu'on disait « éloignées de l'emploi », et c'est Saturne qui apparaît dans l'oculaire. La carte de pollution lumineuse est remise officiellement aux maires présents.
 
 ## En pratique
 - **Budget matière indicatif** : 840 à 1 030 € (hors machines et encadrement).
 - **Saison idéale** : automne-hiver, où la nuit tombe tôt et facilite les sorties nocturnes.
-- **Points de vigilance** :
-  - Sorties nocturnes : transport, encadrement et assurance à organiser ; prévoir deux dates de repli selon la météo.
-  - La collimation des miroirs demande méthode et douceur : en faire un rituel d'équipe, pas une source de frustration.
-  - Le discours aux élus doit rester factuel et non militant : la maquette montre, les chiffres parlent.
+
+> [!warning] Points de vigilance
+> - Sorties nocturnes : transport, encadrement et assurance à organiser ; prévoir deux dates de repli selon la météo.
+> - La collimation des miroirs demande méthode et douceur : en faire un rituel d'équipe, pas une source de frustration.
+> - Le discours aux élus doit rester factuel et non militant : la maquette montre, les chiffres parlent.

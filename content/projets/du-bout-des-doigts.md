@@ -28,13 +28,14 @@ title: Du bout des doigts
 ## Métiers à faire découvrir
 Auxiliaire de puériculture, CAP Accompagnant éducatif petite enfance, ATSEM, accompagnant éducatif et social, animateur en gérontologie, ergothérapeute et psychomotricien : deux filières en tension permanente, accessibles par des formations courtes.
 
-## Le temps fort
-Le jour des remises : voir une main de dix-huit mois et une main de quatre-vingt-huit ans faire exactement le même geste sur deux planches jumelles fabriquées par le groupe. Les professionnels présents ne s'y trompent pas, et le disent aux participants.
+> [!quote] Le temps fort
+> Le jour des remises : voir une main de dix-huit mois et une main de quatre-vingt-huit ans faire exactement le même geste sur deux planches jumelles fabriquées par le groupe. Les professionnels présents ne s'y trompent pas, et le disent aux participants.
 
 ## En pratique
 - **Budget matière indicatif** : 380 à 510 €.
 - **Saison idéale** : toute l'année.
-- **Points de vigilance** :
-  - Sécurité absolue sur les petits éléments : tout est vissé ET collé, testé à l'arrachage avant remise ; ponçage irréprochable, l'écharde est l'ennemi.
-  - Uniquement des finitions certifiées contact enfant (norme jouet) ; en cas de doute, bois brut poncé fin.
-  - Validation par un professionnel de santé (ergothérapeute, psychomotricien) avant toute remise : non négociable.
+
+> [!warning] Points de vigilance
+> - Sécurité absolue sur les petits éléments : tout est vissé ET collé, testé à l'arrachage avant remise ; ponçage irréprochable, l'écharde est l'ennemi.
+> - Uniquement des finitions certifiées contact enfant (norme jouet) ; en cas de doute, bois brut poncé fin.
+> - Validation par un professionnel de santé (ergothérapeute, psychomotricien) avant toute remise : non négociable.

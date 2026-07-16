@@ -28,13 +28,14 @@ title: Autonomie
 ## Métiers à faire découvrir
 Ergothérapeute, orthoprothésiste, aide-soignant, accompagnant éducatif et social, animateur en gérontologie, technicien de matériel médical, métiers de la silver économie. Le lien fabrication/soin ouvre des vocations inattendues.
 
-## Le temps fort
-La remise des objets aux usagers dans la structure partenaire, moment d'émotion forte, suivie d'une demi-journée métiers. Les usagers peuvent être invités comme jurés d'honneur du trophée « Coup de Pouce d'Or » : l'inversion des rôles à double étage.
+> [!quote] Le temps fort
+> La remise des objets aux usagers dans la structure partenaire, moment d'émotion forte, suivie d'une demi-journée métiers. Les usagers peuvent être invités comme jurés d'honneur du trophée « Coup de Pouce d'Or » : l'inversion des rôles à double étage.
 
 ## En pratique
 - **Budget matière indicatif** : 300 à 450 € (le plus économique du volume)
 - **Saison idéale** : toute l'année (projet en intérieur, sans contrainte météo)
-- **Points de vigilance** :
-  - Cadre éthique strict : consentement écrit, droit à l'image, respect du rythme des personnes.
-  - Rester sur des aides du quotidien : ne pas fabriquer de dispositif médical au sens réglementaire ; un ergothérapeute valide chaque solution.
-  - Prévoir un temps d'échange encadré : la rencontre avec la dépendance peut remuer les participants.
+
+> [!warning] Points de vigilance
+> - Cadre éthique strict : consentement écrit, droit à l'image, respect du rythme des personnes.
+> - Rester sur des aides du quotidien : ne pas fabriquer de dispositif médical au sens réglementaire ; un ergothérapeute valide chaque solution.
+> - Prévoir un temps d'échange encadré : la rencontre avec la dépendance peut remuer les participants.

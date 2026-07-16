@@ -28,13 +28,14 @@ title: Sous la halle
 ## Métiers à faire découvrir
 Vendeur sur marché, primeur, fromager, boulanger, poissonnier, métiers de bouche et du commerce alimentaire de proximité, étalagiste : des métiers qui embauchent vite, forment sur le tas et tiennent la vie des centres-villes et des bourgs.
 
-## Le temps fort
-Le second matin de marché : tout est en place, et le groupe passe de stand en stand, reconnu, salué, remercié — leurs ardoises affichent les prix, leurs gradins portent les fraises. La ville entière voit leur travail chaque semaine ; peu de CV en disent aussi long.
+> [!quote] Le temps fort
+> Le second matin de marché : tout est en place, et le groupe passe de stand en stand, reconnu, salué, remercié — leurs ardoises affichent les prix, leurs gradins portent les fraises. La ville entière voit leur travail chaque semaine ; peu de CV en disent aussi long.
 
 ## En pratique
 - **Budget matière indicatif** : 310 à 390 €.
 - **Saison idéale** : toute l'année ; deux levers très matinaux (J1 et J9) à annoncer dès le recrutement.
-- **Points de vigilance** :
-  - Contact alimentaire : uniquement des finitions adaptées (huiles, cires dédiées) sur tout ce qui touche les produits ; en cas de doute, bois brut poncé fin.
-  - Robustesse et manutention : les objets seront chargés, déchargés et empilés deux fois par semaine, à tester avant de livrer.
-  - Équité entre commerçants : critères de choix des six commandes affichés dès J2, et promesse d'une saison 2 pour les autres.
+
+> [!warning] Points de vigilance
+> - Contact alimentaire : uniquement des finitions adaptées (huiles, cires dédiées) sur tout ce qui touche les produits ; en cas de doute, bois brut poncé fin.
+> - Robustesse et manutention : les objets seront chargés, déchargés et empilés deux fois par semaine, à tester avant de livrer.
+> - Équité entre commerçants : critères de choix des six commandes affichés dès J2, et promesse d'une saison 2 pour les autres.

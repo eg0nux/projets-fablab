@@ -28,13 +28,14 @@ title: Faire Podium
 ## Métiers à faire découvrir
 Opérateur laser et gravure, agent de production en petite série, métiers de l'événementiel, animateur sportif, vente et relation client : le projet fait toucher du doigt ce qu'est un atelier qui honore des commandes.
 
-## Le temps fort
-La cérémonie inversée : pour une fois, ce sont les « accompagnés » qui montent sur scène pour récompenser — discours, enveloppe, trophée. Ceux qui ont fabriqué les récompenses de tout le monde décernent enfin la leur. Et toute l'année, à chaque tournoi, leurs objets reparaissent sur les podiums du Bergeracois.
+> [!quote] Le temps fort
+> La cérémonie inversée : pour une fois, ce sont les « accompagnés » qui montent sur scène pour récompenser — discours, enveloppe, trophée. Ceux qui ont fabriqué les récompenses de tout le monde décernent enfin la leur. Et toute l'année, à chaque tournoi, leurs objets reparaissent sur les podiums du Bergeracois.
 
 ## En pratique
 - **Budget matière indicatif** : 360 à 420 € (une participation symbolique des clubs peut autofinancer une partie de la matière).
 - **Saison idéale** : au printemps, en amont des tournois, kermesses et remises de prix de fin d'année.
-- **Points de vigilance** :
-  - Apprendre à dire non et à planifier : un carnet de commandes qui déborde est une leçon professionnelle, pas un échec ; mieux vaut six commandes honorées que douze promises.
-  - Logos des clubs : accord écrit et fichiers fournis par eux, aucune reprise de marques ou blasons sans autorisation.
-  - Associer le graveur local dès le premier jour : le projet complète son offre, il ne la concurrence pas.
+
+> [!warning] Points de vigilance
+> - Apprendre à dire non et à planifier : un carnet de commandes qui déborde est une leçon professionnelle, pas un échec ; mieux vaut six commandes honorées que douze promises.
+> - Logos des clubs : accord écrit et fichiers fournis par eux, aucune reprise de marques ou blasons sans autorisation.
+> - Associer le graveur local dès le premier jour : le projet complète son offre, il ne la concurrence pas.

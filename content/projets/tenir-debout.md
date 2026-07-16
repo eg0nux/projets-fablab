@@ -28,13 +28,14 @@ title: Tenir debout
 ## Métiers à faire découvrir
 Murailler, tailleur de pierre, maçon du bâti ancien, couvreur en lauze, technicien géomètre (le relevé 3D est son quotidien), guide du patrimoine. La restauration du patrimoine périgourdin manque cruellement de bras : les entreprises le disent à chaque chantier.
 
-## Le temps fort
-La marche inaugurale : élus, habitants et familles suivent les participants le long du sentier, jusqu'à l'ouvrage restauré. Chacun pose la main sur une pierre qu'il a placée, et la maquette 3D, à côté, prouve que le geste ancien et l'outil neuf tiennent ensemble. Comme le mur : sans ciment, par le bon agencement.
+> [!quote] Le temps fort
+> La marche inaugurale : élus, habitants et familles suivent les participants le long du sentier, jusqu'à l'ouvrage restauré. Chacun pose la main sur une pierre qu'il a placée, et la maquette 3D, à côté, prouve que le geste ancien et l'outil neuf tiennent ensemble. Comme le mur : sans ciment, par le bon agencement.
 
 ## En pratique
 - **Budget matière indicatif** : 600 à 850 €, hors prestation du murailler à budgéter à part (hors machines et encadrement).
 - **Saison idéale** : de la fin du printemps au début de l'automne, par temps sec ; la pierre mouillée glisse.
-- **Points de vigilance** :
-  - Encadrement par un murailler qualifié obligatoire du premier au dernier jour ; c'est lui qui valide l'ouvrage.
-  - Gestes et postures : échauffements quotidiens, port de charges limité et tournant, gants et chaussures adaptées.
-  - Convention écrite avec le propriétaire (assurance, accès, entretien futur) ; privilégier du petit patrimoine non protégé ; journées de repli numérique par mauvais temps.
+
+> [!warning] Points de vigilance
+> - Encadrement par un murailler qualifié obligatoire du premier au dernier jour ; c'est lui qui valide l'ouvrage.
+> - Gestes et postures : échauffements quotidiens, port de charges limité et tournant, gants et chaussures adaptées.
+> - Convention écrite avec le propriétaire (assurance, accès, entretien futur) ; privilégier du petit patrimoine non protégé ; journées de repli numérique par mauvais temps.

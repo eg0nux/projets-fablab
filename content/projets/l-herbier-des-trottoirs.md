@@ -28,13 +28,14 @@ title: L'Herbier des trottoirs
 ## Métiers à faire découvrir
 Jardinier des espaces verts, ouvrier paysagiste, agent d'entretien du paysage, mais aussi fleuriste et animateur nature : des métiers en recrutement constant, accessibles par des formations courtes.
 
-## Le temps fort
-La balade inversée du dernier jour : ceux qu'on guidait guident. Devant chaque plaque, un participant présente « sa » plante, herbier à l'appui, à un public d'habitants qui découvrent leur propre rue. Et chacun rentre chez soi avec sa presse gravée à son nom — l'outil continue la pratique bien après les dix jours.
+> [!quote] Le temps fort
+> La balade inversée du dernier jour : ceux qu'on guidait guident. Devant chaque plaque, un participant présente « sa » plante, herbier à l'appui, à un public d'habitants qui découvrent leur propre rue. Et chacun rentre chez soi avec sa presse gravée à son nom — l'outil continue la pratique bien après les dix jours.
 
 ## En pratique
 - **Budget matière indicatif** : 320 à 400 €.
 - **Saison idéale** : du printemps à la fin de l'été, quand la flore des trottoirs est en pleine croissance.
-- **Points de vigilance** :
-  - Cueillette raisonnée : jamais tout un pied, jamais d'espèce protégée, jamais dans les zones traitées — le botaniste fixe les règles au premier jour.
-  - Aucune allégation d'usage comestible ou médicinal : on identifie, on n'incite pas à consommer ; accord écrit de la mairie pour toute signalétique ou marquage au sol.
-  - Le séchage prend dix à quinze jours : tout ce qui doit figurer dans l'herbier entre sous presse avant J3.
+
+> [!warning] Points de vigilance
+> - Cueillette raisonnée : jamais tout un pied, jamais d'espèce protégée, jamais dans les zones traitées — le botaniste fixe les règles au premier jour.
+> - Aucune allégation d'usage comestible ou médicinal : on identifie, on n'incite pas à consommer ; accord écrit de la mairie pour toute signalétique ou marquage au sol.
+> - Le séchage prend dix à quinze jours : tout ce qui doit figurer dans l'herbier entre sous presse avant J3.

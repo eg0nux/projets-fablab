@@ -28,13 +28,14 @@ title: Les mains négatives
 ## Métiers à faire découvrir
 Guide-conférencier, médiateur du patrimoine, animateur, scénographe, fac-similiste et mouleur-décorateur, agent d'accueil de site touristique. Le tourisme patrimonial est le premier employeur du département et recrute chaque saison.
 
-## Le temps fort
-La première ouverture publique : dans le noir, à la lampe, chaque participant guide un petit groupe devant la fresque et raconte les mains négatives, la sienne étant sur la paroi. Peu de dispositifs donnent une prise de parole aussi incarnée.
+> [!quote] Le temps fort
+> La première ouverture publique : dans le noir, à la lampe, chaque participant guide un petit groupe devant la fresque et raconte les mains négatives, la sienne étant sur la paroi. Peu de dispositifs donnent une prise de parole aussi incarnée.
 
 ## En pratique
 - **Budget matière indicatif** : 780 à 1 030 € (hors machines et encadrement).
 - **Saison idéale** : toute l'année, en atelier couvert ; la tournée s'adapte au calendrier des écoles et des EHPAD.
-- **Points de vigilance** :
-  - Créer une fresque originale « à la manière de » : ne pas copier les œuvres de Lascaux (fac-similés protégés, exigence scientifique).
-  - Aucune flamme réelle : tout l'effet feu en LED ; vigilance sur l'occultation et la ventilation du dôme.
-  - Itinérance : structure légère, montage à deux, issues dégagées ; en EHPAD, sessions courtes et format adapté.
+
+> [!warning] Points de vigilance
+> - Créer une fresque originale « à la manière de » : ne pas copier les œuvres de Lascaux (fac-similés protégés, exigence scientifique).
+> - Aucune flamme réelle : tout l'effet feu en LED ; vigilance sur l'occultation et la ventilation du dôme.
+> - Itinérance : structure légère, montage à deux, issues dégagées ; en EHPAD, sessions courtes et format adapté.

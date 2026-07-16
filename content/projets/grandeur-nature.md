@@ -28,13 +28,14 @@ title: Grandeur nature
 ## Métiers à faire découvrir
 Animateur (BAFA, BPJEPS), agent d'animation territoriale, ludothécaire, métiers de l'événementiel local : un secteur qui recrute chaque saison et qui offre souvent le premier contrat des parcours de retour à l'emploi.
 
-## Le temps fort
-La fête de lancement : le parvis ou la halle se transforme en kermesse, les participants arbitrent les tournois, et la malle part le soir même pour sa première fête de village. Le jeu de l'oie du Bergeracois, lui, fait déjà parler les anciens : « la case du vieux pont, c'est moi qui l'ai peinte ».
+> [!quote] Le temps fort
+> La fête de lancement : le parvis ou la halle se transforme en kermesse, les participants arbitrent les tournois, et la malle part le soir même pour sa première fête de village. Le jeu de l'oie du Bergeracois, lui, fait déjà parler les anciens : « la case du vieux pont, c'est moi qui l'ai peinte ».
 
 ## En pratique
 - **Budget matière indicatif** : 440 à 600 €.
 - **Saison idéale** : du printemps à l'été, pour les fêtes de village et les animations de plein air.
-- **Points de vigilance** :
-  - L'écharde est l'ennemi public numéro un : ponçage et arrondis systématiques, contrôle croisé.
-  - Des pièces légères pour les versions EHPAD ; finitions certifiées jouet pour tout ce qui se manipule, peintures d'extérieur pour ce qui vit dehors.
-  - Un système de prêt simple et écrit (inventaire, état, caution symbolique) pour que la malle revienne entière.
+
+> [!warning] Points de vigilance
+> - L'écharde est l'ennemi public numéro un : ponçage et arrondis systématiques, contrôle croisé.
+> - Des pièces légères pour les versions EHPAD ; finitions certifiées jouet pour tout ce qui se manipule, peintures d'extérieur pour ce qui vit dehors.
+> - Un système de prêt simple et écrit (inventaire, état, caution symbolique) pour que la malle revienne entière.

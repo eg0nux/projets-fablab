@@ -2,13 +2,15 @@
 title: Projets FabLab · 2026-2027
 ---
 
-Vingt-cinq projets pédagogiques pour un FabLab : des **parcours de remobilisation de 10 jours** où l'on fabrique un objet réel, qui a une vraie destination, en rencontrant les acteurs du territoire.
+Un catalogue de **vingt-cinq projets prêts à monter** pour un FabLab : des parcours courts — **dix jours sur deux semaines et demie** — pensés pour la remobilisation et l'insertion. À chaque fois, un groupe fabrique un **objet réel, qui a une vraie destination**, en rencontrant les acteurs du territoire.
 
-Tous partagent la même ossature — celle du modèle « Faire Récif » — mais changent de terrain : biodiversité, patrimoine, grand âge, énergie, mobilité, jeu, média…
+Tous suivent la même recette — celle du modèle « Faire Récif » — mais changent de terrain : biodiversité, patrimoine, grand âge, énergie, mobilité, jeu, média, alimentation…
 
 > [!tip] Pour s'orienter
-> - [[methode|La méthode]] — les six invariants qui rendent ces parcours efficaces
-> - [[comparatif|Le tableau comparatif]] — les 24 projets notés sur six indicateurs
+> - **[[methode|La méthode]]** — les six invariants qui font la force de ces parcours, et six questions pour choisir
+> - **[[comparatif|Le tableau comparatif]]** — les 24 projets notés sur six indicateurs (originalité, accessibilité, coût…)
+>
+> Chaque **fiche projet** suit le même plan : une accroche, des repères en étoiles, les objectifs, ce que l'on fabrique, les partenaires et métiers à mobiliser, le temps fort du parcours, et les points pratiques (budget, saison, vigilance).
 
 ## Tous les projets
 

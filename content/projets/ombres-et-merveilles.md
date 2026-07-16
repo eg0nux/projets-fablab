@@ -28,13 +28,14 @@ title: Ombres et merveilles
 ## Métiers à faire découvrir
 Médiathécaire, animateur, ATSEM et métiers de la petite enfance, conteur et médiateur culturel, illustrateur : les médiathèques et les services enfance recrutent des profils à l'aise avec le récit et le groupe.
 
-## Le temps fort
-La tournée : quatre représentations en deux jours, devant des publics de trois à quatre-vingt-treize ans. Le même conte fait rire la crèche le matin et pleurer doucement l'EHPAD l'après-midi — et ceux qui n'osaient pas parler le premier jour tiennent la voix principale le dernier.
+> [!quote] Le temps fort
+> La tournée : quatre représentations en deux jours, devant des publics de trois à quatre-vingt-treize ans. Le même conte fait rire la crèche le matin et pleurer doucement l'EHPAD l'après-midi — et ceux qui n'osaient pas parler le premier jour tiennent la voix principale le dernier.
 
 ## En pratique
 - **Budget matière indicatif** : 360 à 420 €.
 - **Saison idéale** : toute l'année, en calant les horaires sur les siestes et les rythmes des structures.
-- **Points de vigilance** :
-  - Le trac se gère par les rôles (manipulateur, voix, lumière) : chacun choisit son exposition, personne n'est forcé seul en scène.
-  - Histoires originales ou du domaine public uniquement ; accord simple des intéressés si des souvenirs d'anciens nourrissent le récit.
-  - Des charnières solides et une malle calée : le matériel voyage beaucoup en deux jours.
+
+> [!warning] Points de vigilance
+> - Le trac se gère par les rôles (manipulateur, voix, lumière) : chacun choisit son exposition, personne n'est forcé seul en scène.
+> - Histoires originales ou du domaine public uniquement ; accord simple des intéressés si des souvenirs d'anciens nourrissent le récit.
+> - Des charnières solides et une malle calée : le matériel voyage beaucoup en deux jours.

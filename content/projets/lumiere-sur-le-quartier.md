@@ -28,13 +28,14 @@ title: Lumière sur le quartier
 ## Métiers à faire découvrir
 Menuisier-agenceur, métallier-serrurier, designer d'espace, paysagiste, agent technique de collectivité, conducteur de travaux, chargé de mission politique de la ville : autant de filières qui recrutent localement.
 
-## Le temps fort
-L'inauguration dans l'espace public, avec habitants, élus, presse locale et familles. Les participants présentent la démarche devant le mobilier qu'ils ont fabriqué et posé. Une prise de parole ancrée dans une preuve tangible.
+> [!quote] Le temps fort
+> L'inauguration dans l'espace public, avec habitants, élus, presse locale et familles. Les participants présentent la démarche devant le mobilier qu'ils ont fabriqué et posé. Une prise de parole ancrée dans une preuve tangible.
 
 ## En pratique
 - **Budget matière indicatif** : 400 à 950 €
 - **Saison idéale** : printemps-été (pose et inauguration par beau temps)
-- **Points de vigilance** :
-  - Engager la demande d'occupation de l'espace public avec la mairie un à deux mois avant.
-  - Faire valider la solidité et la sécurité du mobilier (arêtes, stabilité, ancrage) par les services techniques.
-  - Prévoir assurance, convention avec le commanditaire et entretien ultérieur du mobilier.
+
+> [!warning] Points de vigilance
+> - Engager la demande d'occupation de l'espace public avec la mairie un à deux mois avant.
+> - Faire valider la solidité et la sécurité du mobilier (arêtes, stabilité, ancrage) par les services techniques.
+> - Prévoir assurance, convention avec le commanditaire et entretien ultérieur du mobilier.

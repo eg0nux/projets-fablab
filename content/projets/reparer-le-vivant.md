@@ -28,13 +28,14 @@ title: Réparer le vivant
 ## Métiers à faire découvrir
 Technicien de rivière, chargé d'études naturaliste, animateur nature, agent ONF ou garde du littoral, éco-garde, technicien bocage, métiers agricoles en transition agro-écologique : des métiers de terrain, souvent accessibles par des formations courtes.
 
-## Le temps fort
-La journée de pose en pleine nature, suivie de la remise du trophée « Nid d'Or ». Prolongement original : un tableau de bord des données de capteurs reste consultable, une occasion d'inviter les participants à revenir au FabLab après la formation et de garder le lien.
+> [!quote] Le temps fort
+> La journée de pose en pleine nature, suivie de la remise du trophée « Nid d'Or ». Prolongement original : un tableau de bord des données de capteurs reste consultable, une occasion d'inviter les participants à revenir au FabLab après la formation et de garder le lien.
 
 ## En pratique
 - **Budget matière indicatif** : 600 à 850 €
 - **Saison idéale** : automne à fin d'hiver, la pose devant précéder le printemps (les oiseaux prospectent tôt)
-- **Points de vigilance** :
-  - Respecter strictement les dimensions et trous d'envol normés par espèce, avec la LPO.
-  - Bois non traité chimiquement obligatoire ; pas de peinture à l'intérieur des nichoirs.
-  - Ne pas déranger d'espèces protégées ; obtenir l'autorisation des propriétaires des terrains.
+
+> [!warning] Points de vigilance
+> - Respecter strictement les dimensions et trous d'envol normés par espèce, avec la LPO.
+> - Bois non traité chimiquement obligatoire ; pas de peinture à l'intérieur des nichoirs.
+> - Ne pas déranger d'espèces protégées ; obtenir l'autorisation des propriétaires des terrains.

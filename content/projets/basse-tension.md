@@ -28,13 +28,14 @@ title: Basse tension
 ## Métiers à faire découvrir
 Métiers de la rénovation énergétique : plaquiste, menuisier poseur, chauffagiste, électricien, façadier-isolateur ; conseiller énergie, auditeur, éco-concepteur, chargé de mission énergie-climat. Des parcours courts existent partout et les carnets de commandes sont pleins.
 
-## Le temps fort
-La restitution chiffrée : les participants présentent les courbes de leurs propres tests (« notre four est monté à 120 °C », « la marmite a gardé le plat à plus de 70 °C pendant deux heures »). La preuve par la mesure impressionne toujours les partenaires, et les participants eux-mêmes.
+> [!quote] Le temps fort
+> La restitution chiffrée : les participants présentent les courbes de leurs propres tests (« notre four est monté à 120 °C », « la marmite a gardé le plat à plus de 70 °C pendant deux heures »). La preuve par la mesure impressionne toujours les partenaires, et les participants eux-mêmes.
 
 ## En pratique
 - **Budget matière indicatif** : 550 à 800 €
 - **Saison idéale** : automne-hiver, quand la question énergie est brûlante (tests solaires selon météo)
-- **Points de vigilance** :
-  - Sécurité absolue : aucune intervention sur le gaz ni sur le 230 V ; le chauffe-eau reste une maquette.
-  - Gérer les attentes : un four solaire cuit, mais pas comme un four électrique, à annoncer d'emblée.
-  - Sourcer les matériaux de récupération (vitrages, caissons) plusieurs semaines en amont.
+
+> [!warning] Points de vigilance
+> - Sécurité absolue : aucune intervention sur le gaz ni sur le 230 V ; le chauffe-eau reste une maquette.
+> - Gérer les attentes : un four solaire cuit, mais pas comme un four électrique, à annoncer d'emblée.
+> - Sourcer les matériaux de récupération (vitrages, caissons) plusieurs semaines en amont.

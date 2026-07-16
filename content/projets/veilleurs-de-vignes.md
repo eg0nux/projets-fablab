@@ -28,13 +28,14 @@ title: Veilleurs de vignes
 ## Métiers à faire découvrir
 Ouvrier viticole et tractoriste, agent de chai, technicien vigne et vin, salarié d'œnologie-conseil, tonnelier, commercial et œnotourisme. La filière recrute toute l'année dans le Bergeracois et offre des parcours de formation courts au lycée viticole.
 
-## Le temps fort
-La veillée de gel simulée : rendez-vous avant l'aube dans les rangs, déclenchement de l'alerte test, balises qui s'allument dans la nuit, puis remise du « Sarment d'Or » au lever du jour, autour d'un casse-croûte vigneron. Personne n'oublie ce matin-là.
+> [!quote] Le temps fort
+> La veillée de gel simulée : rendez-vous avant l'aube dans les rangs, déclenchement de l'alerte test, balises qui s'allument dans la nuit, puis remise du « Sarment d'Or » au lever du jour, autour d'un casse-croûte vigneron. Personne n'oublie ce matin-là.
 
 ## En pratique
 - **Budget matière indicatif** : 750 à 950 € (hors machines et encadrement).
 - **Saison idéale** : conception et fabrication en hiver, tout devant être posé avant début mars, à l'approche des gels de printemps.
-- **Points de vigilance** :
-  - Cadrer les attentes : la sentinelle alerte, elle ne protège pas ; les moyens de lutte restent au vigneron.
-  - Fiabilité avant tout : batteries par grand froid, couverture réseau réelle des parcelles à tester sur site (LoRa/SMS).
-  - Étalonnage rigoureux des sondes, sinon fausses alertes et confiance perdue ; consentement simple pour les numéros d'alerte.
+
+> [!warning] Points de vigilance
+> - Cadrer les attentes : la sentinelle alerte, elle ne protège pas ; les moyens de lutte restent au vigneron.
+> - Fiabilité avant tout : batteries par grand froid, couverture réseau réelle des parcelles à tester sur site (LoRa/SMS).
+> - Étalonnage rigoureux des sondes, sinon fausses alertes et confiance perdue ; consentement simple pour les numéros d'alerte.

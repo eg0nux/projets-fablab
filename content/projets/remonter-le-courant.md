@@ -29,13 +29,14 @@ title: Remonter le courant
 ## Métiers à faire découvrir
 Technicien de rivière, agent d'entretien des milieux aquatiques, garde-pêche, pilote et batelier du tourisme fluvial, animateur nature, hydrologie et suivi de la qualité de l'eau : des métiers de terrain recrutés par les collectivités, les syndicats de rivière et les opérateurs touristiques de la vallée.
 
-## Le temps fort
-La mise à l'eau au vieux port de Bergerac, devant familles, partenaires et passants, puis la première donnée qui s'affiche en direct sur le tableau de bord. Le laboratoire reste amarré et continue de mesurer : le projet vit après les dix jours, et les participants peuvent revenir consulter « leur » rivière.
+> [!quote] Le temps fort
+> La mise à l'eau au vieux port de Bergerac, devant familles, partenaires et passants, puis la première donnée qui s'affiche en direct sur le tableau de bord. Le laboratoire reste amarré et continue de mesurer : le projet vit après les dix jours, et les participants peuvent revenir consulter « leur » rivière.
 
 ## En pratique
 - **Budget matière indicatif** : 800 à 1 250 € (hors machines et encadrement).
 - **Saison idéale** : période d'étiage, de la fin du printemps au début de l'automne, hors crues.
-- **Points de vigilance** :
-  - Sécurité nautique absolue : gilets obligatoires, encadrement qualifié pour toute phase sur l'eau, pas de navigation (la plateforme reste amarrée).
-  - Autorisation d'occupation temporaire du domaine public fluvial à demander tôt (DDT / VNF selon le bief) et assurance spécifique.
-  - Prévoir dès la convention avec la ville la maintenance et la sortie d'eau hivernale.
+
+> [!warning] Points de vigilance
+> - Sécurité nautique absolue : gilets obligatoires, encadrement qualifié pour toute phase sur l'eau, pas de navigation (la plateforme reste amarrée).
+> - Autorisation d'occupation temporaire du domaine public fluvial à demander tôt (DDT / VNF selon le bief) et assurance spécifique.
+> - Prévoir dès la convention avec la ville la maintenance et la sortie d'eau hivernale.

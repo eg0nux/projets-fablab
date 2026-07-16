@@ -28,13 +28,14 @@ title: Papiers d'identité
 ## Métiers à faire découvrir
 Conducteur de machines papier-carton, opérateur de façonnage, imprimeur, relieur, graveur, métiers d'art du papier, emballage et carton ondulé : une filière discrète mais bien réelle en Dordogne, entre industrie et artisanat d'art.
 
-## Le temps fort
-Le vernissage : chacun présente sa feuille, sa fibre, son filigrane, son récit. Le papier d'identité choisi se tient à côté du portrait ; les visiteurs repartent avec des feuilles ensemencées à planter. La recette de la vente finance une sortie ou du matériel choisi par le groupe.
+> [!quote] Le temps fort
+> Le vernissage : chacun présente sa feuille, sa fibre, son filigrane, son récit. Le papier d'identité choisi se tient à côté du portrait ; les visiteurs repartent avec des feuilles ensemencées à planter. La recette de la vente finance une sortie ou du matériel choisi par le groupe.
 
 ## En pratique
 - **Budget matière indicatif** : 650 à 750 € (hors machines et encadrement).
 - **Saison idéale** : toute l'année, en atelier chauffé et aéré ; prévoir un séchage suffisant avant le vernissage.
-- **Points de vigilance** :
-  - Le séchage est incompressible : produire les feuilles tôt, sous peine de vernissage humide.
-  - Sécurité de la presse (écrasement) et fatigue du déchiquetage des jeans : rotations courtes, gants.
-  - Le récit de soi est strictement volontaire, relu et validé par son auteur ; le titre est une métaphore, jamais une allusion à la situation administrative de quiconque.
+
+> [!warning] Points de vigilance
+> - Le séchage est incompressible : produire les feuilles tôt, sous peine de vernissage humide.
+> - Sécurité de la presse (écrasement) et fatigue du déchiquetage des jeans : rotations courtes, gants.
+> - Le récit de soi est strictement volontaire, relu et validé par son auteur ; le titre est une métaphore, jamais une allusion à la situation administrative de quiconque.

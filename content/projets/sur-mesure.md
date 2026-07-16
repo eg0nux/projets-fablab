@@ -28,13 +28,14 @@ title: Sur mesure
 ## Métiers à faire découvrir
 Couturier industriel, mécanicien en confection, retoucheur, modéliste, maroquinier, opérateur de tri textile, responsable d'atelier. La filière recrute et se réorganise autour du réemploi : les débouchés sont réels et locaux.
 
-## Le temps fort
-Le défilé — porté par les participants eux-mêmes ou des volontaires — ou la vente solidaire dont la recette va à une association choisie par le groupe. Les photos du shooting constituent un portfolio que chacun emporte.
+> [!quote] Le temps fort
+> Le défilé — porté par les participants eux-mêmes ou des volontaires — ou la vente solidaire dont la recette va à une association choisie par le groupe. Les photos du shooting constituent un portfolio que chacun emporte.
 
 ## En pratique
 - **Budget matière indicatif** : 250 à 950 € selon l'équipement déjà disponible
 - **Saison idéale** : toute l'année (projet en intérieur)
-- **Points de vigilance** :
-  - Hygiène du gisement : tout laver avant usage ; écarter les textiles techniques non identifiables.
-  - Le goulot d'étranglement, c'est le nombre de postes de couture : prévoir rotations et tâches parallèles.
-  - Découpe laser sur tissu : uniquement fibres naturelles ou polyester identifié, jamais de PVC ; bonne ventilation.
+
+> [!warning] Points de vigilance
+> - Hygiène du gisement : tout laver avant usage ; écarter les textiles techniques non identifiables.
+> - Le goulot d'étranglement, c'est le nombre de postes de couture : prévoir rotations et tâches parallèles.
+> - Découpe laser sur tissu : uniquement fibres naturelles ou polyester identifié, jamais de PVC ; bonne ventilation.

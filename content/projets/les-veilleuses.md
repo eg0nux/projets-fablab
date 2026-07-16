@@ -28,13 +28,14 @@ title: Les Veilleuses
 ## Métiers à faire découvrir
 Surveillant de nuit qualifié, veilleur de nuit en EHPAD, en foyer ou en internat, aide-soignant et agent hospitalier de nuit, auxiliaire de puériculture : des filières du soin et du secteur social qui recrutent en continu et restent un angle mort de l'orientation.
 
-## Le temps fort
-Deux temps forts en un : la soirée d'ombres au FabLab, quand toutes les lampes s'allument ensemble et couvrent le plafond de constellations. Puis, plus discret et plus fort encore, la première vraie nuit, quand un enfant s'endort quelque part sous une lampe fabriquée par le groupe. Les équipes de nuit en racontent la suite au dernier jour.
+> [!quote] Le temps fort
+> Deux temps forts en un : la soirée d'ombres au FabLab, quand toutes les lampes s'allument ensemble et couvrent le plafond de constellations. Puis, plus discret et plus fort encore, la première vraie nuit, quand un enfant s'endort quelque part sous une lampe fabriquée par le groupe. Les équipes de nuit en racontent la suite au dernier jour.
 
 ## En pratique
 - **Budget matière indicatif** : 360 à 430 €.
 - **Saison idéale** : toute l'année.
-- **Points de vigilance** :
-  - Sécurité enfant absolue : compartiment à piles vissé et inaccessible, aucun élément détachable, LED froides au toucher, test d'arrachage avant chaque remise.
-  - Lumière chaude et faible uniquement, minuterie systématique ; finitions sans odeur, car ces objets dorment à côté d'un visage.
-  - En milieu hospitalier, tout passe par le cadre de santé : prévoir la bascule vers MAM et familles d'accueil si le circuit est trop long.
+
+> [!warning] Points de vigilance
+> - Sécurité enfant absolue : compartiment à piles vissé et inaccessible, aucun élément détachable, LED froides au toucher, test d'arrachage avant chaque remise.
+> - Lumière chaude et faible uniquement, minuterie systématique ; finitions sans odeur, car ces objets dorment à côté d'un visage.
+> - En milieu hospitalier, tout passe par le cadre de santé : prévoir la bascule vers MAM et familles d'accueil si le circuit est trop long.

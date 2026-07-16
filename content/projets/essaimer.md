@@ -28,13 +28,14 @@ title: Essaimer
 ## Métiers à faire découvrir
 Apiculteur et éleveur de reines, animateur nature et éducateur à l'environnement, jardinier et ouvrier paysagiste, métiers de la transformation alimentaire (miellerie, conditionnement) et de la vente en circuit court : des filières du vivant accessibles par des formations courtes.
 
-## Le temps fort
-La fête du rucher : familles, écoles et partenaires découvrent le site aménagé, guidés par les participants qui expliquent « leur » hôtel et le cycle de l'abeille devant la ruche vitrée. Autour d'une dégustation de miel local, l'apiculteur bénévole reçoit le « Rayon d'Or » — et les abris se peupleront tout seuls au fil des saisons.
+> [!quote] Le temps fort
+> La fête du rucher : familles, écoles et partenaires découvrent le site aménagé, guidés par les participants qui expliquent « leur » hôtel et le cycle de l'abeille devant la ruche vitrée. Autour d'une dégustation de miel local, l'apiculteur bénévole reçoit le « Rayon d'Or » — et les abris se peupleront tout seuls au fil des saisons.
 
 ## En pratique
 - **Budget matière indicatif** : 280 à 420 €
 - **Saison idéale** : de la fin de l'hiver au printemps (les abeilles sauvages prospectent tôt, le parterre méllifère doit fleurir à temps)
-- **Points de vigilance** :
-  - Bois non traité chimiquement obligatoire ; perçages lisses et bons diamètres, sinon les abeilles bouderont les hôtels.
-  - Aucune colonie à miel manipulée par le groupe : la ruche d'observation est peuplée ensuite par l'apiculteur ; s'informer d'éventuelles allergies avant toute sortie au contact d'abeilles.
-  - Orientation et emplacement des abris validés par l'apiculteur (sud-est, hors vent) ; convention d'entretien avec le site d'accueil.
+
+> [!warning] Points de vigilance
+> - Bois non traité chimiquement obligatoire ; perçages lisses et bons diamètres, sinon les abeilles bouderont les hôtels.
+> - Aucune colonie à miel manipulée par le groupe : la ruche d'observation est peuplée ensuite par l'apiculteur ; s'informer d'éventuelles allergies avant toute sortie au contact d'abeilles.
+> - Orientation et emplacement des abris validés par l'apiculteur (sud-est, hors vent) ; convention d'entretien avec le site d'accueil.

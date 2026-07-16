@@ -28,13 +28,14 @@ title: Manger local
 ## Métiers à faire découvrir
 Maraîcher, ouvrier agricole et agroéquipement, technicien paysagiste, animateur jardin, cuisinier de collectivité, agent polyvalent de restauration, commis : deux filières en tension, accessibles rapidement, présentes sur tout le territoire.
 
-## Le temps fort
-Le repas final, préparé et servi par les participants avec des produits locaux — et, symboliquement, les premières récoltes ou aromates du jardin qu'ils viennent d'équiper. Servir les autres inverse une dernière fois les rôles : les accompagnés deviennent les hôtes, et le trophée « Fourchette d'Or » est remis.
+> [!quote] Le temps fort
+> Le repas final, préparé et servi par les participants avec des produits locaux — et, symboliquement, les premières récoltes ou aromates du jardin qu'ils viennent d'équiper. Servir les autres inverse une dernière fois les rôles : les accompagnés deviennent les hôtes, et le trophée « Fourchette d'Or » est remis.
 
 ## En pratique
 - **Budget matière indicatif** : 700 à 1 200 € (le plus coûteux, mais le plus fédérateur)
 - **Saison idéale** : printemps, pour planter et récolter quelque chose
-- **Points de vigilance** :
-  - Hygiène alimentaire du repas : encadrement par un professionnel, denrées tracées, chaîne du froid.
-  - Pérennité : convention d'entretien avec la structure destinataire (qui arrose, récolte, répare).
-  - Vérifier l'accès à l'eau et l'exposition du site avant de dessiner quoi que ce soit.
+
+> [!warning] Points de vigilance
+> - Hygiène alimentaire du repas : encadrement par un professionnel, denrées tracées, chaîne du froid.
+> - Pérennité : convention d'entretien avec la structure destinataire (qui arrose, récolte, répare).
+> - Vérifier l'accès à l'eau et l'exposition du site avant de dessiner quoi que ce soit.

@@ -28,13 +28,14 @@ title: Mémoire vive
 ## Métiers à faire découvrir
 Animateur en gérontologie, accompagnant éducatif et social, aide-soignant, technicien du son, archiviste et métiers du patrimoine, médiateur culturel. L'aide à la personne recrute massivement en Dordogne, département parmi les plus âgés de France : ce projet en est la porte d'entrée la plus douce.
 
-## Le temps fort
-L'inauguration au marché couvert, un samedi matin : la voix d'une ancienne raconte le tabac ou la rivière au milieu des étals, et l'auteure est là, entourée du groupe qui a fabriqué le banc. Le jury mixte aînés-participants pour la « Voix d'Or » scelle l'inversion des rôles.
+> [!quote] Le temps fort
+> L'inauguration au marché couvert, un samedi matin : la voix d'une ancienne raconte le tabac ou la rivière au milieu des étals, et l'auteure est là, entourée du groupe qui a fabriqué le banc. Le jury mixte aînés-participants pour la « Voix d'Or » scelle l'inversion des rôles.
 
 ## En pratique
 - **Budget matière indicatif** : 950 à 1 150 € (hors machines et encadrement).
 - **Saison idéale** : fabrication et collecte à la belle saison ; pose des bornes en extérieur par temps sec.
-- **Points de vigilance** :
-  - Consentement écrit des aînés (et des familles ou tuteurs le cas échéant), droit de retrait à tout moment, validation de chaque capsule par son auteur.
-  - Rythme des personnes âgées : séances de 30 à 45 minutes, jamais plus de deux par jour, toujours avec l'animateur de la structure.
-  - Le projet côtoie la fin de vie : prévoir un temps d'échange encadré ; extérieur étanche, volume respectueux, convention d'entretien avec les communes.
+
+> [!warning] Points de vigilance
+> - Consentement écrit des aînés (et des familles ou tuteurs le cas échéant), droit de retrait à tout moment, validation de chaque capsule par son auteur.
+> - Rythme des personnes âgées : séances de 30 à 45 minutes, jamais plus de deux par jour, toujours avec l'animateur de la structure.
+> - Le projet côtoie la fin de vie : prévoir un temps d'échange encadré ; extérieur étanche, volume respectueux, convention d'entretien avec les communes.
