@@ -18,12 +18,12 @@ const config: QuartzConfig = {
     ignorePatterns: ["private", "templates", ".obsidian"],
     defaultDateType: "modified",
     theme: {
-      fontOrigin: "googleFonts",
+      fontOrigin: "local",
       cdnCaching: true,
       typography: {
-        header: "Schibsted Grotesk",
-        body: "Source Sans Pro",
-        code: "IBM Plex Mono",
+        header: "Fraunces",
+        body: "Iosevka",
+        code: "Iosevka",
       },
       colors: {
         // Mode clair : palette One Light (assortie à One Dark)
@@ -88,8 +88,8 @@ const config: QuartzConfig = {
       Plugin.Static(),
       Plugin.Favicon(),
       Plugin.NotFoundPage(),
-      // Comment out CustomOgImages to speed up build time
-      Plugin.CustomOgImages(),
+      // Désactivé : incompatible avec les polices locales (Iosevka/Fraunces auto-hébergées)
+      // Plugin.CustomOgImages(),
     ],
   },
 }

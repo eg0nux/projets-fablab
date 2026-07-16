@@ -1,3 +1,126 @@
 @use "./base.scss";
 
-// put your custom CSS here!
+/* ==========================================================================
+   Polices auto-hébergées
+   Corps : Iosevka (monospace) · Titres : Fraunces (serif à caractère)
+   ========================================================================== */
+
+@font-face {
+  font-family: "Iosevka";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/static/fonts/iosevka-400.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Iosevka";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("/static/fonts/iosevka-700.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Fraunces";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("/static/fonts/fraunces-600.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Fraunces";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("/static/fonts/fraunces-700.woff2") format("woff2");
+}
+
+/* ==========================================================================
+   Colonne de lecture resserrée (esprit ssp.sh/brain)
+   ========================================================================== */
+
+.center {
+  max-width: 768px;
+  margin: 0 auto;
+}
+
+/* Corps un peu plus aéré : la monospace respire mieux avec de l'interligne */
+p,
+li {
+  line-height: 1.7;
+}
+
+article {
+  font-size: 0.95rem;
+}
+
+/* ==========================================================================
+   Titres Fraunces
+   ========================================================================== */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.page-title {
+  font-family: "Fraunces", Georgia, serif;
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  line-height: 1.2;
+}
+
+h1,
+.page-title {
+  font-weight: 700;
+}
+
+/* Filet discret sous les titres de section */
+article h2 {
+  padding-bottom: 0.2em;
+  border-bottom: 1px solid var(--lightgray);
+}
+
+/* ==========================================================================
+   Liens internes : soulignement pointillé (signature « jardin numérique »)
+   ========================================================================== */
+
+a.internal {
+  text-decoration: underline dashed;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  background-color: transparent;
+  padding: 0;
+  color: var(--secondary);
+  font-weight: inherit;
+}
+a.internal:hover {
+  text-decoration: underline solid;
+}
+
+/* ==========================================================================
+   Tableau comparatif : lignes alternées, étoiles alignées (Iosevka aidant)
+   ========================================================================== */
+
+article table {
+  font-size: 0.85rem;
+  border-collapse: collapse;
+}
+article th {
+  font-family: "Fraunces", Georgia, serif;
+  font-weight: 600;
+  border-bottom: 2px solid var(--gray);
+}
+article tbody tr:nth-child(odd) {
+  background-color: var(--lightgray);
+}
+article td,
+article th {
+  padding: 0.35em 0.6em;
+  border: none;
+}
+
+/* Titre des encadrés d'accroche (> [!abstract]) en Fraunces */
+.callout-title-inner {
+  font-family: "Fraunces", Georgia, serif;
+}
