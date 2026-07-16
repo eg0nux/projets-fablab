@@ -1,37 +1,43 @@
 @use "./base.scss";
 
 /* ==========================================================================
-   Polices auto-hébergées
-   Corps : Iosevka (monospace) · Titres : Fraunces (serif à caractère)
+   Polices auto-hébergées (déclarations mises à jour selon le choix de police)
    ========================================================================== */
 
 @font-face {
-  font-family: "Iosevka";
+  font-family: "Ubuntu";
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url("/static/fonts/iosevka-400.woff2") format("woff2");
+  src: url("/static/fonts/ubuntu-400.woff2") format("woff2");
 }
 @font-face {
-  font-family: "Iosevka";
+  font-family: "Ubuntu";
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/static/fonts/ubuntu-400-italic.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Ubuntu";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("/static/fonts/ubuntu-500.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Ubuntu";
   font-style: normal;
   font-weight: 700;
   font-display: swap;
-  src: url("/static/fonts/iosevka-700.woff2") format("woff2");
+  src: url("/static/fonts/ubuntu-700.woff2") format("woff2");
 }
 @font-face {
-  font-family: "Fraunces";
+  font-family: "Ubuntu Mono";
   font-style: normal;
-  font-weight: 600;
+  font-weight: 400;
   font-display: swap;
-  src: url("/static/fonts/fraunces-600.woff2") format("woff2");
-}
-@font-face {
-  font-family: "Fraunces";
-  font-style: normal;
-  font-weight: 700;
-  font-display: swap;
-  src: url("/static/fonts/fraunces-700.woff2") format("woff2");
+  src: url("/static/fonts/ubuntu-mono-400.woff2") format("woff2");
 }
 
 /* ==========================================================================
@@ -43,18 +49,13 @@
   margin: 0 auto;
 }
 
-/* Corps un peu plus aéré : la monospace respire mieux avec de l'interligne */
 p,
 li {
   line-height: 1.7;
 }
 
-article {
-  font-size: 0.95rem;
-}
-
 /* ==========================================================================
-   Titres Fraunces
+   Titres (palette Kanagawa) — traitement façon ssp.sh
    ========================================================================== */
 
 h1,
@@ -64,21 +65,29 @@ h4,
 h5,
 h6,
 .page-title {
-  font-family: "Fraunces", Georgia, serif;
+  font-family: var(--headerFont);
   font-weight: 600;
   letter-spacing: -0.015em;
   line-height: 1.2;
 }
 
-h1,
-.page-title {
+/* Grand titre : dégradé secondaire → tertiaire */
+.page-title,
+article h1 {
   font-weight: 700;
+  background: linear-gradient(135deg, var(--secondary), var(--tertiary));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: var(--tertiary); /* repli si le clip n'est pas supporté */
 }
 
-/* Filet discret sous les titres de section */
 article h2 {
-  padding-bottom: 0.2em;
-  border-bottom: 1px solid var(--lightgray);
+  color: var(--tertiary);
+}
+
+article h3 {
+  color: var(--secondary);
 }
 
 /* ==========================================================================
@@ -96,10 +105,11 @@ a.internal {
 }
 a.internal:hover {
   text-decoration: underline solid;
+  color: var(--tertiary);
 }
 
 /* ==========================================================================
-   Tableau comparatif : lignes alternées, étoiles alignées (Iosevka aidant)
+   Tableau comparatif : lignes alternées, étoiles alignées
    ========================================================================== */
 
 article table {
@@ -107,7 +117,7 @@ article table {
   border-collapse: collapse;
 }
 article th {
-  font-family: "Fraunces", Georgia, serif;
+  font-family: var(--headerFont);
   font-weight: 600;
   border-bottom: 2px solid var(--gray);
 }
@@ -120,7 +130,7 @@ article th {
   border: none;
 }
 
-/* Titre des encadrés d'accroche (> [!abstract]) en Fraunces */
+/* Titre des encadrés d'accroche (> [!abstract]) suit la police de titre */
 .callout-title-inner {
-  font-family: "Fraunces", Georgia, serif;
+  font-family: var(--headerFont);
 }
