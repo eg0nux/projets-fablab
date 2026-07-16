@@ -41,4 +41,4 @@ Tous partagent la même ossature — celle du modèle « Faire Récif » — mai
 ---
 
 > [!note] Document de travail
-> Les noms de projets et de trophées sont des propositions, à adapter librement. Chaque fiche est étiquetée par volume d'origine (`volume-1`, `volume-2`, `volume-3`) — cliquez sur une étiquette pour retrouver les projets d'une même famille.
+> Les noms de projets et de trophées sont des propositions, à adapter librement. Le volume d'origine (1, 2 ou 3) reste indiqué dans le [[comparatif|tableau comparatif]].

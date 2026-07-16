@@ -1,7 +1,5 @@
 ---
 title: « Grandeur nature »
-tags:
-  - volume-3
 ---
 
 > [!abstract] La malle aux jeux géants

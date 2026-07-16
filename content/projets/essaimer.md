@@ -1,7 +1,5 @@
 ---
 title: Essaimer
-tags:
-  - volume-1
 ---
 
 > [!abstract] Abris à pollinisateurs et rucher pédagogique

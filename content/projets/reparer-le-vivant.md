@@ -1,7 +1,5 @@
 ---
 title: Réparer le vivant
-tags:
-  - volume-1
 ---
 
 > [!abstract] Biodiversité fabriquée

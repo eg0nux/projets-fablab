@@ -1,7 +1,5 @@
 ---
 title: « Faire Podium »
-tags:
-  - volume-3
 ---
 
 > [!abstract] La fabrique des trophées du territoire

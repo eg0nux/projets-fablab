@@ -1,7 +1,5 @@
 ---
 title: Lumière sur le quartier
-tags:
-  - volume-1
 ---
 
 > [!abstract] Mobilier et signalétique urbaine

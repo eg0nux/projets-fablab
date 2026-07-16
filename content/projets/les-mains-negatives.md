@@ -1,7 +1,5 @@
 ---
 title: Les mains négatives
-tags:
-  - volume-2
 ---
 
 > [!abstract] La grotte portative

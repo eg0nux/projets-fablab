@@ -1,7 +1,5 @@
 ---
 title: « Ombres et merveilles »
-tags:
-  - volume-3
 ---
 
 > [!abstract] Kamishibaïs et théâtres d'ombres

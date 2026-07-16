@@ -1,7 +1,5 @@
 ---
 title: Remonter le courant
-tags:
-  - volume-2
 ---
 
 > [!abstract] Le laboratoire flottant de la Dordogne

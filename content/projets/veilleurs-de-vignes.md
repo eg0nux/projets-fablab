@@ -1,7 +1,5 @@
 ---
 title: Veilleurs de vignes
-tags:
-  - volume-2
 ---
 
 > [!abstract] Sentinelles antigel pour les vignerons

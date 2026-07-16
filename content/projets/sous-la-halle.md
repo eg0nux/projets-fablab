@@ -1,7 +1,5 @@
 ---
 title: « Sous la halle »
-tags:
-  - volume-3
 ---
 
 > [!abstract] Ardoises, enseignes et présentoirs pour les marchés

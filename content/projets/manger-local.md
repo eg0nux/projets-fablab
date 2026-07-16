@@ -1,7 +1,5 @@
 ---
 title: Manger local
-tags:
-  - volume-1
 ---
 
 > [!abstract] De la graine à l'assiette

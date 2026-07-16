@@ -1,7 +1,5 @@
 ---
 title: Radio Fab
-tags:
-  - volume-1
 ---
 
 > [!abstract] Média fabriqué

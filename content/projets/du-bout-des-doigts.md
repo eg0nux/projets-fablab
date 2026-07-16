@@ -1,7 +1,5 @@
 ---
 title: « Du bout des doigts »
-tags:
-  - volume-3
 ---
 
 > [!abstract] Planches d'éveil et coussins sensoriels

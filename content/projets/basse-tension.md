@@ -1,7 +1,5 @@
 ---
 title: Basse tension
-tags:
-  - volume-1
 ---
 
 > [!abstract] Low-tech et sobriété énergétique

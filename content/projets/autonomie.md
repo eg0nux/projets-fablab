@@ -1,7 +1,5 @@
 ---
 title: Autonomie
-tags:
-  - volume-1
 ---
 
 > [!abstract] Objets d'assistance sur mesure

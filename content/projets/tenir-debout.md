@@ -1,7 +1,5 @@
 ---
 title: Tenir debout
-tags:
-  - volume-2
 ---
 
 > [!abstract] Pierre sèche et patrimoine numérisé

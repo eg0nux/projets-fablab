@@ -1,7 +1,5 @@
 ---
 title: Changer de braquet
-tags:
-  - volume-2
 ---
 
 > [!abstract] La vélothèque des kilomètres retrouvés

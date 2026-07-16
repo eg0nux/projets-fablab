@@ -1,7 +1,5 @@
 ---
 title: Papiers d'identité
-tags:
-  - volume-2
 ---
 
 > [!abstract] La micro-papeterie de la vallée de la Couze

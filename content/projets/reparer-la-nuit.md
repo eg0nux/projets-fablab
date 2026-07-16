@@ -1,7 +1,5 @@
 ---
 title: Réparer la nuit
-tags:
-  - volume-2
 ---
 
 > [!abstract] Le ciel étoilé comme bien commun

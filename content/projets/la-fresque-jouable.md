@@ -1,7 +1,5 @@
 ---
 title: La fresque jouable
-tags:
-  - volume-1
 ---
 
 > [!abstract] Jeu de société du territoire

@@ -1,7 +1,5 @@
 ---
 title: « Les Veilleuses »
-tags:
-  - volume-3
 ---
 
 > [!abstract] Des lampes pour les nuits difficiles

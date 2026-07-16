@@ -1,7 +1,5 @@
 ---
 title: Mémoire vive
-tags:
-  - volume-2
 ---
 
 > [!abstract] Les bancs qui racontent

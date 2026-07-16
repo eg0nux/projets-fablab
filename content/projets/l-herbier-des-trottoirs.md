@@ -1,7 +1,5 @@
 ---
 title: « L'Herbier des trottoirs »
-tags:
-  - volume-3
 ---
 
 > [!abstract] Le sauvage sous nos pieds

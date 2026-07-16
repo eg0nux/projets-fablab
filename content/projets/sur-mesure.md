@@ -1,7 +1,5 @@
 ---
 title: Sur mesure
-tags:
-  - volume-1
 ---
 
 > [!abstract] Textile, réemploi et confection

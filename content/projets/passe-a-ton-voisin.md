@@ -1,7 +1,5 @@
 ---
 title: « Passe à ton voisin »
-tags:
-  - volume-3
 ---
 
 > [!abstract] Boîtes à livres, grainothèques et boîtes à dons
