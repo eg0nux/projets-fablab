@@ -984,18 +984,12 @@ article p:has(> img:only-child) + p > em:only-child {
      sans blanc, comme des lignes surlignées à la main. */
   line-height: 1.15;
 
-  /* Surlignée du même rouge que le chapeau, et par le même moyen : un
-     dégradé qui ne colore qu'une tranche de la zone de contenu de la police,
-     bien plus haute que les lettres. `box-decoration-break: clone` reprend le
-     fond à chaque ligne, bord droit irrégulier compris. */
+  /* Surlignée du même rouge que le chapeau, mais en aplat plein : les bandes
+     doivent se toucher d'une ligne à l'autre, sans blanc entre elles.
+     `box-decoration-break: clone` reprend le fond à chaque ligne, bord droit
+     irrégulier compris. */
   --surlignage: color-mix(in srgb, var(--tertiary) 60%, transparent);
-  background-image: linear-gradient(
-    180deg,
-    transparent 14%,
-    var(--surlignage) 14%,
-    var(--surlignage) 92%,
-    transparent 92%
-  );
+  background-color: var(--surlignage);
   box-decoration-break: clone;
   -webkit-box-decoration-break: clone;
   padding: 0 0.2em;
