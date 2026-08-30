@@ -908,9 +908,12 @@ footer a:hover {
    -------------------------------------------------------------------------- */
 
 /* Sur écran large, la photo est habillée par le texte : elle flotte à
-   droite sur la moitié de la colonne. Une illustration de machine se
+   droite sur deux cinquièmes de la colonne. Une illustration de machine se
    consulte du coin de l'œil pendant qu'on lit la procédure — la placer en
-   pleine largeur coupe la lecture en deux.
+   pleine largeur coupe la lecture en deux, et la moitié de la colonne lui
+   donnait encore trop de poids face au texte.
+
+   40 % est la règle du site : toute photo d'article s'y tient.
 
    La légende flotte avec elle et se dégage sous l'image par `clear`, de
    sorte que le bloc image + légende tienne d'un seul tenant. */
@@ -919,7 +922,7 @@ article p:has(> img:only-child),
 article p:has(> img:only-child) + p:has(> em:only-child) {
   float: right;
   clear: right;
-  width: 50%;
+  width: 40%;
   /* Gouttière en rem, jamais en em : la règle suivante annule l'interligne
      du paragraphe de l'image, et un em s'y calculerait sur une taille de
      police locale — le texte viendrait alors coller le cadre. */
@@ -964,20 +967,46 @@ article img {
   border-radius: 2px;
 }
 
+/* L'alignement et la marge passent sur le paragraphe : la légende elle-même
+   redevient un élément en ligne, sans quoi son surlignage peindrait tout le
+   rectangle du bloc au lieu d'épouser les lignes de texte. Décalée de 3 px du
+   bord : au ras du cadre, elle semblait déborder. */
+article p:has(> img:only-child) + p:has(> em:only-child) {
+  text-align: right;
+  padding-right: 3px;
+}
+
 article p:has(> img:only-child) + p > em:only-child {
-  display: block;
-  margin-top: 0.35em;
   font-family: var(--codeFont);
   font-size: 0.76rem;
   font-style: italic;
-  /* Alignée à droite, mais décalée de 3 px du bord : au ras du cadre, la
-     légende semblait déborder. */
-  text-align: right;
-  padding-right: 3px;
   /* Interligne resserré : l'interligne de corps de 1,7 creusait un blanc
      au-dessus de la première ligne, qui décollait la légende du cadre. */
   line-height: 1.4;
-  color: var(--gray);
+
+  /* Surlignée du même rouge que le chapeau, et par le même moyen : un
+     dégradé qui ne colore qu'une tranche de la zone de contenu de la police,
+     bien plus haute que les lettres. `box-decoration-break: clone` reprend le
+     fond à chaque ligne, bord droit irrégulier compris. */
+  --surlignage: color-mix(in srgb, var(--tertiary) 60%, transparent);
+  background-image: linear-gradient(
+    180deg,
+    transparent 14%,
+    var(--surlignage) 14%,
+    var(--surlignage) 92%,
+    transparent 92%
+  );
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+  padding: 0 0.2em;
+  color: var(--darkgray);
+}
+
+/* Sur fond sombre, même arbitrage que pour le chapeau : le rouge monte en
+   opacité, sinon le noir le délave, et le texte repasse en sombre. */
+:root[saved-theme="dark"] article p:has(> img:only-child) + p > em:only-child {
+  --surlignage: color-mix(in srgb, var(--secondary) 78%, transparent);
+  color: var(--light);
 }
 
 /* Sans cela, une image flottante déborderait sur la section suivante. */
