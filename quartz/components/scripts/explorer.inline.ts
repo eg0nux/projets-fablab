@@ -205,6 +205,13 @@ async function setupExplorer(currentSlug: FullSlug) {
     const explorerUl = explorer.querySelector(".explorer-ul")
     if (!explorerUl) continue
 
+    // Retirer l'arbre précédemment construit avant d'en insérer un nouveau.
+    // Sans cela, chaque exécution empile une copie de plus : l'insertion ne
+    // vidait pas la liste, et l'explorateur affichait l'arborescence en
+    // double puis en triple au fil des remontages du composant.
+    // Le sentinelle .overflow-end est conservée, elle n'est pas générée ici.
+    explorerUl.querySelectorAll(":scope > li:not(.overflow-end)").forEach((n) => n.remove())
+
     // Create and insert new content
     const fragment = document.createDocumentFragment()
     for (const child of trie.children) {

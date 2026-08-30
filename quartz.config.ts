@@ -8,7 +8,11 @@ import * as Plugin from "./quartz/plugins"
  */
 const config: QuartzConfig = {
   configuration: {
-    pageTitle: "Projets FabLab · 2026-2027",
+    // Le titre porte les deux niveaux : la marque et la section. Le logotype
+    // les sépare à l'affichage (voir PageTitle et la charte), mais l'onglet,
+    // le flux RSS et les métadonnées de partage gardent la chaîne entière —
+    // c'est elle qui distingue ce site de fablab.egonux.com.
+    pageTitle: "fablab/projets",
     pageTitleSuffix: "",
     enableSPA: true,
     enablePopovers: true,
@@ -20,35 +24,39 @@ const config: QuartzConfig = {
     theme: {
       fontOrigin: "local",
       cdnCaching: true,
+      // Même appariement que fablab.egonux.com : titres et interface en
+      // JetBrains Mono, corps en Literata, serif dessinée pour la lecture
+      // longue à l'écran. Le contraste mono / serif tient sans couleur.
       typography: {
-        header: "Ubuntu",
-        body: "Ubuntu",
-        code: "Ubuntu Mono",
+        header: "JetBrains Mono",
+        body: "Literata",
+        code: "JetBrains Mono",
       },
       colors: {
-        // Palette Kanagawa (d'après ssp.sh/brain) — mode clair « lotus »
+        // Encre, papier et rouge repris de maquette.egonux.com ; le reste
+        // est dérivé en gris chauds. Régime sobre : la couleur est un
+        // accent ponctuel, jamais un aplat.
         lightMode: {
-          light: "#faf8f8",
-          lightgray: "#e0ddd0",
-          gray: "#8a8778",
-          darkgray: "#545464",
-          dark: "#141021",
-          secondary: "#ff5d62",
-          tertiary: "#3150aa",
-          highlight: "rgba(255, 93, 98, 0.1)",
-          textHighlight: "#e6c38499",
+          light: "#fafafa", // papier
+          lightgray: "#e6e1d9", // filets, zébrure
+          gray: "#8c8578", // texte effacé, table des matières
+          darkgray: "#38352f", // corps de texte
+          dark: "#212121", // encre : titres
+          secondary: "#d32f2f", // accent : survol, encadrés
+          tertiary: "#f44336", // accent vif
+          highlight: "rgba(237, 209, 176, 0.32)", // pêche
+          textHighlight: "#eddd6e99", // jaune
         },
-        // Palette Kanagawa — mode sombre « wave »
         darkMode: {
-          light: "#1f1f28",
-          lightgray: "#363646",
-          gray: "#727169",
-          darkgray: "#dcd7ba",
-          dark: "#dcd7ba",
-          secondary: "#658594",
-          tertiary: "#e46876",
-          highlight: "rgba(101, 133, 148, 0.15)",
-          textHighlight: "#e6c38455",
+          light: "#1c1b19",
+          lightgray: "#33312c",
+          gray: "#7d786d",
+          darkgray: "#ded8cc",
+          dark: "#f6ece0", // crème : titres
+          secondary: "#f4675c",
+          tertiary: "#f8998f",
+          highlight: "rgba(237, 209, 176, 0.12)",
+          textHighlight: "#eddd6e44",
         },
       },
     },
@@ -68,6 +76,11 @@ const config: QuartzConfig = {
       }),
       Plugin.ObsidianFlavoredMarkdown({ enableInHtmlEmbed: false }),
       Plugin.GitHubFlavoredMarkdown(),
+      // Les codes hexadécimaux s'affichent dans leur couleur : sur une fiche
+      // machine, le code couleur est la consigne elle-même.
+      Plugin.CodesCouleur(),
+      // Espaces insécables devant la ponctuation double française.
+      Plugin.Typographie(),
       Plugin.TableOfContents(),
       Plugin.CrawlLinks({ markdownLinkResolution: "shortest" }),
       Plugin.Description(),
@@ -88,7 +101,7 @@ const config: QuartzConfig = {
       Plugin.Static(),
       Plugin.Favicon(),
       Plugin.NotFoundPage(),
-      // Désactivé : incompatible avec les polices locales (Iosevka/Fraunces auto-hébergées)
+      // Désactivé : incompatible avec les polices locales
       // Plugin.CustomOgImages(),
     ],
   },

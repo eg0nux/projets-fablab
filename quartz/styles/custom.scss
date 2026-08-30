@@ -1,48 +1,26 @@
 @use "./base.scss";
+@use "./fonts.scss";
 
 /* ==========================================================================
-   Polices auto-hébergées (déclarations mises à jour selon le choix de police)
+   Charte lab.egonux.com — régime « fiche », partagé avec fablab.egonux.com
+
+   Ce fichier est le jumeau de celui de fablab.egonux.com : mêmes polices,
+   même palette, mêmes marqueurs. Deux ajouts lui sont propres, en fin de
+   fichier : le tableau du catalogue et le bloc « Repères ». Toute
+   correction de charte se reporte d'un site à l'autre.
+
+   Identité partagée avec maquette.egonux.com : encre #212121, Work Sans,
+   Inconsolata, rouge #f44336. Traitement opposé : là où l'accueil empile
+   cadres épais, aplats et ombres portées, la fiche ne garde que l'encre et
+   des filets fins. Référence de sobriété : arwiki.arweave.net.
+
+   Contrainte de fond : ces pages se lisent en atelier, sur un téléphone posé
+   près d'une machine, et doivent survivre à une impression noir et blanc.
    ========================================================================== */
 
-@font-face {
-  font-family: "Ubuntu";
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url("/static/fonts/ubuntu-400.woff2") format("woff2");
-}
-@font-face {
-  font-family: "Ubuntu";
-  font-style: italic;
-  font-weight: 400;
-  font-display: swap;
-  src: url("/static/fonts/ubuntu-400-italic.woff2") format("woff2");
-}
-@font-face {
-  font-family: "Ubuntu";
-  font-style: normal;
-  font-weight: 500;
-  font-display: swap;
-  src: url("/static/fonts/ubuntu-500.woff2") format("woff2");
-}
-@font-face {
-  font-family: "Ubuntu";
-  font-style: normal;
-  font-weight: 700;
-  font-display: swap;
-  src: url("/static/fonts/ubuntu-700.woff2") format("woff2");
-}
-@font-face {
-  font-family: "Ubuntu Mono";
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url("/static/fonts/ubuntu-mono-400.woff2") format("woff2");
-}
-
-/* ==========================================================================
-   Colonne de lecture resserrée (esprit ssp.sh/brain)
-   ========================================================================== */
+/* --------------------------------------------------------------------------
+   Colonne de lecture
+   -------------------------------------------------------------------------- */
 
 .center {
   max-width: 768px;
@@ -54,9 +32,16 @@ li {
   line-height: 1.7;
 }
 
-/* ==========================================================================
-   Titres (palette Kanagawa) — traitement façon ssp.sh
-   ========================================================================== */
+article {
+  font-size: 1rem;
+}
+
+/* --------------------------------------------------------------------------
+   Titres en monospace — la signature du régime fiche
+
+   Le monospace à grande taille occupe la largeur et impose un rythme ; c'est
+   ce qui distingue la fiche de l'article courant, sans recourir à la couleur.
+   -------------------------------------------------------------------------- */
 
 h1,
 h2,
@@ -66,169 +51,965 @@ h5,
 h6,
 .page-title {
   font-family: var(--headerFont);
-  font-weight: 600;
-  letter-spacing: -0.015em;
-  line-height: 1.2;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  line-height: 1.25;
+  color: var(--dark);
 }
 
-/* Grand titre : dégradé secondaire → tertiaire */
-.page-title,
-article h1 {
+/* --------------------------------------------------------------------------
+   Logotype : {fablab} / PROJETS
+
+   Les accolades sont posées en pseudo-éléments, pas écrites dans le titre :
+   le nom reste « fablab/projets » en clair dans la configuration, le flux
+   RSS, les métadonnées de partage et l'onglet du navigateur. Le logotype est
+   une affaire de présentation, pas de contenu.
+
+   La section passe sous la marque, en capitales et sans cadre à elle : c'est
+   ce qui distingue ce site de fablab.egonux.com dans la colonne de gauche,
+   sans dédoubler le logotype.
+   -------------------------------------------------------------------------- */
+
+.page-title {
+  display: inline-block;
+  margin: 0;
+  padding: 0.3em 0.5em 0.34em;
+  font-size: 1.55rem;
   font-weight: 700;
-  background: linear-gradient(135deg, var(--secondary), var(--tertiary));
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  color: var(--tertiary); /* repli si le clip n'est pas supporté */
+  letter-spacing: -0.01em;
+  line-height: 1.15;
+
+  /* Deux déclinaisons, portées par les variables de thème : encadré à
+     l'encre sur fond clair — c'est la version gravure — et en crème sur
+     fond sombre. Le trait de 2px est celui du sommaire et du chapeau. */
+  border: 2px solid var(--dark);
+  border-radius: 2px;
+  background-color: transparent;
+  color: var(--dark);
+}
+
+.page-title a {
+  color: var(--dark);
+  background-color: transparent;
+  text-decoration: none;
+}
+
+/* Les accolades restent rouges dans les deux thèmes : --secondary vaut le
+   rouge sombre en clair, un rouge éclairci en sombre, chacun lisible sur
+   son fond. */
+.page-title .marque::before,
+.page-title .marque::after {
+  color: var(--secondary);
+  font-weight: 700;
+}
+
+.page-title .marque::before {
+  content: "{";
+}
+
+.page-title .marque::after {
+  content: "}";
+}
+
+/* Le lien passe en bloc pour que la section tombe sous la marque plutôt que
+   de la suivre sur la même ligne. */
+.page-title a {
+  display: block;
+}
+
+.page-title .section {
+  display: block;
+  margin-top: 0.1em;
+  font-size: 0.56em;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--secondary);
+}
+
+/* Recherche : strictement le même traitement que le logotype — bordure de
+   2px à l'encre, fond transparent, angles à 2px, JetBrains Mono, accolades
+   rouges. Seule la taille diffère, pour que la recherche ne concurrence pas
+   le titre du site. */
+.search > .search-button {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: auto;
+  padding: 0.3em 0.5em 0.34em;
+  border: 2px solid var(--dark);
+  border-radius: 2px;
+  background-color: transparent;
+  font-family: var(--headerFont);
+  font-size: 1.05rem;
+}
+
+/* La loupe, en rouge : c'est le seul signe qui distingue la recherche du
+   logotype, puisque tout le reste — bordure, angles, police — est commun. */
+.search > .search-button svg {
+  display: block;
+  width: 15px;
+  min-width: 15px;
+  margin: 0 0.5em 0 0;
+}
+
+.search > .search-button svg .search-path {
+  stroke: var(--secondary);
+  stroke-width: 2px;
+}
+
+/* Le libellé vient de la locale Quartz (« Recherche ») ; on le rabat en bas
+   de casse pour coller à {fablab}. */
+.search > .search-button > p {
+  display: inline;
+  margin: 0;
+  color: var(--dark);
+  font-weight: 700;
+  text-transform: lowercase;
+  letter-spacing: -0.01em;
+}
+
+.search > .search-button > p::before,
+.search > .search-button > p::after {
+  color: var(--secondary);
+  font-weight: 700;
+}
+
+.search > .search-button > p::before {
+  content: "{";
+}
+
+.search > .search-button > p::after {
+  content: "}";
+}
+
+/* Le champ de saisie, une fois la recherche ouverte, et le panneau de
+   résultats sous lui : même trait de 2px à l'encre, mêmes angles vifs,
+   même monospace que le bouton. Sélecteurs alignés sur ceux de Quartz,
+   sinon ils perdent la cascade par spécificité.
+
+   Les ombres portées douces sont retirées : le régime sobre ne connaît que
+   des filets nets. */
+.search > .search-container > .search-space > * {
+  border-radius: 2px;
+  box-shadow: none;
+}
+
+.search > .search-container > .search-space > input {
+  font-family: var(--headerFont);
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: var(--dark);
+  border: 2px solid var(--dark);
+  border-radius: 2px;
+  padding: 0.5em 0.7em;
+}
+
+.search > .search-container > .search-space > input::placeholder {
+  color: var(--gray);
+  font-weight: 400;
+  text-transform: lowercase;
+}
+
+.search > .search-container > .search-space > .search-layout {
+  border: 2px solid var(--dark);
+  border-radius: 2px;
+}
+
+/* --------------------------------------------------------------------------
+   Titre de page : le dièse en filigrane
+
+   Le h1 sort du système de marqueurs en gouttière : son dièse n'est plus une
+   annotation de marge mais un motif de fond, haut de deux lignes. Le titre
+   est décalé vers la droite juste assez pour que sa première lettre morde
+   sur le dièse — le chevauchement fait tenir les deux éléments ensemble ;
+   sans lui, on lirait un symbole puis un titre, côte à côte et sans rapport.
+
+   Le dièse passe derrière le texte par `z-index: -1`, ce qui suppose que le
+   h1 n'ait pas de fond propre. Il est sorti du flux, donc il n'écarte rien.
+   -------------------------------------------------------------------------- */
+
+h1.article-title {
+  position: relative;
+  z-index: 0;
+  font-size: 2rem;
+  margin-top: 2rem;
+  padding-left: 0.62em;
+}
+
+h1.article-title::before {
+  content: "#";
+  position: absolute;
+  left: -0.12em;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: -1;
+
+  font-family: var(--headerFont);
+  font-weight: 700;
+  font-size: 3em; /* environ deux lignes de titre */
+  line-height: 1;
+  color: color-mix(in srgb, var(--secondary) 20%, transparent);
+
+  user-select: none;
+  pointer-events: none;
 }
 
 article h2 {
-  color: var(--tertiary);
+  font-size: 1.45rem;
+  margin-top: 2.4em;
 }
 
 article h3 {
+  font-size: 1.15rem;
+  margin-top: 1.8em;
+}
+
+article h4 {
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--gray);
+}
+
+/* --------------------------------------------------------------------------
+   Marqueurs markdown : #, ##, ### en rouge dans la marge
+
+   Le contenu s'écrit en markdown dans Obsidian ; le niveau de titre se lit
+   au nombre de dièses. Les afficher garde ce repère à la lecture et donne
+   au lecteur une hiérarchie perceptible sans compter les tailles de police.
+
+   En débord à gauche : le texte des titres reste aligné sur celui des
+   paragraphes, et le marqueur se lit comme une annotation de marge.
+   -------------------------------------------------------------------------- */
+
+/* Le marqueur reste DANS le flux, en début de première ligne : c'est la
+   seule façon d'obtenir un alignement exact sur la ligne de base, puisqu'un
+   pseudo-élément en position absolue est calé par les navigateurs sur le
+   haut de la ligne et non sur sa ligne de base — d'où le marqueur perché
+   quand son corps est plus petit que celui du titre.
+
+   Le débord dans la marge est obtenu par un retrait suspendu : marge
+   négative pour sortir de la colonne, remplissage pour y ramener le texte,
+   retrait de première ligne pour y loger le marqueur. Sa largeur est fixe,
+   donc les marqueurs forment une colonne droite quel que soit leur nombre
+   de dièses, et le texte des titres reste aligné sur les paragraphes. */
+
+article h2,
+article h3,
+article h4 {
+  margin-left: -2.6rem;
+  padding-left: 2.6rem;
+  text-indent: -2.6rem;
+}
+
+article h2::before {
+  content: "##";
+}
+article h3::before {
+  content: "###";
+}
+article h4::before {
+  content: "####";
+}
+
+article h2::before,
+article h3::before,
+article h4::before {
+  display: inline-block;
+  box-sizing: border-box;
+  width: 2.6rem;
+  padding-right: 0.55rem;
+  text-align: right;
+  text-indent: 0;
+  font-family: var(--headerFont);
+  font-weight: 700;
+  font-size: 0.65em;
+  color: var(--secondary);
+  white-space: nowrap;
+  user-select: none;
+}
+
+/* Pas de gouttière disponible : le retrait suspendu est annulé et le
+   marqueur se range devant le titre, en réduisant sa largeur au strict
+   nécessaire. */
+@media (max-width: 1000px) {
+  article h2,
+  article h3,
+  article h4 {
+    margin-left: 0;
+    padding-left: 0;
+    text-indent: 0;
+  }
+
+  article h2::before,
+  article h3::before,
+  article h4::before {
+    width: auto;
+    padding-right: 0;
+    margin-right: 0.6em;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Métadonnées et table des matières : petites, monospace, effacées
+   -------------------------------------------------------------------------- */
+
+.content-meta,
+.toc,
+.backlinks,
+.breadcrumb-container,
+.page-listing .meta,
+.page-listing p {
+  font-family: var(--codeFont);
+  /* Ne pas retirer : le fil d'Ariane redéfinit sa taille plus bas, mais le
+     sommaire, les métadonnées et les rétroliens dépendent de celle-ci. */
+  font-size: 0.8rem;
+}
+
+/* Listing de dossier : la date et le décompte en monospace, comme toute la
+   signalétique du site. Le titre de l'entrée, lui, reste un titre. */
+.page-listing .meta {
+  color: var(--gray);
+  letter-spacing: 0.01em;
+}
+
+.page-listing .desc h3 {
+  font-family: var(--headerFont);
+}
+
+/* Explorateur : tout en monospace, dossiers comme fichiers. Quartz ne
+   composait que les titres de dossier dans la police de titre, laissant les
+   pages en Literata — deux polices dans une même liste de navigation, ça se
+   voit et ça se lit mal. */
+.explorer,
+.explorer button,
+.explorer a,
+.explorer .folder-title,
+.explorer ul li > a {
+  font-family: var(--codeFont);
+  font-size: 0.8rem;
+  line-height: 1.5;
+}
+
+/* Noms de dossiers et titre de l'explorateur en capitales : même registre
+   que /SOMMAIRE et le fil d'Ariane. Ce sont des étiquettes de navigation,
+   pas du texte — les titres de pages, eux, gardent leur casse. */
+.explorer .folder-title,
+.explorer button > h2,
+.explorer .explorer-toggle > h2 {
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.content-meta {
+  color: var(--gray);
+  letter-spacing: 0.01em;
+}
+
+/* Fil d'Ariane en capitales : même registre que /SOMMAIRE, il se lit comme
+   un chemin. Interlettrage ouvert, sinon les capitales se tassent. */
+.breadcrumb-container {
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  font-size: 0.74rem;
+}
+
+.breadcrumb-container .breadcrumb-element p {
+  color: var(--gray);
+}
+
+.backlinks h3 {
+  font-family: var(--codeFont);
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--gray);
+  font-weight: 700;
+}
+
+/* Le libellé du sommaire devient « /sommaire », en rouge : même famille de
+   signes que les marqueurs de titre, comme un chemin dans une arborescence.
+   Le texte d'origine vient de la locale Quartz, on le neutralise. */
+.toc .toc-header h3 {
+  font-size: 0;
+  margin: 0;
+}
+
+.toc .toc-header h3::after {
+  content: "/SOMMAIRE";
+  font-family: var(--codeFont);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
   color: var(--secondary);
 }
 
-/* ==========================================================================
-   Liens internes : soulignement pointillé (signature « jardin numérique »)
-   ========================================================================== */
+/* --------------------------------------------------------------------------
+   Logo de La Traverse, en tête de colonne de droite
 
-a.internal {
-  text-decoration: underline dashed;
+   Au survol, le « soubresaut » repris de maquette.egonux.com : un tremblement
+   par pas discrets — d'où `steps(1, end)`, qui saute d'une image à l'autre au
+   lieu d'interpoler — avec décalages rouge et jaune imitant un défaut de
+   repérage d'impression.
+   -------------------------------------------------------------------------- */
+
+.logo-traverse {
+  margin-bottom: 1.4rem;
+}
+
+.logo-traverse img {
+  display: block;
+  width: 104px;
+  max-width: 100%;
+  height: auto;
+}
+
+.logo-traverse a:hover img,
+.logo-traverse a:focus-visible img {
+  animation: soubresaut 0.5s steps(1, end) infinite;
+}
+
+@keyframes soubresaut {
+  0% {
+    transform: translate(0, 0);
+    filter: none;
+  }
+  14% {
+    transform: translate(-2px, 1px);
+    filter: drop-shadow(2px 0 #f44336) drop-shadow(-2px 0 #eddd6e);
+  }
+  28% {
+    transform: translate(2px, -1px);
+    filter: drop-shadow(-2px 0 #f44336);
+  }
+  42% {
+    transform: translate(-1px, -1px);
+    filter: drop-shadow(1px 1px #eddd6e);
+  }
+  56% {
+    transform: translate(1px, 1px);
+    filter: none;
+  }
+  70% {
+    transform: translate(-1px, 0);
+    filter: drop-shadow(2px 0 #f44336);
+  }
+  84% {
+    transform: translate(1px, -1px);
+    filter: none;
+  }
+  100% {
+    transform: translate(0, 0);
+    filter: none;
+  }
+}
+
+/* Respecte le réglage système : une animation en boucle peut gêner, voire
+   déclencher des troubles vestibulaires. On ne supprime pas l'effet pour
+   autant — on lui retire seulement le mouvement, en gardant le décalage
+   chromatique qui fait tout son sel. */
+@media (prefers-reduced-motion: reduce) {
+  .logo-traverse a:hover img,
+  .logo-traverse a:focus-visible img {
+    animation: none;
+    filter: drop-shadow(2px 0 #f44336) drop-shadow(-2px 0 #eddd6e);
+  }
+}
+
+/* Sur fond sombre, le logo noir disparaît : on l'éclaircit par inversion
+   plutôt que d'embarquer un second fichier. */
+:root[saved-theme="dark"] .logo-traverse img {
+  filter: invert(1);
+}
+
+/* Sommaire encadré d'un filet noir fin. Le cadre le détache de l'explorateur
+   placé juste au-dessus : deux listes de liens qui se suivent, sans séparation
+   franche, se lisent comme une seule. */
+.toc {
+  border: 2px solid var(--dark);
+  border-radius: 2px;
+  padding: 0.65rem 0.85rem 0.75rem;
+}
+
+.toc > button {
+  width: 100%;
+  padding: 0;
+}
+
+#toc-content {
+  padding-left: 0;
+  margin-top: 0.4em;
+}
+
+#toc-content .depth-1 {
+  padding-left: 0.9rem;
+}
+#toc-content .depth-2 {
+  padding-left: 1.8rem;
+}
+
+#toc-content a {
+  line-height: 1.45;
+  color: var(--gray);
+}
+#toc-content a:hover,
+#toc-content .in-view {
+  color: var(--dark);
+}
+
+/* --------------------------------------------------------------------------
+   Exergue : le chapeau, surligné du rouge de sélection
+
+   La convention veut que chaque fiche s'ouvre sur deux ou trois lignes qui
+   disent à quoi sert la chose, sans titre.
+
+   Le surlignage épouse les lignes du texte, bord droit irrégulier compris,
+   exactement comme une sélection — un fond de bloc rectangulaire donnerait
+   un encadré de couleur, ce qui n'est pas la même chose. Techniquement il
+   faut donc un élément en ligne : le chapeau s'écrit `==comme ceci==` dans
+   le markdown, ce qui produit un span .text-highlight. La bordure noire
+   va sur le paragraphe qui le contient.
+
+   Écrire le surlignage plutôt que le déduire évite au passage de surligner
+   par erreur le premier paragraphe d'une page qui n'aurait pas de chapeau.
+   -------------------------------------------------------------------------- */
+
+article > p:first-of-type:has(.text-highlight) {
+  border: 2px solid var(--dark);
+  padding: 0.9em 1.1em;
+  margin-bottom: 1.9em;
+  font-size: 1.05rem;
+  line-height: 2;
+}
+
+article > p:first-of-type .text-highlight {
+  /* Le fond d'un élément en ligne couvre la zone de contenu de la police,
+     qui déborde largement la hauteur des lettres — ni le remplissage ni
+     l'interligne ne peuvent la réduire. On peint donc un dégradé qui ne
+     colore qu'une tranche de cette zone : la bande épouse alors le texte,
+     comme un trait de surligneur. Les bornes 20 % et 88 % sont les bords
+     haut et bas de la bande. */
+  --surlignage: color-mix(in srgb, var(--tertiary) 60%, transparent);
+
+  background-color: transparent;
+  background-image: linear-gradient(
+    180deg,
+    transparent 20%,
+    var(--surlignage) 20%,
+    var(--surlignage) 88%,
+    transparent 88%
+  );
+  color: var(--darkgray);
+  padding: 0 0.2em;
+  border-radius: 0;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+
+/* En thème sombre, le surlignage prend le rouge vif de la palette sombre —
+   `--secondary`, et non `--tertiary` qui en est la version pâle — à forte
+   opacité, sinon le fond noir le délave.
+
+   Conséquence : le texte doit repasser en sombre. Sur un rouge aussi
+   soutenu, la couleur de corps du thème sombre, qui est claire, ne tiendrait
+   pas le contraste. Le thème clair n'est pas touché. */
+:root[saved-theme="dark"] article > p:first-of-type .text-highlight {
+  --surlignage: color-mix(in srgb, var(--secondary) 78%, transparent);
+  color: var(--light);
+}
+
+/* --------------------------------------------------------------------------
+   Liens : soulignés, jamais colorés en masse
+
+   Le rouge sert d'accent ponctuel. Sur une page longue, des liens rouges par
+   dizaines feraient un texte tacheté et illisible en atelier.
+   -------------------------------------------------------------------------- */
+
+article a {
+  color: var(--dark);
+  text-decoration: underline;
   text-decoration-thickness: 1px;
-  text-underline-offset: 3px;
+  text-underline-offset: 0.22em;
+  text-decoration-color: var(--gray);
   background-color: transparent;
   padding: 0;
-  color: var(--secondary);
   font-weight: inherit;
 }
-a.internal:hover {
-  text-decoration: underline solid;
-  color: var(--tertiary);
+
+article a:hover {
+  color: var(--secondary);
+  text-decoration-color: var(--secondary);
 }
 
-/* ==========================================================================
-   Tableau comparatif : lignes alternées, étoiles alignées
-   ========================================================================== */
+/* Lien interne dont la cible n'existe pas encore : visiblement en attente */
+article a.internal.broken {
+  color: var(--gray);
+  text-decoration-style: dotted;
+}
+
+/* --------------------------------------------------------------------------
+   Tableaux : filets fins, zébrure très légère
+
+   Les tables de réglages se lisent en diagonale, machine en marche. La
+   zébrure guide l'œil d'une ligne à l'autre et résiste au noir et blanc.
+   -------------------------------------------------------------------------- */
 
 article table {
   width: 100%;
-  border-collapse: separate;
-  border-spacing: 0;
-  margin: 1.6em 0;
-  font-size: 0.86rem;
-  line-height: 1.4;
-  border: 1px solid var(--lightgray);
-  border-radius: 8px;
-  overflow: hidden;
+  border-collapse: collapse;
+  margin: 1.8em 0;
+  font-size: 0.88rem;
+  line-height: 1.45;
 }
 
 article thead th {
-  font-family: var(--headerFont);
-  font-weight: 600;
+  font-family: var(--codeFont);
+  font-weight: 700;
   font-size: 0.78rem;
   text-transform: uppercase;
-  letter-spacing: 0.03em;
+  letter-spacing: 0.05em;
   color: var(--dark);
-  background-color: var(--lightgray);
-  border-bottom: 1px solid var(--gray);
-  padding: 0.6em 0.7em;
+  text-align: left;
+  padding: 0.5em 0.7em;
+  border-bottom: 2px solid var(--dark);
 }
 
 article tbody td {
   padding: 0.5em 0.7em;
   border-bottom: 1px solid var(--lightgray);
-  vertical-align: middle;
-}
-article tbody tr:last-child td {
-  border-bottom: none;
-}
-
-/* Zébrure très légère + surbrillance au survol */
-article tbody tr:nth-child(even) {
-  background-color: color-mix(in srgb, var(--lightgray) 45%, transparent);
-}
-article tbody tr:hover {
-  background-color: color-mix(in srgb, var(--secondary) 12%, transparent);
-}
-
-/* Colonne « Projet » : alignée à gauche, un peu plus marquée */
-article tbody td:first-child {
-  text-align: left;
-  font-weight: 500;
-}
-
-/* Colonne « Vol. » discrète, chiffres alignés */
-article tbody td:nth-child(2) {
-  color: var(--gray);
+  vertical-align: baseline;
+  /* Chiffres alignés : puissances et vitesses se comparent colonne par
+     colonne, machine en marche. */
   font-variant-numeric: tabular-nums;
 }
 
-/* Colonnes d'étoiles : dorées et espacées */
-article tbody td:nth-child(n + 3) {
-  color: #d4a53a;
-  letter-spacing: 0.14em;
-  white-space: nowrap;
+article tbody tr:nth-child(even) {
+  background-color: color-mix(in srgb, var(--lightgray) 40%, transparent);
 }
 
-/* Petit écran : défilement horizontal propre */
 @media (max-width: 800px) {
   article table {
     display: block;
     overflow-x: auto;
-    white-space: nowrap;
   }
 }
 
-/* ==========================================================================
-   Encadrés (callouts) façon ssp.sh : barre de titre teintée, bordure gauche
-   épaisse, corps neutre, sans icône. Couleur d'accent = var(--color) par type.
-   ========================================================================== */
+/* --------------------------------------------------------------------------
+   Codes couleur affichés dans leur couleur
+
+   La pastille n'est pas décorative : certaines couleurs pures sont
+   illisibles en texte sur fond clair — le vert citron #00FF00 tombe à
+   1,3:1 de contraste, là où il en faudrait 4,5. La pastille, elle, reste
+   parfaitement identifiable, et son filet sombre fait tenir aussi bien le
+   blanc que le noir.
+   -------------------------------------------------------------------------- */
+
+/* La teinte affichée n'est pas la couleur brute : les primaires pures sont
+   criardes à côté d'une palette sourde, et certaines sont illisibles — le
+   vert citron #00FF00 tombe à 1,3:1 de contraste sur fond clair. On les
+   ramène donc vers l'encre, ce qui préserve la teinte (un rouge reste un
+   rouge) en assourdissant la saturation et en garantissant le contraste.
+
+   Le mélange se fait vers `--dark`, qui vaut l'encre en clair et la crème
+   en sombre : la même règle fonctionne dans les deux thèmes.
+
+   La valeur exacte, elle, reste écrite en toutes lettres : c'est elle qu'on
+   recopie dans Inkscape, pas la pastille qu'on regarde. */
+
+/* La couleur est portée par une pastille pastel, pas par le texte.
+
+   Deux raisons. D'abord l'accord : les primaires pures détonnent à côté
+   d'une palette de crème et de pêche, alors qu'un pastel s'y fond — c'est
+   la même famille de teintes que #edd1b0 et #eddd6e. Ensuite la lisibilité :
+   un texte pastel sur fond clair est illisible par construction, et un
+   texte assourdi vers l'encre vire au brun ou à l'olive. Le texte reste
+   donc à l'encre, et la couleur vit dans la pastille.
+
+   La pastille apparaît dans les deux colonnes, sur le nom comme sur le
+   code : la teinte est ainsi présente là où l'œil la cherche.
+
+   Le mélange se fait vers `--light`, qui vaut le papier en thème clair et
+   le fond sombre en thème sombre : la règle vaut pour les deux. */
+
+.code-couleur,
+.ligne-couleur td:first-child {
+  color: var(--darkgray);
+}
+
+.code-couleur {
+  font-weight: 700;
+}
+
+.ligne-couleur td:first-child {
+  font-weight: 600;
+}
+
+.code-couleur::before,
+.ligne-couleur td:first-child::before {
+  content: "";
+  display: inline-block;
+  width: 0.78em;
+  height: 0.78em;
+  margin-right: 0.5em;
+  vertical-align: -0.03em;
+  border-radius: 2px;
+
+  /* Aplat pastel, cerné d'un filet dans la même teinte en plus soutenu :
+     sans ce filet, un pastel très clair se perd sur le papier. */
+  background-color: color-mix(in oklab, var(--c) 30%, var(--light));
+  border: 1px solid color-mix(in oklab, var(--c) 62%, var(--dark));
+}
+
+/* --------------------------------------------------------------------------
+   Encadrés : filet gauche épais, sans aplat ni icône
+
+   Seul endroit où la couleur travaille vraiment. Sur une fiche machine,
+   l'encadré rouge est un signal de sécurité, pas une décoration.
+   -------------------------------------------------------------------------- */
 
 .callout {
   border: none;
-  border-left: 5px solid var(--color);
-  background-color: var(--lightgray);
-  border-radius: 6px;
-  padding: 0;
-  margin: 1.4em 0;
-  overflow: hidden;
+  border-left: 3px solid var(--color);
+  background-color: transparent;
+  border-radius: 0;
+  padding: 0.1em 0 0.1em 1.1em;
+  margin: 1.8em 0;
 }
 
 .callout .callout-title {
-  padding: 0.45em 1em;
-  margin: 0;
-  background-color: var(--border); /* teinte de l'accent (~27 %) */
-  color: var(--dark);
+  padding: 0;
+  margin: 0 0 0.2em;
+  background-color: transparent;
 }
 
-/* Pas d'icône, comme sur ssp.sh */
 .callout .callout-title .callout-icon {
   display: none;
 }
 
 .callout .callout-title .callout-title-inner,
 .callout .callout-title .callout-title-inner > p {
-  color: var(--dark);
+  font-family: var(--codeFont);
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
   font-weight: 700;
+  color: var(--color);
 }
 
 .callout .callout-content {
-  padding: 0.35em 1em 0.7em;
+  padding: 0;
   color: var(--darkgray);
 }
 .callout .callout-content > :first-child {
-  margin-top: 0.5em;
+  margin-top: 0.3em;
 }
 .callout .callout-content > :last-child {
   margin-bottom: 0;
 }
 
-/* ==========================================================================
-   Bloc « Repères » (ligne d'étoiles juste après l'accroche) :
-   encadré par deux filets fins pour le distinguer du reste
-   ========================================================================== */
+/* --------------------------------------------------------------------------
+   Pied de page : une seule ligne, petite, grise, en capitales
+
+   La mention de Quartz et le lien de contact sont de la signalétique, pas du
+   contenu : ils doivent se lire si on les cherche et s'effacer sinon. D'où
+   le corps réduit, le gris, et la mise sur une seule ligne — la liste de
+   liens que Quartz place en dessous remonte à côté du texte.
+   -------------------------------------------------------------------------- */
+
+footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.9rem;
+  margin-top: 3rem;
+  opacity: 1;
+
+  font-family: var(--codeFont);
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--gray);
+}
+
+footer p {
+  margin: 0;
+  color: var(--gray);
+}
+
+footer ul {
+  margin: 0;
+  gap: 0.9rem;
+}
+
+footer a {
+  color: var(--gray);
+  text-decoration: none;
+  border-bottom: 1px solid color-mix(in srgb, var(--gray) 45%, transparent);
+}
+
+footer a:hover {
+  color: var(--secondary);
+  border-bottom-color: var(--secondary);
+}
+
+/* --------------------------------------------------------------------------
+   Photos
+
+   Une fiche d'atelier montre autant qu'elle décrit : la photo d'un réglage
+   de machine dit en un instant ce qu'un paragraphe peine à expliquer.
+
+   Cadre de 2px à l'encre, comme le sommaire et le chapeau. Il fait plus que
+   décorer : beaucoup de photos d'atelier ont des fonds clairs — un plateau,
+   un mur blanc, du contreplaqué — et sans cadre elles se dissolvent dans la
+   page.
+
+   Légende : un paragraphe en italique placé juste après l'image. C'est une
+   convention d'écriture, pas une syntaxe : rien à apprendre dans Obsidian.
+   -------------------------------------------------------------------------- */
+
+/* Sur écran large, la photo est habillée par le texte : elle flotte à
+   droite sur la moitié de la colonne. Une illustration de machine se
+   consulte du coin de l'œil pendant qu'on lit la procédure — la placer en
+   pleine largeur coupe la lecture en deux.
+
+   La légende flotte avec elle et se dégage sous l'image par `clear`, de
+   sorte que le bloc image + légende tienne d'un seul tenant. */
+
+article p:has(> img:only-child),
+article p:has(> img:only-child) + p:has(> em:only-child) {
+  float: right;
+  clear: right;
+  width: 50%;
+  /* Gouttière en rem, jamais en em : la règle suivante annule l'interligne
+     du paragraphe de l'image, et un em s'y calculerait sur une taille de
+     police locale — le texte viendrait alors coller le cadre. */
+  margin: 0 0 0 1.8rem;
+}
+
+/* Interligne annulé sur le paragraphe de l'image : il y porte sinon une
+   boîte de ligne de 27 px, invisible mais bien présente.
+
+   La marge haute de 0,44 rem aligne le haut du cadre sur le sommet des
+   lettres de la première ligne voisine, et non sur la boîte du paragraphe :
+   7 px mesurés, soit le demi-interligne (5,6 px) plus l'écart entre le haut
+   de la boîte de cadratin et la hauteur de capitale de Literata (1,4 px).
+   Un alignement sur la boîte laissait le cadre visiblement trop haut. */
+article p:has(> img:only-child) {
+  line-height: 0;
+  margin-top: 0.44rem;
+}
+
+/* La légende se colle sous le cadre : pas de marge haute sur son
+   paragraphe, l'écart est porté par le seul `em` en dessous. */
+article p:has(> img:only-child) + p:has(> em:only-child) {
+  margin-top: 0;
+  margin-bottom: 1.6em;
+}
+
+article img {
+  display: block;
+  width: 100%;
+  height: auto;
+  /* Quartz pose 16 px de marge au-dessus et en dessous des images : c'est
+     cette marge basse qui décollait la légende du cadre, pas les marges du
+     paragraphe. */
+  margin: 0;
+  /* Quartz émet `width="auto" height="auto"` sur les images intégrées en
+     `![[...|texte]]` : des valeurs invalides dont le navigateur tire un
+     rapport d'aspect nul, et l'image s'affiche sur zéro pixel de haut.
+     Forcer `aspect-ratio: auto` lui fait reprendre le rapport intrinsèque
+     du fichier. À retirer si Quartz corrige son émission. */
+  aspect-ratio: auto;
+  border: 2px solid var(--dark);
+  border-radius: 2px;
+}
+
+article p:has(> img:only-child) + p > em:only-child {
+  display: block;
+  margin-top: 0.35em;
+  font-family: var(--codeFont);
+  font-size: 0.76rem;
+  font-style: italic;
+  /* Alignée à droite, mais décalée de 3 px du bord : au ras du cadre, la
+     légende semblait déborder. */
+  text-align: right;
+  padding-right: 3px;
+  /* Interligne resserré : l'interligne de corps de 1,7 creusait un blanc
+     au-dessus de la première ligne, qui décollait la légende du cadre. */
+  line-height: 1.4;
+  color: var(--gray);
+}
+
+/* Sans cela, une image flottante déborderait sur la section suivante. */
+article h2,
+article h3,
+article h4 {
+  clear: both;
+}
+
+/* Sur téléphone, la colonne est trop étroite pour un habillage : la photo
+   reprend toute la largeur et le texte repasse dessous. */
+@media (max-width: 700px) {
+  article p:has(> img:only-child),
+  article p:has(> img:only-child) + p:has(> em:only-child) {
+    float: none;
+    width: 100%;
+    margin-left: 0;
+  }
+
+  article p:has(> img:only-child) {
+    margin-top: 1.6em;
+  }
+}
+
+@media print {
+  article p:has(> img:only-child),
+  article p:has(> img:only-child) + p:has(> em:only-child) {
+    float: none;
+    width: 100%;
+    margin-left: 0;
+  }
+
+  article img {
+    break-inside: avoid;
+    max-height: 9cm;
+    width: auto;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Tableau du catalogue : volume horaire et colonnes d'appréciation
+
+   Propre à ce site. Le comparatif des parcours ajoute deux choses au tableau
+   ordinaire : le volume horaire, qui s'efface parce qu'il se lit en
+   diagonale, et les colonnes d'étoiles, qui se comparent verticalement. Le
+   doré les tient à distance du rouge d'accent, qui garde ainsi sa valeur de
+   signal.
+   -------------------------------------------------------------------------- */
+
+article tbody td:first-child {
+  font-weight: 600;
+}
+
+article tbody td:nth-child(2) {
+  color: var(--gray);
+}
+
+article tbody td:nth-child(n + 3) {
+  color: #d4a53a;
+  letter-spacing: 0.14em;
+  white-space: nowrap;
+}
+
+/* --------------------------------------------------------------------------
+   Bloc « Repères » : la ligne qui suit l'accroche
+
+   Propre à ce site. Chaque fiche de parcours ouvre sur un encadré, puis sur
+   une ligne de repères. Deux filets fins la détachent sans l'encadrer : c'est
+   un palier de lecture, pas un encadré de plus.
+   -------------------------------------------------------------------------- */
 
 article .callout + p {
   margin: 1.6em 0;
@@ -237,4 +1018,112 @@ article .callout + p {
   border-bottom: 1px solid var(--lightgray);
   font-size: 0.9rem;
   color: var(--darkgray);
+}
+
+/* --------------------------------------------------------------------------
+   Code
+   -------------------------------------------------------------------------- */
+
+article code {
+  font-size: 0.9em;
+  border-radius: 2px;
+  padding: 0.1em 0.3em;
+}
+
+/* --------------------------------------------------------------------------
+   Impression : la fiche doit tenir sur papier, en noir et blanc
+
+   Ce bloc n'est pas un ornement : une fiche punaisée près d'une machine est
+   un usage réel, et une page qui s'imprime mal ne sera pas punaisée.
+   -------------------------------------------------------------------------- */
+
+@media print {
+  .sidebar,
+  .toc,
+  .backlinks,
+  .graph,
+  .search,
+  .darkmode,
+  .explorer,
+  footer {
+    display: none !important;
+  }
+
+  .center {
+    max-width: 100%;
+    margin: 0;
+  }
+
+  body,
+  article {
+    color: #000;
+    background: #fff;
+  }
+
+  article h2 {
+    break-after: avoid;
+  }
+
+  article h3,
+  article h4 {
+    break-after: avoid;
+  }
+
+  article table,
+  .callout {
+    break-inside: avoid;
+  }
+
+  .callout {
+    border-left: 3px solid #000;
+  }
+
+  /* Les marqueurs de titre restent : ils portent la hiérarchie sur papier,
+     là où les nuances de taille passent mal. En noir. */
+  article h2::before,
+  article h3::before,
+  article h4::before {
+    color: #000;
+  }
+
+  /* Le dièse en filigrane du titre, lui, disparaît : c'est un motif de fond,
+     et un aplat de cette taille mange une cartouche d'encre pour rien. */
+  h1.article-title::before {
+    display: none;
+  }
+
+  h1.article-title {
+    padding-left: 0;
+  }
+
+  /* Le surlignage rouge vire au gris sale en noir et blanc : on ne garde
+     que la bordure du chapeau, qui suffit à le détacher. */
+  article > p:first-of-type .text-highlight {
+    background: none;
+    color: #000;
+    padding: 0;
+  }
+
+  article > p:first-of-type:has(.text-highlight) {
+    border-color: #000;
+  }
+
+  /* Codes couleur : le texte repasse en noir, la pastille garde sa teinte
+     — imprimée en gris, elle continue de distinguer les lignes entre elles. */
+  .code-couleur,
+  .ligne-couleur td:first-child {
+    color: #000;
+  }
+
+  .code-couleur::before {
+    border-color: #000;
+  }
+
+  /* L'adresse des liens externes, sinon perdue à l'impression */
+  article a[href^="http"]::after {
+    content: " (" attr(href) ")";
+    font-size: 0.75em;
+    color: #444;
+    word-break: break-all;
+  }
 }

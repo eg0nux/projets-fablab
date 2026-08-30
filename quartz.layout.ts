@@ -8,7 +8,7 @@ export const sharedPageComponents: SharedLayout = {
   afterBody: [],
   footer: Component.Footer({
     links: {
-      Contact: "mailto:florian@egonux.com",
+      Florian: "mailto:florian@egonux.com",
     },
   }),
 }
@@ -46,6 +46,9 @@ export const defaultContentPageLayout: PageLayout = {
     }),
   ],
   right: [
+    // Le FabLab est hébergé par l'Atelier Partagé de La Traverse : le logo
+    // ouvre la colonne de droite sur chaque page, comme sur fablab.egonux.com.
+    Component.LogoTraverse(),
     Component.Graph(),
     Component.DesktopOnly(Component.TableOfContents()),
     Component.Backlinks(),
@@ -54,7 +57,11 @@ export const defaultContentPageLayout: PageLayout = {
 
 // components for pages that display lists of pages  (e.g. tags or folders)
 export const defaultListPageLayout: PageLayout = {
-  beforeBody: [Component.Breadcrumbs({ rootName: "Accueil" }), Component.ArticleTitle(), Component.ContentMeta()],
+  beforeBody: [
+    Component.Breadcrumbs({ rootName: "Accueil" }),
+    Component.ArticleTitle(),
+    Component.ContentMeta(),
+  ],
   left: [
     Component.PageTitle(),
     Component.MobileOnly(Component.Spacer()),
@@ -75,5 +82,11 @@ export const defaultListPageLayout: PageLayout = {
       },
     }),
   ],
-  right: [],
+  // Même mobilier que les pages de contenu : une page de dossier ne doit pas
+  // perdre le logo ni le sommaire en chemin.
+  right: [
+    Component.LogoTraverse(),
+    Component.DesktopOnly(Component.TableOfContents()),
+    Component.Backlinks(),
+  ],
 }
