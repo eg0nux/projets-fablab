@@ -49,9 +49,7 @@ export const defaultContentPageLayout: PageLayout = {
     // Le FabLab est hébergé par l'Atelier Partagé de La Traverse : le logo
     // ouvre la colonne de droite sur chaque page, comme sur fablab.egonux.com.
     Component.LogoTraverse(),
-    Component.Graph(),
     Component.DesktopOnly(Component.TableOfContents()),
-    Component.Backlinks(),
   ],
 }
 
@@ -87,6 +85,5 @@ export const defaultListPageLayout: PageLayout = {
   right: [
     Component.LogoTraverse(),
     Component.DesktopOnly(Component.TableOfContents()),
-    Component.Backlinks(),
   ],
 }
