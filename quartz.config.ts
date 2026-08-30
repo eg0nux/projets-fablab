@@ -81,6 +81,8 @@ const config: QuartzConfig = {
       Plugin.CodesCouleur(),
       // Espaces insécables devant la ponctuation double française.
       Plugin.Typographie(),
+      // Les étoiles du bloc « Repères » deviennent des jauges segmentées.
+      Plugin.Reperes(),
       Plugin.TableOfContents(),
       Plugin.CrawlLinks({ markdownLinkResolution: "shortest" }),
       Plugin.Description(),

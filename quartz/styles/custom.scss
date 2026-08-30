@@ -236,6 +236,15 @@ h1.article-title {
   padding-left: 0.62em;
 }
 
+/* Le croisillon écrit dans un titre — celui qui sépare le nom du millésime
+   sur l'accueil — prend le rouge des marqueurs de balisage en gouttière. Sur
+   ce site le # est un signe de structure : il serait incohérent qu'il passe à
+   l'encre du seul fait d'entrer dans un titre. À ne pas confondre avec le
+   dièse en filigrane ci-dessous, qui est décoratif. */
+h1.article-title .diese {
+  color: var(--secondary);
+}
+
 h1.article-title::before {
   content: "#";
   position: absolute;
@@ -1004,20 +1013,79 @@ article tbody td:nth-child(n + 3) {
 }
 
 /* --------------------------------------------------------------------------
-   Bloc « Repères » : la ligne qui suit le chapeau
+   Bloc « Repères » : six appréciations, sous le chapeau
 
-   Propre à ce site. Chaque fiche de parcours ouvre sur son chapeau, puis sur
-   une ligne de repères. Deux filets fins la détachent sans l'encadrer : c'est
-   un palier de lecture, pas un encadré de plus.
+   Propre à ce site. La ligne s'écrit en étoiles dans Obsidian ; le
+   transformer Reperes la recompose en grille de jauges. Deux filets fins la
+   détachent sans l'encadrer : c'est un palier de lecture, pas un encadré de
+   plus.
+
+   Les segments valent mieux que les étoiles à l'écran : ils se comparent
+   verticalement d'une ligne à l'autre, ne dépendent d'aucun glyphe de police,
+   et un segment plein reste plein sur une fiche imprimée en noir et blanc.
    -------------------------------------------------------------------------- */
 
-article > p:first-of-type:has(.text-highlight) + p {
-  margin: 1.6em 0;
-  padding: 0.7em 0;
+.reperes {
+  margin: 1.7em 0;
+  padding: 0.95em 0;
   border-top: 1px solid var(--lightgray);
   border-bottom: 1px solid var(--lightgray);
-  font-size: 0.9rem;
-  color: var(--darkgray);
+}
+
+/* Même registre que /SOMMAIRE et le fil d'Ariane : c'est une étiquette de
+   signalétique, pas un titre de section. */
+.reperes-etiquette {
+  margin: 0 0 0.75em;
+  font-family: var(--codeFont);
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--secondary);
+}
+
+/* La grille se règle sur la place disponible : trois colonnes au large, deux
+   ou une sur un téléphone. Une paire critère-note n'est jamais coupée. */
+.reperes-liste {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+  gap: 0.5em 1.8em;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.reperes-liste li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1em;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.repere-nom {
+  font-family: var(--codeFont);
+  font-size: 0.74rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--gray);
+}
+
+.repere-jauge {
+  display: flex;
+  flex: 0 0 auto;
+  gap: 3px;
+}
+
+.repere-jauge i {
+  width: 0.85rem;
+  height: 3px;
+  background-color: var(--lightgray);
+}
+
+.repere-jauge i.plein {
+  background-color: var(--dark);
 }
 
 /* --------------------------------------------------------------------------
@@ -1117,6 +1185,16 @@ article code {
 
   .code-couleur::before {
     border-color: #000;
+  }
+
+  /* Les jauges : plein à l'encre, vide en filet clair — la comparaison tient
+     encore sur une feuille en noir et blanc. */
+  .repere-jauge i {
+    background-color: #ddd;
+  }
+
+  .repere-jauge i.plein {
+    background-color: #000;
   }
 
   /* L'adresse des liens externes, sinon perdue à l'impression */

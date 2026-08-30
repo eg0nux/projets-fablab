@@ -1,16 +1,15 @@
 ---
-title: Projets FabLab · 2026-2027
+title: "Projets FabLab # 2026~2028"
 ---
 
-Un catalogue de **vingt-cinq projets prêts à monter** pour un FabLab : des parcours courts — **dix jours sur deux semaines et demie** — pensés pour la remobilisation et l'insertion. À chaque fois, un groupe fabrique un **objet réel, qui a une vraie destination**, en rencontrant les acteurs du territoire.
-
-Tous suivent la même recette — celle du modèle « Faire Récif » — mais changent de terrain : biodiversité, patrimoine, grand âge, énergie, mobilité, jeu, média, alimentation…
+==Un catalogue de vingt-cinq projets prêts à monter pour un FabLab : des parcours courts — dix jours sur deux semaines et demie — pensés pour la remobilisation et l'insertion. À chaque fois, un groupe fabrique un objet réel, qui a une vraie destination, en rencontrant les acteurs du territoire.==  
+==Tous suivent la même recette — celle du modèle « Faire Récif » — mais changent de terrain : biodiversité, patrimoine, grand âge, énergie, mobilité, jeu, média, alimentation…==
 
 > [!tip] Pour s'orienter
 > - **[[methode|La méthode]]** — les six invariants qui font la force de ces parcours, et six questions pour choisir
 > - **[[comparatif|Le tableau comparatif]]** — les 24 projets notés sur six indicateurs (originalité, accessibilité, coût…)
 >
-> Chaque **fiche projet** suit le même plan : une accroche, des repères en étoiles, les objectifs, ce que l'on fabrique, les partenaires et métiers à mobiliser, le temps fort du parcours, et les points pratiques (budget, saison, vigilance).
+> Chaque **fiche projet** suit le même plan : une accroche, des repères notés, les objectifs, ce que l'on fabrique, les partenaires et métiers à mobiliser, le temps fort du parcours, et les points pratiques (budget, saison, vigilance).
 
 ## Tous les projets
 
