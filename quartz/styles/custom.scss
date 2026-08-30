@@ -980,9 +980,9 @@ article p:has(> img:only-child) + p > em:only-child {
   font-family: var(--codeFont);
   font-size: 0.76rem;
   font-style: italic;
-  /* Interligne resserré : l'interligne de corps de 1,7 creusait un blanc
-     au-dessus de la première ligne, qui décollait la légende du cadre. */
-  line-height: 1.4;
+  /* Interligne serré : les bandes de surlignage doivent se suivre presque
+     sans blanc, comme des lignes surlignées à la main. */
+  line-height: 1.15;
 
   /* Surlignée du même rouge que le chapeau, et par le même moyen : un
      dégradé qui ne colore qu'une tranche de la zone de contenu de la police,
