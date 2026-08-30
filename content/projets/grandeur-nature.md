@@ -2,8 +2,7 @@
 title: Grandeur nature
 ---
 
-> [!abstract] La malle aux jeux géants
-> Fabriquer une malle de jeux surdimensionnés — quilles finlandaises, puissance 4 géant, mikado d'un mètre, morpion, jeu de palets et un jeu de l'oie dont les cases racontent le Bergeracois — prêtée ensuite aux comités des fêtes, aux centres de loisirs et aux EHPAD. Quand le jeu grandit, tout le monde redevient joueur : c'est la magie du format.
+==La malle aux jeux géants. Fabriquer une malle de jeux surdimensionnés — quilles finlandaises, puissance 4 géant, mikado d'un mètre, morpion, jeu de palets et un jeu de l'oie dont les cases racontent le Bergeracois — prêtée ensuite aux comités des fêtes, aux centres de loisirs et aux EHPAD. Quand le jeu grandit, tout le monde redevient joueur : c'est la magie du format.==
 
 **Repères** — Originalité ★★★☆☆ · Accessibilité ★★★★☆ · Polyvalence FabLab ★★★☆☆ · Impact social ★★★★☆ · Ancrage territorial ★★★★☆ · Coût matière ★★★☆☆
 

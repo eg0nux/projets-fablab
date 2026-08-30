@@ -2,8 +2,7 @@
 title: L'Herbier des trottoirs
 ---
 
-> [!abstract] Le sauvage sous nos pieds
-> Il pousse cinquante espèces entre les pavés du centre-ville. Le groupe fabrique ses presses à fleurs, herborise le long des trottoirs avec un botaniste, monte un herbier encadré et grave une signalétique posée au pied des plantes : « ici pousse la chélidoine ». La ville se met enfin à regarder ce qu'elle piétine — et, ce faisant, elle regarde aussi ceux qu'elle ne voyait plus.
+==Le sauvage sous nos pieds. Il pousse cinquante espèces entre les pavés du centre-ville. Le groupe fabrique ses presses à fleurs, herborise le long des trottoirs avec un botaniste, monte un herbier encadré et grave une signalétique posée au pied des plantes : « ici pousse la chélidoine ». La ville se met enfin à regarder ce qu'elle piétine — et, ce faisant, elle regarde aussi ceux qu'elle ne voyait plus.==
 
 **Repères** — Originalité ★★★★☆ · Accessibilité ★★★★★ · Polyvalence FabLab ★★☆☆☆ · Impact social ★★★★☆ · Ancrage territorial ★★★★☆ · Coût matière ★★★★★
 

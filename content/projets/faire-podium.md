@@ -2,8 +2,7 @@
 title: Faire Podium
 ---
 
-> [!abstract] La fabrique des trophées du territoire
-> Pendant dix jours, le FabLab devient la fabrique officielle des trophées, médailles et diplômes éco-conçus des clubs sportifs, des écoles et des associations du Bergeracois. Les commanditaires défilent, le carnet de commandes se remplit, la production s'organise — et au dernier jour, retournement : ce sont les participants qui montent sur scène pour décerner leur propre prix au club le plus inspirant.
+==La fabrique des trophées du territoire. Pendant dix jours, le FabLab devient la fabrique officielle des trophées, médailles et diplômes éco-conçus des clubs sportifs, des écoles et des associations du Bergeracois. Les commanditaires défilent, le carnet de commandes se remplit, la production s'organise — et au dernier jour, retournement : ce sont les participants qui montent sur scène pour décerner leur propre prix au club le plus inspirant.==
 
 **Repères** — Originalité ★★★★☆ · Accessibilité ★★★★☆ · Polyvalence FabLab ★★★★☆ · Impact social ★★★☆☆ · Ancrage territorial ★★★★☆ · Coût matière ★★★★☆
 

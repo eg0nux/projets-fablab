@@ -2,8 +2,7 @@
 title: Ombres et merveilles
 ---
 
-> [!abstract] Kamishibaïs et théâtres d'ombres
-> Fabriquer des kamishibaïs — ces théâtres d'images japonais en bois qui s'ouvrent comme des retables — et des castelets d'ombres, puis écrire et illustrer une histoire du pays : la rivière, la vigne, une légende locale. Et partir en tournée la raconter, de l'école à l'EHPAD. La boîte protège celui qui raconte : on ose parler quand on est derrière le théâtre.
+==Kamishibaïs et théâtres d'ombres. Fabriquer des kamishibaïs — ces théâtres d'images japonais en bois qui s'ouvrent comme des retables — et des castelets d'ombres, puis écrire et illustrer une histoire du pays : la rivière, la vigne, une légende locale. Et partir en tournée la raconter, de l'école à l'EHPAD. La boîte protège celui qui raconte : on ose parler quand on est derrière le théâtre.==
 
 **Repères** — Originalité ★★★★☆ · Accessibilité ★★★★☆ · Polyvalence FabLab ★★★★☆ · Impact social ★★★★☆ · Ancrage territorial ★★★★☆ · Coût matière ★★★★☆
 

@@ -2,8 +2,7 @@
 title: Les Veilleuses
 ---
 
-> [!abstract] Des lampes pour les nuits difficiles
-> Fabriquer des veilleuses en bois ajouré — des lampes qui projettent au plafond des constellations, des feuillages, des poissons — pour les dortoirs de la crèche, les chambres de la pédiatrie et celles de l'EHPAD où les nuits sont longues. Et rencontrer celles et ceux qui veillent, les professionnels de la nuit. Car une veilleuse, c'est les deux à la fois : la petite lampe qui rassure et la personne qui reste éveillée pour les autres. Le projet honore l'une et l'autre.
+==Des lampes pour les nuits difficiles. Fabriquer des veilleuses en bois ajouré — des lampes qui projettent au plafond des constellations, des feuillages, des poissons — pour les dortoirs de la crèche, les chambres de la pédiatrie et celles de l'EHPAD où les nuits sont longues. Et rencontrer celles et ceux qui veillent, les professionnels de la nuit. Car une veilleuse, c'est les deux à la fois : la petite lampe qui rassure et la personne qui reste éveillée pour les autres. Le projet honore l'une et l'autre.==
 
 **Repères** — Originalité ★★★★★ · Accessibilité ★★★★★ · Polyvalence FabLab ★★★☆☆ · Impact social ★★★★★ · Ancrage territorial ★★★☆☆ · Coût matière ★★★★☆
 

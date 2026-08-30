@@ -2,8 +2,7 @@
 title: Du bout des doigts
 ---
 
-> [!abstract] Planches d'éveil et coussins sensoriels
-> Fabriquer des planches d'activités — loquets, serrures, interrupteurs, engrenages à tourner — pour les crèches et le relais petite enfance, et des coussins sensoriels pour les unités Alzheimer des EHPAD. Deux âges de la vie réunis par le même geste : occuper les mains pour éveiller les uns, apaiser les autres. Le tout se visse, se ponce et se coud, rien de plus.
+==Planches d'éveil et coussins sensoriels. Fabriquer des planches d'activités — loquets, serrures, interrupteurs, engrenages à tourner — pour les crèches et le relais petite enfance, et des coussins sensoriels pour les unités Alzheimer des EHPAD. Deux âges de la vie réunis par le même geste : occuper les mains pour éveiller les uns, apaiser les autres. Le tout se visse, se ponce et se coud, rien de plus.==
 
 **Repères** — Originalité ★★★★☆ · Accessibilité ★★★★☆ · Polyvalence FabLab ★★★★☆ · Impact social ★★★★★ · Ancrage territorial ★★★☆☆ · Coût matière ★★★★☆
 

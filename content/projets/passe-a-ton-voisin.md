@@ -2,8 +2,7 @@
 title: Passe à ton voisin
 ---
 
-> [!abstract] Boîtes à livres, grainothèques et boîtes à dons
-> Essaimer dans les villages du Bergeracois de petites architectures du partage : boîtes à livres sur les places, grainothèques dans les médiathèques, boîtes à dons près des écoles. Un même caisson bien conçu, décliné en série et posé en tournée — et le jeu d'enfant devient un service public de poche.
+==Boîtes à livres, grainothèques et boîtes à dons. Essaimer dans les villages du Bergeracois de petites architectures du partage : boîtes à livres sur les places, grainothèques dans les médiathèques, boîtes à dons près des écoles. Un même caisson bien conçu, décliné en série et posé en tournée — et le jeu d'enfant devient un service public de poche.==
 
 **Repères** — Originalité ★★★☆☆ · Accessibilité ★★★★☆ · Polyvalence FabLab ★★★☆☆ · Impact social ★★★★☆ · Ancrage territorial ★★★★☆ · Coût matière ★★★☆☆
 

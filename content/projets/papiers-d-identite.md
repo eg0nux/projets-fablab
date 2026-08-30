@@ -2,8 +2,7 @@
 title: Papiers d'identité
 ---
 
-> [!abstract] La micro-papeterie de la vallée de la Couze
-> À un quart d'heure de Bergerac, la vallée de la Couze fut la vallée du papier ; le moulin de la Rouzique en témoigne encore. Le groupe reconstruit la chaîne papetière à son échelle — formes, tamis, presse, séchoir sortent du FabLab — et fabrique du papier à partir de chutes de jeans et de sarments, teinté au brou de noix. Sur ces feuilles, chacun imprime son portrait et son récit : des papiers d'identité choisis, pour des personnes que l'administration réduit trop souvent aux leurs.
+==La micro-papeterie de la vallée de la Couze. À un quart d'heure de Bergerac, la vallée de la Couze fut la vallée du papier ; le moulin de la Rouzique en témoigne encore. Le groupe reconstruit la chaîne papetière à son échelle — formes, tamis, presse, séchoir sortent du FabLab — et fabrique du papier à partir de chutes de jeans et de sarments, teinté au brou de noix. Sur ces feuilles, chacun imprime son portrait et son récit : des papiers d'identité choisis, pour des personnes que l'administration réduit trop souvent aux leurs.==
 
 **Repères** — Originalité ★★★★★ · Accessibilité ★★★☆☆ · Polyvalence FabLab ★★★★☆ · Impact social ★★★★☆ · Ancrage territorial ★★★★★ · Coût matière ★★★☆☆
 

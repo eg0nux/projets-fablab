@@ -1004,14 +1004,14 @@ article tbody td:nth-child(n + 3) {
 }
 
 /* --------------------------------------------------------------------------
-   Bloc « Repères » : la ligne qui suit l'accroche
+   Bloc « Repères » : la ligne qui suit le chapeau
 
-   Propre à ce site. Chaque fiche de parcours ouvre sur un encadré, puis sur
+   Propre à ce site. Chaque fiche de parcours ouvre sur son chapeau, puis sur
    une ligne de repères. Deux filets fins la détachent sans l'encadrer : c'est
    un palier de lecture, pas un encadré de plus.
    -------------------------------------------------------------------------- */
 
-article .callout + p {
+article > p:first-of-type:has(.text-highlight) + p {
   margin: 1.6em 0;
   padding: 0.7em 0;
   border-top: 1px solid var(--lightgray);

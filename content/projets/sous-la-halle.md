@@ -2,8 +2,7 @@
 title: Sous la halle
 ---
 
-> [!abstract] Ardoises, enseignes et présentoirs pour les marchés
-> Équiper les commerçants du marché couvert de Bergerac — la halle — et des marchés de villages : ardoises gravées, porte-étiquettes, présentoirs à gradins, caisses de présentation empilables, enseignes de stand. Dix jours pour rendre les étals plus beaux et découvrir de l'intérieur, dès l'aube, les métiers de bouche et du commerce de proximité, premiers recruteurs du quotidien.
+==Ardoises, enseignes et présentoirs pour les marchés. Équiper les commerçants du marché couvert de Bergerac — la halle — et des marchés de villages : ardoises gravées, porte-étiquettes, présentoirs à gradins, caisses de présentation empilables, enseignes de stand. Dix jours pour rendre les étals plus beaux et découvrir de l'intérieur, dès l'aube, les métiers de bouche et du commerce de proximité, premiers recruteurs du quotidien.==
 
 **Repères** — Originalité ★★★☆☆ · Accessibilité ★★★★☆ · Polyvalence FabLab ★★★☆☆ · Impact social ★★★★☆ · Ancrage territorial ★★★★★ · Coût matière ★★★★★
 

@@ -2,8 +2,7 @@
 title: Manger local
 ---
 
-> [!abstract] De la graine à l'assiette
-> Fabriquer l'équipement d'un potager nourricier — bacs, serre semi-automatisée avec arrosage piloté, séchoir solaire, poulailler — pour une cantine, une épicerie solidaire ou un jardin partagé, puis clore le parcours par un repas préparé et servi par les participants. Du bois au capteur d'humidité, et du plant à l'assiette.
+==De la graine à l'assiette. Fabriquer l'équipement d'un potager nourricier — bacs, serre semi-automatisée avec arrosage piloté, séchoir solaire, poulailler — pour une cantine, une épicerie solidaire ou un jardin partagé, puis clore le parcours par un repas préparé et servi par les participants. Du bois au capteur d'humidité, et du plant à l'assiette.==
 
 **Repères** — Originalité ★★★☆☆ · Accessibilité ★★★☆☆ · Polyvalence FabLab ★★★★☆ · Impact social ★★★★☆ · Ancrage territorial ★★★★☆ · Coût matière ★★☆☆☆
 

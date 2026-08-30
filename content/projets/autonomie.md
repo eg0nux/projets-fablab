@@ -2,8 +2,7 @@
 title: Autonomie
 ---
 
-> [!abstract] Objets d'assistance sur mesure
-> Rencontrer des personnes en situation de handicap ou des personnes âgées, identifier avec elles des gestes du quotidien devenus difficiles, et fabriquer des aides techniques personnalisées, essentiellement en impression 3D. C'est le projet au sens le plus immédiat : l'objet change concrètement la vie de quelqu'un que l'on connaît désormais.
+==Objets d'assistance sur mesure. Rencontrer des personnes en situation de handicap ou des personnes âgées, identifier avec elles des gestes du quotidien devenus difficiles, et fabriquer des aides techniques personnalisées, essentiellement en impression 3D. C'est le projet au sens le plus immédiat : l'objet change concrètement la vie de quelqu'un que l'on connaît désormais.==
 
 **Repères** — Originalité ★★★★★ · Accessibilité ★★★★☆ · Polyvalence FabLab ★★★☆☆ · Impact social ★★★★★ · Ancrage territorial ★★☆☆☆ · Coût matière ★★★★★
 

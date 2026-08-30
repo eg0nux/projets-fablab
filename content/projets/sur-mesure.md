@@ -2,8 +2,7 @@
 title: Sur mesure
 ---
 
-> [!abstract] Textile, réemploi et confection
-> Monter une micro-collection à partir de textiles récupérés — vêtements de travail, bâches publicitaires, chutes et invendus — en combinant machines à coudre, brodeuse numérique et découpe laser sur tissu, jusqu'au défilé ou à la vente solidaire. Le FabLab devient un atelier de mode circulaire.
+==Textile, réemploi et confection. Monter une micro-collection à partir de textiles récupérés — vêtements de travail, bâches publicitaires, chutes et invendus — en combinant machines à coudre, brodeuse numérique et découpe laser sur tissu, jusqu'au défilé ou à la vente solidaire. Le FabLab devient un atelier de mode circulaire.==
 
 **Repères** — Originalité ★★★☆☆ · Accessibilité ★★★☆☆ · Polyvalence FabLab ★★★☆☆ · Impact social ★★★★☆ · Ancrage territorial ★★★☆☆ · Coût matière ★★★★☆
 
