@@ -974,11 +974,19 @@ article img {
 article p:has(> img:only-child) + p:has(> em:only-child) {
   text-align: right;
   padding-right: 3px;
+  /* Taille et interligne se règlent ici, pas sur la légende. La hauteur des
+     lignes d'un bloc est fixée par le bloc, pas par les éléments en ligne
+     qu'il contient : posé sur le `em` seul, l'interligne laissait 11 px de
+     blanc entre les bandes ; posé ici mais avec la taille de corps, il en
+     laissait encore 2,7, car il se calculait sur 16 px et non sur 12.
+     1,28 fois la taille de la légende vaut la hauteur exacte des bandes :
+     elles se touchent sans se chevaucher. */
+  font-size: 0.76rem;
+  line-height: 1.28;
 }
 
 article p:has(> img:only-child) + p > em:only-child {
   font-family: var(--codeFont);
-  font-size: 0.76rem;
   font-style: italic;
   /* Interligne serré : les bandes de surlignage doivent se suivre presque
      sans blanc, comme des lignes surlignées à la main. */
