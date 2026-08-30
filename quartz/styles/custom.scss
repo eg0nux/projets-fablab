@@ -778,6 +778,35 @@ article tbody tr:nth-child(even) {
    l'encadré rouge est un signal de sécurité, pas une décoration.
    -------------------------------------------------------------------------- */
 
+/* Deux registres, pas douze. Quartz attribue une couleur à chacun de ses
+   types — vert pour tip, bleu pour note, orange pour warning — ce qui pose un
+   arc-en-ciel sur une charte qui n'a que de l'encre et un rouge. On ramène
+   donc tout à l'encre, et on garde le rouge pour ce qui alerte : sur une
+   fiche, un encadré rouge doit vouloir dire quelque chose.
+
+   La sélection porte sur l'attribut pour l'emporter sur les règles de Quartz,
+   qui ciblent chacune leur type. */
+.callout[data-callout] {
+  --color: var(--dark);
+  --border: var(--lightgray);
+  --bg: transparent;
+}
+
+.callout[data-callout="warning"],
+.callout[data-callout="danger"],
+.callout[data-callout="caution"],
+.callout[data-callout="failure"],
+.callout[data-callout="bug"] {
+  --color: var(--secondary);
+}
+
+/* Le temps fort d'un parcours est un récit, pas une consigne : filet à
+   l'encre comme les autres, mais le corps passe en italique — c'est le seul
+   endroit du site où l'on raconte une scène. */
+.callout[data-callout="quote"] .callout-content {
+  font-style: italic;
+}
+
 .callout {
   border: none;
   border-left: 3px solid var(--color);
