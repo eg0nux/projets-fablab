@@ -1,0 +1,43 @@
+# Construit le site et le publie sur Cloudflare Pages à chaque poussée.
+#
+# L'intégration Git de Cloudflare mémorise l'identifiant GitHub du dépôt, pas
+# son nom : elle n'a pas survécu à la recréation du dépôt le 2026-08-30, et
+# rien dans son tableau de bord ne le signalait — seul un push resté sans
+# effet l'a révélé. On construit donc ici, et on publie avec un jeton d'API :
+# le dépôt peut être recréé autant de fois qu'il le faut, la chaîne tient.
+
+name: Déploiement
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  publier:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          # Quartz date les pages d'après l'historique git. Une copie
+          # superficielle les daterait toutes du jour de la construction.
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - run: npm ci
+
+      - run: npx quartz build
+
+      # Empreinte du contenu dans le nom des ressources de thème. Sans elle,
+      # index.css garde son nom d'un déploiement à l'autre et les caches
+      # continuent de servir l'ancienne charte.
+      - run: node tools/versionner-assets.mjs
+
+      - uses: cloudflare/wrangler-action@v4
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          command: pages deploy public --project-name=lab-egonux --branch=main
