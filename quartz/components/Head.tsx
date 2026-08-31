@@ -26,6 +26,7 @@ export default (() => {
     const path = url.pathname as FullSlug
     const baseDir = fileData.slug === "404" ? path : pathToRoot(fileData.slug!)
     const iconPath = joinSegments(baseDir, "static/icon.png")
+    const iconSvgPath = joinSegments(baseDir, "static/icon.svg")
 
     // Url of current page
     const socialUrl =
@@ -82,7 +83,11 @@ export default (() => {
           </>
         )}
 
-        <link rel="icon" href={iconPath} />
+        {/* Le SVG d'abord, net à toute taille ; le PNG en repli pour Safari,
+            qui ne lit pas les favicons vectoriels. `sizes="any"` empêche les
+            navigateurs qui savent lire le SVG de préférer quand même le PNG. */}
+        <link rel="icon" href={iconSvgPath} type="image/svg+xml" />
+        <link rel="icon" href={iconPath} sizes="any" />
         <meta name="description" content={description} />
         <meta name="generator" content="Quartz" />
 
