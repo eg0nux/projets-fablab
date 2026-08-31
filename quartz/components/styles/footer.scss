@@ -13,3 +13,38 @@ footer {
     margin-top: -1rem;
   }
 }
+
+/* Pastille EcoIndex : reprise du badge d'ecoindex.fr — disque plein, lettre
+   blanche en gras, vert #2e9b43 pour un A. Dessinée en CSS plutôt qu'en image
+   ou en SVG distant : afficher une bonne note ne doit rien coûter en poids ni
+   en requêtes. */
+.ecoindex {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45em;
+  /* le soulignement des liens du pied de page passerait sous la pastille */
+  border-bottom: none;
+}
+
+.ecoindex-nom {
+  border-bottom: 1px solid color-mix(in srgb, var(--gray) 45%, transparent);
+}
+
+.ecoindex:hover .ecoindex-nom {
+  border-bottom-color: var(--secondary);
+}
+
+.ecoindex-note {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.55em;
+  height: 1.55em;
+  border-radius: 50%;
+  background: #2e9b43;
+  color: #fff;
+  font-weight: 700;
+  /* l'interlettrage du pied de page décentrerait la lettre dans le disque */
+  letter-spacing: 0;
+  line-height: 1;
+}

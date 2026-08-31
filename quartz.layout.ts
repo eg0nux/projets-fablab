@@ -8,8 +8,12 @@ export const sharedPageComponents: SharedLayout = {
   afterBody: [],
   footer: Component.Footer({
     links: {
+      contact: "mailto:florian@egonux.com",
       "ego/nux": "https://www.egonux.com",
-      Florian: "mailto:florian@egonux.com",
+    },
+    ecoindex: {
+      note: "A",
+      url: "https://www.ecoindex.fr/resultat/?id=05ecb87b-50f2-442b-81f0-6d28f74ba13d",
     },
   }),
 }
