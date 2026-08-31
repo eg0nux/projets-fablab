@@ -34,7 +34,9 @@ export default ((opts?: Options) => {
                 aria-label={`EcoIndex : note ${ecoindex.note}, voir le rapport`}
               >
                 <span class="ecoindex-nom">ecoindex</span>
-                <span class="ecoindex-note">{ecoindex.note}</span>
+                <span class="ecoindex-note" data-note={ecoindex.note}>
+                  {ecoindex.note}
+                </span>
               </a>
             </li>
           )}

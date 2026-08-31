@@ -41,10 +41,24 @@ footer {
   width: 1.55em;
   height: 1.55em;
   border-radius: 50%;
-  background: #2e9b43;
-  color: #fff;
   font-weight: 700;
   /* l'interlettrage du pied de page décentrerait la lettre dans le disque */
   letter-spacing: 0;
   line-height: 1;
+  /* sans couleur déclarée pour la note, la pastille reste neutre plutôt que
+     d'afficher le vert d'une bonne note par défaut */
+  background: var(--lightgray);
+  color: var(--darkgray);
+}
+
+/* Couleurs relevées sur les badges d'ecoindex.fr. Les notes claires y passent
+   en encre foncée : le blanc n'y tiendrait pas la lisibilité. */
+.ecoindex-note[data-note="A"] {
+  background: #2e9b43;
+  color: #fff;
+}
+
+.ecoindex-note[data-note="B"] {
+  background: #34bc6e;
+  color: #052d33;
 }
