@@ -51,10 +51,14 @@ export const defaultContentPageLayout: PageLayout = {
     }),
   ],
   right: [
-    // Le FabLab est hébergé par l'Atelier Partagé de La Traverse : le logo
-    // ouvre la colonne de droite sur chaque page, comme sur fablab.egonux.com.
-    Component.LogoTraverse(),
+    // Le CIDFF Dordogne anime l'atelier numérique, La Traverse l'héberge :
+    // les deux logos ouvrent la colonne de droite sur chaque page, comme sur
+    // fablab.egonux.com.
+    Component.Logos(),
     Component.DesktopOnly(Component.TableOfContents()),
+    // Ne rend rien : embarque le script qui donne au sommaire sa jauge de
+    // progression et son repère de section courante.
+    Component.DesktopOnly(Component.Sommaire()),
   ],
 }
 
@@ -88,7 +92,8 @@ export const defaultListPageLayout: PageLayout = {
   // Même mobilier que les pages de contenu : une page de dossier ne doit pas
   // perdre le logo ni le sommaire en chemin.
   right: [
-    Component.LogoTraverse(),
+    Component.Logos(),
     Component.DesktopOnly(Component.TableOfContents()),
+    Component.DesktopOnly(Component.Sommaire()),
   ],
 }

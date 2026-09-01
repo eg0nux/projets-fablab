@@ -456,7 +456,12 @@ article h4::before {
 }
 
 /* --------------------------------------------------------------------------
-   Logo de La Traverse, en tête de colonne de droite
+   Logos des structures, en tête de colonne de droite
+
+   Le CIDFF Dordogne puis La Traverse, côte à côte sur toutes les pages. Ils
+   sont calés sur une hauteur commune et non sur une largeur commune : leurs
+   proportions diffèrent (1,96 pour le CIDFF, 1,56 pour La Traverse) et une
+   largeur égale aurait écrasé l'un des deux.
 
    Au survol, le « soubresaut » repris de maquette.egonux.com : un tremblement
    par pas discrets — d'où `steps(1, end)`, qui saute d'une image à l'autre au
@@ -464,19 +469,90 @@ article h4::before {
    repérage d'impression.
    -------------------------------------------------------------------------- */
 
-.logo-traverse {
+.logos {
+  display: flex;
+  align-items: center;
+  /* Aux deux bords de la colonne, le « × » au milieu : ce sont deux
+     structures distinctes, et l'atelier est ce qu'elles font ensemble.
+     L'écart le dit mieux qu'une notice ; le signe dit qu'il se franchit.
+     Le `gap` ne sert plus que de garde-fou si la colonne se rétrécit. */
+  justify-content: space-between;
+  gap: 1.1rem;
   margin-bottom: 1.4rem;
 }
 
-.logo-traverse img {
-  display: block;
-  width: 104px;
-  max-width: 100%;
-  height: auto;
+/* Cormorant Garamond, italique, réduite au seul caractère « & » — mille cent
+   quatre octets. La police n'est appelée que pour ce signe, jamais pour du
+   texte : c'est ce qui rend le sous-ensemble acceptable là où embarquer une
+   quatrième famille complète ne le serait pas. Le fichier est sous licence
+   ouverte SIL, dont le texte accompagne la police dans le même dossier.
+
+   Pourquoi elle plutôt que Literata, déjà là : l'esperluette de Cormorant est
+   une ligature « Et » de tradition Garamond, la boucle qui remonte et la barre
+   qui traverse. Celle de Literata, dessinée pour le labeur, est une
+   ponctuation. Ici le signe doit tenir seul entre deux logotypes.
+
+   En encre, pas en rouge : `--dark` est le noir du thème clair et la crème du
+   thème sombre, donc le signe s'inverse tout seul. C'est la couleur des
+   titres — le rouge reste aux accolades, aux chapeaux et aux liens.
+
+   Aligné bas, pas au milieu. Les deux logotypes ont leur masse en bas — le
+   cartouche « Dordogne » d'un côté, le mot « LA TRAVERSE » de l'autre,
+   surmonté d'une arche qui n'est que du vide optique. Centré sur la boîte,
+   le signe flottait au-dessus de cette ligne-là.
+
+   Il ne réagit pas au survol : rien à cliquer, et le soubresaut des logos
+   serait brouillé par un troisième élément qui bouge. */
+@font-face {
+  font-family: "Cormorant Garamond";
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/static/fonts/cormorant-garamond-400-italic-esperluette.woff2") format("woff2");
+  /* Le sous-ensemble ne contient que l'esperluette. Le dire au navigateur lui
+     évite de charger le fichier sur une page qui n'en affiche pas. */
+  unicode-range: U+26;
 }
 
-.logo-traverse a:hover img,
-.logo-traverse a:focus-visible img {
+.logos-et {
+  flex: 0 0 auto;
+  align-self: flex-end;
+  font-family: "Cormorant Garamond", var(--bodyFont), serif;
+  font-style: italic;
+  /* Cormorant est un caractère de titrage : à corps égal, son œil est plus
+     petit et son trait plus fin que ceux de Literata. Il lui faut donc un
+     corps plus grand pour peser autant entre les deux logotypes. */
+  font-size: 2.2rem;
+  line-height: 1;
+  color: var(--dark);
+  user-select: none;
+
+  /* Cormorant pose son esperluette haut dans la boîte de ligne : calée au
+     pied, son encre tombait à 66 % de la hauteur des logotypes, au-dessus de
+     la ligne des mots. La marge négative la redescend à 73 %, la valeur
+     retenue du temps de Literata. En em pour qu'elle suive le corps si on y
+     retouche, et non en pixels qui décrocheraient au premier réglage. */
+  margin-bottom: -0.11em;
+}
+
+.logos .logo img {
+  display: block;
+  /* Hauteur commune, largeur libre : c'est la hauteur d'x des deux
+     logotypes qui doit s'accorder, pas leur encombrement. 52 px laisse
+     « Dordogne » lisible sans que le pavé du CIDFF, plus large, prenne le
+     pas sur La Traverse. */
+  height: 52px;
+  width: auto;
+  max-width: 100%;
+  /* Quartz pose 1 rem de marge au-dessus et en dessous de toute image :
+     hors de `article`, personne ne l'annulait, et la boîte du lien faisait
+     32 px de plus que le logo qu'elle contient. Tout alignement vertical
+     s'en trouvait faussé. */
+  margin: 0;
+}
+
+.logos .logo:hover img,
+.logos .logo:focus-visible img {
   animation: soubresaut 0.5s steps(1, end) infinite;
 }
 
@@ -520,51 +596,263 @@ article h4::before {
    autant — on lui retire seulement le mouvement, en gardant le décalage
    chromatique qui fait tout son sel. */
 @media (prefers-reduced-motion: reduce) {
-  .logo-traverse a:hover img,
-  .logo-traverse a:focus-visible img {
+  .logos .logo:hover img,
+  .logos .logo:focus-visible img {
     animation: none;
     filter: drop-shadow(2px 0 #f44336) drop-shadow(-2px 0 #eddd6e);
   }
 }
 
-/* Sur fond sombre, le logo noir disparaît : on l'éclaircit par inversion
-   plutôt que d'embarquer un second fichier. */
-:root[saved-theme="dark"] .logo-traverse img {
-  filter: invert(1);
+/* Sur fond sombre, aucun logo ne prend de fond : ils restent détourés.
+
+   Deux traitements, parce que les deux rangées ne disent pas la même chose.
+
+   **Les logos des structures passent en blanc plein** — `brightness(0)`
+   aplatit tout sur du noir en gardant la transparence, `invert(1)` le
+   retourne en blanc. La même paire de filtres convient au logotype noir de
+   La Traverse et au logotype en couleurs du CIDFF : côte à côte dans la
+   colonne, ils doivent se lire comme un seul bloc de signalétique, pas comme
+   deux marques en concurrence.
+
+   **Le bandeau de fiche suit la même règle.** On avait d'abord cherché à lui
+   garder ses couleurs, éclaircies ; mais un logotype APF bleu et orange
+   au-dessus d'un CIDFF blanc mettait deux régimes dans le même écran. Sur
+   fond noir, tout ce qui est marque passe en blanc. */
+:root[saved-theme="dark"] .logos .logo img,
+:root[saved-theme="dark"] .marques img {
+  filter: brightness(0) invert(1);
 }
 
-/* Sommaire encadré d'un filet noir fin. Le cadre le détache de l'explorateur
-   placé juste au-dessus : deux listes de liens qui se suivent, sans séparation
-   franche, se lisent comme une seule. */
+/* Le soubresaut réécrit entièrement le `filter` à chaque étape : sans une
+   version claire de l'animation, les logos retomberaient à leur couleur
+   d'origine dès le survol. Les décalages sont posés après l'inversion, ce qui
+   leur garde leur rouge et leur jaune. */
+:root[saved-theme="dark"] .logos .logo:hover img,
+:root[saved-theme="dark"] .logos .logo:focus-visible img {
+  animation-name: soubresaut-clair;
+}
+
+@keyframes soubresaut-clair {
+  0% {
+    transform: translate(0, 0);
+    filter: brightness(0) invert(1);
+  }
+  14% {
+    transform: translate(-2px, 1px);
+    filter: brightness(0) invert(1) drop-shadow(2px 0 #f44336) drop-shadow(-2px 0 #eddd6e);
+  }
+  28% {
+    transform: translate(2px, -1px);
+    filter: brightness(0) invert(1) drop-shadow(-2px 0 #f44336);
+  }
+  42% {
+    transform: translate(-1px, -1px);
+    filter: brightness(0) invert(1) drop-shadow(1px 1px #eddd6e);
+  }
+  56% {
+    transform: translate(1px, 1px);
+    filter: brightness(0) invert(1);
+  }
+  70% {
+    transform: translate(-1px, 0);
+    filter: brightness(0) invert(1) drop-shadow(2px 0 #f44336);
+  }
+  84% {
+    transform: translate(1px, -1px);
+    filter: brightness(0) invert(1);
+  }
+  100% {
+    transform: translate(0, 0);
+    filter: brightness(0) invert(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root[saved-theme="dark"] .logos .logo:hover img,
+  :root[saved-theme="dark"] .logos .logo:focus-visible img {
+    animation: none;
+    filter: brightness(0) invert(1) drop-shadow(2px 0 #f44336) drop-shadow(-2px 0 #eddd6e);
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Sommaire : une jauge et un rail
+
+   Le cadre détache le bloc de l'explorateur placé juste au-dessus : deux
+   listes de liens qui se suivent, sans séparation franche, se lisent comme
+   une seule.
+
+   Le bandeau porte trois choses sur une ligne : le libellé, une jauge qui se
+   remplit à mesure qu'on descend la page, et le pourcentage lu. Sur une fiche
+   technique où l'on arrive souvent par une ancre partagée, sans savoir où
+   l'on est tombé, c'est le renseignement qui manquait le plus.
+
+   La liste, elle, court le long d'un rail, et la section en cours de lecture
+   y est marquée d'un segment rouge plein. La position ne se devine plus à une
+   nuance de gris : elle se voit.
+
+   Jauge, pourcentage et repère sont posés par `scripts/sommaire.inline.ts` —
+   Quartz ne calcule ni l'un ni l'autre. Son `in-view` marque tout ce qui est
+   passé au-dessus du bas de la fenêtre, c'est-à-dire ce qui a été lu, jamais
+   où l'on se trouve.
+
+   Note pour plus tard : les règles précédentes visaient `#toc-content`, un
+   identifiant qui n'existe pas — Quartz numérote les siens (`list-4`) et ne
+   laisse que la classe `toc-content`. Elles n'ont donc jamais rien fait, et
+   c'est la feuille de Quartz qu'on voyait à l'œuvre.
+   -------------------------------------------------------------------------- */
+
 .toc {
   border: 2px solid var(--dark);
   border-radius: 2px;
   padding: 0.65rem 0.85rem 0.75rem;
 }
 
-.toc > button {
+/* Le bandeau : libellé, jauge, pourcentage, chevron de repli. C'est un
+   bouton — cliquer la jauge replie donc le sommaire, ce qu'on attend de
+   toute barre de titre. */
+.toc > button.toc-header {
   width: 100%;
   padding: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
 }
 
-#toc-content {
-  padding-left: 0;
-  margin-top: 0.4em;
+.toc > button.toc-header > h3 {
+  flex: 0 0 auto;
 }
 
-#toc-content .depth-1 {
+/* Le chevron porte sa propre marge dans la feuille de Quartz ; elle
+   s'ajouterait à la gouttière du bandeau. */
+.toc > button.toc-header > .fold {
+  margin-left: 0;
+  flex: 0 0 auto;
+}
+
+.toc .toc-progression {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  /* Prend la place qui reste entre le libellé et le chevron, et se laisse
+     comprimer : dans une colonne étroite, c'est la jauge qui cède, pas le
+     pourcentage. */
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.toc .toc-jauge {
+  flex: 1 1 auto;
+  min-width: 0;
+  height: 2px;
+  background-color: var(--lightgray);
+  overflow: hidden;
+}
+
+.toc .toc-jauge > i {
+  display: block;
+  height: 100%;
+  width: 0;
+  background-color: var(--secondary);
+  /* Assez court pour suivre le défilement sans traîner derrière lui. */
+  transition: width 0.25s ease;
+}
+
+.toc .toc-pct {
+  flex: 0 0 auto;
+  font-family: var(--codeFont);
+  font-size: 0.68rem;
+  /* En encre pleine, comme les entrées lues : c'est un chiffre qu'on vient
+     chercher, pas une mention de service. */
+  color: var(--dark);
+  /* Chiffres de largeur fixe : sans quoi le pourcentage tremble à chaque
+     dizaine et fait bouger la jauge à sa gauche. */
+  font-variant-numeric: tabular-nums;
+}
+
+/* La liste et son rail.
+
+   Quartz pose `padding: 0` sur `ul.toc-content.overflow`, sélecteur plus
+   spécifique que le nôtre : inutile de lutter sur le remplissage de la liste.
+   Le rail devient donc un calque tracé dans la liste, et c'est le lien qui
+   prend son retrait — le texte se décolle du filet sans qu'on ait à toucher
+   à la boîte.
+
+   Ce détour règle aussi la barre de défilement horizontale : `overflow-y:
+   hidden` sur `.toc` fait passer l'autre axe en `auto`, si bien que le
+   moindre débordement par la gauche affichait une barre. Rail et repère sont
+   maintenant tous deux à l'intérieur.
+
+   Le repère de section courante est calé sur `left: 0` de l'entrée. Un élément
+   en position absolue se règle sur la boîte de remplissage de son parent, qui
+   commence avant le retrait par profondeur : le segment tombe donc sur le rail
+   pour une entrée de premier niveau comme pour une sous-entrée. */
+.toc ul.toc-content {
+  position: relative;
+  margin-top: 0.5rem;
+  margin-bottom: 0;
+}
+
+.toc ul.toc-content::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background-color: var(--lightgray);
+}
+
+.toc .toc-content > li {
+  position: relative;
+}
+
+.toc .toc-content > li.courant::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.12em;
+  bottom: 0.12em;
+  width: 2px;
+  background-color: var(--secondary);
+}
+
+/* Les entrées passent en Literata. Elles étaient en monospace, héritée de la
+   colonne : bon pour une étiquette de navigation d'un ou deux mots, mauvais
+   pour « Les trois gestes qui évitent les ratés » — la monospace y chasse
+   trop large et casse la ligne. Le libellé `/SOMMAIRE` reste en monospace,
+   lui : c'est une étiquette, pas une phrase.
+
+   Le retrait est posé sur le lien et non sur l'entrée : Quartz réserve le
+   remplissage de l'entrée au retrait par profondeur, `calc(1rem × niveau)`,
+   et les deux s'ajoutent proprement.
+
+   Quartz nuance enfin ses entrées en opacité, ce qui délave le texte sur fond
+   sombre au lieu de le griser. On reprend en couleur, un seul signal : gris
+   pour tout, encre pour la section en cours et pour le survol. */
+.toc .toc-content > li > a,
+.toc .toc-content > li > a.in-view {
   padding-left: 0.9rem;
-}
-#toc-content .depth-2 {
-  padding-left: 1.8rem;
+  font-family: var(--bodyFont);
+  font-size: 0.82rem;
+  line-height: 1.5;
+  /* L'encre du thème, à peine éclaircie vers son papier. Une seule formule
+     pour les deux : `--dark` est le noir sur papier et le crème sur fond
+     noir, `--light` l'inverse — le mélange s'inverse donc avec eux, sans
+     règle propre au thème sombre.
+
+     Le gris de la palette était un mauvais choix : trop pâle sur papier, trop
+     proche du fond sur écran noir. Ici l'écart entre lu et non lu se joue à
+     un cinquième d'encre, assez pour se voir, trop peu pour faire deux
+     couleurs. */
+  color: color-mix(in srgb, var(--dark) 80%, var(--light));
+  opacity: 1;
+  transition: color 0.2s ease;
 }
 
-#toc-content a {
-  line-height: 1.45;
-  color: var(--gray);
-}
-#toc-content a:hover,
-#toc-content .in-view {
+.toc .toc-content > li.courant > a,
+.toc .toc-content > li > a:hover,
+.toc .toc-content > li > a:focus-visible {
   color: var(--dark);
 }
 
@@ -630,32 +918,146 @@ article > p:first-of-type .text-highlight {
 }
 
 /* --------------------------------------------------------------------------
-   Liens : soulignés, jamais colorés en masse
+   Liens : un coup de surligneur
 
-   Le rouge sert d'accent ponctuel. Sur une page longue, des liens rouges par
-   dizaines feraient un texte tacheté et illisible en atelier.
+   Le trait est peint sur le fond du lien lui-même, pas sur un calque posé
+   derrière. C'est ce qui lui permet de suivre le retour à la ligne : avec
+   `box-decoration-break: clone`, chaque fragment reçoit sa bande, bouts
+   arrondis compris. Un calque en `position: absolute` donnait un plus beau
+   biais mais s'arrêtait à la première ligne — et sur ce site, la moitié des
+   liens sont des titres de fichiers ou d'ouvrages qui débordent.
+
+   Le biais vient de l'angle du dégradé. À 178,6° la ligne de dégradé est
+   presque verticale, donc les bandes de couleur sont presque horizontales :
+   elles penchent d'un degré et demi. Ni transformation, ni calque.
+
+   `mix-blend-mode: multiply` fait le reste. C'est lui qui donne l'encre : la
+   bande ne recouvre pas le texte, elle s'y multiplie — une lettre sous le
+   trait s'assombrit au lieu de disparaître, exactement comme sous un feutre.
+   Le texte reste donc lisible sans qu'on ait à lui forcer une couleur.
+
+   Sur fond noir, `multiply` donnerait du noir sur du noir : le thème sombre
+   passe en `screen`, l'opération inverse, qui éclaircit au lieu d'assombrir.
+
+   Au survol, l'encre s'éclaircit. La couleur passe par `--encre`, déclarée en
+   `@property` : sans cette déclaration, une couleur en variable saute d'une
+   valeur à l'autre au lieu de se fondre. C'est le prix du fondu.
+
+   Contrairement a fablab.egonux.com, l'accueil n'est pas exclu : ses
+   rubriques y sont des logotypes encadres, ici ce sont des liens ordinaires.
+
+   Les ancres de titre sont exclues elles aussi. Quartz pose au bout de chaque
+   titre un `a role="anchor"` qui ne contient qu'un pictogramme de lien : un
+   coup de surligneur sur une icône de dix-huit pixels ne donne qu'une tache.
+
+   L'accueil est exclu. Ses deux rubriques sont des liens dans un `article`,
+   mais rendues au logotype encadré du site : un coup de surligneur par-dessus
+   n'a aucun sens. Sa règle propre est plus spécifique sur le remplissage et
+   les angles, mais elle ne déclare ni fond en dégradé ni mode de fusion — ces
+   deux-là fuyaient donc sur les rubriques. D'où l'exclusion en toutes lettres
+   plutôt qu'une surcharge à rallonge côté accueil.
    -------------------------------------------------------------------------- */
 
-article a {
-  color: var(--dark);
-  text-decoration: underline;
+/* Le rouge du surligneur, à contre-emploi des thèmes : le papier reçoit le
+   rouge pâle de la palette sombre, le fond noir reçoit le rouge vif de la
+   palette claire. Sur papier, `--tertiary` était trop franc et tachait la
+   page ; sur fond noir, il était trop délavé pour se voir. Les deux sont
+   simplement échangés.
+
+   Ce sont les seules valeurs de la charte écrites en dur hors de
+   `quartz.config.ts` : elles y sont définies pour l'autre thème, et aucune
+   variable ne permet d'atteindre la palette opposée. À reporter ici si la
+   charte bouge. */
+:root {
+  --stabilo: #f8998f; /* le `tertiary` du thème sombre */
+}
+
+:root[saved-theme="dark"] {
+  --stabilo: #f44336; /* le `tertiary` du thème clair */
+}
+
+@property --encre {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: transparent;
+}
+
+article a:not([role="anchor"]),
+article a.internal:not([role="anchor"]) {
+  --encre: color-mix(in srgb, var(--stabilo) 52%, transparent);
+
+  color: inherit;
+  font-weight: inherit;
+  text-decoration: none;
+  background-color: transparent;
+
+  /* Le trait déborde d'un cheveu de chaque côté et les bouts sont inégaux :
+     un feutre ne s'arrête pas net, et ne repart jamais deux fois au même
+     endroit. Les quatre rayons diffèrent pour cette raison. */
+  padding: 0.1em 0.14em 0.12em;
+  border-radius: 0.14em 0.3em 0.2em 0.1em;
+
+  background-image: linear-gradient(
+    178.6deg,
+    transparent 0 12%,
+    var(--encre) 12% 94%,
+    transparent 94%
+  );
+
+  /* Chaque fragment d'un lien qui passe à la ligne reçoit sa propre bande,
+     ses propres bouts arrondis et son propre débordement. */
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+
+  mix-blend-mode: multiply;
+
+  transition: --encre 0.3s ease;
+}
+
+article a:not([role="anchor"]):hover,
+article a.internal:not([role="anchor"]):hover,
+article a:not([role="anchor"]):focus-visible,
+article a.internal:not([role="anchor"]):focus-visible {
+  --encre: color-mix(in srgb, var(--stabilo) 24%, transparent);
+}
+
+/* Sur fond noir, multiplier revient à peindre du noir sur du noir. `screen`
+   fait l'opération inverse — elle éclaircit — et rend au trait sa présence.
+   L'encre monte en proportion pour la même raison qu'ailleurs : le fond
+   sombre absorbe les teintes faibles bien plus vite que le papier. */
+:root[saved-theme="dark"] article a:not([role="anchor"]),
+:root[saved-theme="dark"] article a.internal:not([role="anchor"]) {
+  --encre: color-mix(in srgb, var(--stabilo) 34%, transparent);
+
+  mix-blend-mode: screen;
+}
+
+:root[saved-theme="dark"] article a:not([role="anchor"]):hover,
+:root[saved-theme="dark"]
+  body:not([data-slug="index"])
+  article
+  a.internal:not([role="anchor"]):hover,
+:root[saved-theme="dark"]
+  body:not([data-slug="index"])
+  article
+  a:not([role="anchor"]):focus-visible,
+:root[saved-theme="dark"]
+  body:not([data-slug="index"])
+  article
+  a.internal:not([role="anchor"]):focus-visible {
+  --encre: color-mix(in srgb, var(--stabilo) 16%, transparent);
+}
+
+/* Lien interne dont la cible n'existe pas encore : ni cartouche ni filet — il
+   n'y a rien à ouvrir. Le pointillé dit que la place est réservée. */
+article a.internal.broken,
+article a.internal.broken:hover {
+  color: var(--gray);
+  background-color: transparent;
+  background-image: none;
+  text-decoration: underline dotted;
   text-decoration-thickness: 1px;
   text-underline-offset: 0.22em;
-  text-decoration-color: var(--gray);
-  background-color: transparent;
-  padding: 0;
-  font-weight: inherit;
-}
-
-article a:hover {
-  color: var(--secondary);
-  text-decoration-color: var(--secondary);
-}
-
-/* Lien interne dont la cible n'existe pas encore : visiblement en attente */
-article a.internal.broken {
-  color: var(--gray);
-  text-decoration-style: dotted;
 }
 
 /* --------------------------------------------------------------------------

@@ -9,7 +9,8 @@ import Head from "./Head"
 import PageTitle from "./PageTitle"
 import ContentMeta from "./ContentMeta"
 import Spacer from "./Spacer"
-import LogoTraverse from "./LogoTraverse"
+import Logos from "./Logos"
+import Sommaire from "./Sommaire"
 import TableOfContents from "./TableOfContents"
 import Explorer from "./Explorer"
 import TagList from "./TagList"
@@ -36,7 +37,8 @@ export {
   PageTitle,
   ContentMeta,
   Spacer,
-  LogoTraverse,
+  Logos,
+  Sommaire,
   TableOfContents,
   Explorer,
   TagList,
