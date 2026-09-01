@@ -25,17 +25,17 @@ Quatre canaux se complètent, sans examen : la **production** (les objets, la ca
 Inauguration, défilé, émission en direct, repas servi, remise de trophées : chaque parcours se termine par un événement ouvert. Ce rendez-vous donne une échéance non négociable qui structure les dix jours, et une scène où les participants prennent la parole.
 
 ### 6. Des compétences transversales outillées
-Au-delà du geste technique, chaque projet fait travailler des compétences repérables et valorisables — communiquer, travailler en équipe, s'organiser, prendre des initiatives. Les badges et l'arbre de compétences en sont la traduction visible, mobilisable ensuite face à un employeur.
+Au-delà du geste technique, chaque projet fait travailler des compétences repérables et valorisables (communiquer, travailler en équipe, s'organiser, prendre des initiatives). Les badges et l'arbre de compétences en sont la traduction visible, mobilisable ensuite face à un employeur.
 
 ## Comment choisir
 
 Six questions à se poser pour présélectionner deux ou trois projets :
 
-- **Vos partenaires** — qui, sur le territoire, est déjà motivé ou facile à convaincre ?
-- **Votre bassin d'emploi** — quelles filières recrutent réellement autour de vous ?
-- **Votre équipement et vos compétences** — quelles machines tournent bien, que sait faire l'équipe ?
-- **Votre public** — âge, mixité, freins, appétences.
-- **La saison** — certains projets se jouent au printemps, d'autres en hiver.
-- **Le budget et les financements** — de 300 € à 2 400 € de matière ; le nerf de la guerre reste le temps d'encadrement.
+- **Vos partenaires** : qui, sur le territoire, est déjà motivé ou facile à convaincre ?
+- **Votre bassin d'emploi** : quelles filières recrutent réellement autour de vous ?
+- **Votre équipement et vos compétences** : quelles machines tournent bien, que sait faire l'équipe ?
+- **Votre public** : âge, mixité, freins, appétences.
+- **La saison** : certains projets se jouent au printemps, d'autres en hiver.
+- **Le budget et les financements** : de 300 € à 2 400 € de matière ; le nerf de la guerre reste le temps d'encadrement.
 
 Voir le [[comparatif|tableau comparatif]] pour trancher.

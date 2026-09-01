@@ -12,8 +12,7 @@ import { classNames } from "../util/lang"
  * À ne pas confondre avec le bandeau de {@link Marques}, en tête de fiche :
  * celui-ci dit la maison, celui-là le partenaire d'un projet précis.
  *
- * Au survol, chaque logo reprend le « soubresaut » de maquette.egonux.com —
- * un tremblement par pas discrets avec décalages rouge et jaune, qui imite un
+ * Au survol, chaque logo reprend le « soubresaut » de maquette.egonux.com : un tremblement par pas discrets avec décalages rouge et jaune, qui imite un
  * défaut de repérage d'impression. L'animation est décrite dans la feuille de
  * style.
  */
@@ -51,7 +50,7 @@ export default ((opts?: Partial<Options>) => {
       <div class={classNames(displayClass, "logos")}>
         {o.logos.map((logo, i) => (
           <Fragment key={logo.nom}>
-            {/* L'esperluette de Literata en italique — la police du corps
+            {/* L'esperluette de Literata en italique ; la police du corps
                 de texte, dont c'est le plus beau caractère. Un logotype
                 dessiné aurait fait une troisième marque entre deux marques ;
                 une ligature de labeur, elle, se contente de relier.

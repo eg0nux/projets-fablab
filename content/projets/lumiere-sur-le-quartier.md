@@ -4,7 +4,7 @@ title: Lumière sur le quartier
 
 ==Mobilier et signalétique urbaine. Les participants conçoivent et fabriquent du micro-mobilier urbain et de la signalétique pour un lieu réel de leur quartier, à la demande d'habitants, d'une mairie ou d'un bailleur social. Le quartier devient le client, le FabLab un bureau d'études et un atelier de production. Le résultat reste visible des années : chacun peut dire « ce banc, c'est moi ».==
 
-**Repères** — Originalité ★★★☆☆ · Accessibilité ★★★☆☆ · Polyvalence FabLab ★★★★☆ · Impact social ★★★★☆ · Ancrage territorial ★★★☆☆ · Coût matière ★★★☆☆
+**Repères** : Originalité ★★★☆☆ · Accessibilité ★★★☆☆ · Polyvalence FabLab ★★★★☆ · Impact social ★★★★☆ · Ancrage territorial ★★★☆☆ · Coût matière ★★★☆☆
 
 ## Objectifs
 - Remobiliser par un chantier concret, collectif et durablement visible dans l'espace public.

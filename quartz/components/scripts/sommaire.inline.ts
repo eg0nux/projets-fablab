@@ -2,7 +2,7 @@
  * Sommaire : jauge de progression et repère de section courante.
  *
  * Quartz marque d'un `in-view` toute entrée dont le titre est passé au-dessus
- * du bas de la fenêtre — c'est-à-dire tout ce qui a été lu, jamais où l'on se
+ * du bas de la fenêtre ; c'est-à-dire tout ce qui a été lu, jamais où l'on se
  * trouve. Il en faut deux choses de plus : la part de la page déjà parcourue,
  * et la seule section en cours.
  *
@@ -21,7 +21,7 @@ function borner(v: number, min: number, max: number) {
 }
 
 /**
- * Ajoute la jauge au bandeau, une fois. Le bandeau est un bouton — cliquer la
+ * Ajoute la jauge au bandeau, une fois. Le bandeau est un bouton : cliquer la
  * jauge replie donc le sommaire, ce qui est le comportement attendu de toute
  * la barre de titre.
  */

@@ -2,9 +2,9 @@
 title: Sous la halle
 ---
 
-==Ardoises, enseignes et présentoirs pour les marchés. Équiper les commerçants du marché couvert de Bergerac — la halle — et des marchés de villages : ardoises gravées, porte-étiquettes, présentoirs à gradins, caisses de présentation empilables, enseignes de stand. Dix jours pour rendre les étals plus beaux et découvrir de l'intérieur, dès l'aube, les métiers de bouche et du commerce de proximité, premiers recruteurs du quotidien.==
+==Ardoises, enseignes et présentoirs pour les marchés. Équiper les commerçants du marché couvert de Bergerac (la halle) et des marchés de villages : ardoises gravées, porte-étiquettes, présentoirs à gradins, caisses de présentation empilables, enseignes de stand. Dix jours pour rendre les étals plus beaux et découvrir de l'intérieur, dès l'aube, les métiers de bouche et du commerce de proximité, premiers recruteurs du quotidien.==
 
-**Repères** — Originalité ★★★☆☆ · Accessibilité ★★★★☆ · Polyvalence FabLab ★★★☆☆ · Impact social ★★★★☆ · Ancrage territorial ★★★★★ · Coût matière ★★★★★
+**Repères** : Originalité ★★★☆☆ · Accessibilité ★★★★☆ · Polyvalence FabLab ★★★☆☆ · Impact social ★★★★☆ · Ancrage territorial ★★★★★ · Coût matière ★★★★★
 
 ## Objectifs
 - Mener une vraie relation client de proximité : relever les besoins au stand, proposer, livrer, ajuster sur place.
@@ -28,7 +28,7 @@ title: Sous la halle
 Vendeur sur marché, primeur, fromager, boulanger, poissonnier, métiers de bouche et du commerce alimentaire de proximité, étalagiste : des métiers qui embauchent vite, forment sur le tas et tiennent la vie des centres-villes et des bourgs.
 
 > [!quote] Le temps fort
-> Le second matin de marché : tout est en place, et le groupe passe de stand en stand, reconnu, salué, remercié — leurs ardoises affichent les prix, leurs gradins portent les fraises. La ville entière voit leur travail chaque semaine ; peu de CV en disent aussi long.
+> Le second matin de marché : tout est en place, et le groupe passe de stand en stand, reconnu, salué, remercié ; leurs ardoises affichent les prix, leurs gradins portent les fraises. La ville entière voit leur travail chaque semaine ; peu de CV en disent aussi long.
 
 ## En pratique
 - **Budget matière indicatif** : 310 à 390 €.

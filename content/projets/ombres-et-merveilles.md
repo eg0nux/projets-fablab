@@ -2,12 +2,12 @@
 title: Ombres et merveilles
 ---
 
-==Kamishibaïs et théâtres d'ombres. Fabriquer des kamishibaïs — ces théâtres d'images japonais en bois qui s'ouvrent comme des retables — et des castelets d'ombres, puis écrire et illustrer une histoire du pays : la rivière, la vigne, une légende locale. Et partir en tournée la raconter, de l'école à l'EHPAD. La boîte protège celui qui raconte : on ose parler quand on est derrière le théâtre.==
+==Kamishibaïs et théâtres d'ombres. Fabriquer des kamishibaïs (ces théâtres d'images japonais en bois qui s'ouvrent comme des retables) et des castelets d'ombres, puis écrire et illustrer une histoire du pays : la rivière, la vigne, une légende locale. Et partir en tournée la raconter, de l'école à l'EHPAD. La boîte protège celui qui raconte : on ose parler quand on est derrière le théâtre.==
 
-**Repères** — Originalité ★★★★☆ · Accessibilité ★★★★☆ · Polyvalence FabLab ★★★★☆ · Impact social ★★★★☆ · Ancrage territorial ★★★★☆ · Coût matière ★★★★☆
+**Repères** : Originalité ★★★★☆ · Accessibilité ★★★★☆ · Polyvalence FabLab ★★★★☆ · Impact social ★★★★☆ · Ancrage territorial ★★★★☆ · Coût matière ★★★★☆
 
 ## Objectifs
-- Fabriquer simple et beau : un caisson, trois volets, des charnières — le kamishibaï est à la portée de tous dès le premier jour.
+- Fabriquer simple et beau : un caisson, trois volets, des charnières ; le kamishibaï est à la portée de tous dès le premier jour.
 - Travailler l'oral en douceur : le butaï fait écran, les rôles se partagent (voix, images, lumière), personne n'est seul en scène.
 - Créer un contenu culturel original et duplicable, qui reste en prêt à la médiathèque.
 - Vivre une vraie tournée : quatre publics différents en deux jours, du dortoir de la crèche au salon de l'EHPAD.
@@ -28,7 +28,7 @@ title: Ombres et merveilles
 Médiathécaire, animateur, ATSEM et métiers de la petite enfance, conteur et médiateur culturel, illustrateur : les médiathèques et les services enfance recrutent des profils à l'aise avec le récit et le groupe.
 
 > [!quote] Le temps fort
-> La tournée : quatre représentations en deux jours, devant des publics de trois à quatre-vingt-treize ans. Le même conte fait rire la crèche le matin et pleurer doucement l'EHPAD l'après-midi — et ceux qui n'osaient pas parler le premier jour tiennent la voix principale le dernier.
+> La tournée : quatre représentations en deux jours, devant des publics de trois à quatre-vingt-treize ans. Le même conte fait rire la crèche le matin et pleurer doucement l'EHPAD l'après-midi ; et ceux qui n'osaient pas parler le premier jour tiennent la voix principale le dernier.
 
 ## En pratique
 - **Budget matière indicatif** : 360 à 420 €.

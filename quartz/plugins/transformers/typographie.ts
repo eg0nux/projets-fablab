@@ -5,7 +5,7 @@ import { Root, Element, RootContent } from "hast"
  * Ponctuation française : espaces insécables automatiques.
  *
  * En français, la ponctuation double appelle une espace avant, et cette
- * espace doit être insécable — sans quoi le signe peut se retrouver seul en
+ * espace doit être insécable ; sans quoi le signe peut se retrouver seul en
  * début de ligne. Personne ne devrait avoir à saisir ces caractères à la
  * main dans Obsidian.
  *

@@ -9,7 +9,7 @@ const PageTitle: QuartzComponent = ({ fileData, cfg, displayClass }: QuartzCompo
 
   // Un titre de la forme « marque/section » se rend sur deux lignes : la
   // marque, puis la section sous elle, barre oblique comprise. La chaîne
-  // complète reste celle de la configuration — c'est la présentation qui
+  // complète reste celle de la configuration ; c'est la présentation qui
   // se dédouble, pas le contenu, et l'onglet comme le flux RSS gardent
   // « fablab/projets ». Un titre sans barre oblique est rendu tel quel.
   const coupure = title.indexOf("/")

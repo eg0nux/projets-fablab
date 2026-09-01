@@ -2,9 +2,9 @@
 title: Radio Fab
 ---
 
-==Média fabriqué. Construire physiquement un studio radio-podcast — enceintes, panneaux acoustiques, supports micros, table, habillage — puis produire une série d'émissions où les participants interviewent des professionnels du territoire. L'objet et la parole dans le même parcours : on fabrique l'outil, puis on s'en sert pour se faire entendre.==
+==Média fabriqué. Construire physiquement un studio radio-podcast (enceintes, panneaux acoustiques, supports micros, table, habillage), puis produire une série d'émissions où les participants interviewent des professionnels du territoire. L'objet et la parole dans le même parcours : on fabrique l'outil, puis on s'en sert pour se faire entendre.==
 
-**Repères** — Originalité ★★★★☆ · Accessibilité ★★☆☆☆ · Polyvalence FabLab ★★★★☆ · Impact social ★★★★☆ · Ancrage territorial ★★★☆☆ · Coût matière ★★★☆☆
+**Repères** : Originalité ★★★★☆ · Accessibilité ★★☆☆☆ · Polyvalence FabLab ★★★★☆ · Impact social ★★★★☆ · Ancrage territorial ★★★☆☆ · Coût matière ★★★☆☆
 
 ## Objectifs
 - Travailler massivement l'expression orale, compétence transversale décisive, par un média valorisant.

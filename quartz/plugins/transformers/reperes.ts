@@ -5,15 +5,15 @@ import { Root, Element, RootContent } from "hast"
  * Bloc « Repères » : des étoiles dans le markdown, des jauges à l'écran.
  *
  * Chaque fiche de parcours porte, sous son chapeau, une ligne de six
- * appréciations notées sur cinq. Elle s'écrit en clair dans Obsidian —
- * `**Repères** — Originalité ★★★★☆ · …` — parce que c'est là qu'on la
+ * appréciations notées sur cinq. Elle s'écrit en clair dans Obsidian
+ * (`**Repères** : Originalité ★★★★☆ · …`) parce que c'est là qu'on la
  * relit et qu'on l'ajuste, et que des étoiles s'y lisent d'un coup d'œil.
  *
  * À l'écran, ces mêmes étoiles tiennent mal : composées dans la serif du
  * corps de texte, elles se mêlent aux mots, et la ligne se replie au milieu
  * d'une paire critère-note. On les remplace donc par des segments dessinés
  * en CSS, disposés en grille : chaque repère reste d'un bloc, la notation
- * se compare colonne par colonne, et le tout survit au noir et blanc — un
+ * se compare colonne par colonne, et le tout survit au noir et blanc ; un
  * segment plein reste plein à l'impression.
  *
  * La transformation se fait à l'affichage : le markdown n'est pas touché.
@@ -26,9 +26,11 @@ const SEPARATEUR = /\s*·\s*/
 type Repere = { nom: string; note: number; total: number }
 
 function lireReperes(texte: string): Repere[] | null {
-  // Le tiret cadratin sépare l'étiquette de la série ; il peut être précédé
-  // d'une espace insécable, posée par le plugin de typographie.
-  const serie = texte.replace(/^[\s  ]*—[\s  ]*/, "")
+  // Le deux-points sépare l'étiquette de la série ; il est précédé d'une
+  // espace insécable, posée par le greffon de typographie. Le cadratin reste
+  // accepté : c'est la forme qu'avaient les fiches avant qu'on le bannisse du
+  // contenu, et une note ancienne doit continuer de s'afficher.
+  const serie = texte.replace(/^[\s  ]*[—:][\s  ]*/, "")
   if (serie === texte) return null
 
   const reperes: Repere[] = []

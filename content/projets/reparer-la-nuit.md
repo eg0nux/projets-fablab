@@ -4,7 +4,7 @@ title: Réparer la nuit
 
 ==Le ciel étoilé comme bien commun. La Dordogne possède l'un des ciels les plus purs de France, et des dizaines de communes pratiquent déjà l'extinction nocturne. Le groupe construit un télescope Dobson collectif, fabrique des photomètres pour cartographier la pollution lumineuse du secteur, monte une maquette d'éclairage raisonné à présenter aux mairies, et organise de bout en bout une Nuit des étoiles publique. Réparer la nuit, c'est rendre à tous un spectacle gratuit.==
 
-**Repères** — Originalité ★★★★★ · Accessibilité ★★☆☆☆ · Polyvalence FabLab ★★★★★ · Impact social ★★★☆☆ · Ancrage territorial ★★★★☆ · Coût matière ★★☆☆☆
+**Repères** : Originalité ★★★★★ · Accessibilité ★★☆☆☆ · Polyvalence FabLab ★★★★★ · Impact social ★★★☆☆ · Ancrage territorial ★★★★☆ · Coût matière ★★☆☆☆
 
 ## Objectifs
 - Rendre tangible un bien commun invisible : la nuit noire, sa faune, son ciel.

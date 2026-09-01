@@ -2,15 +2,15 @@
 title: Passe à ton voisin
 ---
 
-==Boîtes à livres, grainothèques et boîtes à dons. Essaimer dans les villages du Bergeracois de petites architectures du partage : boîtes à livres sur les places, grainothèques dans les médiathèques, boîtes à dons près des écoles. Un même caisson bien conçu, décliné en série et posé en tournée — et le jeu d'enfant devient un service public de poche.==
+==Boîtes à livres, grainothèques et boîtes à dons. Essaimer dans les villages du Bergeracois de petites architectures du partage : boîtes à livres sur les places, grainothèques dans les médiathèques, boîtes à dons près des écoles. Un même caisson bien conçu, décliné en série et posé en tournée ; et le jeu d'enfant devient un service public de poche.==
 
-**Repères** — Originalité ★★★☆☆ · Accessibilité ★★★★☆ · Polyvalence FabLab ★★★☆☆ · Impact social ★★★★☆ · Ancrage territorial ★★★★☆ · Coût matière ★★★☆☆
+**Repères** : Originalité ★★★☆☆ · Accessibilité ★★★★☆ · Polyvalence FabLab ★★★☆☆ · Impact social ★★★★☆ · Ancrage territorial ★★★★☆ · Coût matière ★★★☆☆
 
 ## Objectifs
-- Réussir une production en petite série : un modèle, des gabarits, des postes — l'organisation d'atelier comme apprentissage central.
+- Réussir une production en petite série : un modèle, des gabarits, des postes ; l'organisation d'atelier comme apprentissage central.
 - Mailler le territoire : chaque binôme mène son micro-projet complet, de la demande du maire à la pose.
 - Créer du lien avec la lecture publique et le monde associatif local.
-- Fabriquer durable : étanchéité, lasure, pieds hors sol — des gestes simples mais faits sérieusement.
+- Fabriquer durable : étanchéité, lasure, pieds hors sol ; des gestes simples mais faits sérieusement.
 
 ## Ce que l'on fabrique
 - Des boîtes à livres d'extérieur : caisson en contreplaqué marine, porte vitrée en plexi, toit débordant, pieds ou fixation murale, signalétique gravée.

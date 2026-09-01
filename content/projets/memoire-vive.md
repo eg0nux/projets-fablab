@@ -2,9 +2,9 @@
 title: Mémoire vive
 ---
 
-==Les bancs qui racontent. Le nom dit tout : la mémoire vive des machines, la mémoire vivante d'un territoire qui vieillit. Les participants fabriquent des bornes d'écoute solaires — un banc, un bouton, une voix — installées au marché couvert de Bergerac et dans les villages, puis collectent ce qu'elles diffuseront : souvenirs des derniers gabariers, du temps du tabac, de la Poudrerie, mots d'occitan, récits recueillis en EHPAD. Les aînés deviennent les auteurs ; les participants, leurs éditeurs et leurs fabricants.==
+==Les bancs qui racontent. Le nom dit tout : la mémoire vive des machines, la mémoire vivante d'un territoire qui vieillit. Les participants fabriquent des bornes d'écoute solaires (un banc, un bouton, une voix) installées au marché couvert de Bergerac et dans les villages, puis collectent ce qu'elles diffuseront : souvenirs des derniers gabariers, du temps du tabac, de la Poudrerie, mots d'occitan, récits recueillis en EHPAD. Les aînés deviennent les auteurs ; les participants, leurs éditeurs et leurs fabricants.==
 
-**Repères** — Originalité ★★★★★ · Accessibilité ★★★☆☆ · Polyvalence FabLab ★★★★★ · Impact social ★★★★★ · Ancrage territorial ★★★★★ · Coût matière ★★☆☆☆
+**Repères** : Originalité ★★★★★ · Accessibilité ★★★☆☆ · Polyvalence FabLab ★★★★★ · Impact social ★★★★★ · Ancrage territorial ★★★★★ · Coût matière ★★☆☆☆
 
 ## Objectifs
 - Créer du lien intergénérationnel réel : la collecte oblige à écouter longtemps, et bien.

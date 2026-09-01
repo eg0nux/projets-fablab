@@ -2,9 +2,9 @@
 title: Réparer le vivant
 ---
 
-==Biodiversité fabriquée. Fabriquer des refuges pour la faune locale — nichoirs, hôtels à insectes, gîtes à chauves-souris, abris à hérissons — instrumentés avec des capteurs simples, puis les installer avec des naturalistes et suivre les données dans le temps. Le bois rencontre l'électronique, et le FabLab se met au service du vivant qui entoure les participants.==
+==Biodiversité fabriquée. Fabriquer des refuges pour la faune locale (nichoirs, hôtels à insectes, gîtes à chauves-souris, abris à hérissons) instrumentés avec des capteurs simples, puis les installer avec des naturalistes et suivre les données dans le temps. Le bois rencontre l'électronique, et le FabLab se met au service du vivant qui entoure les participants.==
 
-**Repères** — Originalité ★★★★☆ · Accessibilité ★★★☆☆ · Polyvalence FabLab ★★★★★ · Impact social ★★★★☆ · Ancrage territorial ★★★☆☆ · Coût matière ★★★☆☆
+**Repères** : Originalité ★★★★☆ · Accessibilité ★★★☆☆ · Polyvalence FabLab ★★★★★ · Impact social ★★★★☆ · Ancrage territorial ★★★☆☆ · Coût matière ★★★☆☆
 
 ## Objectifs
 - Relier fabrication numérique et nature : montrer que la technique peut servir la biodiversité.

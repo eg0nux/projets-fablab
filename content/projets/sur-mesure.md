@@ -2,9 +2,9 @@
 title: Sur mesure
 ---
 
-==Textile, réemploi et confection. Monter une micro-collection à partir de textiles récupérés — vêtements de travail, bâches publicitaires, chutes et invendus — en combinant machines à coudre, brodeuse numérique et découpe laser sur tissu, jusqu'au défilé ou à la vente solidaire. Le FabLab devient un atelier de mode circulaire.==
+==Textile, réemploi et confection. Monter une micro-collection à partir de textiles récupérés (vêtements de travail, bâches publicitaires, chutes et invendus) en combinant machines à coudre, brodeuse numérique et découpe laser sur tissu, jusqu'au défilé ou à la vente solidaire. Le FabLab devient un atelier de mode circulaire.==
 
-**Repères** — Originalité ★★★☆☆ · Accessibilité ★★★☆☆ · Polyvalence FabLab ★★★☆☆ · Impact social ★★★★☆ · Ancrage territorial ★★★☆☆ · Coût matière ★★★★☆
+**Repères** : Originalité ★★★☆☆ · Accessibilité ★★★☆☆ · Polyvalence FabLab ★★★☆☆ · Impact social ★★★★☆ · Ancrage territorial ★★★☆☆ · Coût matière ★★★★☆
 
 ## Objectifs
 - Faire découvrir la filière textile en pleine réindustrialisation (relocalisation, réemploi, loi AGEC).
@@ -28,7 +28,7 @@ title: Sur mesure
 Couturier industriel, mécanicien en confection, retoucheur, modéliste, maroquinier, opérateur de tri textile, responsable d'atelier. La filière recrute et se réorganise autour du réemploi : les débouchés sont réels et locaux.
 
 > [!quote] Le temps fort
-> Le défilé — porté par les participants eux-mêmes ou des volontaires — ou la vente solidaire dont la recette va à une association choisie par le groupe. Les photos du shooting constituent un portfolio que chacun emporte.
+> Le défilé (porté par les participants eux-mêmes ou des volontaires) ou la vente solidaire dont la recette va à une association choisie par le groupe. Les photos du shooting constituent un portfolio que chacun emporte.
 
 ## En pratique
 - **Budget matière indicatif** : 250 à 950 € selon l'équipement déjà disponible

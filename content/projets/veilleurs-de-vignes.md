@@ -2,9 +2,9 @@
 title: Veilleurs de vignes
 ---
 
-==Sentinelles antigel pour les vignerons. Depuis les gelées noires d'avril 2021, chaque printemps est une veille angoissée à Monbazillac comme en Pécharmant. Les participants fabriquent un réseau de sentinelles low-cost — température au ras des ceps, alerte téléphonique, balise lumineuse — installées chez trois ou quatre vignerons, complété par des gîtes à chauves-souris pour la lutte biologique contre les vers de la grappe. Le FabLab monte la garde avec la première filière du Bergeracois.==
+==Sentinelles antigel pour les vignerons. Depuis les gelées noires d'avril 2021, chaque printemps est une veille angoissée à Monbazillac comme en Pécharmant. Les participants fabriquent un réseau de sentinelles low-cost (température au ras des ceps, alerte téléphonique, balise lumineuse) installées chez trois ou quatre vignerons, complété par des gîtes à chauves-souris pour la lutte biologique contre les vers de la grappe. Le FabLab monte la garde avec la première filière du Bergeracois.==
 
-**Repères** — Originalité ★★★★★ · Accessibilité ★★★☆☆ · Polyvalence FabLab ★★★★☆ · Impact social ★★★★☆ · Ancrage territorial ★★★★★ · Coût matière ★★★☆☆
+**Repères** : Originalité ★★★★★ · Accessibilité ★★★☆☆ · Polyvalence FabLab ★★★★☆ · Impact social ★★★★☆ · Ancrage territorial ★★★★★ · Coût matière ★★★☆☆
 
 ## Objectifs
 - Mettre la technique au service d'une urgence locale réelle et récente : le gel de printemps.

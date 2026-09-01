@@ -2,7 +2,7 @@
 @use "./fonts.scss";
 
 /* ==========================================================================
-   Charte lab.egonux.com — régime « fiche », partagé avec fablab.egonux.com
+   Charte lab.egonux.com : régime « fiche », partagé avec fablab.egonux.com
 
    Ce fichier est le jumeau de celui de fablab.egonux.com : mêmes polices,
    même palette, mêmes marqueurs. Deux ajouts lui sont propres, en fin de
@@ -37,7 +37,7 @@ article {
 }
 
 /* --------------------------------------------------------------------------
-   Titres en monospace — la signature du régime fiche
+   Titres en monospace ; la signature du régime fiche
 
    Le monospace à grande taille occupe la largeur et impose un rythme ; c'est
    ce qui distingue la fiche de l'article courant, sans recourir à la couleur.
@@ -80,7 +80,7 @@ h6,
   line-height: 1.15;
 
   /* Deux déclinaisons, portées par les variables de thème : encadré à
-     l'encre sur fond clair — c'est la version gravure — et en crème sur
+     l'encre sur fond clair (c'est la version gravure) et en crème sur
      fond sombre. Le trait de 2px est celui du sommaire et du chapeau. */
   border: 2px solid var(--dark);
   border-radius: 2px;
@@ -126,7 +126,7 @@ h6,
   color: var(--secondary);
 }
 
-/* Recherche : strictement le même traitement que le logotype — bordure de
+/* Recherche : strictement le même traitement que le logotype : bordure de
    2px à l'encre, fond transparent, angles à 2px, JetBrains Mono, accolades
    rouges. Seule la taille diffère, pour que la recherche ne concurrence pas
    le titre du site. */
@@ -144,7 +144,7 @@ h6,
 }
 
 /* La loupe, en rouge : c'est le seul signe qui distingue la recherche du
-   logotype, puisque tout le reste — bordure, angles, police — est commun. */
+   logotype, puisque tout le reste (bordure, angles, police) est commun. */
 .search > .search-button svg {
   display: block;
   width: 15px;
@@ -221,7 +221,7 @@ h6,
    Le h1 sort du système de marqueurs en gouttière : son dièse n'est plus une
    annotation de marge mais un motif de fond, haut de deux lignes. Le titre
    est décalé vers la droite juste assez pour que sa première lettre morde
-   sur le dièse — le chevauchement fait tenir les deux éléments ensemble ;
+   sur le dièse ; le chevauchement fait tenir les deux éléments ensemble ;
    sans lui, on lirait un symbole puis un titre, côte à côte et sans rapport.
 
    Le dièse passe derrière le texte par `z-index: -1`, ce qui suppose que le
@@ -236,8 +236,8 @@ h1.article-title {
   padding-left: 0.62em;
 }
 
-/* Le croisillon écrit dans un titre — celui qui sépare le nom du millésime
-   sur l'accueil — prend le rouge des marqueurs de balisage en gouttière. Sur
+/* Le croisillon écrit dans un titre (celui qui sépare le nom du millésime
+   sur l'accueil) prend le rouge des marqueurs de balisage en gouttière. Sur
    ce site le # est un signe de structure : il serait incohérent qu'il passe à
    l'encre du seul fait d'entrer dans un titre. À ne pas confondre avec le
    dièse en filigrane ci-dessous, qui est décoratif. */
@@ -294,7 +294,7 @@ article h4 {
 /* Le marqueur reste DANS le flux, en début de première ligne : c'est la
    seule façon d'obtenir un alignement exact sur la ligne de base, puisqu'un
    pseudo-élément en position absolue est calé par les navigateurs sur le
-   haut de la ligne et non sur sa ligne de base — d'où le marqueur perché
+   haut de la ligne et non sur sa ligne de base ; d'où le marqueur perché
    quand son corps est plus petit que celui du titre.
 
    Le débord dans la marge est obtenu par un retrait suspendu : marge
@@ -388,7 +388,7 @@ article h4::before {
 
 /* Explorateur : tout en monospace, dossiers comme fichiers. Quartz ne
    composait que les titres de dossier dans la police de titre, laissant les
-   pages en Literata — deux polices dans une même liste de navigation, ça se
+   pages en Literata : deux polices dans une même liste de navigation, ça se
    voit et ça se lit mal. */
 .explorer,
 .explorer button,
@@ -402,7 +402,7 @@ article h4::before {
 
 /* Noms de dossiers et titre de l'explorateur en capitales : même registre
    que /SOMMAIRE et le fil d'Ariane. Ce sont des étiquettes de navigation,
-   pas du texte — les titres de pages, eux, gardent leur casse. */
+   pas du texte ; les titres de pages, eux, gardent leur casse. */
 .explorer .folder-title,
 .explorer button > h2,
 .explorer .explorer-toggle > h2 {
@@ -464,8 +464,8 @@ article h4::before {
    largeur égale aurait écrasé l'un des deux.
 
    Au survol, le « soubresaut » repris de maquette.egonux.com : un tremblement
-   par pas discrets — d'où `steps(1, end)`, qui saute d'une image à l'autre au
-   lieu d'interpoler — avec décalages rouge et jaune imitant un défaut de
+   par pas discrets (d'où `steps(1, end)`, qui saute d'une image à l'autre au
+   lieu d'interpoler) avec décalages rouge et jaune imitant un défaut de
    repérage d'impression.
    -------------------------------------------------------------------------- */
 
@@ -481,7 +481,7 @@ article h4::before {
   margin-bottom: 1.4rem;
 }
 
-/* Cormorant Garamond, italique, réduite au seul caractère « & » — mille cent
+/* Cormorant Garamond, italique, réduite au seul caractère « & » : mille cent
    quatre octets. La police n'est appelée que pour ce signe, jamais pour du
    texte : c'est ce qui rend le sous-ensemble acceptable là où embarquer une
    quatrième famille complète ne le serait pas. Le fichier est sous licence
@@ -494,9 +494,9 @@ article h4::before {
 
    En encre, pas en rouge : `--dark` est le noir du thème clair et la crème du
    thème sombre, donc le signe s'inverse tout seul. C'est la couleur des
-   titres — le rouge reste aux accolades, aux chapeaux et aux liens.
+   titres ; le rouge reste aux accolades, aux chapeaux et aux liens.
 
-   Aligné bas, pas au milieu. Les deux logotypes ont leur masse en bas — le
+   Aligné bas, pas au milieu. Les deux logotypes ont leur masse en bas ; le
    cartouche « Dordogne » d'un côté, le mot « LA TRAVERSE » de l'autre,
    surmonté d'une arche qui n'est que du vide optique. Centré sur la boîte,
    le signe flottait au-dessus de cette ligne-là.
@@ -593,7 +593,7 @@ article h4::before {
 
 /* Respecte le réglage système : une animation en boucle peut gêner, voire
    déclencher des troubles vestibulaires. On ne supprime pas l'effet pour
-   autant — on lui retire seulement le mouvement, en gardant le décalage
+   autant ; on lui retire seulement le mouvement, en gardant le décalage
    chromatique qui fait tout son sel. */
 @media (prefers-reduced-motion: reduce) {
   .logos .logo:hover img,
@@ -603,7 +603,7 @@ article h4::before {
   }
 }
 
-/* Le repli de mouvement réduit réécrit le `filter` lui aussi — même piège que
+/* Le repli de mouvement réduit réécrit le `filter` lui aussi : même piège que
    l'animation, et il fallait donc la même parade. Sans cette règle, le
    logotype du CIDFF retrouvait ses couleurs au survol chez qui demande moins
    d'animation, c'est-à-dire précisément là où le survol ne bouge pas et où la
@@ -615,12 +615,12 @@ article h4::before {
   }
 }
 
-/* Le logotype du CIDFF est le seul en couleur de la rangée — La Traverse est
+/* Le logotype du CIDFF est le seul en couleur de la rangée ; La Traverse est
    déjà dessiné en noir. Sur papier, ce turquoise et cet orange faisaient une
    tache isolée, le seul endroit de la page où la couleur ne dit rien : le
    rouge de la charte est ailleurs, réservé aux accents.
 
-   `brightness(0)` aplatit tout sur du noir en gardant la transparence — c'est
+   `brightness(0)` aplatit tout sur du noir en gardant la transparence ; c'est
    la première moitié de ce que fait déjà le thème sombre avant d'inverser.
    On cible par le fichier plutôt que par un libellé : le nom de la structure
    peut changer, le fichier non.
@@ -678,7 +678,7 @@ article h4::before {
 
    Deux traitements, parce que les deux rangées ne disent pas la même chose.
 
-   **Les logos des structures passent en blanc plein** — `brightness(0)`
+   **Les logos des structures passent en blanc plein** : `brightness(0)`
    aplatit tout sur du noir en gardant la transparence, `invert(1)` le
    retourne en blanc. La même paire de filtres convient au logotype noir de
    La Traverse et au logotype en couleurs du CIDFF : côte à côte dans la
@@ -762,13 +762,12 @@ article h4::before {
    y est marquée d'un segment rouge plein. La position ne se devine plus à une
    nuance de gris : elle se voit.
 
-   Jauge, pourcentage et repère sont posés par `scripts/sommaire.inline.ts` —
-   Quartz ne calcule ni l'un ni l'autre. Son `in-view` marque tout ce qui est
+   Jauge, pourcentage et repère sont posés par `scripts/sommaire.inline.ts` ; Quartz ne calcule ni l'un ni l'autre. Son `in-view` marque tout ce qui est
    passé au-dessus du bas de la fenêtre, c'est-à-dire ce qui a été lu, jamais
    où l'on se trouve.
 
    Note pour plus tard : les règles précédentes visaient `#toc-content`, un
-   identifiant qui n'existe pas — Quartz numérote les siens (`list-4`) et ne
+   identifiant qui n'existe pas : Quartz numérote les siens (`list-4`) et ne
    laisse que la classe `toc-content`. Elles n'ont donc jamais rien fait, et
    c'est la feuille de Quartz qu'on voyait à l'œuvre.
    -------------------------------------------------------------------------- */
@@ -780,7 +779,7 @@ article h4::before {
 }
 
 /* Le bandeau : libellé, jauge, pourcentage, chevron de repli. C'est un
-   bouton — cliquer la jauge replie donc le sommaire, ce qu'on attend de
+   bouton : cliquer la jauge replie donc le sommaire, ce qu'on attend de
    toute barre de titre. */
 .toc > button.toc-header {
   width: 100%;
@@ -846,7 +845,7 @@ article h4::before {
    Quartz pose `padding: 0` sur `ul.toc-content.overflow`, sélecteur plus
    spécifique que le nôtre : inutile de lutter sur le remplissage de la liste.
    Le rail devient donc un calque tracé dans la liste, et c'est le lien qui
-   prend son retrait — le texte se décolle du filet sans qu'on ait à toucher
+   prend son retrait ; le texte se décolle du filet sans qu'on ait à toucher
    à la boîte.
 
    Ce détour règle aussi la barre de défilement horizontale : `overflow-y:
@@ -890,7 +889,7 @@ article h4::before {
 
 /* Les entrées passent en Literata. Elles étaient en monospace, héritée de la
    colonne : bon pour une étiquette de navigation d'un ou deux mots, mauvais
-   pour « Les trois gestes qui évitent les ratés » — la monospace y chasse
+   pour « Les trois gestes qui évitent les ratés » ; la monospace y chasse
    trop large et casse la ligne. Le libellé `/SOMMAIRE` reste en monospace,
    lui : c'est une étiquette, pas une phrase.
 
@@ -909,7 +908,7 @@ article h4::before {
   line-height: 1.5;
   /* L'encre du thème, à peine éclaircie vers son papier. Une seule formule
      pour les deux : `--dark` est le noir sur papier et le crème sur fond
-     noir, `--light` l'inverse — le mélange s'inverse donc avec eux, sans
+     noir, `--light` l'inverse ; le mélange s'inverse donc avec eux, sans
      règle propre au thème sombre.
 
      Le gris de la palette était un mauvais choix : trop pâle sur papier, trop
@@ -934,7 +933,7 @@ article h4::before {
    disent à quoi sert la chose, sans titre.
 
    Le surlignage épouse les lignes du texte, bord droit irrégulier compris,
-   exactement comme une sélection — un fond de bloc rectangulaire donnerait
+   exactement comme une sélection ; un fond de bloc rectangulaire donnerait
    un encadré de couleur, ce qui n'est pas la même chose. Techniquement il
    faut donc un élément en ligne : le chapeau s'écrit `==comme ceci==` dans
    le markdown, ce qui produit un span .text-highlight. La bordure noire
@@ -954,7 +953,7 @@ article > p:first-of-type:has(.text-highlight) {
 
 article > p:first-of-type .text-highlight {
   /* Le fond d'un élément en ligne couvre la zone de contenu de la police,
-     qui déborde largement la hauteur des lettres — ni le remplissage ni
+     qui déborde largement la hauteur des lettres ; ni le remplissage ni
      l'interligne ne peuvent la réduire. On peint donc un dégradé qui ne
      colore qu'une tranche de cette zone : la bande épouse alors le texte,
      comme un trait de surligneur. Les bornes 20 % et 88 % sont les bords
@@ -976,8 +975,8 @@ article > p:first-of-type .text-highlight {
   -webkit-box-decoration-break: clone;
 }
 
-/* En thème sombre, le surlignage prend le rouge vif de la palette sombre —
-   `--secondary`, et non `--tertiary` qui en est la version pâle — à forte
+/* En thème sombre, le surlignage prend le rouge vif de la palette sombre
+   (`--secondary`, et non `--tertiary` qui en est la version pâle), à forte
    opacité, sinon le fond noir le délave.
 
    Conséquence : le texte doit repasser en sombre. Sur un rouge aussi
@@ -995,7 +994,7 @@ article > p:first-of-type .text-highlight {
    derrière. C'est ce qui lui permet de suivre le retour à la ligne : avec
    `box-decoration-break: clone`, chaque fragment reçoit sa bande, bouts
    arrondis compris. Un calque en `position: absolute` donnait un plus beau
-   biais mais s'arrêtait à la première ligne — et sur ce site, la moitié des
+   biais mais s'arrêtait à la première ligne ; et sur ce site, la moitié des
    liens sont des titres de fichiers ou d'ouvrages qui débordent.
 
    Le biais vient de l'angle du dégradé. À 178,6° la ligne de dégradé est
@@ -1003,7 +1002,7 @@ article > p:first-of-type .text-highlight {
    elles penchent d'un degré et demi. Ni transformation, ni calque.
 
    `mix-blend-mode: multiply` fait le reste. C'est lui qui donne l'encre : la
-   bande ne recouvre pas le texte, elle s'y multiplie — une lettre sous le
+   bande ne recouvre pas le texte, elle s'y multiplie ; une lettre sous le
    trait s'assombrit au lieu de disparaître, exactement comme sous un feutre.
    Le texte reste donc lisible sans qu'on ait à lui forcer une couleur.
 
@@ -1024,7 +1023,7 @@ article > p:first-of-type .text-highlight {
    L'accueil est exclu. Ses deux rubriques sont des liens dans un `article`,
    mais rendues au logotype encadré du site : un coup de surligneur par-dessus
    n'a aucun sens. Sa règle propre est plus spécifique sur le remplissage et
-   les angles, mais elle ne déclare ni fond en dégradé ni mode de fusion — ces
+   les angles, mais elle ne déclare ni fond en dégradé ni mode de fusion : ces
    deux-là fuyaient donc sur les rubriques. D'où l'exclusion en toutes lettres
    plutôt qu'une surcharge à rallonge côté accueil.
    -------------------------------------------------------------------------- */
@@ -1093,7 +1092,7 @@ article a.internal:not([role="anchor"]):focus-visible {
 }
 
 /* Sur fond noir, multiplier revient à peindre du noir sur du noir. `screen`
-   fait l'opération inverse — elle éclaircit — et rend au trait sa présence.
+   fait l'opération inverse (elle éclaircit) et rend au trait sa présence.
    L'encre monte en proportion pour la même raison qu'ailleurs : le fond
    sombre absorbe les teintes faibles bien plus vite que le papier. */
 :root[saved-theme="dark"] article a:not([role="anchor"]),
@@ -1119,7 +1118,7 @@ article a.internal:not([role="anchor"]):focus-visible {
   --encre: color-mix(in srgb, var(--stabilo) 16%, transparent);
 }
 
-/* Lien interne dont la cible n'existe pas encore : ni cartouche ni filet — il
+/* Lien interne dont la cible n'existe pas encore : ni cartouche ni filet ; il
    n'y a rien à ouvrir. Le pointillé dit que la place est réservée. */
 article a.internal.broken,
 article a.internal.broken:hover {
@@ -1182,14 +1181,14 @@ article tbody tr:nth-child(even) {
    Codes couleur affichés dans leur couleur
 
    La pastille n'est pas décorative : certaines couleurs pures sont
-   illisibles en texte sur fond clair — le vert citron #00FF00 tombe à
+   illisibles en texte sur fond clair ; le vert citron #00FF00 tombe à
    1,3:1 de contraste, là où il en faudrait 4,5. La pastille, elle, reste
    parfaitement identifiable, et son filet sombre fait tenir aussi bien le
    blanc que le noir.
    -------------------------------------------------------------------------- */
 
 /* La teinte affichée n'est pas la couleur brute : les primaires pures sont
-   criardes à côté d'une palette sourde, et certaines sont illisibles — le
+   criardes à côté d'une palette sourde, et certaines sont illisibles ; le
    vert citron #00FF00 tombe à 1,3:1 de contraste sur fond clair. On les
    ramène donc vers l'encre, ce qui préserve la teinte (un rouge reste un
    rouge) en assourdissant la saturation et en garantissant le contraste.
@@ -1203,7 +1202,7 @@ article tbody tr:nth-child(even) {
 /* La couleur est portée par une pastille pastel, pas par le texte.
 
    Deux raisons. D'abord l'accord : les primaires pures détonnent à côté
-   d'une palette de crème et de pêche, alors qu'un pastel s'y fond — c'est
+   d'une palette de crème et de pêche, alors qu'un pastel s'y fond ; c'est
    la même famille de teintes que #edd1b0 et #eddd6e. Ensuite la lisibilité :
    un texte pastel sur fond clair est illisible par construction, et un
    texte assourdi vers l'encre vire au brun ou à l'olive. Le texte reste
@@ -1252,7 +1251,7 @@ article tbody tr:nth-child(even) {
    -------------------------------------------------------------------------- */
 
 /* Deux registres, pas douze. Quartz attribue une couleur à chacun de ses
-   types — vert pour tip, bleu pour note, orange pour warning — ce qui pose un
+   types (vert pour tip, bleu pour note, orange pour warning) ce qui pose un
    arc-en-ciel sur une charte qui n'a que de l'encre et un rouge. On ramène
    donc tout à l'encre, et on garde le rouge pour ce qui alerte : sur une
    fiche, un encadré rouge doit vouloir dire quelque chose.
@@ -1274,7 +1273,7 @@ article tbody tr:nth-child(even) {
 }
 
 /* Le temps fort d'un parcours est un récit, pas une consigne : filet à
-   l'encre comme les autres, mais le corps passe en italique — c'est le seul
+   l'encre comme les autres, mais le corps passe en italique ; c'est le seul
    endroit du site où l'on raconte une scène. */
 .callout[data-callout="quote"] .callout-content {
   font-style: italic;
@@ -1325,7 +1324,7 @@ article tbody tr:nth-child(even) {
 
    La mention de Quartz et le lien de contact sont de la signalétique, pas du
    contenu : ils doivent se lire si on les cherche et s'effacer sinon. D'où
-   le corps réduit, le gris, et la mise sur une seule ligne — la liste de
+   le corps réduit, le gris, et la mise sur une seule ligne ; la liste de
    liens que Quartz place en dessous remonte à côté du texte.
    -------------------------------------------------------------------------- */
 
@@ -1354,7 +1353,7 @@ footer ul {
   gap: 0.6rem;
 }
 
-/* Croisillon de séparation entre les mentions du pied de page — le motif de
+/* Croisillon de séparation entre les mentions du pied de page ; le motif de
    maquette.egonux.com, repris ici. Posé en pseudo-élément sur chaque entrée
    de la liste : le premier sépare aussi la mention de Quartz du reste, et
    rien ne s'ajoute au DOM. Rouge pâli : ça ponctue sans attirer l'œil. */
@@ -1384,8 +1383,8 @@ footer a:hover {
    de machine dit en un instant ce qu'un paragraphe peine à expliquer.
 
    Cadre de 2px à l'encre, comme le sommaire et le chapeau. Il fait plus que
-   décorer : beaucoup de photos d'atelier ont des fonds clairs — un plateau,
-   un mur blanc, du contreplaqué — et sans cadre elles se dissolvent dans la
+   décorer : beaucoup de photos d'atelier ont des fonds clairs (un plateau,
+   un mur blanc, du contreplaqué) et sans cadre elles se dissolvent dans la
    page.
 
    Légende : un paragraphe en italique placé juste après l'image. C'est une
@@ -1394,7 +1393,7 @@ footer a:hover {
 
 /* Sur écran large, la photo est habillée par le texte : elle flotte à
    droite sur deux cinquièmes de la colonne. Une illustration de machine se
-   consulte du coin de l'œil pendant qu'on lit la procédure — la placer en
+   consulte du coin de l'œil pendant qu'on lit la procédure ; la placer en
    pleine largeur coupe la lecture en deux, et la moitié de la colonne lui
    donnait encore trop de poids face au texte.
 
@@ -1410,7 +1409,7 @@ article p:has(> img:only-child) + p:has(> em:only-child) {
   width: 40%;
   /* Gouttière en rem, jamais en em : la règle suivante annule l'interligne
      du paragraphe de l'image, et un em s'y calculerait sur une taille de
-     police locale — le texte viendrait alors coller le cadre. */
+     police locale ; le texte viendrait alors coller le cadre. */
   margin: 0 0 0 1.8rem;
 }
 
@@ -1722,7 +1721,7 @@ article code {
   }
 
   /* Codes couleur : le texte repasse en noir, la pastille garde sa teinte
-     — imprimée en gris, elle continue de distinguer les lignes entre elles. */
+     imprimée en gris, elle continue de distinguer les lignes entre elles. */
   .code-couleur,
   .ligne-couleur td:first-child {
     color: #000;
@@ -1732,7 +1731,7 @@ article code {
     border-color: #000;
   }
 
-  /* Les jauges : plein à l'encre, vide en filet clair — la comparaison tient
+  /* Les jauges : plein à l'encre, vide en filet clair ; la comparaison tient
      encore sur une feuille en noir et blanc. */
   .repere-jauge i {
     background-color: #ddd;

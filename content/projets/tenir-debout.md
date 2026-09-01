@@ -2,9 +2,9 @@
 title: Tenir debout
 ---
 
-==Pierre sèche et patrimoine numérisé. L'art de la pierre sèche est inscrit au patrimoine immatériel de l'UNESCO : des murs et des cabanes qui tiennent sans ciment, par le seul agencement juste des pierres — difficile de trouver plus belle image d'un collectif qui se reconstruit. Le groupe restaure un mur ou une cabane du Bergeracois avec un murailler professionnel, puis le FabLab prend le relais : relevé en photogrammétrie au smartphone, maquettes imprimées en 3D, sentier d'interprétation gravé, lapidarium numérique en ligne.==
+==Pierre sèche et patrimoine numérisé. L'art de la pierre sèche est inscrit au patrimoine immatériel de l'UNESCO : des murs et des cabanes qui tiennent sans ciment, par le seul agencement juste des pierres ; difficile de trouver plus belle image d'un collectif qui se reconstruit. Le groupe restaure un mur ou une cabane du Bergeracois avec un murailler professionnel, puis le FabLab prend le relais : relevé en photogrammétrie au smartphone, maquettes imprimées en 3D, sentier d'interprétation gravé, lapidarium numérique en ligne.==
 
-**Repères** — Originalité ★★★★★ · Accessibilité ★★☆☆☆ · Polyvalence FabLab ★★★★☆ · Impact social ★★★★☆ · Ancrage territorial ★★★★★ · Coût matière ★★★☆☆
+**Repères** : Originalité ★★★★★ · Accessibilité ★★☆☆☆ · Polyvalence FabLab ★★★★☆ · Impact social ★★★★☆ · Ancrage territorial ★★★★★ · Coût matière ★★★☆☆
 
 ## Objectifs
 - Éprouver un savoir-faire UNESCO par le corps : trier, caler, croiser, monter, et voir tenir.

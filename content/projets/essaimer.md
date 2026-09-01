@@ -2,9 +2,9 @@
 title: Essaimer
 ---
 
-==Abris à pollinisateurs et rucher pédagogique. Fabriquer tout ce qui accueille le petit peuple des pollinisateurs — hôtels à abeilles sauvages, ruches vitrées d'observation, ruche-tronc traditionnelle, signalétique — pour un rucher-école, un jardin partagé ou une école. Un apiculteur transmet le geste, le calme, l'observation d'un cadre derrière la vitre. Essaimer, pour une abeille, c'est quitter la ruche en groupe pour en fonder une autre ailleurs : exactement ce qu'on souhaite à celles et ceux qui repartent.==
+==Abris à pollinisateurs et rucher pédagogique. Fabriquer tout ce qui accueille le petit peuple des pollinisateurs (hôtels à abeilles sauvages, ruches vitrées d'observation, ruche-tronc traditionnelle, signalétique) pour un rucher-école, un jardin partagé ou une école. Un apiculteur transmet le geste, le calme, l'observation d'un cadre derrière la vitre. Essaimer, pour une abeille, c'est quitter la ruche en groupe pour en fonder une autre ailleurs : exactement ce qu'on souhaite à celles et ceux qui repartent.==
 
-**Repères** — Fiche complémentaire au volume 1, non notée au comparatif.
+**Repères** : Fiche complémentaire au volume 1, non notée au comparatif.
 
 ## Objectifs
 - Réussir un projet techniquement très accessible : coupe, perçage, vissage, ponçage, sans geste expert ni électronique.
@@ -28,7 +28,7 @@ title: Essaimer
 Apiculteur et éleveur de reines, animateur nature et éducateur à l'environnement, jardinier et ouvrier paysagiste, métiers de la transformation alimentaire (miellerie, conditionnement) et de la vente en circuit court : des filières du vivant accessibles par des formations courtes.
 
 > [!quote] Le temps fort
-> La fête du rucher : familles, écoles et partenaires découvrent le site aménagé, guidés par les participants qui expliquent « leur » hôtel et le cycle de l'abeille devant la ruche vitrée. Autour d'une dégustation de miel local, l'apiculteur bénévole reçoit le « Rayon d'Or » — et les abris se peupleront tout seuls au fil des saisons.
+> La fête du rucher : familles, écoles et partenaires découvrent le site aménagé, guidés par les participants qui expliquent « leur » hôtel et le cycle de l'abeille devant la ruche vitrée. Autour d'une dégustation de miel local, l'apiculteur bénévole reçoit le « Rayon d'Or » ; et les abris se peupleront tout seuls au fil des saisons.
 
 ## En pratique
 - **Budget matière indicatif** : 280 à 420 €

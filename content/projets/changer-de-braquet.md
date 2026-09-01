@@ -4,7 +4,7 @@ title: Changer de braquet
 
 ==La vélothèque des kilomètres retrouvés. En Dordogne, pas de voiture signifie trop souvent pas d'emploi. Le groupe remet en état une flotte de vélos donnés, assemble deux vélos-cargos sur plans libres, en électrifie deux, puis fonde avec la mission locale une vélothèque solidaire : des vélos prêtés à ceux qui décrochent un travail ou une formation. Une station d'auto-réparation publique reste en ville, et la balade inaugurale emprunte la véloroute de la vallée de la Dordogne. Changer de braquet : passer, enfin, la vitesse supérieure.==
 
-**Repères** — Originalité ★★★★☆ · Accessibilité ★★★☆☆ · Polyvalence FabLab ★★★★☆ · Impact social ★★★★★ · Ancrage territorial ★★★★☆ · Coût matière ★☆☆☆☆
+**Repères** : Originalité ★★★★☆ · Accessibilité ★★★☆☆ · Polyvalence FabLab ★★★★☆ · Impact social ★★★★★ · Ancrage territorial ★★★★☆ · Coût matière ★☆☆☆☆
 
 ## Objectifs
 - S'attaquer au premier frein périphérique à l'emploi en zone rurale : la mobilité.

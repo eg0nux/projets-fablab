@@ -2,9 +2,9 @@
 title: Basse tension
 ---
 
-==Low-tech et sobriété énergétique. Fabriquer des objets low-tech réellement utiles — four et séchoir solaires, marmite norvégienne, garde-manger, chauffe-eau solaire de démonstration, wattmètres pédagogiques — qui équiperont un tiers-lieu, une cuisine associative ou des foyers accompagnés contre la précarité énergétique. On mesure avant, on mesure après : la donnée devient la preuve.==
+==Low-tech et sobriété énergétique. Fabriquer des objets low-tech réellement utiles (four et séchoir solaires, marmite norvégienne, garde-manger, chauffe-eau solaire de démonstration, wattmètres pédagogiques) qui équiperont un tiers-lieu, une cuisine associative ou des foyers accompagnés contre la précarité énergétique. On mesure avant, on mesure après : la donnée devient la preuve.==
 
-**Repères** — Originalité ★★★★☆ · Accessibilité ★★★☆☆ · Polyvalence FabLab ★★★★☆ · Impact social ★★★★☆ · Ancrage territorial ★★★☆☆ · Coût matière ★★★☆☆
+**Repères** : Originalité ★★★★☆ · Accessibilité ★★★☆☆ · Polyvalence FabLab ★★★★☆ · Impact social ★★★★☆ · Ancrage territorial ★★★☆☆ · Coût matière ★★★☆☆
 
 ## Objectifs
 - Rendre concrètes les notions d'énergie (kWh, isolation, ordres de grandeur) par la fabrication et la mesure.

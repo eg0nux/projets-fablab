@@ -4,7 +4,7 @@ title: Remonter le courant
 
 ==Le laboratoire flottant de la Dordogne. Construire une plateforme flottante d'observation inspirée des gabares, instrumentée de capteurs de qualité d'eau, et l'amarrer au vieux port de Bergerac. Les données remontent en direct vers les acteurs de la rivière. La visite de l'ascenseur à poissons de Tuilières donne le fil rouge : saumons et anguilles y remontent le courant, exactement comme le groupe. La rivière qui a fait Bergerac redevient un terrain d'avenir.==
 
-**Repères** — Originalité ★★★★★ · Accessibilité ★★☆☆☆ · Polyvalence FabLab ★★★★☆ · Impact social ★★★★☆ · Ancrage territorial ★★★★★ · Coût matière ★★☆☆☆
+**Repères** : Originalité ★★★★★ · Accessibilité ★★☆☆☆ · Polyvalence FabLab ★★★★☆ · Impact social ★★★★☆ · Ancrage territorial ★★★★★ · Coût matière ★★☆☆☆
 
 ## Objectifs
 - Remobiliser par un chantier naval à taille humaine, avec une échéance spectaculaire : la mise à l'eau.

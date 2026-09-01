@@ -2,9 +2,9 @@
 title: La fresque jouable
 ---
 
-==Jeu de société du territoire. Concevoir, fabriquer et éditer en petite série un jeu de société — ou un escape game portable — sur un thème local : l'eau du bassin, l'histoire industrielle de la ville, l'alimentation, une figure du patrimoine. Des classes d'école testent les prototypes et votent : les enfants deviennent le jury.==
+==Jeu de société du territoire. Concevoir, fabriquer et éditer en petite série un jeu de société (ou un escape game portable) sur un thème local : l'eau du bassin, l'histoire industrielle de la ville, l'alimentation, une figure du patrimoine. Des classes d'école testent les prototypes et votent : les enfants deviennent le jury.==
 
-**Repères** — Originalité ★★★★☆ · Accessibilité ★★★★☆ · Polyvalence FabLab ★★★★★ · Impact social ★★★☆☆ · Ancrage territorial ★★★★☆ · Coût matière ★★★★☆
+**Repères** : Originalité ★★★★☆ · Accessibilité ★★★★☆ · Polyvalence FabLab ★★★★★ · Impact social ★★★☆☆ · Ancrage territorial ★★★★☆ · Coût matière ★★★★☆
 
 ## Objectifs
 - Mobiliser des compétences très variées dans un même objet : recherche documentaire, écriture, graphisme, fabrication, animation.

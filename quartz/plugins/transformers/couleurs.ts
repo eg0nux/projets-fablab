@@ -44,10 +44,7 @@ export const CodesCouleur: QuartzTransformerPlugin = () => ({
           if (couleur) {
             node.properties = {
               ...node.properties,
-              className: [
-                ...((node.properties?.className as string[]) ?? []),
-                "code-couleur",
-              ],
+              className: [...((node.properties?.className as string[]) ?? []), "code-couleur"],
               style: `--c: ${couleur}`,
             }
             return
