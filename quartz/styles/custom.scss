@@ -603,6 +603,65 @@ article h4::before {
   }
 }
 
+/* Le logotype du CIDFF est le seul en couleur de la rangée — La Traverse est
+   déjà dessiné en noir. Sur papier, ce turquoise et cet orange faisaient une
+   tache isolée, le seul endroit de la page où la couleur ne dit rien : le
+   rouge de la charte est ailleurs, réservé aux accents.
+
+   `brightness(0)` aplatit tout sur du noir en gardant la transparence — c'est
+   la première moitié de ce que fait déjà le thème sombre avant d'inverser.
+   On cible par le fichier plutôt que par un libellé : le nom de la structure
+   peut changer, le fichier non.
+
+   Le thème sombre n'est pas touché : ses règles, plus spécifiques, passent
+   les deux logotypes en blanc. */
+.logos .logo img[src$="logo-cidff.svg"] {
+  filter: brightness(0);
+}
+
+/* Même raison que pour la variante claire : le soubresaut réécrit le `filter`
+   à chaque étape, et sans version noire le logotype retrouverait ses couleurs
+   au survol. */
+.logos .logo:hover img[src$="logo-cidff.svg"],
+.logos .logo:focus-visible img[src$="logo-cidff.svg"] {
+  animation-name: soubresaut-noir;
+}
+
+@keyframes soubresaut-noir {
+  0% {
+    transform: translate(0, 0);
+    filter: brightness(0);
+  }
+  14% {
+    transform: translate(-2px, 1px);
+    filter: brightness(0) drop-shadow(2px 0 #f44336) drop-shadow(-2px 0 #eddd6e);
+  }
+  28% {
+    transform: translate(2px, -1px);
+    filter: brightness(0) drop-shadow(-2px 0 #f44336);
+  }
+  42% {
+    transform: translate(-1px, -1px);
+    filter: brightness(0) drop-shadow(1px 1px #eddd6e);
+  }
+  56% {
+    transform: translate(1px, 1px);
+    filter: brightness(0);
+  }
+  70% {
+    transform: translate(-1px, 0);
+    filter: brightness(0) drop-shadow(2px 0 #f44336);
+  }
+  84% {
+    transform: translate(1px, -1px);
+    filter: brightness(0);
+  }
+  100% {
+    transform: translate(0, 0);
+    filter: brightness(0);
+  }
+}
+
 /* Sur fond sombre, aucun logo ne prend de fond : ils restent détourés.
 
    Deux traitements, parce que les deux rangées ne disent pas la même chose.
