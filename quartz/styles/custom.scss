@@ -603,6 +603,18 @@ article h4::before {
   }
 }
 
+/* Le repli de mouvement réduit réécrit le `filter` lui aussi — même piège que
+   l'animation, et il fallait donc la même parade. Sans cette règle, le
+   logotype du CIDFF retrouvait ses couleurs au survol chez qui demande moins
+   d'animation, c'est-à-dire précisément là où le survol ne bouge pas et où la
+   couleur saute d'autant plus aux yeux. */
+@media (prefers-reduced-motion: reduce) {
+  .logos .logo:hover img[src$="logo-cidff.svg"],
+  .logos .logo:focus-visible img[src$="logo-cidff.svg"] {
+    filter: brightness(0) drop-shadow(2px 0 #f44336) drop-shadow(-2px 0 #eddd6e);
+  }
+}
+
 /* Le logotype du CIDFF est le seul en couleur de la rangée — La Traverse est
    déjà dessiné en noir. Sur papier, ce turquoise et cet orange faisaient une
    tache isolée, le seul endroit de la page où la couleur ne dit rien : le
