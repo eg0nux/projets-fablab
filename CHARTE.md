@@ -210,6 +210,9 @@ titre, le bandeau de marques quand la fiche en a (voir §7).
   italique pour le temps fort d'un parcours ; sans icône, sans fond ;
 - les **photos** cadrées de 2 px, habillées par le texte sur deux cinquièmes
   de colonne, légende en italique surlignée juste en dessous ;
+- le **bandeau**, quand une page s'ouvre sur une photo avant son premier
+  titre : toute la largeur de la colonne, trois fois plus large que haut,
+  même cadre et même légende que les photos ;
 - les **tableaux** à filets fins et zébrure très légère ;
 - la **carte de fabrication** (fablab) : machines, matériaux, temps, coût,
   dans un cadre, pictogramme par ligne ;

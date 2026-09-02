@@ -2130,6 +2130,41 @@ article img {
   border-radius: 2px;
 }
 
+/* --------------------------------------------------------------------------
+   Bandeau : une photo en tête de page
+
+   Une page peut s'ouvrir sur une photo, avant son premier titre : « L'atelier »
+   montre le lieu avant d'en parler. Cette photo n'illustre pas un passage,
+   elle plante le décor : elle prend toute la largeur de la colonne, sur une
+   hauteur modérée, au lieu de l'habillage à 40 % des photos d'article.
+
+   La règle ne tient qu'à la place : le premier enfant de l'article, un
+   paragraphe qui ne contient qu'une image. Une fiche s'ouvre toujours sur son
+   chapeau, jamais sur une photo, elle n'est donc pas concernée. Le fichier est
+   déjà recadré à 3:1 ; `aspect-ratio` et `object-fit` ne font que garantir la
+   hauteur si un autre format est un jour posé là.
+
+   La légende, si elle suit, s'étale sur la largeur du bandeau. Spécificité
+   (0,2,3), au-dessus des (0,1,3) de l'habillage : les règles d'impression et
+   de téléphone, à (0,1,3) elles aussi, perdent de la même façon, et le bandeau
+   y est de toute façon déjà en pleine largeur. */
+article > p:first-child:has(> img:only-child),
+article > p:first-child:has(> img:only-child) + p:has(> em:only-child) {
+  float: none;
+  clear: both;
+  width: 100%;
+  margin-left: 0;
+}
+
+article > p:first-child:has(> img:only-child) {
+  margin-top: 0;
+}
+
+article > p:first-child:has(> img:only-child) > img {
+  aspect-ratio: 3 / 1;
+  object-fit: cover;
+}
+
 /* L'alignement et la marge passent sur le paragraphe : la légende elle-même
    redevient un élément en ligne, sans quoi son surlignage peindrait tout le
    rectangle du bloc au lieu d'épouser les lignes de texte. Décalée de 3 px du
