@@ -1,5 +1,16 @@
 import { PageLayout, SharedLayout } from "./quartz/cfg"
+import { QuartzComponent } from "./quartz/components/types"
 import * as Component from "./quartz/components"
+
+// L'accueil garde son titre et sa date (le catalogue est daté, c'est son
+// millésime), mais ni fil d'Ariane ni sommaire : comme sur fablab.egonux.com,
+// la colonne de droite n'y porte que les logos des structures, que la grille
+// à deux colonnes fait tomber sous le contenu.
+const saufAccueil = (component: QuartzComponent) =>
+  Component.ConditionalRender({
+    component,
+    condition: (page) => page.fileData.slug !== "index",
+  })
 
 // components shared across all pages
 export const sharedPageComponents: SharedLayout = {
@@ -21,10 +32,7 @@ export const sharedPageComponents: SharedLayout = {
 // components for pages that display a single page (e.g. a single note)
 export const defaultContentPageLayout: PageLayout = {
   beforeBody: [
-    Component.ConditionalRender({
-      component: Component.Breadcrumbs({ rootName: "Accueil" }),
-      condition: (page) => page.fileData.slug !== "index",
-    }),
+    saufAccueil(Component.Breadcrumbs({ rootName: "Accueil" })),
     Component.ArticleTitle(),
     Component.ContentMeta(),
     Component.TagList(),
@@ -55,10 +63,10 @@ export const defaultContentPageLayout: PageLayout = {
     // les deux logos ouvrent la colonne de droite sur chaque page, comme sur
     // fablab.egonux.com.
     Component.Logos(),
-    Component.DesktopOnly(Component.TableOfContents()),
+    saufAccueil(Component.DesktopOnly(Component.TableOfContents())),
     // Ne rend rien : embarque le script qui donne au sommaire sa jauge de
     // progression et son repère de section courante.
-    Component.DesktopOnly(Component.Sommaire()),
+    saufAccueil(Component.DesktopOnly(Component.Sommaire())),
   ],
 }
 

@@ -31,10 +31,10 @@ Au-delà du geste technique, chaque projet fait travailler des compétences rep�
 
 Six questions à se poser pour présélectionner deux ou trois projets :
 
-- **Vos partenaires** : qui, sur le territoire, est déjà motivé ou facile à convaincre ?
-- **Votre bassin d'emploi** : quelles filières recrutent réellement autour de vous ?
-- **Votre équipement et vos compétences** : quelles machines tournent bien, que sait faire l'équipe ?
-- **Votre public** : âge, mixité, freins, appétences.
+- **Les partenaires** : qui, sur le territoire, est déjà motivé ?
+- **Le bassin d'emploi** : quelles filières recrutent réellement autour de l'atelier ?
+- **L'équipement et les compétences** : quelles machines tournent bien, que sait faire l'équipe ?
+- **Le public** : âge, mixité, freins, appétences.
 - **La saison** : certains projets se jouent au printemps, d'autres en hiver.
 - **Le budget et les financements** : de 300 € à 2 400 € de matière ; le nerf de la guerre reste le temps d'encadrement.
 
