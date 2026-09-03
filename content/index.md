@@ -10,7 +10,7 @@ description: "Vingt-cinq parcours prêts à monter pour un FabLab : un groupe fa
 > - [la méthode](methode)
 > - [le comparatif](comparatif)
 
-**[[methode|La méthode]]** : les six invariants qui font la force de ces parcours, et six questions pour choisir. **[[comparatif|Le tableau comparatif]]** : les projets notés sur six indicateurs (originalité, accessibilité, coût…). Chaque **fiche projet** suit le même plan : une accroche, des repères notés, les objectifs, ce que l'on fabrique, les partenaires et métiers à mobiliser, le temps fort du parcours, et les points pratiques (budget, saison, vigilance).
+**[[methode|La méthode]]** : les six invariants qui structurent ces parcours, et six questions pour choisir. **[[comparatif|Le tableau comparatif]]** : les projets notés sur six indicateurs (originalité, accessibilité, coût…). Chaque **fiche projet** suit le même plan : une accroche, des repères notés, les objectifs, ce que l'on fabrique, les partenaires et métiers à mobiliser, le temps fort du parcours, et les points pratiques (budget, saison, vigilance).
 
 Ces parcours sont pensés pour l'atelier numérique du [CIDFF Dordogne](https://www.cidff24.fr), installé à l'[Atelier Partagé de La Traverse](https://www.latraverse-bergerac.fr/), à Bergerac, et pour les lieux où il se déplace. Ce qui y a déjà été fabriqué est présenté sur [fablab.egonux.com](https://fablab.egonux.com/).
 
