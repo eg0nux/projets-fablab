@@ -1460,37 +1460,39 @@ article h4::before {
    par erreur le premier paragraphe d'une page qui n'aurait pas de chapeau.
    -------------------------------------------------------------------------- */
 
+/* L'italique est celle du temps fort : le chapeau raconte à quoi sert la
+   fiche, il ne l'annonce pas. */
 article > p:first-of-type:has(.text-highlight) {
   border: 2px solid var(--dark);
   padding: 0.9em 1.1em;
   margin-bottom: 1.9em;
   font-size: 1.05rem;
+  font-style: italic;
   line-height: 2;
 }
 
 article > p:first-of-type .text-highlight {
-  /* Le fond d'un élément en ligne couvre la zone de contenu de la police,
-     qui déborde largement la hauteur des lettres ; ni le remplissage ni
-     l'interligne ne peuvent la réduire. On peint donc un dégradé qui ne
-     colore qu'une tranche de cette zone : la bande épouse alors le texte,
-     comme un trait de surligneur. Les bornes 20 % et 88 % sont les bords
-     haut et bas de la bande. */
-  /* Le rouge clair de la palette, très pâli : la même teinte que les dièses
-     en filigrane des sous-titres. À 60 %, la bande tirait vers l'aplat et
-     assombrissait le chapeau ; à 24 %, elle reste un trait de surligneur.
-     Thème clair seulement : le sombre garde son rouge vif, plus bas. */
-  --surlignage: color-mix(in srgb, var(--tertiary) 24%, transparent);
+  /* Le rouge est celui de la sélection (`::selection`, dans base.scss) et la
+     bande est posée à plat, sans dégradé : le fond d'un élément en ligne
+     couvre exactement la zone de contenu de la police, ascendantes et
+     descendantes comprises, c'est-à-dire la surface que peint le navigateur
+     quand on sélectionne le texte à la souris. Toutes les lignes reçoivent
+     donc la même hauteur de bande et l'interligne de 2 les espace strictement
+     pareil.
 
-  background-color: transparent;
-  background-image: linear-gradient(
-    180deg,
-    transparent 20%,
-    var(--surlignage) 20%,
-    var(--surlignage) 88%,
-    transparent 88%
-  );
+     Le dégradé qui ne peignait qu'une tranche de cette zone (de 20 % à 88 %
+     de la boîte de ligne) est abandonné avec lui : il dépendait de
+     l'interligne, et sa teinte pâlie à 24 % tirait vers le rose. Le procédé
+     reste employé là où la bande doit épouser la hauteur des capitales : la
+     section du logotype, les dièses en filigrane. */
+  --surlignage: color-mix(in srgb, var(--tertiary) 60%, transparent);
+
+  background-image: none;
+  background-color: var(--surlignage);
   color: var(--darkgray);
-  padding: 0 0.2em;
+  /* Pas de remplissage : la bande s'arrête au dernier signe de la ligne,
+     largeur du texte et rien de plus, comme une sélection. */
+  padding: 0;
   border-radius: 0;
   box-decoration-break: clone;
   -webkit-box-decoration-break: clone;
@@ -1498,8 +1500,7 @@ article > p:first-of-type .text-highlight {
 
 /* En thème sombre, le surlignage garde le rouge vif de la palette sombre
    (`--secondary`, et non `--tertiary` qui en est la version pâle), à forte
-   opacité, sinon le fond noir le délave. La teinte pâle à 24 % ne vaut que
-   pour le thème clair.
+   opacité, sinon le fond noir le délave.
 
    Conséquence : le texte doit repasser en sombre. Sur un rouge aussi
    soutenu, la couleur de corps du thème sombre, qui est claire, ne tiendrait
