@@ -167,8 +167,8 @@ Quatre règles :
    rubriques de l'accueil s'échangent avec le thème : sur papier, étiquette
    safran au repos, accolades au papier, section cernée d'un filet fin, et
    bloc d'encre à texte papier au survol, accolades safran ; sur fond sombre,
-   la marque nue au repos — crème, accolades safran, section en étiquette —
-   et l'étiquette safran au survol. Quand plusieurs étiquettes se suivent —
+   la marque nue au repos — crème, accolades safran, section en étiquette
+   sans filet — et l'étiquette safran au survol, section cernée de crème. Quand plusieurs étiquettes se suivent —
    les rubriques de l'accueil, la liste d'une rubrique — une sur deux
    s'encre, bloc d'encre à texte papier (crème et noir sur le sombre), et
    les deux s'échangent au survol : deux encres qui alternent font une
