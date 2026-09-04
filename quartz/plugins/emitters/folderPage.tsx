@@ -71,7 +71,11 @@ function computeFolderInfo(
       defaultProcessedContent({
         slug: joinSegments(folder, "index") as FullSlug,
         frontmatter: {
-          title: `${i18n(locale).pages.folderContent.folder}: ${folder}`,
+          // Le nom de la rubrique seul, capitale initiale, tirets en espaces :
+          // « Dossier: techniques » est un libellé de Quartz, pas un titre.
+          title: ((nom) => nom.charAt(0).toUpperCase() + nom.slice(1))(
+            folder.split("/").pop()!.replace(/-/g, " "),
+          ),
           tags: [],
         },
       }),

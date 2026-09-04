@@ -16,6 +16,10 @@ import { Root, Element, RootContent } from "hast"
  * se compare colonne par colonne, et le tout survit au noir et blanc ; un
  * segment plein reste plein à l'impression.
  *
+ * Le tableau comparatif du catalogue reçoit la même jauge : toute cellule
+ * qui ne contient qu'une note en étoiles est redessinée en segments, et les
+ * colonnes se comparent d'un coup d'œil, sans glyphe de police.
+ *
  * La transformation se fait à l'affichage : le markdown n'est pas touché.
  */
 
@@ -129,6 +133,23 @@ function parcourir(noeuds: RootContent[]): void {
           noeuds[i] = bloc(reperes)
           return
         }
+      }
+    }
+
+    // Une cellule qui ne contient qu'une note en étoiles : le tableau
+    // comparatif. Même jauge que le bloc, sans nom.
+    if (e.tagName === "td" && e.children.length === 1 && e.children[0].type === "text") {
+      const m = e.children[0].value.trim().match(/^[★☆]{2,}$/)
+      if (m) {
+        const notation = m[0]
+        e.children = [
+          jauge({
+            nom: "",
+            note: [...notation].filter((c) => c === ETOILE_PLEINE).length,
+            total: notation.length,
+          }),
+        ]
+        return
       }
     }
 

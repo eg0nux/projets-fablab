@@ -12,15 +12,77 @@
    trouve rien à habiller sur l'autre, et ne coûte rien. La charte elle-même
    est décrite dans CHARTE.md, à la racine du dépôt.
 
-   Identité partagée avec egonux.com et maquette.egonux.com : encre #212121,
-   papier #fafafa, rouge #d32f2f, JetBrains Mono. Traitement opposé à celui de
-   la maquette : là où elle empile cadres épais, aplats et ombres portées, la
-   fiche ne garde que l'encre et des filets fins. Référence de sobriété :
-   arwiki.arweave.net.
+   Charte « Sérigraphie » : deux encres à plat, le noir #1a1613 et le safran
+   #f26b1d, sur un papier crème #fbf6ec, JetBrains Mono et Literata. Comme une
+   affiche tirée en deux passages : pas de transparence, pas de dégradé, pas
+   de bande de biais. Le chapeau est un bloc d'encre plein, les liens des
+   étiquettes safran, les titres portent une barre de repérage. Le safran
+   n'est jamais une couleur de texte — il ne se lit pas sur le papier — c'est
+   une encre de fond, et le texte posé dessus est toujours le noir de la page,
+   dans les deux thèmes. Identité partagée avec egonux.com.
 
    Contrainte de fond : ces pages se lisent en atelier, sur un téléphone posé
    près d'une machine, et doivent survivre à une impression noir et blanc.
    ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   Les deux encres
+
+   `--safran` est l'encre de fond ; `--sur-safran`, la couleur du texte qu'on
+   pose dessus. Ce texte est le noir de la page dans les deux thèmes : sur
+   papier c'est `--dark`, l'encre ; sur fond sombre c'est `--light`, le fond
+   lui-même. Le safran ne change pas d'un thème à l'autre, c'est le texte qui
+   s'y inverse — le crème du thème sombre ne tiendrait pas dessus (2,9:1).
+   -------------------------------------------------------------------------- */
+
+:root {
+  --safran: var(--secondary);
+  --sur-safran: var(--dark);
+}
+
+:root[saved-theme="dark"] {
+  --sur-safran: var(--light);
+}
+
+/* Les blocs à accolades — le logotype et les rubriques de l'accueil — ont
+   deux états qui s'échangent avec le thème. Sur papier : étiquette safran
+   au repos, comme un lien, bloc d'encre à texte papier au survol. Sur fond
+   sombre : la marque nue au repos — crème sur la page, accolades safran,
+   section en étiquette — et l'étiquette safran au survol. Le texte s'écrit
+   une seule fois, `--dark` au repos et `--light` au survol : c'est le noir
+   sur safran puis le papier sur encre d'un côté, la crème sur la nuit puis
+   le noir sur safran de l'autre. Les accolades restent safran, et se
+   fondent dans le bloc quand il l'est. */
+:root {
+  --bloc-repos: var(--safran);
+  --bloc-survol: var(--dark);
+}
+
+:root[saved-theme="dark"] {
+  --bloc-repos: var(--light);
+  --bloc-survol: var(--safran);
+}
+
+/* La sélection à la souris est du safran plein, texte en noir : la même
+   étiquette que les liens. Quartz la posait à 60 % de transparence. */
+::selection {
+  background: var(--safran);
+  color: var(--sur-safran);
+}
+
+/* Un `==surlignage==` hors chapeau (rare) : la même étiquette, angles vifs. */
+.text-highlight {
+  color: var(--sur-safran);
+  border-radius: 0;
+}
+
+/* Hors de l'article, Quartz colore ses liens de `--secondary`, qui est
+   maintenant le safran : illisible en texte. Rétroliens et listes de dossier
+   repassent à l'encre ; l'explorateur et le sommaire ont leurs règles. */
+.backlinks a,
+.page-listing a {
+  color: var(--dark);
+}
 
 /* --------------------------------------------------------------------------
    Colonne de lecture
@@ -92,27 +154,44 @@ h6,
   letter-spacing: -0.01em;
   line-height: 1.15;
 
-  /* Deux déclinaisons, portées par les variables de thème : encadré à
-     l'encre sur fond clair (c'est la version gravure) et en crème sur
-     fond sombre. Le trait de 2px est celui du sommaire et du chapeau. */
-  border: 2px solid var(--dark);
+  /* Sur papier, une étiquette safran pleine, texte à l'encre : celle des
+     liens, au corps du logotype. Sur fond sombre, la marque nue sur la page
+     (`--bloc-repos`, en tête de feuille). Le trait de 2 px a la couleur du
+     bloc ; il reste parce qu'il est le cadre de la version gravure de
+     `logos/`, et qu'au survol il suit le bloc. */
+  border: 2px solid var(--bloc-repos);
   border-radius: 2px;
-  background-color: transparent;
+  background-color: var(--bloc-repos);
   color: var(--dark);
+  transition:
+    background-color 0.18s,
+    border-color 0.18s,
+    color 0.18s;
 }
 
 .page-title a {
-  color: var(--dark);
+  color: inherit;
   background-color: transparent;
   text-decoration: none;
 }
 
-/* Les accolades restent rouges dans les deux thèmes : --secondary vaut le
-   rouge sombre en clair, un rouge éclairci en sombre, chacun lisible sur
-   son fond. */
+/* Au survol, le bloc change d'encre : il s'encre sur papier et les
+   accolades ressortent ; il passe au safran sur fond sombre et l'étiquette
+   avale la marque (`--bloc-survol`, en tête de feuille). Même geste sur les
+   rubriques de l'accueil. */
+.page-title:hover,
+.page-title:focus-within {
+  background-color: var(--bloc-survol);
+  border-color: var(--bloc-survol);
+  color: var(--light);
+}
+
+/* Les accolades sont en safran dans les deux thèmes. C'est la seule entorse à
+   la règle « jamais en texte » : le logotype est une marque, pas une ligne à
+   lire, et deux signes gras à ce corps se reconnaissent sans se déchiffrer. */
 .page-title .marque::before,
 .page-title .marque::after {
-  color: var(--secondary);
+  color: var(--safran);
   font-weight: 700;
 }
 
@@ -130,45 +209,28 @@ h6,
   display: block;
 }
 
-/* La section : capitales espacées aux six dixièmes du corps, en graisse
-   normale, calée à droite sous la marque et posée sur une bande rouge. C'est
-   la construction de l'accueil du domaine (egonux.com), reprise à l'identique
+/* La section : capitales espacées aux six dixièmes du corps, en gras, calée
+   à droite sous la marque, en étiquette safran pleine — la même que les
+   liens. C'est la construction de l'accueil du domaine (egonux.com), reprise
    partout où le logotype apparaît : ici, dans les fichiers de `logos/` et sur
    les images de partage.
 
-   La bande est un dégradé qui ne peint qu'une tranche de la boîte de ligne,
-   pour épouser la hauteur des capitales : le même procédé que le surlignage
-   du chapeau. Elle part à 20 % et va jusqu'au bas de la boîte : avec un
-   interligne de 1, le navigateur pose la ligne de base tout près du bas, et
-   une bande arrêtée plus haut coupait le pied des lettres, que leur couleur,
-   celle du fond, rendait alors invisible. La marge droite de 0,58 em du corps de la
-   marque ramène le bord de la bande sous la dernière lettre du nom, pas sous
-   l'accolade fermante. */
+   La marge droite de 0,58 em du corps de la marque ramène le bord de
+   l'étiquette sous la dernière lettre du nom, pas sous l'accolade fermante ;
+   le remplissage horizontal de l'étiquette en est retranché pour que ce soit
+   le texte, et non le bloc, qui s'aligne. */
 .page-title .section {
   display: block;
   width: fit-content;
-  margin: 0.1em calc(0.58em / 0.56) 0 auto;
+  margin: 0.15em calc(0.58em / 0.56 - 0.45em) 0 auto;
+  padding: 0.14em 0.45em 0.1em;
   font-size: 0.56em;
-  font-weight: 400;
-  letter-spacing: 0.08em;
+  font-weight: 700;
+  letter-spacing: 0.1em;
   line-height: 1;
   text-transform: uppercase;
-  color: var(--darkgray);
-
-  --surlignage: color-mix(in srgb, var(--tertiary) 60%, transparent);
-  background-image: linear-gradient(
-    180deg,
-    transparent 20%,
-    var(--surlignage) 20%,
-    var(--surlignage) 100%
-  );
-}
-
-/* Sur fond sombre, la bande passe en rouge plein et le texte en papier, comme
-   le chapeau : un rouge translucide se délave sur le noir. */
-:root[saved-theme="dark"] .page-title .section {
-  --surlignage: var(--secondary);
-  color: var(--light);
+  color: var(--sur-safran);
+  background-color: var(--safran);
 }
 
 /* Recherche : strictement le même traitement que le logotype : bordure de
@@ -188,8 +250,13 @@ h6,
   font-size: 1.05rem;
 }
 
-/* La loupe, en rouge : c'est le seul signe qui distingue la recherche du
-   logotype, puisque tout le reste (bordure, angles, police) est commun. */
+/* Le bouton garde le fond de la page, cerné d'encre : c'est le seul bloc à
+   accolades qui ne soit pas une étiquette. C'est un outil, pas un rayon, et
+   sa place dans la colonne est de s'effacer derrière le logotype. */
+
+/* La loupe, à l'encre : le safran ne se lit pas en trait fin sur le papier.
+   Ce sont les accolades, safran comme celles du logotype, qui disent que le
+   bouton est de la même famille ; la loupe dit ce qu'il fait. */
 .search > .search-button svg {
   display: block;
   width: 15px;
@@ -198,7 +265,7 @@ h6,
 }
 
 .search > .search-button svg .search-path {
-  stroke: var(--secondary);
+  stroke: var(--dark);
   stroke-width: 2px;
 }
 
@@ -215,7 +282,7 @@ h6,
 
 .search > .search-button > p::before,
 .search > .search-button > p::after {
-  color: var(--secondary);
+  color: var(--safran);
   font-weight: 700;
 }
 
@@ -320,7 +387,7 @@ body[data-slug="index"] article {
   align-items: center;
 
   /* Entier, comme la hauteur des cadres : si les rubriques retombent l'une
-     sous l'autre, 48 + 18 les sépare d'un nombre rond de pixels, elles se
+     sous l'autre, 34 + 18 les sépare d'un nombre rond de pixels, elles se
      posent donc sur la même fraction de pixel et leurs traits s'arrondissent
      pareil. 1.1rem en valait 17,6. */
   gap: 18px;
@@ -333,60 +400,55 @@ body[data-slug="index"] article {
   margin: 0;
 }
 
-/* Métriques du logotype `{fablab}` de la colonne de gauche : même corps,
-   même chasse, même interligne, mêmes marges intérieures. Les rubriques n'ont
-   qu'une ligne, là où le logotype en a deux ; à corps égal, elles se lisent
-   comme ses déclinaisons.
+/* Construction du logotype `{fablab}` de la colonne de gauche — même chasse,
+   même interligne, mêmes marges intérieures — au corps de `{recherche}`,
+   1,05 rem : les rubriques sont des déclinaisons du logotype, pas des
+   titres, et à son corps elles pesaient plus lourd que le chapeau.
 
-   Hauteur figée à 48px, traits compris : sans elle le cadre mesure 47,864px,
-   un corps de 24,8px, un interligne de 1,15 et des marges en em ne tombant
-   jamais rond. Une hauteur fractionnaire ne se pose pas sur la grille de
-   pixels, et le navigateur arrondit le trait du bas selon la fraction où le
-   cadre a atterri : deux rubriques identiques pouvaient se peindre à un pixel
-   d'écart. En `rem`, pour suivre la taille de texte réglée dans le
-   navigateur ; `border-box` garde les marges intérieures où elles étaient.
-
-   Le coup de surligneur des liens d'article est écarté en toutes lettres :
-   fond, mode de fusion et rayons repassent à zéro, sans quoi ils fuiraient
-   sur le cadre. */
+   Hauteur figée à 34 px, traits compris (2,125 rem) : sans elle le cadre
+   tombe sur une fraction de pixel et deux rubriques côte à côte n'ont pas
+   toujours le même trait. 19,32 px de ligne, 10,75 de marges intérieures,
+   4 de traits : 34,07, qu'on arrondit. */
 .callout[data-callout="rubriques"] li > a,
 .callout[data-callout="rubriques"] li > a.internal {
   display: inline-block;
   box-sizing: border-box;
-  height: 3rem;
+  height: 2.125rem;
   padding: 0.3em 0.5em 0.34em;
-  border: 2px solid var(--dark);
+  border: 2px solid var(--bloc-repos);
   border-radius: 2px;
   font-family: var(--headerFont);
   font-weight: 700;
-  font-size: 1.55rem;
+  font-size: 1.05rem;
   letter-spacing: -0.01em;
   line-height: 1.15;
   color: var(--dark);
-  background-color: transparent;
+  background-color: var(--bloc-repos);
   background-image: none;
   mix-blend-mode: normal;
   text-decoration: none;
   transition:
     background-color 0.18s,
+    border-color 0.18s,
     color 0.18s;
 }
 
 .callout[data-callout="rubriques"] li > a::before {
   content: "{";
-  color: var(--secondary);
+  color: var(--safran);
 }
 
 .callout[data-callout="rubriques"] li > a::after {
   content: "}";
-  color: var(--secondary);
+  color: var(--safran);
 }
 
-/* Au survol, le logotype s'encre : comme celui de la colonne de gauche.
-   Les accolades restent rouges : elles sont lisibles sur les deux fonds. */
+/* Au survol, le bloc passe à la nuit et les accolades ressortent : comme le
+   logotype de la colonne de gauche. */
 .callout[data-callout="rubriques"] li > a:hover,
 .callout[data-callout="rubriques"] li > a:focus-visible {
-  background-color: var(--dark);
+  background-color: var(--bloc-survol);
+  border-color: var(--bloc-survol);
   color: var(--light);
   outline: none;
 }
@@ -491,22 +553,36 @@ body[data-slug="index"] .page > #quartz-body footer {
 /* --------------------------------------------------------------------------
    Titre de page : le dièse en filigrane
 
-   Le dièse du h1 n'est pas une annotation de marge mais un motif de fond,
-   haut de deux lignes ; les ## et ### plus bas reprennent le procédé. Le titre
-   est décalé vers la droite juste assez pour que sa première lettre morde
-   sur le dièse ; le chevauchement fait tenir les deux éléments ensemble ;
-   sans lui, on lirait un symbole puis un titre, côte à côte et sans rapport.
+   Le titre est en capitales, en gras, et son dièse est un motif de fond,
+   haut de deux lignes, dans un safran pâli : le seul endroit de la charte où
+   le safran n'est pas plein. Le titre est décalé vers la droite juste assez
+   pour que sa première lettre morde sur le dièse ; le chevauchement fait
+   tenir les deux ensemble — côte à côte, on lirait un symbole puis un titre
+   sans rapport. Les ## et ###, eux, portent une barre de repérage (plus
+   bas) : la hiérarchie se lit au signe pour la page, à la barre pour ses
+   sections.
+
+   Le pâlissement est un mélange vers le papier, pas une transparence : la
+   teinte est posée à plat, comme tout le reste, et elle suit le thème parce
+   que `--light` en fait partie.
 
    Le dièse passe derrière le texte par `z-index: -1`, ce qui suppose que le
    h1 n'ait pas de fond propre. Il est sorti du flux, donc il n'écarte rien.
+
+   Le corps suit la largeur de la colonne, entre 1,35 et 1,75 rem : des
+   capitales monospace à 1,75 rem tiennent trois lignes sur un téléphone pour
+   « Générateur de mot de passe », et le titre écrasait sa page.
    -------------------------------------------------------------------------- */
 
 h1.article-title {
   position: relative;
   z-index: 0;
-  font-size: 2rem;
+  font-size: clamp(1.35rem, 5.2vw, 1.75rem);
   margin-top: 2rem;
   padding-left: 0.62em;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
 }
 
 h1.article-title::before {
@@ -521,138 +597,79 @@ h1.article-title::before {
   font-weight: 700;
   font-size: 3em; /* environ deux lignes de titre */
   line-height: 1;
-  color: color-mix(in srgb, var(--secondary) 20%, transparent);
+  color: color-mix(in srgb, var(--safran) 22%, var(--light));
 
   user-select: none;
   pointer-events: none;
 }
 
 /* Le croisillon écrit dans un titre (celui qui sépare le nom du millésime
-   sur l'accueil du catalogue) prend le rouge des marqueurs de balisage en
-   gouttière. Sur ces sites le # est un signe de structure : il serait
-   incohérent qu'il passe à l'encre du seul fait d'entrer dans un titre. À ne
-   pas confondre avec le dièse en filigrane ci-dessus, qui est décoratif. */
+   sur l'accueil du catalogue) prend le safran : sur ces sites le # est un
+   signe de structure, et il serait incohérent qu'il passe à l'encre du seul
+   fait d'entrer dans un titre. Même entorse que les accolades du logotype :
+   un signe gras et grand, pas une ligne à lire. */
 h1.article-title .diese {
-  color: var(--secondary);
+  color: var(--safran);
 }
 
 article h2 {
-  font-size: 1.45rem;
-  margin-top: 2.4em;
+  font-size: 1.1rem;
+  margin-top: 2.6em;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
 }
 
 article h3 {
-  font-size: 1.15rem;
-  margin-top: 1.8em;
+  font-size: 0.95rem;
+  margin-top: 2em;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
 }
 
 article h4 {
-  font-size: 1rem;
+  font-size: 0.82rem;
   text-transform: uppercase;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.06em;
   color: var(--gray);
 }
 
 /* --------------------------------------------------------------------------
-   Marqueurs markdown : ## et ### en filigrane, #### en gouttière
+   Barres de repérage des sous-titres : ## en 4 px, ### en 3 px, #### en filet
 
    Le contenu s'écrit en markdown dans Obsidian ; le niveau de titre se lit
-   au nombre de dièses. Les afficher garde ce repère à la lecture et donne
-   au lecteur une hiérarchie perceptible sans compter les tailles de police.
+   au nombre de dièses. Le titre de page garde le sien en filigrane ; ses
+   sections, elles, portent une barre : 4 px sur 2 rem pour un ##, 3 px sur
+   1,25 rem pour un ### — même encre, même geste, plus court d'un niveau à
+   l'autre. Les titres sont en capitales comme le titre de page, à corps
+   décroissant.
 
-   Les deux premiers niveaux reçoivent le traitement du titre de page : le
-   marqueur est un motif de fond, plus grand que le titre, en rouge clair très
-   pâli, et le titre est décalé juste assez pour que sa première lettre morde
-   dessus. Le chevauchement fait tenir les deux ensemble ; côte à côte, on
-   lisait un symbole puis un titre sans rapport. Le corps du marqueur est en
-   em du titre : il suit l'échelle, deux fois plus grand pour un ## que pour
-   un ###, comme le dièse du h1 l'est pour le titre de page.
-
-   Le quatrième niveau, une étiquette en capitales grises, garde son marqueur
-   en gouttière : un #### de la taille d'un motif écraserait ce titre-là.
+   Le quatrième niveau, une étiquette en capitales grises, n'a pas de barre
+   au-dessus mais un filet safran devant : il annonce un paragraphe, pas une
+   section, et une barre de plus ferait un palier de trop.
    -------------------------------------------------------------------------- */
-
-article h2,
-article h3 {
-  position: relative;
-  z-index: 0;
-  padding-left: 0.62em;
-}
-
-article h2::before {
-  content: "##";
-}
-
-article h3::before {
-  content: "###";
-}
 
 article h2::before,
 article h3::before {
-  position: absolute;
-  left: -0.12em;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: -1;
-
-  font-family: var(--headerFont);
-  font-weight: 700;
-  font-size: 2.2em;
-  line-height: 1;
-  /* Les dièses se resserrent : espacés comme du texte, ## faisait deux
-     signes ; serrés, ils font un seul motif. */
-  letter-spacing: -0.08em;
-  white-space: nowrap;
-  /* Le rouge clair de la palette, très pâli : un cran plus clair que le
-     dièse du titre de page, pour qu'un sous-titre ne pèse pas plus lourd
-     que le titre. */
-  color: color-mix(in srgb, var(--tertiary) 24%, transparent);
-
-  user-select: none;
-  pointer-events: none;
+  content: "";
+  display: block;
+  background-color: var(--safran);
 }
 
-/* Le marqueur du #### reste DANS le flux, en début de première ligne : c'est
-   la seule façon d'obtenir un alignement exact sur la ligne de base. Le
-   débord dans la marge est obtenu par un retrait suspendu : marge négative
-   pour sortir de la colonne, remplissage pour y ramener le texte, retrait de
-   première ligne pour y loger le marqueur. */
+article h2::before {
+  width: 2rem;
+  height: 4px;
+  margin-bottom: 0.5em;
+}
+
+article h3::before {
+  width: 1.25rem;
+  height: 3px;
+  margin-bottom: 0.45em;
+}
+
 article h4 {
-  margin-left: -2.6rem;
-  padding-left: 2.6rem;
-  text-indent: -2.6rem;
-}
-
-article h4::before {
-  content: "####";
-  display: inline-block;
-  box-sizing: border-box;
-  width: 2.6rem;
-  padding-right: 0.55rem;
-  text-align: right;
-  text-indent: 0;
-  font-family: var(--headerFont);
-  font-weight: 700;
-  font-size: 0.65em;
-  color: var(--secondary);
-  white-space: nowrap;
-  user-select: none;
-}
-
-/* Pas de gouttière disponible : le retrait suspendu est annulé et le
-   marqueur se range devant le titre. */
-@media (max-width: 1000px) {
-  article h4 {
-    margin-left: 0;
-    padding-left: 0;
-    text-indent: 0;
-  }
-
-  article h4::before {
-    width: auto;
-    padding-right: 0;
-    margin-right: 0.6em;
-  }
+  border-left: 3px solid var(--safran);
+  padding-left: 0.55em;
 }
 
 /* --------------------------------------------------------------------------
@@ -684,10 +701,52 @@ article h4::before {
 .page-listing .meta {
   color: var(--gray);
   letter-spacing: 0.01em;
+  opacity: 1;
 }
 
+/* Une page de rubrique liste ses fiches : la date en gris, le titre en
+   étiquette safran — c'est un lien, il en a l'habit — et rien d'autre. La
+   colonne d'étiquettes de Quartz (`ul.tags`) est vide sur ces sites et
+   prenait un tiers de la ligne pour rien. Les sélecteurs reprennent la
+   chaîne de Quartz (`li.section-li > .section > .desc > h3 > a`), qui pose
+   un fond transparent sur le lien avec une spécificité qu'il faut égaler. */
 .page-listing .desc h3 {
   font-family: var(--headerFont);
+  font-size: 0.95rem;
+  font-weight: 700;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.page-listing li.section-li > .section {
+  grid-template-columns: fit-content(8em) 1fr;
+  align-items: baseline;
+}
+
+.page-listing li.section-li > .section > .desc > h3 > a {
+  color: var(--sur-safran);
+  background-color: var(--safran);
+  padding: 0.04em 0.32em 0.06em;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+  transition:
+    background-color 0.18s,
+    color 0.18s;
+}
+
+.page-listing li.section-li > .section > .desc > h3 > a:hover,
+.page-listing li.section-li > .section > .desc > h3 > a:focus-visible {
+  background-color: var(--bloc-survol);
+  color: var(--bloc-survol-texte);
+  outline: none;
+}
+
+.page-listing ul.tags:empty {
+  display: none;
+}
+
+.page-listing > p {
+  color: var(--gray);
 }
 
 /* Explorateur : tout en monospace, dossiers comme fichiers. Quartz ne
@@ -723,42 +782,83 @@ article h4::before {
   font-size: 0.78rem;
 }
 
-/* Les pages d'un dossier alternent deux couleurs, anthracite puis rouge clair
-   (crème puis rouge pâle sur fond sombre) : dans une liste de vingt-cinq
-   entrées en capitales, l'œil ne tenait plus la ligne. Le rouge est un cran
-   plus clair que celui du dossier parent, pour que la rubrique reste au-dessus
-   de ses pages. Ne comptent que les pages : `nth-child(... of :has(> a))`
-   saute les sous-dossiers, qui sinon décaleraient l'alternance. Quartz
-   grisait tout par une opacité, qu'on retire. */
+/* Les rubriques, à l'encre et en gras. Quartz les colore de `--secondary`,
+   qui est maintenant le safran : illisible en texte sur le papier. Le chevron
+   qui les ouvre passe à l'encre lui aussi. */
+.explorer .folder-container div > a,
+.explorer .folder-container div > a:hover,
+.explorer .folder-container button > span,
+.explorer .folder-icon,
+.explorer .folder-icon:hover {
+  color: var(--dark);
+}
+
+/* Les pages d'un dossier alternent deux gris, le corps puis le gris effacé :
+   dans une liste de vingt-cinq entrées en capitales, l'œil ne tenait plus la
+   ligne. Seulement dans un dossier (`ul ul`) : la racine a sa couleur, plus
+   bas. Ne comptent que les pages : `nth-child(... of :has(> a))` saute les
+   sous-dossiers, qui sinon décaleraient l'alternance. Quartz grisait tout par
+   une opacité, qu'on retire. La page courante et le survol sont écartés de
+   l'alternance : leur règle, plus bas, est moins spécifique qu'un
+   `nth-child(of)` et perdrait sinon. */
 /* Sur fablab, une fiche logée dans un dossier (à cause de son `img/`) est un
    dossier sans enfant aux yeux de l'explorateur, rendu par `.folder-container`
    et non par un simple lien. L'alternance porte donc sur toute entrée qui n'a
    pas d'enfant, page ou dossier vide, et saute les vraies rubriques, qui
-   gardent leur rouge de dossier. Le `of` compte les seules entrées retenues,
+   gardent leur encre de dossier. Le `of` compte les seules entrées retenues,
    sinon une rubrique intercalée décalerait l'alternance d'un cran. */
-.explorer-content ul li:nth-child(odd of :not(:has(> .folder-outer > ul > li))) > a,
-.explorer-content ul li:nth-child(odd of :not(:has(> .folder-outer > ul > li))) > .folder-container div > a,
-.explorer-content ul li:nth-child(odd of :not(:has(> .folder-outer > ul > li))) > .folder-container button > span {
+.explorer-content ul ul li:nth-child(odd of :not(:has(> .folder-outer > ul > li))) > a:not(.active):not(:hover),
+.explorer-content ul ul li:nth-child(odd of :not(:has(> .folder-outer > ul > li))) > .folder-container div > a:not(.active):not(:hover),
+.explorer-content ul ul li:nth-child(odd of :not(:has(> .folder-outer > ul > li))) > .folder-container button > span {
   color: var(--darkgray);
   opacity: 1;
 }
 
-.explorer-content ul li:nth-child(even of :not(:has(> .folder-outer > ul > li))) > a,
-.explorer-content ul li:nth-child(even of :not(:has(> .folder-outer > ul > li))) > .folder-container div > a,
-.explorer-content ul li:nth-child(even of :not(:has(> .folder-outer > ul > li))) > .folder-container button > span {
-  color: var(--tertiary);
+.explorer-content ul ul li:nth-child(even of :not(:has(> .folder-outer > ul > li))) > a:not(.active):not(:hover),
+.explorer-content ul ul li:nth-child(even of :not(:has(> .folder-outer > ul > li))) > .folder-container div > a:not(.active):not(:hover),
+.explorer-content ul ul li:nth-child(even of :not(:has(> .folder-outer > ul > li))) > .folder-container button > span {
+  color: var(--gray);
   opacity: 1;
 }
 
-/* La page courante : en gras et en rouge plein, quelle que soit sa place dans
-   l'alternance. Le survol prend le même rouge. */
+/* Les intitulés de premier niveau — les rayons — en safran, sans attendre le
+   survol. C'est une entorse de plus à « jamais en texte », et elle est
+   voulue : à ce corps, en gras et en capitales, un intitulé de rayon est une
+   marque, pas une ligne à lire, et c'est lui qui donne à la colonne son
+   second passage. Les niveaux suivants restent à l'encre et au gris. Au
+   survol et sur la page courante, l'étiquette (plus bas) l'emporte : safran
+   plein, texte noir — une règle qui garderait ici le texte safran le
+   rendrait invisible sur elle. */
+.explorer-content > ul > li > a,
+.explorer-content > ul > li > .folder-container div > a,
+.explorer-content > ul > li > .folder-container button > span,
+.explorer-content > ul > li > .folder-container > .folder-icon {
+  color: var(--safran);
+  opacity: 1;
+}
+
+/* La page courante : une étiquette safran, quelle que soit sa place dans
+   l'alternance — la même que les liens de l'article, et le seul safran de la
+   colonne. Le survol la prend aussi, le temps de pointer. */
 .explorer-content ul li > a.active,
 .explorer-content ul li > a:hover,
 .explorer-content ul li > .folder-container div > a.active,
 .explorer-content ul li > .folder-container div > a:hover {
-  color: var(--secondary);
-  font-weight: 700;
+  color: var(--sur-safran);
+  background-color: var(--safran);
+  /* Les débords de l'étiquette sont peints en ombre portée, pas en
+     remplissage : la boîte ne change pas de largeur au survol, sinon une
+     entrée longue passait à la ligne le temps qu'on la pointe. Pas de
+     graisse au survol non plus, pour la même raison. */
+  box-shadow:
+    0.3em 0 0 var(--safran),
+    -0.3em 0 0 var(--safran);
   opacity: 1;
+}
+
+.explorer-content ul li > a.active,
+.explorer-content ul li > .folder-container div > a.active {
+  font-weight: 700;
 }
 
 /* La molette au-dessus d'un dossier déplié.
@@ -783,15 +883,20 @@ article h4::before {
   letter-spacing: 0.01em;
 }
 
-/* Fil d'Ariane en capitales : même registre que /SOMMAIRE, il se lit comme
-   un chemin. Interlettrage ouvert, sinon les capitales se tassent. */
+/* Fil d'Ariane en capitales, petit et tout en gris, maillons séparés de
+   chevrons (« › », réglé dans `quartz.layout.ts`) : même registre que
+   /SOMMAIRE, il se lit comme un chemin, et un chemin n'a pas à crier — pas
+   même son dernier maillon, qui est la page où l'on est et que le titre dit
+   déjà. Interlettrage ouvert, sinon les capitales se tassent. Quartz colore
+   ses liens de `--secondary`, le safran : illisible en texte. */
 .breadcrumb-container {
   text-transform: uppercase;
-  letter-spacing: 0.07em;
-  font-size: 0.74rem;
+  letter-spacing: 0.08em;
+  font-size: 0.68rem;
 }
 
-.breadcrumb-container .breadcrumb-element p {
+.breadcrumb-container .breadcrumb-element p,
+.breadcrumb-container .breadcrumb-element a {
   color: var(--gray);
 }
 
@@ -804,8 +909,8 @@ article h4::before {
   font-weight: 700;
 }
 
-/* Le libellé du sommaire devient « /sommaire », en rouge : même famille de
-   signes que les marqueurs de titre, comme un chemin dans une arborescence.
+/* Le libellé du sommaire devient « /sommaire », en étiquette safran : même
+   signe que la section du logotype, comme un chemin dans une arborescence.
    Le texte d'origine vient de la locale Quartz, on le neutralise. */
 .toc .toc-header h3 {
   font-size: 0;
@@ -818,7 +923,9 @@ article h4::before {
   font-size: 0.82rem;
   font-weight: 700;
   letter-spacing: 0.06em;
-  color: var(--secondary);
+  padding: 0.1em 0.4em 0.05em;
+  color: var(--sur-safran);
+  background-color: var(--safran);
 }
 
 /* --------------------------------------------------------------------------
@@ -831,8 +938,8 @@ article h4::before {
 
    Au survol, le « soubresaut » repris de maquette.egonux.com : un tremblement
    par pas discrets (d'où `steps(1, end)`, qui saute d'une image à l'autre au
-   lieu d'interpoler) avec décalages rouge et jaune imitant un défaut de
-   repérage d'impression.
+   lieu d'interpoler) avec décalages safran et encre imitant un défaut de
+   repérage d'impression : deux passages mal calés.
    -------------------------------------------------------------------------- */
 
 .logos {
@@ -860,7 +967,7 @@ article h4::before {
 
    En encre, pas en rouge : `--dark` est le noir du thème clair et la crème du
    thème sombre, donc le signe s'inverse tout seul. C'est la couleur des
-   titres ; le rouge reste aux accolades, aux chapeaux et aux liens.
+   titres ; le safran reste aux accolades et aux liens.
 
    Aligné bas, pas au milieu. Les deux logotypes ont leur masse en bas ; le
    cartouche « Dordogne » d'un côté, le mot « LA TRAVERSE » de l'autre,
@@ -929,15 +1036,15 @@ article h4::before {
   }
   14% {
     transform: translate(-2px, 1px);
-    filter: drop-shadow(2px 0 #f44336) drop-shadow(-2px 0 #eddd6e);
+    filter: drop-shadow(2px 0 #f26b1d) drop-shadow(-2px 0 var(--dark));
   }
   28% {
     transform: translate(2px, -1px);
-    filter: drop-shadow(-2px 0 #f44336);
+    filter: drop-shadow(-2px 0 #f26b1d);
   }
   42% {
     transform: translate(-1px, -1px);
-    filter: drop-shadow(1px 1px #eddd6e);
+    filter: drop-shadow(1px 1px var(--dark));
   }
   56% {
     transform: translate(1px, 1px);
@@ -945,7 +1052,7 @@ article h4::before {
   }
   70% {
     transform: translate(-1px, 0);
-    filter: drop-shadow(2px 0 #f44336);
+    filter: drop-shadow(2px 0 #f26b1d);
   }
   84% {
     transform: translate(1px, -1px);
@@ -965,7 +1072,7 @@ article h4::before {
   .logos .logo:hover img,
   .logos .logo:focus-visible img {
     animation: none;
-    filter: drop-shadow(2px 0 #f44336) drop-shadow(-2px 0 #eddd6e);
+    filter: drop-shadow(2px 0 #f26b1d) drop-shadow(-2px 0 var(--dark));
   }
 }
 
@@ -977,7 +1084,7 @@ article h4::before {
 @media (prefers-reduced-motion: reduce) {
   .logos .logo:hover img[src$="logo-cidff.svg"],
   .logos .logo:focus-visible img[src$="logo-cidff.svg"] {
-    filter: brightness(0) drop-shadow(2px 0 #f44336) drop-shadow(-2px 0 #eddd6e);
+    filter: brightness(0) drop-shadow(2px 0 #f26b1d) drop-shadow(-2px 0 var(--dark));
   }
 }
 
@@ -1012,15 +1119,15 @@ article h4::before {
   }
   14% {
     transform: translate(-2px, 1px);
-    filter: brightness(0) drop-shadow(2px 0 #f44336) drop-shadow(-2px 0 #eddd6e);
+    filter: brightness(0) drop-shadow(2px 0 #f26b1d) drop-shadow(-2px 0 var(--dark));
   }
   28% {
     transform: translate(2px, -1px);
-    filter: brightness(0) drop-shadow(-2px 0 #f44336);
+    filter: brightness(0) drop-shadow(-2px 0 #f26b1d);
   }
   42% {
     transform: translate(-1px, -1px);
-    filter: brightness(0) drop-shadow(1px 1px #eddd6e);
+    filter: brightness(0) drop-shadow(1px 1px var(--dark));
   }
   56% {
     transform: translate(1px, 1px);
@@ -1028,7 +1135,7 @@ article h4::before {
   }
   70% {
     transform: translate(-1px, 0);
-    filter: brightness(0) drop-shadow(2px 0 #f44336);
+    filter: brightness(0) drop-shadow(2px 0 #f26b1d);
   }
   84% {
     transform: translate(1px, -1px);
@@ -1076,15 +1183,15 @@ article h4::before {
   }
   14% {
     transform: translate(-2px, 1px);
-    filter: brightness(0) invert(1) drop-shadow(2px 0 #f44336) drop-shadow(-2px 0 #eddd6e);
+    filter: brightness(0) invert(1) drop-shadow(2px 0 #f26b1d) drop-shadow(-2px 0 var(--dark));
   }
   28% {
     transform: translate(2px, -1px);
-    filter: brightness(0) invert(1) drop-shadow(-2px 0 #f44336);
+    filter: brightness(0) invert(1) drop-shadow(-2px 0 #f26b1d);
   }
   42% {
     transform: translate(-1px, -1px);
-    filter: brightness(0) invert(1) drop-shadow(1px 1px #eddd6e);
+    filter: brightness(0) invert(1) drop-shadow(1px 1px var(--dark));
   }
   56% {
     transform: translate(1px, 1px);
@@ -1092,7 +1199,7 @@ article h4::before {
   }
   70% {
     transform: translate(-1px, 0);
-    filter: brightness(0) invert(1) drop-shadow(2px 0 #f44336);
+    filter: brightness(0) invert(1) drop-shadow(2px 0 #f26b1d);
   }
   84% {
     transform: translate(1px, -1px);
@@ -1108,7 +1215,7 @@ article h4::before {
   :root[saved-theme="dark"] .logos .logo:hover img,
   :root[saved-theme="dark"] .logos .logo:focus-visible img {
     animation: none;
-    filter: brightness(0) invert(1) drop-shadow(2px 0 #f44336) drop-shadow(-2px 0 #eddd6e);
+    filter: brightness(0) invert(1) drop-shadow(2px 0 #f26b1d) drop-shadow(-2px 0 var(--dark));
   }
 }
 
@@ -1510,10 +1617,12 @@ article > p:first-of-type abbr > span {
 }
 
 article > p:first-of-type abbr > span b {
-  color: var(--secondary);
+  color: var(--dark);
   font-weight: 700;
   text-transform: uppercase;
   text-decoration: underline;
+  text-decoration-color: var(--safran);
+  text-decoration-thickness: 2px;
   text-underline-offset: 0.15em;
 }
 
@@ -1534,213 +1643,103 @@ article > p:first-of-type abbr:focus > span {
 }
 
 /* --------------------------------------------------------------------------
-   Exergue : le chapeau, surligné du rouge de sélection
+   Exergue : le chapeau, un bloc d'encre plein
 
    La convention veut que chaque fiche s'ouvre sur deux ou trois lignes qui
-   disent à quoi sert la chose, sans titre.
+   disent à quoi sert la chose, sans titre. Elles sont tirées en réserve : un
+   bloc d'encre plein, le texte dans la couleur du papier — le premier
+   passage de l'affiche. Sur fond sombre le bloc est crème et le texte noir :
+   `--dark` et `--light` s'inversent avec le thème, la règle est la même.
 
-   Le surlignage épouse les lignes du texte, bord droit irrégulier compris,
-   exactement comme une sélection ; un fond de bloc rectangulaire donnerait
-   un encadré de couleur, ce qui n'est pas la même chose. Techniquement il
-   faut donc un élément en ligne : le chapeau s'écrit `==comme ceci==` dans
-   le markdown, ce qui produit un span .text-highlight. La bordure noire
-   va sur le paragraphe qui le contient.
-
-   Écrire le surlignage plutôt que le déduire évite au passage de surligner
-   par erreur le premier paragraphe d'une page qui n'aurait pas de chapeau.
+   Le chapeau s'écrit `==comme ceci==` dans le markdown, ce qui produit un
+   span .text-highlight : c'est lui qui désigne le paragraphe. Écrire la
+   marque plutôt que la déduire évite de traiter par erreur le premier
+   paragraphe d'une page qui n'aurait pas de chapeau. Le span lui-même ne
+   porte plus rien, c'est le paragraphe qui est le bloc.
    -------------------------------------------------------------------------- */
 
 /* L'italique est celle du temps fort : le chapeau raconte à quoi sert la
    fiche, il ne l'annonce pas. */
 article > p:first-of-type:has(.text-highlight) {
-  border: 2px solid var(--dark);
-  padding: 0.9em 1.1em;
+  background-color: var(--dark);
+  color: var(--light);
+  padding: 1.05em 1.25em;
   margin-bottom: 1.9em;
   font-size: 1.05rem;
   font-style: italic;
-  line-height: 2;
+  line-height: 1.75;
 }
 
 article > p:first-of-type .text-highlight {
-  /* Le rouge est celui de la sélection (`::selection`, dans base.scss) et la
-     bande est posée à plat, sans dégradé : le fond d'un élément en ligne
-     couvre exactement la zone de contenu de la police, ascendantes et
-     descendantes comprises, c'est-à-dire la surface que peint le navigateur
-     quand on sélectionne le texte à la souris. Toutes les lignes reçoivent
-     donc la même hauteur de bande et l'interligne de 2 les espace strictement
-     pareil.
-
-     Le dégradé qui ne peignait qu'une tranche de cette zone (de 20 % à 88 %
-     de la boîte de ligne) est abandonné avec lui : il dépendait de
-     l'interligne, et sa teinte pâlie à 24 % tirait vers le rose. Le procédé
-     reste employé là où la bande doit épouser la hauteur des capitales : la
-     section du logotype, les dièses en filigrane. */
-  --surlignage: color-mix(in srgb, var(--tertiary) 60%, transparent);
-
-  background-image: none;
-  background-color: var(--surlignage);
-  color: var(--darkgray);
-  /* Pas de remplissage : la bande s'arrête au dernier signe de la ligne,
-     largeur du texte et rien de plus, comme une sélection. */
+  background: none;
+  color: inherit;
   padding: 0;
   border-radius: 0;
-  box-decoration-break: clone;
-  -webkit-box-decoration-break: clone;
-}
-
-/* En thème sombre, le surlignage garde le rouge vif de la palette sombre
-   (`--secondary`, et non `--tertiary` qui en est la version pâle), à forte
-   opacité, sinon le fond noir le délave.
-
-   Conséquence : le texte doit repasser en sombre. Sur un rouge aussi
-   soutenu, la couleur de corps du thème sombre, qui est claire, ne tiendrait
-   pas le contraste. */
-:root[saved-theme="dark"] article > p:first-of-type .text-highlight {
-  --surlignage: color-mix(in srgb, var(--secondary) 78%, transparent);
-  color: var(--light);
 }
 
 /* --------------------------------------------------------------------------
-   Liens : un coup de surligneur
+   Liens : des étiquettes safran
 
-   Le trait est peint sur le fond du lien lui-même, pas sur un calque posé
-   derrière. C'est ce qui lui permet de suivre le retour à la ligne : avec
-   `box-decoration-break: clone`, chaque fragment reçoit sa bande, bouts
-   arrondis compris. Un calque en `position: absolute` donnait un plus beau
-   biais mais s'arrêtait à la première ligne ; et sur ce site, la moitié des
-   liens sont des titres de fichiers ou d'ouvrages qui débordent.
+   Un lien est une étiquette d'encre safran collée sur la ligne, à angles
+   vifs, le texte en noir dessus — le second passage de l'affiche. Pas de
+   souligné, pas de dégradé, pas de biais : le bloc est la marque. Au survol
+   l'étiquette s'inverse en bloc d'encre, texte au papier, comme le chapeau ;
+   le survol fonce donc l'état au lieu de l'éclaircir, et une étiquette qu'on
+   pointe ne s'efface jamais.
 
-   Le biais vient de l'angle du dégradé. À 178,6° la ligne de dégradé est
-   presque verticale, donc les bandes de couleur sont presque horizontales :
-   elles penchent d'un degré et demi. Ni transformation, ni calque.
+   Le safran ne se lit pas sur le papier (2,8:1) : c'est pour ça qu'il est un
+   fond et que le texte posé dessus est le noir de la page dans les deux
+   thèmes — `--sur-safran`, déclaré en tête de fichier. Contraste 5,9:1 sur
+   papier, 6,1:1 sur fond sombre.
 
-   Le texte n'est pas coloré : il garde celle du corps sur les deux fonds. Un
-   essai en blanc sur la bande a été écarté — le rapport de contraste y
-   tombait de 5,2 à 2,2, très en dessous de ce qui se lit.
+   Avec `box-decoration-break: clone`, un lien qui passe à la ligne donne une
+   étiquette par fragment, et sur ce site la moitié des liens sont des titres
+   de fichiers ou d'ouvrages qui débordent.
 
-   Sur papier, la bande est posée à plat. `mix-blend-mode: multiply` — qui
-   donnait l'encre du feutre, la bande se multipliant au texte au lieu de le
-   recouvrir — la fonçait d'un cheveu et l'écartait d'autant de la teinte du
-   chapeau. À plat, elle est exactement la sienne, et l'encre du corps se lit
-   tout aussi bien par-dessus.
-
-   Sur fond noir, la bande reste en `screen`, l'opération inverse de
-   `multiply`, qui éclaircit au lieu d'assombrir : multiplier y reviendrait à
-   peindre du noir sur du noir.
-
-   Au survol, l'encre s'éclaircit. La couleur passe par `--encre`, déclarée en
-   `@property` : sans cette déclaration, une couleur en variable saute d'une
-   valeur à l'autre au lieu de se fondre. C'est le prix du fondu.
-
-   Les ancres de titre sont exclues elles aussi. Quartz pose au bout de chaque
-   titre un `a role="anchor"` qui ne contient qu'un pictogramme de lien : un
-   coup de surligneur sur une icône de dix-huit pixels ne donne qu'une tache.
-
-   Les rubriques de l'accueil sont exclues par leur encadré : ce sont des
-   liens dans un `article`, mais rendus au logotype encadré du site, et un
-   coup de surligneur par-dessus n'a aucun sens. Le rouge reste un accent
-   ponctuel : sur une page longue, des liens rouges par dizaines feraient un
-   texte tacheté et illisible en atelier.
+   Les ancres de titre sont exclues : Quartz pose au bout de chaque titre un
+   `a role="anchor"` qui ne contient qu'un pictogramme de lien, et une
+   étiquette sur une icône de dix-huit pixels ne donne qu'une tache. Les
+   rubriques de l'accueil le sont aussi : ce sont des liens dans un
+   `article`, mais rendus au logotype encadré du site. Le safran reste rare :
+   sur une page longue, des étiquettes par dizaines feraient un texte tacheté
+   et illisible en atelier.
    -------------------------------------------------------------------------- */
-
-/* Le rouge du surligneur est le même dans les deux thèmes, le rouge vif
-   `#f44336`. Sur papier, c'est celui du chapeau : le lien et l'exergue
-   reçoivent la même teinte, et `--tertiary` la donne sans qu'on ait à
-   l'écrire. Le rouge pâle qui servait ici auparavant tenait le lien à
-   distance de l'exergue ; il en faisait surtout deux rouges pour un seul
-   usage, le surlignage.
-
-   Sur fond noir, `--tertiary` est le rouge pâle `#f8998f`, trop délavé pour
-   se voir : le rouge vif y est gardé, écrit en dur faute d'une variable qui
-   atteigne la palette opposée. C'est la seule valeur de la charte écrite
-   hors de `quartz.config.ts` ; à reporter ici si la charte bouge. */
-:root {
-  --stabilo: var(--tertiary);
-}
-
-:root[saved-theme="dark"] {
-  --stabilo: #f44336; /* le `tertiary` du thème clair */
-}
-
-@property --encre {
-  syntax: "<color>";
-  inherits: false;
-  initial-value: transparent;
-}
 
 article a:not([role="anchor"]):not([data-callout="rubriques"] a),
 article a.internal:not([role="anchor"]):not([data-callout="rubriques"] a) {
-  /* Les 60 % sont ceux du chapeau, et la bande étant posée à plat sur le
-     papier, la teinte obtenue est exactement la sienne. */
-  --encre: color-mix(in srgb, var(--stabilo) 60%, transparent);
-
-  color: inherit;
+  color: var(--sur-safran);
   font-weight: inherit;
-  background-color: transparent;
-
-  /* Un souligné en pointillé sous le coup de surligneur : c'est lui qui dit
-     « on peut cliquer » à qui ne lit pas la bande comme un lien, et il tient
-     seul à l'impression, où la bande disparaît. À l'encre (crème sur fond
-     sombre), en points de 2 px, que le navigateur espace d'autant ; décollé
-     du texte pour ne pas couper les descendantes. */
-  text-decoration: underline dotted;
-  text-decoration-color: var(--dark);
-  text-decoration-thickness: 2px;
-  text-underline-offset: 0.22em;
-
-  /* Le trait déborde d'un cheveu de chaque côté et les bouts sont inégaux :
-     un feutre ne s'arrête pas net, et ne repart jamais deux fois au même
-     endroit. Les quatre rayons diffèrent pour cette raison. */
-  padding: 0.1em 0.14em 0.12em;
-  border-radius: 0.14em 0.3em 0.2em 0.1em;
-
-  background-image: linear-gradient(
-    178.6deg,
-    transparent 0 12%,
-    var(--encre) 12% 94%,
-    transparent 94%
-  );
-
-  /* Chaque fragment d'un lien qui passe à la ligne reçoit sa propre bande,
-     ses propres bouts arrondis et son propre débordement. */
+  background-color: var(--safran);
+  background-image: none;
+  text-decoration: none;
+  padding: 0.04em 0.32em 0.06em;
+  border-radius: 0;
   box-decoration-break: clone;
   -webkit-box-decoration-break: clone;
-
-  transition: --encre 0.3s ease;
+  transition:
+    background-color 0.18s,
+    color 0.18s;
 }
 
 article a:not([role="anchor"]):not([data-callout="rubriques"] a):hover,
 article a.internal:not([role="anchor"]):not([data-callout="rubriques"] a):hover,
 article a:not([role="anchor"]):not([data-callout="rubriques"] a):focus-visible,
 article a.internal:not([role="anchor"]):not([data-callout="rubriques"] a):focus-visible {
-  --encre: color-mix(in srgb, var(--stabilo) 24%, transparent);
+  background-color: var(--dark);
+  color: var(--light);
+  outline: none;
 }
 
-/* Sur fond noir, multiplier reviendrait à peindre du noir sur du noir.
-   `screen` fait l'opération inverse (elle éclaircit) et rend au trait sa
-   présence. L'encre monte en proportion pour la même raison qu'ailleurs : le
-   fond sombre absorbe les teintes faibles bien plus vite que le papier. */
-:root[saved-theme="dark"] article a:not([role="anchor"]):not([data-callout="rubriques"] a),
-:root[saved-theme="dark"] article a.internal:not([role="anchor"]):not([data-callout="rubriques"] a) {
-  --encre: color-mix(in srgb, var(--stabilo) 34%, transparent);
-
-  mix-blend-mode: screen;
-}
-
-:root[saved-theme="dark"] article a:not([role="anchor"]):not([data-callout="rubriques"] a):hover,
-:root[saved-theme="dark"] article a.internal:not([role="anchor"]):not([data-callout="rubriques"] a):hover,
-:root[saved-theme="dark"] article a:not([role="anchor"]):not([data-callout="rubriques"] a):focus-visible,
-:root[saved-theme="dark"] article a.internal:not([role="anchor"]):not([data-callout="rubriques"] a):focus-visible {
-  --encre: color-mix(in srgb, var(--stabilo) 16%, transparent);
-}
-
-/* Lien interne dont la cible n'existe pas encore : ni cartouche ni filet ; il
-   n'y a rien à ouvrir. Le pointillé dit que la place est réservée. */
-article a.internal.broken,
-article a.internal.broken:hover {
+/* Lien interne dont la cible n'existe pas encore : ni étiquette ni filet ; il
+   n'y a rien à ouvrir. Le pointillé dit que la place est réservée. Le
+   sélecteur reprend les deux exclusions de la règle générale, sans quoi il
+   lui est inférieur en spécificité et ne s'applique pas. */
+article a.internal.broken:not([role="anchor"]):not([data-callout="rubriques"] a),
+article a.internal.broken:not([role="anchor"]):not([data-callout="rubriques"] a):hover {
   color: var(--gray);
   background-color: transparent;
   background-image: none;
+  padding: 0;
   text-decoration: underline dotted;
   text-decoration-thickness: 1px;
   text-underline-offset: 0.22em;
@@ -1754,7 +1753,7 @@ article a.internal.broken:hover {
    d'écriture, comme la légende sous une photo : rien à apprendre dans
    Obsidian, rien dans le frontmatter. Il passe en signalétique : petit,
    monospace, gris, détaché du corps par un filet. Les liens y gardent leur
-   surligneur.
+   étiquette.
 
    La légende d'une photo placée en fin de page est écartée : elle suit une
    image, et c'est sa règle propre qui la tient.
@@ -1883,7 +1882,7 @@ article tbody tr:nth-child(even) {
   font-size: 0.74rem;
   width: 1.02em;
   height: 1.02em;
-  background-color: var(--secondary);
+  background-color: var(--safran);
   mask-position: center;
   mask-size: contain;
   mask-repeat: no-repeat;
@@ -1907,15 +1906,17 @@ article tbody tr:nth-child(even) {
   mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linejoin='round'%3E%3Cpath d='M3.2 3.2h8.2l9.4 9.4-8.2 8.2-9.4-9.4V3.2z'/%3E%3Ccircle cx='7.4' cy='7.4' r='1.5'/%3E%3C/svg%3E");
 }
 
-/* Intitulés en rouge : c'est la colonne qu'on parcourt du regard pour
-   trouver sa ligne. Capitales monospace, comme les intitulés d'encadré. */
+/* Intitulés à l'encre, en gras : c'est la colonne qu'on parcourt du regard
+   pour trouver sa ligne, et le safran ne se lit pas en texte. C'est le
+   pictogramme, safran, qui porte la couleur de la ligne. Capitales
+   monospace, comme les intitulés d'encadré. */
 .fabrication dt {
   font-family: var(--codeFont);
   font-size: 0.74rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.07em;
-  color: var(--secondary);
+  color: var(--dark);
 }
 
 /* Valeurs en monospace elles aussi : le bloc entier tient dans une seule
@@ -1979,8 +1980,8 @@ article tbody tr:nth-child(even) {
 /* La couleur est portée par une pastille pastel, pas par le texte.
 
    Deux raisons. D'abord l'accord : les primaires pures détonnent à côté
-   d'une palette de crème et de pêche, alors qu'un pastel s'y fond ; c'est
-   la même famille de teintes que #edd1b0 et #eddd6e. Ensuite la lisibilité :
+   d'une palette de crème et de safran, alors qu'un pastel s'y fond. Ensuite
+   la lisibilité :
    un texte pastel sur fond clair est illisible par construction, et un
    texte assourdi vers l'encre vire au brun ou à l'olive. Le texte reste
    donc à l'encre, et la couleur vit dans la pastille.
@@ -2024,14 +2025,14 @@ article tbody tr:nth-child(even) {
    Encadrés : filet gauche épais, sans aplat ni icône
 
    Seul endroit où la couleur travaille vraiment. Sur une fiche machine,
-   l'encadré rouge est un signal de sécurité, pas une décoration.
+   l'encadré safran est un signal de sécurité, pas une décoration.
    -------------------------------------------------------------------------- */
 
 /* Deux registres, pas douze. Quartz attribue une couleur à chacun de ses
    types (vert pour tip, bleu pour note, orange pour warning) ce qui pose un
-   arc-en-ciel sur une charte qui n'a que de l'encre et un rouge. On ramène
-   donc tout à l'encre, et on garde le rouge pour ce qui alerte : sur une
-   fiche, un encadré rouge doit vouloir dire quelque chose.
+   arc-en-ciel sur une charte qui n'a que deux encres. On ramène donc tout à
+   l'encre, et on garde le safran pour ce qui alerte : sur une fiche, un
+   encadré safran doit vouloir dire quelque chose.
 
    La sélection porte sur l'attribut pour l'emporter sur les règles de Quartz,
    qui ciblent chacune leur type. */
@@ -2046,7 +2047,7 @@ article tbody tr:nth-child(even) {
 .callout[data-callout="caution"],
 .callout[data-callout="failure"],
 .callout[data-callout="bug"] {
-  --color: var(--secondary);
+  --color: var(--safran);
 }
 
 /* Le temps fort d'un parcours est un récit, pas une consigne : filet à
@@ -2133,13 +2134,14 @@ footer ul {
 /* Croisillon de séparation entre les mentions du pied de page ; le motif de
    maquette.egonux.com, repris ici. Posé en pseudo-élément sur chaque entrée
    de la liste : le premier sépare aussi la mention de Quartz du reste, et
-   rien ne s'ajoute au DOM. Rouge pâli : ça ponctue sans attirer l'œil. */
+   rien ne s'ajoute au DOM. Safran plein, à plat comme tout le reste : à ce
+   corps, un signe de ponctuation ne se lit pas, il se voit. */
 footer ul li::before {
   content: "#";
   margin-right: 0.6rem;
   font-weight: 700;
   font-size: 0.9em;
-  color: color-mix(in srgb, var(--secondary) 55%, transparent);
+  color: var(--safran);
 }
 
 footer a {
@@ -2148,9 +2150,10 @@ footer a {
   border-bottom: 1px solid color-mix(in srgb, var(--gray) 45%, transparent);
 }
 
+/* Au survol, le lien s'encre et prend le safran en filet, pas en texte. */
 footer a:hover {
-  color: var(--secondary);
-  border-bottom-color: var(--secondary);
+  color: var(--dark);
+  border-bottom: 2px solid var(--safran);
 }
 
 /* --------------------------------------------------------------------------
@@ -2263,49 +2266,25 @@ article > p:first-child:has(> img:only-child) > img {
   object-fit: cover;
 }
 
-/* L'alignement et la marge passent sur le paragraphe : la légende elle-même
-   redevient un élément en ligne, sans quoi son surlignage peindrait tout le
-   rectangle du bloc au lieu d'épouser les lignes de texte. Décalée de 3 px du
-   bord : au ras du cadre, elle semblait déborder. */
+/* La légende se range à gauche derrière un filet safran de 4 px, dans la
+   marge du cadre : c'est la barre de repérage des titres, posée de chant.
+   Plus de surlignage : une teinte pâle serait une transparence, et la charte
+   n'en a pas. */
 article p:has(> img:only-child) + p:has(> em:only-child) {
-  text-align: right;
-  padding-right: 3px;
-  /* Taille et interligne se règlent ici, pas sur la légende. La hauteur des
-     lignes d'un bloc est fixée par le bloc, pas par les éléments en ligne
-     qu'il contient : posé sur le `em` seul, l'interligne laissait 11 px de
-     blanc entre les bandes ; posé ici mais avec la taille de corps, il en
-     laissait encore 2,7, car il se calculait sur 16 px et non sur 12.
-     1,28 fois la taille de la légende vaut la hauteur exacte des bandes :
-     elles se touchent sans se chevaucher. */
+  /* Le filet et le remplissage comptent dans les 40 % : en `content-box`, la
+     légende débordait de dix pixels à gauche du cadre de la photo. */
+  box-sizing: border-box;
+  text-align: left;
+  border-left: 4px solid var(--safran);
+  padding-left: 0.5em;
   font-size: 0.76rem;
-  line-height: 1.28;
+  line-height: 1.4;
 }
 
 article p:has(> img:only-child) + p > em:only-child {
   font-family: var(--codeFont);
   font-style: italic;
-  /* Interligne serré : les bandes de surlignage doivent se suivre presque
-     sans blanc, comme des lignes surlignées à la main. */
-  line-height: 1.15;
-
-  /* Surlignée de la même teinte pâle que le chapeau et les dièses en
-     filigrane, en thème clair (le sombre garde son rouge vif, plus bas), mais
-     en aplat plein : les bandes doivent se toucher d'une ligne à l'autre,
-     sans blanc entre elles. `box-decoration-break: clone` reprend le fond à
-     chaque ligne, bord droit irrégulier compris. */
-  --surlignage: color-mix(in srgb, var(--tertiary) 24%, transparent);
-  background-color: var(--surlignage);
-  box-decoration-break: clone;
-  -webkit-box-decoration-break: clone;
-  padding: 0 0.2em;
   color: var(--darkgray);
-}
-
-/* Sur fond sombre, même arbitrage que pour le chapeau : le rouge monte en
-   opacité, sinon le noir le délave, et le texte repasse en sombre. */
-:root[saved-theme="dark"] article p:has(> img:only-child) + p > em:only-child {
-  --surlignage: color-mix(in srgb, var(--secondary) 78%, transparent);
-  color: var(--light);
 }
 
 /* Sans cela, une image flottante déborderait sur la section suivante. */
@@ -2330,34 +2309,26 @@ article h4 {
   }
 }
 
-/* Le titre d'un callout repris au surlignage des légendes : même rouge, même
-   `color-mix`, même `box-decoration-break`. Il en partage la fonction (une
-   étiquette posée sur le texte, pas un titre de section) et c'est ce qui
-   fait la différence avec les `##` de la page, qui restent noirs.
+/* Le titre d'un encadré est une étiquette safran, comme les liens et la
+   section du logotype : une étiquette posée sur le texte, pas un titre de
+   section, et c'est ce qui fait la différence avec les ## de la page, qui
+   restent noirs sous leur barre.
 
    Le `p` repasse en ligne : en bloc, il prenait toute la largeur de sa boîte
-   flex et la bande rouge s'étendait bien au-delà du texte.
+   flex et l'étiquette s'étendait bien au-delà du texte.
 
    Le sélecteur reprend toute la chaîne de Quartz : la règle plus haut, qui
    donne au titre la couleur de l'encadré, est plus spécifique qu'un simple
    `.callout-title-inner > p`, et le titre d'une alerte se retrouvait en
-   rouge sur la bande rouge, illisible. Le texte reste à l'encre du corps sur
-   les deux thèmes ; c'est le filet de gauche, en rouge, qui dit l'alerte. */
+   safran sur le safran, illisible. Le texte est le noir de la page sur les
+   deux thèmes ; c'est le filet de gauche, safran, qui dit l'alerte. */
 .callout .callout-title .callout-title-inner > p {
-  --surlignage: color-mix(in srgb, var(--tertiary) 60%, transparent);
   display: inline;
-  background-color: var(--surlignage);
+  background-color: var(--safran);
+  color: var(--sur-safran);
   box-decoration-break: clone;
   -webkit-box-decoration-break: clone;
-  padding: 0 0.2em;
-  color: var(--darkgray);
-}
-
-/* Même arbitrage que pour le chapeau et les légendes : sur fond noir le rouge
-   monte en opacité et passe sur `--secondary`, et le texte repasse en clair. */
-:root[saved-theme="dark"] .callout .callout-title .callout-title-inner > p {
-  --surlignage: color-mix(in srgb, var(--secondary) 78%, transparent);
-  color: var(--light);
+  padding: 0.08em 0.4em 0.04em;
 }
 
 /* Un listing en callout est une annexe, pas le corps du texte : un demi-point
@@ -2412,9 +2383,11 @@ article h4 {
 
    Propre à lab.egonux.com, et délimité par sa page : la règle colorerait
    sinon la troisième colonne de toute table de réglages sur l'autre site. Le
-   volume s'efface parce qu'il se lit en diagonale ; les colonnes d'étoiles se
-   comparent verticalement. Le doré les tient à distance du rouge d'accent,
-   qui garde ainsi sa valeur de signal.
+   volume s'efface parce qu'il se lit en diagonale ; les colonnes de notes se
+   comparent verticalement, en jauges — celles du bloc « Repères », posées
+   dans chaque cellule par le même transformer. Un doré tenait autrefois des
+   étoiles à distance du rouge d'accent ; avec deux encres à plat, une
+   troisième n'a plus sa place, et les étoiles non plus.
    -------------------------------------------------------------------------- */
 
 body[data-slug="comparatif"] article tbody td:first-child {
@@ -2426,9 +2399,27 @@ body[data-slug="comparatif"] article tbody td:nth-child(2) {
 }
 
 body[data-slug="comparatif"] article tbody td:nth-child(n + 3) {
-  color: #d4a53a;
-  letter-spacing: 0.14em;
   white-space: nowrap;
+}
+
+/* Le nom du parcours ne se coupe pas : six colonnes de jauges laissent peu
+   de place à la première, et une étiquette sur deux lignes se lit mal. */
+body[data-slug="comparatif"] article tbody td:first-child,
+body[data-slug="comparatif"] article tbody td:first-child a {
+  white-space: nowrap;
+}
+
+/* La jauge en cellule : en ligne, calée au milieu de la ligne de texte, et
+   plus courte que dans le bloc « Repères » — six par ligne au lieu de trois,
+   dans une colonne de lecture qui n'a pas grandi. */
+td .repere-jauge {
+  display: inline-flex;
+  vertical-align: middle;
+  gap: 2px;
+}
+
+td .repere-jauge i {
+  width: 0.55rem;
 }
 
 /* --------------------------------------------------------------------------
@@ -2454,13 +2445,16 @@ body[data-slug="comparatif"] article tbody td:nth-child(n + 3) {
 /* Même registre que /SOMMAIRE et le fil d'Ariane : c'est une étiquette de
    signalétique, pas un titre de section. */
 .reperes-etiquette {
+  display: inline-block;
   margin: 0 0 0.75em;
+  padding: 0.1em 0.4em 0.05em;
   font-family: var(--codeFont);
   font-size: 0.72rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.07em;
-  color: var(--secondary);
+  color: var(--sur-safran);
+  background-color: var(--safran);
 }
 
 /* La grille se règle sur la place disponible : trois colonnes au large, deux
@@ -2565,28 +2559,12 @@ article code {
     border-left: 3px solid #000;
   }
 
-  /* Les marqueurs de titre restent : ils portent la hiérarchie sur papier,
-     là où les nuances de taille passent mal. En noir, et ceux des ## et ###
-     quittent le fond pour se ranger devant le titre : un motif à 24 % ne
-     s'imprime pas. */
-  article h2::before,
-  article h3::before,
-  article h4::before {
-    color: #000;
-  }
-
-  article h2,
-  article h3 {
-    padding-left: 0;
-  }
-
+  /* Les barres de repérage restent : elles portent la hiérarchie sur papier,
+     là où les nuances de taille passent mal. En noir : le safran vire au
+     gris sale en noir et blanc, et une barre noire de 4 px s'imprime net. */
   article h2::before,
   article h3::before {
-    position: static;
-    transform: none;
-    font-size: 0.65em;
-    margin-right: 0.5em;
-    letter-spacing: 0;
+    background-color: #000;
   }
 
   /* Le dièse en filigrane du titre, lui, disparaît : c'est un motif de fond,
@@ -2599,16 +2577,26 @@ article code {
     padding-left: 0;
   }
 
-  /* Le surlignage rouge vire au gris sale en noir et blanc : on ne garde
-     que la bordure du chapeau, qui suffit à le détacher. */
-  article > p:first-of-type .text-highlight {
+  article h4 {
+    border-left-color: #000;
+  }
+
+  /* Le bloc d'encre du chapeau mangerait une cartouche pour rien : sur la
+     feuille il redevient un cadre, texte en noir. */
+  article > p:first-of-type:has(.text-highlight) {
+    background: none;
+    color: #000;
+    border: 2px solid #000;
+  }
+
+  /* Les étiquettes des liens ne s'impriment pas : le texte repasse en noir,
+     souligné, et l'adresse suit (plus bas). */
+  article a:not([role="anchor"]):not([data-callout="rubriques"] a),
+  article a.internal:not([role="anchor"]):not([data-callout="rubriques"] a) {
     background: none;
     color: #000;
     padding: 0;
-  }
-
-  article > p:first-of-type:has(.text-highlight) {
-    border-color: #000;
+    text-decoration: underline;
   }
 
   /* Codes couleur : le texte repasse en noir, la pastille garde sa teinte
@@ -2656,7 +2644,7 @@ article code {
    composant.
 
    Le parti pris : la page est cassée, elle le montre. Le « 404 » tressaute,
-   se dédouble en rouge et en jaune comme un défaut de repérage d'impression,
+   se dédouble en safran et en encre comme un défaut de repérage d'impression,
    et des pixels morts sautillent par-dessus. C'est le « soubresaut » des
    logotypes, poussé jusqu'à la panne franche.
 
@@ -2755,9 +2743,9 @@ body[data-slug="404"] article > a {
   animation: erreur-secousse 1.1s steps(1, end) infinite;
 }
 
-/* Le tremblement : de courts déplacements et le dédoublement rouge et jaune
-   du soubresaut des logotypes, aux mêmes teintes écrites en dur — elles
-   valent pour les deux thèmes. Les deux tiers du tour sont immobiles : une
+/* Le tremblement : de courts déplacements et le dédoublement safran et encre
+   du soubresaut des logotypes. Le safran est écrit en dur, il vaut pour les
+   deux thèmes ; l'encre suit le thème. Les deux tiers du tour sont immobiles : une
    panne qui ne s'arrête jamais n'est plus une panne, c'est une texture. */
 @keyframes erreur-secousse {
   0%,
@@ -2767,15 +2755,15 @@ body[data-slug="404"] article > a {
   }
   66% {
     transform: translate(-3px, 1px);
-    filter: drop-shadow(3px 0 #f44336) drop-shadow(-3px 0 #eddd6e);
+    filter: drop-shadow(3px 0 #f26b1d) drop-shadow(-3px 0 var(--dark));
   }
   70% {
     transform: translate(3px, -2px);
-    filter: drop-shadow(-4px 0 #f44336);
+    filter: drop-shadow(-4px 0 #f26b1d);
   }
   74% {
     transform: translate(-1px, 2px);
-    filter: drop-shadow(2px 1px #eddd6e);
+    filter: drop-shadow(2px 1px var(--dark));
   }
   78% {
     transform: translate(2px, 0);
@@ -2783,7 +2771,7 @@ body[data-slug="404"] article > a {
   }
   86% {
     transform: translate(-2px, -1px);
-    filter: drop-shadow(4px 0 #f44336) drop-shadow(-2px 0 #eddd6e);
+    filter: drop-shadow(4px 0 #f26b1d) drop-shadow(-2px 0 var(--dark));
   }
   92% {
     transform: translate(1px, 1px);
@@ -2836,15 +2824,15 @@ body[data-slug="404"] article > a {
   }
 }
 
-/* Le défaut de repérage du calque : il vire au rouge puis au jaune, sur une
-   cadence qui n'est pas celle des tranches — deux pannes distinctes. */
+/* Le défaut de repérage du calque : il vire au safran puis à l'encre, sur
+   une cadence qui n'est pas celle des tranches — deux pannes distinctes. */
 @keyframes erreur-reperage {
   0%,
   100% {
     color: var(--secondary);
   }
   50% {
-    color: #eddd6e;
+    color: var(--dark);
   }
 }
 
@@ -2962,7 +2950,7 @@ body[data-slug="404"] article > a {
   }
 
   body[data-slug="404"] article h1 {
-    filter: drop-shadow(3px 0 #f44336) drop-shadow(-3px 0 #eddd6e);
+    filter: drop-shadow(3px 0 #f26b1d) drop-shadow(-3px 0 var(--dark));
   }
 
   body[data-slug="404"] article h1::after {

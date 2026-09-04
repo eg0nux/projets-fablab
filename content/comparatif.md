@@ -2,7 +2,7 @@
 title: Tableau comparatif
 ---
 
-Les vingt-quatre parcours notés sur six indicateurs à cinq étoiles (scores indicatifs, pour comparer et guider le choix). Deux indicateurs sont **inversés** pour que « plus d'étoiles » signifie toujours « plus favorable » : l'accessibilité (★★★★★ = le plus facile à mener) et le coût matière (★★★★★ = le plus économique).
+==Les vingt-quatre parcours notés sur six indicateurs de un à cinq segments (scores indicatifs, pour comparer et guider le choix). Deux indicateurs sont inversés pour que « plus de segments » signifie toujours « plus favorable » : l'accessibilité (cinq segments pour le plus facile à mener) et le coût matière (cinq segments pour le plus économique).==
 
 > [!note]
 > Projets classés par ordre alphabétique. La fiche complémentaire [[essaimer|Essaimer]] n'est pas notée ici. La colonne **Vol.** rappelle le volume d'origine (1 = génériques, 2 = ancrés Bergeracois, 3 = à hauteur d'atelier).

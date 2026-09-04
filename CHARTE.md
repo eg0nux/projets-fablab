@@ -5,6 +5,11 @@ Ce document décrit l'identité graphique commune à **fablab.egonux.com**
 dans les deux dépôts, à l'octet près, comme la feuille de style qu'il
 explique : toute modification se reporte de l'un à l'autre.
 
+C'est la charte **Sérigraphie**, arrêtée le 2026-09-04 : deux encres à plat,
+le noir et le safran, sur un papier crème. Elle remplace la charte « encre,
+papier et rouge » du 2026-08-30, dont elle garde le mobilier, les polices, le
+logotype et les signes.
+
 Il dit ce qui est décidé et pourquoi. Le *comment* est dans le code, commenté
 en français : `quartz/styles/custom.scss` pour l'essentiel, les composants
 `PageTitle`, `Logos`, `Marques` et `Footer` pour le reste.
@@ -25,9 +30,9 @@ sont deux sites :
 C'est la seule différence affichée, et c'est voulu : même charte, même
 mobilier, même ton. Un lecteur qui passe de l'un à l'autre ne change pas de
 maison, il change de rayon. Le troisième site, `{maquette}/LATRAVERSE`,
-partage la palette et la police mais pas le régime : c'est une page
-d'exposition, avec ses cadres épais et ses aplats, là où les deux sites du
-FabLab sont des fiches.
+partage la police mais ni la palette ni le régime : il a gardé le rouge de la
+première charte, et c'est une page d'exposition, avec ses cadres épais et ses
+ombres, là où les deux sites du FabLab sont des fiches.
 
 Ce que le lecteur doit trouver sans chercher, sur chacun des deux accueils :
 où ça se passe, avec qui, grâce à qui, et où est l'autre site.
@@ -39,22 +44,26 @@ où ça se passe, avec qui, grâce à qui, et où est l'autre site.
 ```
 ┌──────────────┐
 │ {fablab}     │   la marque : JetBrains Mono 700, bas de casse,
-│         /DOC │   accolades rouges, nom à l'encre, interlettrage -0,01 em
-└──────────────┘   la section : 0,56 du corps, capitales, graisse normale,
-                   interlettrage 0,08 em, 0,1 em sous la marque, calée à droite
-                   sous la dernière lettre du nom, sur une bande rouge
+│         /DOC │   accolades safran, nom à l'encre, interlettrage -0,01 em
+└──────────────┘   la section : 0,56 du corps, capitales, graisse 700,
+                   interlettrage 0,1 em, 0,15 em sous la marque, calée à droite
+                   sous la dernière lettre du nom, en étiquette safran pleine
 ```
 
-La section est celle de l'accueil du domaine, reprise à l'identique partout :
-texte anthracite sur une bande rouge translucide (rouge plein et texte papier
-sur fond sombre), qui couvre la hauteur des capitales et dont le bord droit
-tombe à 0,58 em du bord droit de la marque.
+La section est une étiquette : safran plein, texte au noir de la page (l'encre
+sur papier, le fond lui-même sur thème sombre), la même étiquette que les
+liens. Son bord droit — celui du texte, pas du bloc — tombe à 0,58 em du bord
+droit de la marque.
 
-Le cadre est un trait de 0,08 du corps (2 px pour le corps de 24,8 px de la
-colonne de gauche), angles à 2 px, marges intérieures 0,3 em en haut, 0,5 em
-sur les côtés, 0,34 em en bas. Le trait du cadre est celui du chapeau, du
-sommaire, des photos et de la carte de fabrication : sur ces sites, un trait
-de 2 px à l'encre veut dire « ceci est un bloc ».
+Dans les pages, sur papier, le logotype est une étiquette safran pleine,
+texte à l'encre, accolades fondues dans le bloc ; au survol il s'encre, texte
+papier, et les accolades ressortent. Sur fond sombre il est nu au repos —
+crème sur la page, accolades safran, section en étiquette — et devient
+l'étiquette safran au survol. Le trait de 2 px, de la couleur du bloc, reste
+le cadre de la version gravure : un trait de 0,08
+du corps, angles à 2 px, marges intérieures 0,3 em en haut, 0,5 em sur les
+côtés, 0,34 em en bas — celui du sommaire, des photos et de la carte de
+fabrication, où un trait de 2 px à l'encre veut dire « ceci est un bloc ».
 
 Le logotype n'est pas une image : dans les pages, c'est du texte, et la
 feuille de style pose les accolades en pseudo-éléments. Le titre de site
@@ -75,8 +84,9 @@ entière.
 
 Les rubriques de l'accueil (`{techniques}`, `{objets}`, `{la méthode}`),
 côte à côte, et le bouton `{recherche}` sont rendus dans la même construction,
-sans section, au même corps ou plus petit : ce sont des déclinaisons du
-logotype, pas des boutons.
+sans section, au corps de 1,05 rem : ce sont des déclinaisons du logotype,
+pas des boutons. Les rubriques sont des étiquettes comme lui ; le bouton de
+recherche, seul, garde le fond de la page et son cadre d'encre.
 
 Tous les fichiers de `logos/` sont des tracés, générés depuis les polices du
 site. Leur README dit comment ils sont faits et ce qu'on ne fait pas avec.
@@ -93,7 +103,7 @@ réduction mais le sigle de la maison : l'onglet dit ego/nux, la page dit
 
 ### Ce qu'on ne fait pas
 
-Pas d'autre couleur que l'encre et le rouge ; pas de dégradé, d'ombre ou de
+Pas d'autre couleur que l'encre et le safran ; pas de dégradé, d'ombre ou de
 contour ; pas de majuscule dans la marque ni de bas de casse dans la section ;
 pas de section inventée ; pas de déformation, le cadre suit le texte et ne
 s'étire jamais pour remplir une largeur ; pas de logotype posé sur une photo.
@@ -108,50 +118,65 @@ l'illustration.
 |---|---|---|
 | `{ }` | la marque, ce qui appartient à l'atelier | logotype, rubriques de l'accueil, bouton de recherche |
 | `/` | la section, le chemin | `/DOC`, `/PROJETS`, `/SOMMAIRE`, le fil d'Ariane |
-| `#` | la structure | dièses en filigrane derrière le titre de page et les sous-titres (`#`, `##`, `###`), marqueur `####` en gouttière, croisillon du millésime du catalogue, séparateurs du pied de page |
+| `#` | la structure | dièse en filigrane derrière le titre de page, croisillon du millésime du catalogue, séparateurs du pied de page — et, sans être écrite, la barre de repérage au-dessus des sous-titres, qui dit le niveau à sa longueur |
 | `&` | la maison, deux structures qui font une chose ensemble | entre les logos du CIDFF et de La Traverse, en Cormorant italique |
-| `==` | le surlignage, ce qu'on retient | chapeau, légendes de photos, titres d'encadrés, coup de surligneur des liens |
+| `==` | la marque du chapeau, ce qu'on retient | le chapeau, qui s'écrit ainsi dans le markdown ; à l'écran c'est un bloc d'encre plein |
 
-Le `#` est rouge quand il est un signe (marqueur `####`, croisillon du titre,
-pied de page) et rouge très pâli quand il est un motif : le filigrane du titre
-de page, rouge à 20 %, et celui des sous-titres, rouge clair à 24 %, plus
-grand que le titre et mordu par sa première lettre.
-Le `&` est à l'encre : c'est la couleur des titres, et le rouge reste aux
-accolades, aux chapeaux et aux liens.
+Le `#` est safran quand il est écrit (croisillon du titre, pied de page), et
+safran pâli vers le papier quand il est un motif : le filigrane du titre de
+page, deux lignes de haut, mordu par la première lettre du titre. C'est le
+seul safran qui ne soit pas plein. Les sous-titres n'affichent plus leurs
+dièses : leur niveau se lit à la barre de repérage posée au-dessus — 4 px sur
+2 rem pour un `##`, 3 px sur 1,25 rem pour un `###`, et un filet devant le
+`####`. Le `&` est à l'encre : c'est la couleur des titres, et le
+safran reste aux accolades et aux liens.
 
 ## 4. Les couleurs
 
-Neuf variables Quartz, deux thèmes, déclarées dans `quartz.config.ts`.
+Deux encres à plat, comme une affiche sérigraphiée en deux passages : le
+**noir** et le **safran**, sur un papier crème. Pas de transparence, pas de
+dégradé, pas de bande de biais. Neuf variables Quartz, deux thèmes, déclarées
+dans `quartz.config.ts`.
 
 | Variable | Clair | Sombre | Rôle |
 |---|---|---|---|
-| `light` | `#fafafa` papier | `#1c1b19` | fond de page |
-| `lightgray` | `#e6e1d9` | `#33312c` | filets, zébrure des tableaux, rail du sommaire |
-| `gray` | `#8c8578` | `#7d786d` | texte effacé : dates, fil d'Ariane, pied de page |
-| `darkgray` | `#38352f` | `#ded8cc` | corps de texte |
-| `dark` | `#212121` encre | `#f6ece0` crème | titres, cadres, logotype, `&` |
-| `secondary` | `#d32f2f` rouge | `#f4675c` | accolades, section, marqueurs, alertes, jauge |
-| `tertiary` | `#f44336` | `#f8998f` | surlignage : le chapeau et le surligneur des liens à 60 %, comme les titres d'encadrés ; les légendes de photos (thème clair) et les dièses en filigrane à 24 % ; en sombre, le chapeau reprend `secondary` à 78 % et le surligneur garde le vif du thème clair |
-| `highlight` | pêche à 32 % | pêche à 12 % | survol de l'explorateur |
-| `textHighlight` | jaune à 60 % | jaune à 27 % | jamais employé tel quel |
+| `light` | `#fbf6ec` papier crème | `#171311` | fond de page ; texte du chapeau |
+| `lightgray` | `#e4dbc9` | `#332d27` | filets, zébrure des tableaux, rail du sommaire |
+| `gray` | `#8a8176` | `#948a7d` | texte effacé : dates, fil d'Ariane, pied de page, `####` |
+| `darkgray` | `#33302a` | `#d8cfc1` | corps de texte |
+| `dark` | `#1a1613` encre | `#f5eee2` crème | titres, cadres, logotype, `&` ; bloc du chapeau ; survol des liens |
+| `secondary` | `#f26b1d` safran | le même | l'autre encre : étiquettes des liens et de la section, barres de repérage, filets d'alerte et de légende, jauge, croisillons, accolades |
+| `tertiary` | `#f26b1d` | le même | Quartz veut deux accents, la charte n'en a qu'un |
+| `highlight` | safran à 16 % | safran à 20 % | survols de Quartz hors charte (résultats de recherche) |
+| `textHighlight` | `#f26b1d` | le même | un `==surlignage==` hors chapeau, rare |
 
 Quatre règles :
 
-1. **Le rouge est un accent, jamais un aplat.** Il marque un signe, une
-   alerte, une bande de surlignage ; il ne colore ni un fond de bloc, ni un
-   bouton, ni des liens par dizaines.
-2. **Un seul rouge par usage.** Le surlignage n'a qu'un rouge, le vif
-   `#f44336` : le chapeau et les liens reçoivent la même teinte. Sur papier
-   c'est `tertiary`, pris tel quel ; sur fond noir `tertiary` est le rouge
-   pâle, trop délavé pour s'y voir, et `--stabilo` garde le vif — la seule
-   valeur écrite en dur hors de la configuration.
+1. **Le safran est un fond, jamais un texte.** À 2,8:1 sur le papier, il ne
+   se lit pas : il n'est jamais la couleur d'une ligne à lire. Il est
+   toujours un bloc, une barre ou un filet, et le texte posé sur lui est le
+   noir de la page — `--sur-safran` dans la feuille : l'encre sur papier, le
+   fond lui-même sur thème sombre. Trois entorses, qui sont des marques et
+   non des lignes : les accolades du logotype, le croisillon du millésime, et
+   les intitulés racine de l'explorateur — les rayons — en gras et en
+   capitales. Le seul safran pâli est le dièse en filigrane du titre de page,
+   mélangé vers le papier, jamais transparent.
+2. **Le noir est un fond aussi.** Le chapeau est un bloc d'encre plein, texte
+   au papier ; sur thème sombre le bloc est crème et le texte noir, `--dark`
+   et `--light` s'inversent et la règle est la même. Le logotype et les
+   rubriques de l'accueil s'échangent avec le thème : sur papier, étiquette
+   safran au repos, accolades fondues dans le bloc, et bloc d'encre à texte
+   papier au survol ; sur fond sombre, la marque nue au repos — crème,
+   accolades safran, section en étiquette — et l'étiquette safran au survol.
+   Le bouton `{recherche}`, seul, garde le fond de la page et son cadre
+   d'encre dans les deux thèmes : c'est un outil, pas un rayon.
 3. **Les marques d'autrui passent en noir.** Le logo du CIDFF est le seul en
    couleur ; il est ramené à l'encre par un filtre, et tous les logos passent
    en blanc plein sur fond sombre. Sur ces pages, la couleur d'une marque ne
    dit rien.
-4. **Le doré `#d4a53a` n'existe que sur le tableau comparatif** du
-   catalogue, pour tenir les étoiles à distance du rouge d'accent. Il est
-   délimité par la page et ne doit pas en sortir.
+4. **Pas de troisième encre.** Le doré qui tenait les étoiles du tableau
+   comparatif à distance du rouge n'a plus de raison d'être : les étoiles
+   sont devenues les jauges des repères, à l'encre.
 
 Les codes couleur cités dans une fiche (les consignes Trotec, par exemple)
 s'affichent avec une pastille pastel : c'est le seul endroit où d'autres
@@ -169,15 +194,17 @@ Toutes auto-hébergées dans `quartz/static/fonts/`, sous-ensembles latin et
 latin étendu. L'appariement mono / serif donne le contraste sans couleur : la
 monospace impose un rythme aux titres, la serif tient la lecture longue.
 
-Échelle : titre de page 2 rem, `##` 1,45 rem, `###` 1,15 rem, `####` 1 rem en
-capitales grises ; logotype et rubriques 1,55 rem ; corps 1 rem, interligne
-1,7 ; chapeau 1,05 rem, interligne 2 ; signalétique de 0,68 à 0,82 rem.
+Échelle : titres en capitales ; titre de page de 1,35 à 1,75 rem selon la
+largeur de la colonne, `##` 1,1 rem, `###` 0,95 rem, `####` 0,82 rem en gris ;
+logotype 1,55 rem, rubriques et recherche 1,05 rem ; corps 1 rem, interligne 1,7 ; chapeau
+1,05 rem, interligne 1,75 ; signalétique de 0,68 à 0,82 rem.
 
 La **signalétique** est un registre à part : capitales, interlettrage de 0,07
 em, JetBrains Mono, petit corps. C'est le registre des étiquettes de
 navigation, `/SOMMAIRE`, l'explorateur entier, le fil d'Ariane, les intitulés
-d'encadrés, la ligne « Repères », le pied de page. Les titres de pages, eux,
-gardent leur casse en tête de page.
+d'encadrés, la ligne « Repères », le pied de page. Les titres sont en
+capitales eux aussi, mais au corps et à la graisse d'un titre : la
+signalétique est petite, un titre ne l'est pas.
 
 Les chiffres sont à chasse fixe partout où ils se comparent : tableaux, carte
 de fabrication, pourcentage du sommaire.
@@ -186,31 +213,34 @@ de fabrication, pourcentage du sommaire.
 
 **Colonne de gauche**, sur toutes les pages : le logotype encadré, le bouton
 `{recherche}` dans la même construction, la bascule de thème, le mode
-lecture, puis l'explorateur ouvert, tout en capitales, rubriques en gras et
-en rouge, entrées sans enfant (pages, et fiches logées dans un dossier)
-alternant anthracite et rouge clair (crème et rouge pâle sur fond sombre), la
-page courante en rouge plein et en gras. La liste de l'explorateur défile
+lecture, puis l'explorateur ouvert, tout en capitales, les intitulés racine
+en safran et en gras, les rubriques imbriquées à l'encre, les entrées sans
+enfant d'un dossier (pages, et fiches logées dans un dossier) alternant le
+corps et le gris, la page courante en étiquette safran. La liste de l'explorateur défile
 sous la molette comme sous le pavé tactile : les sous-listes de dossiers ne
 retiennent plus le geste (voir le commentaire sur `overscroll-behavior`).
 
 **Colonne de droite** : les logos de la maison en tête, `CIDFF & La Traverse`,
-puis `/SOMMAIRE` encadré, avec sa jauge de lecture et son rail où la section
-courante est marquée en rouge, puis les rétroliens.
+puis `/SOMMAIRE` en étiquette safran dans son cadre, avec sa jauge de lecture
+et son rail où la section courante est marquée en safran, puis les rétroliens.
 
-**En-tête de page** : le fil d'Ariane en capitales, le titre avec son dièse en
-filigrane, la date et le temps de lecture en gris ; à droite, sur la ligne du
+**En-tête de page** : le fil d'Ariane en petites capitales grises, maillons
+séparés de chevrons, le titre en
+capitales sur son dièse en filigrane, la date et le temps de lecture en gris ; à droite, sur la ligne du
 titre, le bandeau de marques quand la fiche en a (voir §7).
 
 **Corps** :
 
-- le **chapeau**, deux ou trois lignes surlignées dans un cadre, qui dit à
-  quoi sert la chose ; il s'écrit `==ainsi==` en premier paragraphe ;
-- les **titres** avec leurs dièses en filigrane, le `####` seul restant en
-  gouttière ;
-- les **encadrés** à filet gauche, à l'encre ; rouge pour ce qui alerte ;
-  italique pour le temps fort d'un parcours ; sans icône, sans fond ;
+- le **chapeau**, deux ou trois lignes en italique dans un bloc d'encre
+  plein, texte au papier, qui dit à quoi sert la chose ; il s'écrit
+  `==ainsi==` en premier paragraphe ;
+- les **sous-titres** en capitales sous leur barre de repérage, plus courte
+  d'un niveau à l'autre ; le `####` derrière un filet ;
+- les **encadrés** à filet gauche, à l'encre ; safran pour ce qui alerte ;
+  leur intitulé en étiquette safran ; italique pour le temps fort d'un
+  parcours ; sans icône, sans fond ;
 - les **photos** cadrées de 2 px, habillées par le texte sur deux cinquièmes
-  de colonne, légende en italique surlignée juste en dessous ;
+  de colonne, légende en italique derrière un filet safran juste en dessous ;
 - le **bandeau**, quand une page s'ouvre sur une photo avant son premier
   titre : toute la largeur de la colonne, trois fois plus large que haut,
   même cadre et même légende que les photos ;
@@ -218,15 +248,18 @@ titre, le bandeau de marques quand la fiche en a (voir §7).
 - la **carte de fabrication** (fablab) : machines, matériaux, temps, coût,
   dans un cadre, pictogramme par ligne ;
 - les **repères** (lab) : six appréciations en jauges segmentées, entre deux
-  filets ;
-- les **liens** au surligneur, une bande légèrement de biais, du rouge du
-  chapeau, qui suit le retour à la ligne, soulignée d'un pointillé à l'encre, en points de 2 px ; le
-  texte y garde la couleur du corps ; jamais de lien rouge ;
+  filets ; le tableau comparatif reprend la même jauge dans chaque cellule ;
+- les **liens** en étiquettes safran à angles vifs, texte au noir de la page,
+  une étiquette par fragment quand le lien passe à la ligne ; au survol
+  l'étiquette s'inverse en bloc d'encre ; jamais de lien coloré en texte ;
 - le **colophon** : le dernier paragraphe, s'il est en italique, dit avec qui
-  et grâce à qui ; il passe en signalétique sous un filet.
+  et grâce à qui ; il passe en signalétique sous un filet ;
+- les **pages de rubrique** (`/objets/`, `/techniques/`, `/projets/`) : le
+  nom de la rubrique en titre, le décompte des fiches en signalétique, puis
+  la liste — date en gris, titre en étiquette safran.
 
-**Page 404**, la seule qui bouge : le nombre tressaute et se dédouble en rouge
-et en jaune comme un défaut de repérage d'impression, des tranches de l'image
+**Page 404**, la seule qui bouge : le nombre tressaute et se dédouble en safran
+et en encre comme un défaut de repérage d'impression, des tranches de l'image
 partent de travers, et un semis de pixels morts sautille par-dessus. Trois
 cadences premières entre elles — 0,7 s, 1,1 s et 2,3 s — pour que l'oeil n'y
 retrouve pas de boucle, et des pas discrets partout : un glitch ne glisse pas,
@@ -235,7 +268,7 @@ de retour qu'en attendant on repart dans le passé. Même traitement sur
 egonux.com, dont la page est écrite à la main.
 
 **Pied de page** : une seule ligne, en capitales grises, mentions séparées
-d'un croisillon rouge pâli : Quartz, EcoIndex, contact, ego/nux.
+d'un croisillon safran : Quartz, EcoIndex, contact, ego/nux.
 
 **Accueil**, même structure sur les deux sites : le chapeau, puis les
 rubriques rendues au logotype (`> [!rubriques]` dans le markdown), puis
@@ -277,10 +310,10 @@ bandeau de fiche dit avec qui, pas grâce à qui.
 
 ## 8. Sombre, immobile, imprimé
 
-**Thème sombre** : la palette s'inverse, le rouge s'éclaircit, les
-surlignages montent en opacité et leur texte repasse en clair, tous les logos
-passent en blanc, le surligneur des liens passe en `screen` — sur papier il
-est posé à plat. Rien ne prend de fond.
+**Thème sombre** : la palette s'inverse — papier noir, encre crème — et le
+safran ne bouge pas : c'est le texte posé dessus qui suit, noir dans les deux
+thèmes. Les blocs s'inversent avec l'encre : le chapeau devient crème, texte
+noir. Tous les logos passent en blanc.
 
 **Mouvement réduit** : le soubresaut des logos s'arrête, mais garde son
 décalage chromatique ; la page 404 se fige de la même façon — le nombre garde
@@ -288,9 +321,10 @@ son dédoublement, la déchirure une tranche, le semis de pixels sa position de
 départ. Ce sont les deux seules animations des sites.
 
 **Impression** : les colonnes et le pied de page disparaissent, tout passe en
-noir, les marqueurs `##` reviennent devant les titres (ils portent la
-hiérarchie sur papier), le filigrane du titre de page s'efface, les surlignages tombent et le chapeau garde son cadre, les
-adresses des liens externes s'écrivent entre parenthèses. Une fiche punaisée
+noir, les barres de repérage restent et s'impriment en noir (elles portent la
+hiérarchie sur papier), le filigrane du titre s'efface, le chapeau quitte son bloc d'encre pour un cadre, les
+étiquettes des liens tombent et leur texte se souligne, les adresses des liens
+externes s'écrivent entre parenthèses. Une fiche punaisée
 près d'une machine est un usage réel.
 
 ## 9. Où ça vit
@@ -305,7 +339,9 @@ près d'une machine est un usage réel.
 | `quartz/components/Marques.tsx` | le partenaire d'un projet | fablab seulement |
 | `quartz/plugins/transformers/fabrication.ts` | la carte de fabrication | fablab seulement |
 | `quartz/plugins/transformers/reperes.ts` | les jauges du catalogue | lab seulement |
-| `quartz/static/og-image.png` | image de partage | propre à chaque site, générée avec les logotypes |
+| `quartz/plugins/emitters/folderPage.tsx` | le titre des pages de rubrique, sans le « Dossier : » de Quartz | identique |
+| `quartz/i18n/locales/fr-FR.ts` | les libellés : décompte des fiches, page 404 | identique |
+| `quartz/static/og-image.png` | image de partage | propre à chaque site : le logotype encadré sur papier crème, le domaine en dessous |
 | `logos/` | la famille de logotypes en tracés | fablab seulement, dossier de référence |
 | `CHARTE.md` | ce document | identique |
 
@@ -324,3 +360,6 @@ l'ancienne feuille.
 - **Deux vestiges** dans le dépôt fablab, `tools/accueil.mjs` et `wip/`, à
   retirer quand la commande de build de Cloudflare Pages ne les appellera
   plus.
+- **Les tracés de `logos/`** ont été passés à Sérigraphie sur les fichiers
+  eux-mêmes, le script qui les avait produits n'étant pas dans le dépôt ; au
+  prochain changement de construction, il faudra le réécrire.

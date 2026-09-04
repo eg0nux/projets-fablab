@@ -33,30 +33,32 @@ const config: QuartzConfig = {
         code: "JetBrains Mono",
       },
       colors: {
-        // Encre, papier et rouge repris de maquette.egonux.com ; le reste
-        // est dérivé en gris chauds. Régime sobre : la couleur est un
-        // accent ponctuel, jamais un aplat.
+        // Sérigraphie : deux encres à plat, le noir et le safran, sur un
+        // papier crème. Le safran est un fond, jamais un texte : à 2,8:1 sur
+        // le papier il ne se lit pas, et c'est ce qui le tient à sa place.
+        // Quartz veut deux accents, la charte n'en a qu'un : `secondary` et
+        // `tertiary` sont la même encre. Le reste est dérivé en gris chauds.
         lightMode: {
-          light: "#fafafa", // papier
-          lightgray: "#e6e1d9", // filets, zébrure
-          gray: "#8c8578", // texte effacé, table des matières
-          darkgray: "#38352f", // corps de texte
-          dark: "#212121", // encre : titres
-          secondary: "#d32f2f", // accent : survol, encadrés
-          tertiary: "#f44336", // accent vif
-          highlight: "rgba(237, 209, 176, 0.32)", // pêche
-          textHighlight: "#eddd6e99", // jaune
+          light: "#fbf6ec", // papier crème
+          lightgray: "#e4dbc9", // filets, zébrure
+          gray: "#8a8176", // texte effacé, signalétique
+          darkgray: "#33302a", // corps de texte
+          dark: "#1a1613", // encre : titres, blocs pleins
+          secondary: "#f26b1d", // safran : l'autre encre, toujours en fond
+          tertiary: "#f26b1d", // idem
+          highlight: "rgba(242, 107, 29, 0.16)", // survols de Quartz hors charte
+          textHighlight: "#f26b1d", // ==surlignage== hors chapeau
         },
         darkMode: {
-          light: "#1c1b19",
-          lightgray: "#33312c",
-          gray: "#7d786d",
-          darkgray: "#ded8cc",
-          dark: "#f6ece0", // crème : titres
-          secondary: "#f4675c",
-          tertiary: "#f8998f",
-          highlight: "rgba(237, 209, 176, 0.12)",
-          textHighlight: "#eddd6e44",
+          light: "#171311",
+          lightgray: "#332d27",
+          gray: "#948a7d",
+          darkgray: "#d8cfc1",
+          dark: "#f5eee2", // crème : titres, blocs pleins
+          secondary: "#f26b1d", // le même safran : c'est le texte posé dessus qui suit le thème
+          tertiary: "#f26b1d",
+          highlight: "rgba(242, 107, 29, 0.2)",
+          textHighlight: "#f26b1d",
         },
       },
     },

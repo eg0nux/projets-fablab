@@ -71,9 +71,9 @@ export default {
       home: "En attendant, je retourne dans le passé.",
     },
     folderContent: {
-      folder: "Dossier",
+      folder: "Rubrique",
       itemsUnderFolder: ({ count }) =>
-        count === 1 ? "1 élément sous ce dossier." : `${count} éléments sous ce dossier.`,
+        count === 1 ? "1 fiche dans cette rubrique." : `${count} fiches dans cette rubrique.`,
     },
     tagContent: {
       tag: "Étiquette",

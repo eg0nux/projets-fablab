@@ -2,7 +2,7 @@
 title: La méthode
 ---
 
-Ce qui rend ces parcours efficaces ne tient pas à leur thème, mais à leur **mécanique pédagogique**. Les vingt-cinq projets changent de terrain, mais conservent tous la même ossature. La voici, explicitée pour être transposée.
+==Ce qui rend ces parcours efficaces ne tient pas à leur thème, mais à leur mécanique pédagogique. Les vingt-cinq projets changent de terrain, mais conservent tous la même ossature. La voici, explicitée pour être transposée.==
 
 > [!info] Format de référence
 > **10 jours** répartis sur 2,5 semaines · groupe de **8 à 12 participants** · fabrication au FabLab + pitchs de professionnels + trophée éco-conçu + évaluation multi-modale.
