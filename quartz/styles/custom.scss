@@ -237,7 +237,16 @@ h6,
   display: block;
   width: fit-content;
   margin: 0.15em calc(0.58em / 0.56 - 0.45em) 0 auto;
-  padding: 0.14em 0.45em 0.1em;
+  /* Un filet fin à l'encre — crème sur fond sombre — cerne l'étiquette. Sur
+     l'étiquette safran du logotype au repos, il est ce qui distingue encore
+     la section du bloc ; sur la page nue du thème sombre, il la détache de
+     la page. Il reste dans tous les états. C'est une bordure, et le pixel
+     qu'elle prend est retranché du remplissage : l'encombrement ne change
+     pas. Un `outline` à décalage négatif faisait le même dessin, mais à ce
+     corps fractionnaire il tombait entre deux pixels et laissait un liseré
+     de safran dehors. */
+  border: 1px solid var(--dark);
+  padding: calc(0.14em - 1px) calc(0.45em - 1px) calc(0.1em - 1px);
   font-size: 0.56em;
   font-weight: 700;
   letter-spacing: 0.1em;
@@ -245,13 +254,6 @@ h6,
   text-transform: uppercase;
   color: var(--sur-safran);
   background-color: var(--safran);
-  /* Un filet fin à l'encre — crème sur fond sombre —, tracé à l'intérieur
-     de l'étiquette (`outline` à décalage négatif : rien ne bouge). Sur
-     l'étiquette safran du logotype au repos, il est ce qui distingue encore
-     la section du bloc ; sur la page nue du thème sombre, il la détache de
-     la page. Il reste dans tous les états. */
-  outline: 1px solid var(--dark);
-  outline-offset: -1px;
 }
 
 /* Recherche : strictement le même traitement que le logotype : bordure de
