@@ -14,6 +14,16 @@ async function mouseEnterHandler(
     return
   }
 
+  // Un lien vers un fichier (plan de découpe, programme, modèle 3D, PDF) n'a
+  // rien à prévisualiser : sans ce garde, le script téléchargeait le fichier
+  // au survol et affichait une boîte vide, ou le retéléchargeait à chaque
+  // passage. Les pages n'ont pas d'extension dans leur adresse ; les fichiers
+  // gardent la leur. (Ajout propre au site, à reporter à chaque montée de
+  // version de Quartz.)
+  if (/\.[a-z0-9]+$/i.test(link.pathname)) {
+    return
+  }
+
   async function setPosition(popoverElement: HTMLElement) {
     const { x, y } = await computePosition(link, popoverElement, {
       strategy: "fixed",

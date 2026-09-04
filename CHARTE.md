@@ -349,6 +349,7 @@ près d'une machine est un usage réel.
 | `quartz/components/PageTitle.tsx` | le logotype sur deux lignes | identique |
 | `quartz/components/Logos.tsx` | la maison | identique |
 | `quartz/components/Marques.tsx` | le partenaire d'un projet | fablab seulement |
+| `quartz/components/scripts/popover.inline.ts` | un garde en tête du script : pas de prévisualisation au survol d'un lien de fichier, qui n'a rien à montrer et pèse lourd ; à reporter à chaque montée de version | identique |
 | `quartz/plugins/transformers/fabrication.ts` | la carte de fabrication | fablab seulement |
 | `quartz/plugins/transformers/reperes.ts` | les jauges du catalogue | lab seulement |
 | `quartz/plugins/emitters/folderPage.tsx` | le titre des pages de rubrique, sans le « Dossier : » de Quartz | identique |
