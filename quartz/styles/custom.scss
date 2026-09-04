@@ -2515,17 +2515,40 @@ body[data-slug="comparatif"] article tbody td:first-child a {
   white-space: nowrap;
 }
 
-/* La jauge en cellule : en ligne, calée au milieu de la ligne de texte, et
-   plus courte que dans le bloc « Repères » — six par ligne au lieu de trois,
-   dans une colonne de lecture qui n'a pas grandi. */
+/* La jauge en cellule : plus courte que dans le bloc « Repères » — six par
+   ligne au lieu de trois, dans une colonne de lecture qui n'a pas grandi.
+   En bloc, pas en ligne : posée dans une boîte de ligne, elle héritait de
+   la position fractionnaire de la ligne de base, différente à chaque
+   rangée, et un trait de 3 px à cheval sur deux pixels paraît tantôt gras,
+   tantôt maigre. Les rangées reçoivent une hauteur entière, la jauge y est
+   centrée par la cellule : même position partout, même trait partout. */
 td .repere-jauge {
-  display: inline-flex;
-  vertical-align: middle;
+  display: flex;
   gap: 2px;
 }
 
 td .repere-jauge i {
   width: 0.55rem;
+}
+
+body[data-slug="comparatif"] article tbody td {
+  height: 43px;
+  padding-top: 0;
+  padding-bottom: 0;
+  vertical-align: middle;
+}
+
+/* Les noms de parcours alternent, comme la liste d'une rubrique : une
+   colonne de vingt-cinq étiquettes safran se lisait mal. */
+body[data-slug="comparatif"] article tbody tr:nth-child(even) td:first-child a {
+  background-color: var(--dark);
+  color: var(--light);
+}
+
+body[data-slug="comparatif"] article tbody tr:nth-child(even) td:first-child a:hover,
+body[data-slug="comparatif"] article tbody tr:nth-child(even) td:first-child a:focus-visible {
+  background-color: var(--safran);
+  color: var(--sur-safran);
 }
 
 /* --------------------------------------------------------------------------
