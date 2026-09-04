@@ -56,8 +56,8 @@ liens. Son bord droit — celui du texte, pas du bloc — tombe à 0,58 em du bo
 droit de la marque.
 
 Dans les pages, sur papier, le logotype est une étiquette safran pleine,
-texte à l'encre, accolades fondues dans le bloc ; au survol il s'encre, texte
-papier, et les accolades ressortent. Sur fond sombre il est nu au repos —
+texte à l'encre, accolades au papier, section cernée d'un filet fin à
+l'encre ; au survol il s'encre, texte papier, accolades safran. Sur fond sombre il est nu au repos —
 crème sur la page, accolades safran, section en étiquette — et devient
 l'étiquette safran au survol. Le trait de 2 px, de la couleur du bloc, reste
 le cadre de la version gravure : un trait de 0,08
@@ -165,9 +165,10 @@ Quatre règles :
    au papier ; sur thème sombre le bloc est crème et le texte noir, `--dark`
    et `--light` s'inversent et la règle est la même. Le logotype et les
    rubriques de l'accueil s'échangent avec le thème : sur papier, étiquette
-   safran au repos, accolades fondues dans le bloc, et bloc d'encre à texte
-   papier au survol ; sur fond sombre, la marque nue au repos — crème,
-   accolades safran, section en étiquette — et l'étiquette safran au survol.
+   safran au repos, accolades au papier, section cernée d'un filet fin, et
+   bloc d'encre à texte papier au survol, accolades safran ; sur fond sombre,
+   la marque nue au repos — crème, accolades safran, section en étiquette —
+   et l'étiquette safran au survol.
    Le bouton `{recherche}`, seul, garde le fond de la page et son cadre
    d'encre dans les deux thèmes : c'est un outil, pas un rayon.
 3. **Les marques d'autrui passent en noir.** Le logo du CIDFF est le seul en
