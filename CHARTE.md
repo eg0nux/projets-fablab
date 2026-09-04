@@ -259,6 +259,11 @@ titre, le bandeau de marques quand la fiche en a (voir §7).
 - les **liens** en étiquettes safran à angles vifs, texte au noir de la page,
   une étiquette par fragment quand le lien passe à la ligne ; au survol
   l'étiquette s'inverse en bloc d'encre ; jamais de lien coloré en texte ;
+- l'**infobulle des liens** : un lien qui sort du site ou qui livre un
+  fichier le dit au survol et au focus, dans le mobilier de la glose du
+  sigle ; deux lignes, ce que c'est puis ce qui va se passer : la nature du
+  fichier et « à télécharger », ou « site externe » et l'adresse ; rien à
+  écrire dans les fiches, la règle lit l'extension et la classe du lien ;
 - le **colophon** : le dernier paragraphe, s'il est en italique, dit avec qui
   et grâce à qui ; il passe en signalétique sous un filet ;
 - les **pages de rubrique** (`/objets/`, `/techniques/`, `/projets/`) : le
