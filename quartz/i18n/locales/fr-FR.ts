@@ -67,8 +67,8 @@ export default {
     },
     error: {
       title: "Introuvable",
-      notFound: "Cette page est soit privée, soit elle n'existe pas.",
-      home: "Retour à la page d'accueil",
+      notFound: "Cette page existera peut-être dans le futur.",
+      home: "En attendant, je retourne dans le passé.",
     },
     folderContent: {
       folder: "Dossier",

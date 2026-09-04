@@ -1614,13 +1614,19 @@ article > p:first-of-type .text-highlight {
    presque verticale, donc les bandes de couleur sont presque horizontales :
    elles penchent d'un degré et demi. Ni transformation, ni calque.
 
-   `mix-blend-mode: multiply` fait le reste. C'est lui qui donne l'encre : la
-   bande ne recouvre pas le texte, elle s'y multiplie ; une lettre sous le
-   trait s'assombrit au lieu de disparaître, exactement comme sous un feutre.
-   Le texte reste donc lisible sans qu'on ait à lui forcer une couleur.
+   Le texte n'est pas coloré : il garde celle du corps sur les deux fonds. Un
+   essai en blanc sur la bande a été écarté — le rapport de contraste y
+   tombait de 5,2 à 2,2, très en dessous de ce qui se lit.
 
-   Sur fond noir, `multiply` donnerait du noir sur du noir : le thème sombre
-   passe en `screen`, l'opération inverse, qui éclaircit au lieu d'assombrir.
+   Sur papier, la bande est posée à plat. `mix-blend-mode: multiply` — qui
+   donnait l'encre du feutre, la bande se multipliant au texte au lieu de le
+   recouvrir — la fonçait d'un cheveu et l'écartait d'autant de la teinte du
+   chapeau. À plat, elle est exactement la sienne, et l'encre du corps se lit
+   tout aussi bien par-dessus.
+
+   Sur fond noir, la bande reste en `screen`, l'opération inverse de
+   `multiply`, qui éclaircit au lieu d'assombrir : multiplier y reviendrait à
+   peindre du noir sur du noir.
 
    Au survol, l'encre s'éclaircit. La couleur passe par `--encre`, déclarée en
    `@property` : sans cette déclaration, une couleur en variable saute d'une
@@ -1637,18 +1643,19 @@ article > p:first-of-type .text-highlight {
    texte tacheté et illisible en atelier.
    -------------------------------------------------------------------------- */
 
-/* Le rouge du surligneur, à contre-emploi des thèmes : le papier reçoit le
-   rouge pâle de la palette sombre, le fond noir reçoit le rouge vif de la
-   palette claire. Sur papier, `--tertiary` était trop franc et tachait la
-   page ; sur fond noir, il était trop délavé pour se voir. Les deux sont
-   simplement échangés.
+/* Le rouge du surligneur est le même dans les deux thèmes, le rouge vif
+   `#f44336`. Sur papier, c'est celui du chapeau : le lien et l'exergue
+   reçoivent la même teinte, et `--tertiary` la donne sans qu'on ait à
+   l'écrire. Le rouge pâle qui servait ici auparavant tenait le lien à
+   distance de l'exergue ; il en faisait surtout deux rouges pour un seul
+   usage, le surlignage.
 
-   Ce sont les seules valeurs de la charte écrites en dur hors de
-   `quartz.config.ts` : elles y sont définies pour l'autre thème, et aucune
-   variable ne permet d'atteindre la palette opposée. À reporter ici si la
-   charte bouge. */
+   Sur fond noir, `--tertiary` est le rouge pâle `#f8998f`, trop délavé pour
+   se voir : le rouge vif y est gardé, écrit en dur faute d'une variable qui
+   atteigne la palette opposée. C'est la seule valeur de la charte écrite
+   hors de `quartz.config.ts` ; à reporter ici si la charte bouge. */
 :root {
-  --stabilo: #f8998f; /* le `tertiary` du thème sombre */
+  --stabilo: var(--tertiary);
 }
 
 :root[saved-theme="dark"] {
@@ -1663,7 +1670,9 @@ article > p:first-of-type .text-highlight {
 
 article a:not([role="anchor"]):not([data-callout="rubriques"] a),
 article a.internal:not([role="anchor"]):not([data-callout="rubriques"] a) {
-  --encre: color-mix(in srgb, var(--stabilo) 52%, transparent);
+  /* Les 60 % sont ceux du chapeau, et la bande étant posée à plat sur le
+     papier, la teinte obtenue est exactement la sienne. */
+  --encre: color-mix(in srgb, var(--stabilo) 60%, transparent);
 
   color: inherit;
   font-weight: inherit;
@@ -1697,8 +1706,6 @@ article a.internal:not([role="anchor"]):not([data-callout="rubriques"] a) {
   box-decoration-break: clone;
   -webkit-box-decoration-break: clone;
 
-  mix-blend-mode: multiply;
-
   transition: --encre 0.3s ease;
 }
 
@@ -1709,10 +1716,10 @@ article a.internal:not([role="anchor"]):not([data-callout="rubriques"] a):focus-
   --encre: color-mix(in srgb, var(--stabilo) 24%, transparent);
 }
 
-/* Sur fond noir, multiplier revient à peindre du noir sur du noir. `screen`
-   fait l'opération inverse (elle éclaircit) et rend au trait sa présence.
-   L'encre monte en proportion pour la même raison qu'ailleurs : le fond
-   sombre absorbe les teintes faibles bien plus vite que le papier. */
+/* Sur fond noir, multiplier reviendrait à peindre du noir sur du noir.
+   `screen` fait l'opération inverse (elle éclaircit) et rend au trait sa
+   présence. L'encre monte en proportion pour la même raison qu'ailleurs : le
+   fond sombre absorbe les teintes faibles bien plus vite que le papier. */
 :root[saved-theme="dark"] article a:not([role="anchor"]):not([data-callout="rubriques"] a),
 :root[saved-theme="dark"] article a.internal:not([role="anchor"]):not([data-callout="rubriques"] a) {
   --encre: color-mix(in srgb, var(--stabilo) 34%, transparent);
@@ -2638,5 +2645,350 @@ article code {
   article > p:last-of-type:has(> em:only-child):not(p:has(> img:only-child) + p) {
     color: #000;
     border-top-color: #000;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   404 : la page qui n'existe pas encore
+
+   Quartz pose `data-slug="404"` sur le `body` de cette page-là et sur aucune
+   autre : tout ce qui suit s'accroche à cet attribut, sans toucher au
+   composant.
+
+   Le parti pris : la page est cassée, elle le montre. Le « 404 » tressaute,
+   se dédouble en rouge et en jaune comme un défaut de repérage d'impression,
+   et des pixels morts sautillent par-dessus. C'est le « soubresaut » des
+   logotypes, poussé jusqu'à la panne franche.
+
+   Les mouvements ont des durées premières entre elles — 0,7 s, 1,1 s et
+   2,3 s — et ne retombent donc ensemble qu'au bout de dix-sept secondes :
+   l'oeil n'y retrouve pas de boucle.
+
+   Tout est en `steps(1, end)` : l'animation saute d'une image à la suivante
+   au lieu d'interpoler. Un glitch ne glisse pas, il saute.
+   -------------------------------------------------------------------------- */
+
+body[data-slug="404"] article {
+  position: relative;
+  text-align: center;
+  /* De quoi laisser les pixels morts et les tranches déborder du texte sans
+     que la page prenne l'ascenseur horizontal. */
+  padding: 3rem 1rem 5rem;
+  overflow: hidden;
+}
+
+/* Le nombre, en grand : c'est lui qui porte la panne. */
+body[data-slug="404"] article h1 {
+  position: relative;
+  display: inline-block;
+  margin: 0 0 1.6rem;
+  font-size: clamp(4.5rem, 20vw, 9rem);
+  line-height: 1;
+  letter-spacing: 0.06em;
+  color: var(--dark);
+  animation: erreur-secousse 0.7s steps(1, end) infinite;
+}
+
+/* Le dièse en filigrane du titre de page n'a rien à faire ici : il doublerait
+   le nombre d'un second motif au moment où tout tremble déjà. */
+body[data-slug="404"] article h1::before {
+  content: none;
+}
+
+/* Le calque du dédoublement. Il reprend le nombre en toutes lettres : la page
+   404 est la seule à le porter, il ne changera pas. */
+body[data-slug="404"] article h1::after {
+  content: "404";
+  position: absolute;
+  inset: 0;
+  /* Découpé en tranches horizontales qui se déplacent : c'est la déchirure
+     d'image, celle d'un signal qui perd la ligne. */
+  animation:
+    erreur-tranches 1.1s steps(1, end) infinite,
+    erreur-reperage 0.7s steps(1, end) infinite;
+}
+
+/* Les pixels morts : quatre semis de points de 2 px, aux pas premiers entre
+   eux (41×29, 67×43, 53×71 et 89×37 pixels), qui ne se superposent donc
+   jamais deux fois de la même façon. Le calque est posé par-dessus le texte
+   et ne prend pas le clic : le lien de retour reste atteignable partout. */
+body[data-slug="404"] article::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 2;
+  background-image:
+    radial-gradient(circle, var(--dark) 0 1px, transparent 1.2px),
+    radial-gradient(circle, var(--secondary) 0 1px, transparent 1.2px),
+    radial-gradient(circle, var(--dark) 0 1px, transparent 1.2px),
+    radial-gradient(circle, var(--tertiary) 0 1px, transparent 1.2px);
+  background-size:
+    41px 29px,
+    67px 43px,
+    53px 71px,
+    89px 37px;
+  animation: erreur-pixels 0.7s steps(1, end) infinite;
+}
+
+/* Le texte et le lien de retour passent sous le semis, pas dessus. */
+body[data-slug="404"] article p,
+body[data-slug="404"] article > a {
+  position: relative;
+  z-index: 1;
+}
+
+body[data-slug="404"] article p {
+  font-size: 1.05rem;
+  font-style: italic;
+  /* La ligne dérive à son tour, mais de deux pixels et trois fois moins
+     souvent : la panne est dans le nombre, pas dans la phrase. */
+  animation: erreur-derive 2.3s steps(1, end) infinite;
+}
+
+/* Le lien de retour garde son coup de surligneur — c'est un lien d'article
+   comme un autre — et reçoit la même secousse que le nombre, sur une cadence
+   plus lente pour qu'ils ne partent jamais ensemble. */
+body[data-slug="404"] article > a {
+  display: inline-block;
+  margin-top: 1.4rem;
+  animation: erreur-secousse 1.1s steps(1, end) infinite;
+}
+
+/* Le tremblement : de courts déplacements et le dédoublement rouge et jaune
+   du soubresaut des logotypes, aux mêmes teintes écrites en dur — elles
+   valent pour les deux thèmes. Les deux tiers du tour sont immobiles : une
+   panne qui ne s'arrête jamais n'est plus une panne, c'est une texture. */
+@keyframes erreur-secousse {
+  0%,
+  62% {
+    transform: translate(0, 0);
+    filter: none;
+  }
+  66% {
+    transform: translate(-3px, 1px);
+    filter: drop-shadow(3px 0 #f44336) drop-shadow(-3px 0 #eddd6e);
+  }
+  70% {
+    transform: translate(3px, -2px);
+    filter: drop-shadow(-4px 0 #f44336);
+  }
+  74% {
+    transform: translate(-1px, 2px);
+    filter: drop-shadow(2px 1px #eddd6e);
+  }
+  78% {
+    transform: translate(2px, 0);
+    filter: none;
+  }
+  86% {
+    transform: translate(-2px, -1px);
+    filter: drop-shadow(4px 0 #f44336) drop-shadow(-2px 0 #eddd6e);
+  }
+  92% {
+    transform: translate(1px, 1px);
+    filter: none;
+  }
+  100% {
+    transform: translate(0, 0);
+    filter: none;
+  }
+}
+
+/* La déchirure : `clip-path` ne garde qu'une tranche du calque, et la tranche
+   se déplace latéralement. Le reste du temps, un `inset` de 100 % par le haut
+   ne laisse rien voir et le calque disparaît complètement. */
+@keyframes erreur-tranches {
+  0%,
+  20% {
+    clip-path: inset(100% 0 0 0);
+    transform: translate(0, 0);
+  }
+  24% {
+    clip-path: inset(12% 0 74% 0);
+    transform: translate(-9px, 0);
+  }
+  28% {
+    clip-path: inset(43% 0 41% 0);
+    transform: translate(7px, 0);
+  }
+  32% {
+    clip-path: inset(66% 0 19% 0);
+    transform: translate(-5px, 0);
+  }
+  36%,
+  54% {
+    clip-path: inset(100% 0 0 0);
+    transform: translate(0, 0);
+  }
+  58% {
+    clip-path: inset(28% 0 58% 0);
+    transform: translate(11px, 0);
+  }
+  62% {
+    clip-path: inset(78% 0 8% 0);
+    transform: translate(-8px, 0);
+  }
+  66%,
+  100% {
+    clip-path: inset(100% 0 0 0);
+    transform: translate(0, 0);
+  }
+}
+
+/* Le défaut de repérage du calque : il vire au rouge puis au jaune, sur une
+   cadence qui n'est pas celle des tranches — deux pannes distinctes. */
+@keyframes erreur-reperage {
+  0%,
+  100% {
+    color: var(--secondary);
+  }
+  50% {
+    color: #eddd6e;
+  }
+}
+
+/* Les pixels morts sautillent : chaque semis change de position à chaque pas,
+   et les quatre ne parcourent pas les mêmes distances. Deux images sur huit
+   les éteignent tous — l'écran se rattrape, puis repart. */
+@keyframes erreur-pixels {
+  0% {
+    opacity: 0.55;
+    background-position:
+      0 0,
+      0 0,
+      0 0,
+      0 0;
+  }
+  12% {
+    opacity: 0.7;
+    background-position:
+      13px 7px,
+      -21px 11px,
+      8px -17px,
+      -31px 5px;
+  }
+  25% {
+    opacity: 0;
+    background-position:
+      13px 7px,
+      -21px 11px,
+      8px -17px,
+      -31px 5px;
+  }
+  37% {
+    opacity: 0.8;
+    background-position:
+      -7px 19px,
+      33px -9px,
+      -19px 23px,
+      17px -13px;
+  }
+  50% {
+    opacity: 0.45;
+    background-position:
+      23px -11px,
+      -5px 27px,
+      31px 9px,
+      -9px 21px;
+  }
+  62% {
+    opacity: 0.75;
+    background-position:
+      -17px 3px,
+      19px 15px,
+      -27px -5px,
+      37px 11px;
+  }
+  75% {
+    opacity: 0;
+    background-position:
+      -17px 3px,
+      19px 15px,
+      -27px -5px,
+      37px 11px;
+  }
+  87% {
+    opacity: 0.6;
+    background-position:
+      29px 13px,
+      -13px -19px,
+      11px 31px,
+      -23px -7px;
+  }
+  100% {
+    opacity: 0.55;
+    background-position:
+      0 0,
+      0 0,
+      0 0,
+      0 0;
+  }
+}
+
+/* La dérive de la phrase : deux pixels, pas plus, et immobile le reste du
+   temps. */
+@keyframes erreur-derive {
+  0%,
+  88% {
+    transform: translate(0, 0);
+  }
+  90% {
+    transform: translate(-2px, 0);
+  }
+  93% {
+    transform: translate(2px, 1px);
+  }
+  96% {
+    transform: translate(-1px, -1px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+/* Même arbitrage que pour le soubresaut des logotypes : le mouvement s'arrête,
+   la panne reste. Le nombre garde son dédoublement, la déchirure une tranche
+   figée, le semis sa position de départ. Une page qui tremble en boucle est
+   autrement plus gênante qu'un survol, et celle-ci s'affiche sans qu'on l'ait
+   demandée. */
+@media (prefers-reduced-motion: reduce) {
+  body[data-slug="404"] article h1,
+  body[data-slug="404"] article h1::after,
+  body[data-slug="404"] article p,
+  body[data-slug="404"] article > a,
+  body[data-slug="404"] article::after {
+    animation: none;
+  }
+
+  body[data-slug="404"] article h1 {
+    filter: drop-shadow(3px 0 #f44336) drop-shadow(-3px 0 #eddd6e);
+  }
+
+  body[data-slug="404"] article h1::after {
+    color: var(--secondary);
+    clip-path: inset(43% 0 41% 0);
+    transform: translate(7px, 0);
+  }
+
+  body[data-slug="404"] article::after {
+    opacity: 0.55;
+  }
+}
+
+/* Sur la feuille, rien de tout cela : ni tremblement, ni dédoublement, ni
+   pixels morts. Imprimer une page introuvable est déjà une curiosité ; la
+   panne, elle, ne se transpose pas à l'encre. */
+@media print {
+  body[data-slug="404"] article h1,
+  body[data-slug="404"] article p,
+  body[data-slug="404"] article > a {
+    animation: none;
+    filter: none;
+  }
+
+  body[data-slug="404"] article h1::after,
+  body[data-slug="404"] article::after {
+    content: none;
   }
 }

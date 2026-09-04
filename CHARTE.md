@@ -131,7 +131,7 @@ Neuf variables Quartz, deux thèmes, déclarées dans `quartz.config.ts`.
 | `darkgray` | `#38352f` | `#ded8cc` | corps de texte |
 | `dark` | `#212121` encre | `#f6ece0` crème | titres, cadres, logotype, `&` |
 | `secondary` | `#d32f2f` rouge | `#f4675c` | accolades, section, marqueurs, alertes, jauge |
-| `tertiary` | `#f44336` | `#f8998f` | surlignage : le chapeau, les légendes de photos (thème clair) et les dièses en filigrane à 24 %, les titres d'encadrés à 60 % ; en sombre, le chapeau reprend `secondary` à 78 % |
+| `tertiary` | `#f44336` | `#f8998f` | surlignage : le chapeau et le surligneur des liens à 60 %, comme les titres d'encadrés ; les légendes de photos (thème clair) et les dièses en filigrane à 24 % ; en sombre, le chapeau reprend `secondary` à 78 % et le surligneur garde le vif du thème clair |
 | `highlight` | pêche à 32 % | pêche à 12 % | survol de l'explorateur |
 | `textHighlight` | jaune à 60 % | jaune à 27 % | jamais employé tel quel |
 
@@ -140,10 +140,11 @@ Quatre règles :
 1. **Le rouge est un accent, jamais un aplat.** Il marque un signe, une
    alerte, une bande de surlignage ; il ne colore ni un fond de bloc, ni un
    bouton, ni des liens par dizaines.
-2. **Un seul rouge par usage.** Le rouge d'accent en thème clair est le
-   rouge pâle du thème sombre pour le surligneur des liens, et inversement :
-   `--stabilo` vaut `#f8998f` sur papier et `#f44336` sur fond noir. Ce sont
-   les seules valeurs écrites en dur hors de la configuration.
+2. **Un seul rouge par usage.** Le surlignage n'a qu'un rouge, le vif
+   `#f44336` : le chapeau et les liens reçoivent la même teinte. Sur papier
+   c'est `tertiary`, pris tel quel ; sur fond noir `tertiary` est le rouge
+   pâle, trop délavé pour s'y voir, et `--stabilo` garde le vif — la seule
+   valeur écrite en dur hors de la configuration.
 3. **Les marques d'autrui passent en noir.** Le logo du CIDFF est le seul en
    couleur ; il est ramené à l'encre par un filtre, et tous les logos passent
    en blanc plein sur fond sombre. Sur ces pages, la couleur d'une marque ne
@@ -218,11 +219,20 @@ titre, le bandeau de marques quand la fiche en a (voir §7).
   dans un cadre, pictogramme par ligne ;
 - les **repères** (lab) : six appréciations en jauges segmentées, entre deux
   filets ;
-- les **liens** au surligneur, une bande rouge pâle légèrement de biais qui
-  suit le retour à la ligne, soulignée d'un pointillé à l'encre, en points de 2 px ; jamais de
-  lien rouge ;
+- les **liens** au surligneur, une bande légèrement de biais, du rouge du
+  chapeau, qui suit le retour à la ligne, soulignée d'un pointillé à l'encre, en points de 2 px ; le
+  texte y garde la couleur du corps ; jamais de lien rouge ;
 - le **colophon** : le dernier paragraphe, s'il est en italique, dit avec qui
   et grâce à qui ; il passe en signalétique sous un filet.
+
+**Page 404**, la seule qui bouge : le nombre tressaute et se dédouble en rouge
+et en jaune comme un défaut de repérage d'impression, des tranches de l'image
+partent de travers, et un semis de pixels morts sautille par-dessus. Trois
+cadences premières entre elles — 0,7 s, 1,1 s et 2,3 s — pour que l'oeil n'y
+retrouve pas de boucle, et des pas discrets partout : un glitch ne glisse pas,
+il saute. Le texte dit que la page existera peut-être dans le futur, et le lien
+de retour qu'en attendant on repart dans le passé. Même traitement sur
+egonux.com, dont la page est écrite à la main.
 
 **Pied de page** : une seule ligne, en capitales grises, mentions séparées
 d'un croisillon rouge pâli : Quartz, EcoIndex, contact, ego/nux.
@@ -269,11 +279,13 @@ bandeau de fiche dit avec qui, pas grâce à qui.
 
 **Thème sombre** : la palette s'inverse, le rouge s'éclaircit, les
 surlignages montent en opacité et leur texte repasse en clair, tous les logos
-passent en blanc, le surligneur des liens passe de `multiply` à `screen`.
-Rien ne prend de fond.
+passent en blanc, le surligneur des liens passe en `screen` — sur papier il
+est posé à plat. Rien ne prend de fond.
 
 **Mouvement réduit** : le soubresaut des logos s'arrête, mais garde son
-décalage chromatique. Aucune autre animation sur les sites.
+décalage chromatique ; la page 404 se fige de la même façon — le nombre garde
+son dédoublement, la déchirure une tranche, le semis de pixels sa position de
+départ. Ce sont les deux seules animations des sites.
 
 **Impression** : les colonnes et le pied de page disparaissent, tout passe en
 noir, les marqueurs `##` reviennent devant les titres (ils portent la
