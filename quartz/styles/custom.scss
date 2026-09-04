@@ -475,6 +475,35 @@ body[data-slug="index"] article {
   color: var(--safran);
 }
 
+/* L'alternance des rubriques : une sur deux est le bloc de nuit du survol —
+   encre et papier sur le clair, crème et noir sur le sombre —, accolades
+   safran, et passe au safran quand on la survole ; voir la liste des
+   rubriques, plus bas, pour le pourquoi. */
+.callout[data-callout="rubriques"] li:nth-child(even) > a {
+  background-color: var(--dark);
+  border-color: var(--dark);
+  color: var(--light);
+}
+
+.callout[data-callout="rubriques"] li:nth-child(even) > a::before,
+.callout[data-callout="rubriques"] li:nth-child(even) > a::after {
+  color: var(--safran);
+}
+
+.callout[data-callout="rubriques"] li:nth-child(even) > a:hover,
+.callout[data-callout="rubriques"] li:nth-child(even) > a:focus-visible {
+  background-color: var(--safran);
+  border-color: var(--safran);
+  color: var(--sur-safran);
+}
+
+.callout[data-callout="rubriques"] li:nth-child(even) > a:hover::before,
+.callout[data-callout="rubriques"] li:nth-child(even) > a:hover::after,
+.callout[data-callout="rubriques"] li:nth-child(even) > a:focus-visible::before,
+.callout[data-callout="rubriques"] li:nth-child(even) > a:focus-visible::after {
+  color: var(--accolades-repos);
+}
+
 /* Au survol, le bloc passe à la nuit et les accolades ressortent : comme le
    logotype de la colonne de gauche. */
 .callout[data-callout="rubriques"] li > a:hover,
@@ -771,6 +800,24 @@ article h4 {
   background-color: var(--bloc-survol);
   color: var(--light);
   outline: none;
+}
+
+/* L'alternance : quand plusieurs étiquettes se suivent, une sur deux
+   s'encre — bloc d'encre à texte papier sur le clair, bloc crème à texte
+   noir sur le sombre, ce sont les mêmes variables — et les deux s'échangent
+   au survol. Une rangée d'étiquettes toutes safran faisait un aplat ; deux
+   encres qui alternent font une affiche. Même règle sur les rubriques de
+   l'accueil, plus haut. Les liens du texte courant, eux, gardent une seule
+   encre : dans une phrase, l'alternance serait du bruit. */
+.page-listing li.section-li:nth-child(even) > .section > .desc > h3 > a {
+  background-color: var(--dark);
+  color: var(--light);
+}
+
+.page-listing li.section-li:nth-child(even) > .section > .desc > h3 > a:hover,
+.page-listing li.section-li:nth-child(even) > .section > .desc > h3 > a:focus-visible {
+  background-color: var(--safran);
+  color: var(--sur-safran);
 }
 
 .page-listing ul.tags:empty {

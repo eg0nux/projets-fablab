@@ -168,7 +168,12 @@ Quatre règles :
    safran au repos, accolades au papier, section cernée d'un filet fin, et
    bloc d'encre à texte papier au survol, accolades safran ; sur fond sombre,
    la marque nue au repos — crème, accolades safran, section en étiquette —
-   et l'étiquette safran au survol.
+   et l'étiquette safran au survol. Quand plusieurs étiquettes se suivent —
+   les rubriques de l'accueil, la liste d'une rubrique — une sur deux
+   s'encre, bloc d'encre à texte papier (crème et noir sur le sombre), et
+   les deux s'échangent au survol : deux encres qui alternent font une
+   affiche, une rangée toute safran faisait un aplat. Les liens du texte
+   courant gardent une seule encre.
    Le bouton `{recherche}`, seul, garde le fond de la page et son cadre
    d'encre dans les deux thèmes : c'est un outil, pas un rayon.
 3. **Les marques d'autrui passent en noir.** Le logo du CIDFF est le seul en
@@ -257,7 +262,7 @@ titre, le bandeau de marques quand la fiche en a (voir §7).
   et grâce à qui ; il passe en signalétique sous un filet ;
 - les **pages de rubrique** (`/objets/`, `/techniques/`, `/projets/`) : le
   nom de la rubrique en titre, le décompte des fiches en signalétique, puis
-  la liste — date en gris, titre en étiquette safran.
+  la liste — date en gris, titre en étiquette, safran et encre en alternance.
 
 **Page 404**, la seule qui bouge : le nombre tressaute et se dédouble en safran
 et en encre comme un défaut de repérage d'impression, des tranches de l'image
