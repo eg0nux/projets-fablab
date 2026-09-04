@@ -4,7 +4,7 @@ description: "Vingt-cinq parcours prêts à monter pour un FabLab : un groupe fa
 ---
 
 ==Un catalogue de vingt-cinq projets prêts à monter pour un FabLab : des parcours courts (dix jours sur deux semaines et demie) pensés pour la remobilisation et l'insertion. À chaque fois, un groupe fabrique un objet réel, qui a une vraie destination, en rencontrant les acteurs du territoire.==  
-==Tous suivent la même recette (celle du modèle « Faire Récif »), mais changent de terrain : biodiversité, patrimoine, grand âge, énergie, mobilité, jeu, média, alimentation…==
+==Tous suivent la même méthodologie (celle du modèle « Faire Récif »), mais changent de terrain : biodiversité, patrimoine, grand âge, énergie, mobilité, jeu, média, alimentation…==
 
 > [!rubriques]
 > - [la méthode](methode)
