@@ -1444,6 +1444,96 @@ article h4::before {
 }
 
 /* --------------------------------------------------------------------------
+   Le sigle et sa glose : FabLab, laboratoire de fabrication
+
+   Le mot est un sigle avant d'être un nom de lieu ; qui ne l'a jamais lu n'y
+   voit qu'une marque. La glose au survol le décompose sans allonger la
+   phrase : les lettres reprises dans le sigle sortent en rouge, en capitales
+   et soulignées, le reste du mot suit en encre. La capitalisation est posée
+   en CSS, pas écrite dans le texte : comme les accolades du logotype, elle
+   relève de la présentation, et la source reste lisible en clair.
+
+   Le crochet est `<abbr>` : le mot est réellement une abréviation, l'élément
+   dit ce qu'il est, et la glose tient dans un `<span>` à l'intérieur.
+
+   Piège à connaître avant de gloser un mot du chapeau : le surlignage
+   `==comme ceci==` est appliqué par Quartz sur les nœuds de texte seuls.
+   Y insérer la moindre balise coupe le texte en morceaux, plus aucun ne
+   contient les deux paires de signes égal, et le surlignage disparaît en
+   silence — les `==` s'affichent alors tels quels dans la page. Un chapeau
+   qui porte une glose doit donc s'écrire directement
+   `<p><span class="text-highlight">…</span></p>`, ce que fait `index.md`.
+
+   Même mobilier que l'infobulle des pictogrammes : papier, filet de 2 px,
+   monospace. Le mot est rendu focalisable dans le markdown et la glose
+   répond au survol comme au focus : sans quoi le sens du sigle n'existerait
+   qu'à la souris, alors que ces pages se lisent au doigt, sur un téléphone
+   posé près d'une machine.
+   -------------------------------------------------------------------------- */
+
+/* C'est le chapeau qui sert d'ancrage, pas le mot : un mot en fin de ligne
+   pousserait la glose hors de la colonne, où elle serait rognée. Elle tombe
+   donc sous l'encadré, calée à gauche — même parti que l'infobulle des
+   pictogrammes, et pour la même raison. */
+article > p:first-of-type:has(abbr) {
+  position: relative;
+}
+
+article abbr {
+  border-bottom: 1px dotted var(--gray);
+  cursor: help;
+}
+
+article > p:first-of-type abbr > span {
+  position: absolute;
+  top: calc(100% + 0.5em);
+  left: 0;
+  z-index: 3;
+
+  padding: 0.3em 0.55em 0.34em;
+  border: 2px solid var(--dark);
+  border-radius: 2px;
+  background-color: var(--light);
+  color: var(--dark);
+
+  font-family: var(--codeFont);
+  font-size: 0.72rem;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  line-height: 1.2;
+  white-space: nowrap;
+
+  opacity: 0;
+  transition: opacity 0.14s ease-out;
+  pointer-events: none;
+}
+
+article > p:first-of-type abbr > span b {
+  color: var(--secondary);
+  font-weight: 700;
+  text-transform: uppercase;
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
+
+article > p:first-of-type abbr:hover > span,
+article > p:first-of-type abbr:focus > span {
+  opacity: 1;
+}
+
+/* Sur papier rien ne se survole : ni le filet d'appel, ni la glose. */
+@media print {
+  article abbr {
+    border-bottom: none;
+  }
+
+  article > p:first-of-type abbr > span {
+    display: none;
+  }
+}
+
+/* --------------------------------------------------------------------------
    Exergue : le chapeau, surligné du rouge de sélection
 
    La convention veut que chaque fiche s'ouvre sur deux ou trois lignes qui
