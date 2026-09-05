@@ -59,7 +59,8 @@ Dans les pages, sur papier, le logotype est une étiquette safran pleine,
 texte à l'encre, accolades au papier, section cernée d'un filet fin à
 l'encre ; au survol il s'encre, texte papier, accolades safran. Sur fond sombre il est nu au repos —
 crème sur la page, accolades safran, section en étiquette — et devient
-l'étiquette safran au survol. Le trait de 2 px, de la couleur du bloc, reste
+l'étiquette safran au survol, accolades crème. Le trait de 2 px, de la
+couleur du bloc, reste
 le cadre de la version gravure : un trait de 0,08
 du corps, angles à 2 px, marges intérieures 0,3 em en haut, 0,5 em sur les
 côtés, 0,34 em en bas — celui du sommaire, des photos et de la carte de
@@ -168,7 +169,8 @@ Quatre règles :
    safran au repos, accolades au papier, section cernée d'un filet fin, et
    bloc d'encre à texte papier au survol, accolades safran ; sur fond sombre,
    la marque nue au repos — crème, accolades safran, section en étiquette
-   sans filet — et l'étiquette safran au survol, section cernée de crème.
+   sans filet — et l'étiquette safran au survol, accolades crème, section
+   cernée de crème.
    Quand plusieurs étiquettes se suivent — les rubriques de l'accueil, la
    liste d'une rubrique, la première colonne du tableau comparatif — une
    sur deux s'encre, bloc d'encre à texte papier (crème et noir sur le

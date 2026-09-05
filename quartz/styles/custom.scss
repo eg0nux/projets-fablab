@@ -51,22 +51,31 @@
    section en étiquette — et l'étiquette safran au survol. Le texte s'écrit
    une seule fois, `--dark` au repos et `--light` au survol : c'est le noir
    sur safran puis le papier sur encre d'un côté, la crème sur la nuit puis
-   le noir sur safran de l'autre. Les accolades restent safran, et se
-   fondent dans le bloc quand il l'est. */
+   le noir sur safran de l'autre. Les accolades sont safran partout où le
+   bloc ne l'est pas ; sur l'étiquette safran, qui les avalerait, elles
+   prennent le blanc de la page. */
 :root {
   --bloc-repos: var(--safran);
   --bloc-survol: var(--dark);
-  /* Les accolades au repos : au papier sur l'étiquette safran, où le safran
-     les avalait ; safran sur la page nue du thème sombre. Au survol elles
-     sont safran dans les deux cas — visibles sur l'encre, fondues dans le
-     safran. */
-  --accolades-repos: var(--light);
+  /* Le blanc de la page : le papier sur le clair, la crème sur le sombre —
+     le pendant de `--sur-safran`, pour ce qui se pose sur l'étiquette
+     safran sans être du texte. */
+  --accolades-sur-safran: var(--light);
+  /* Les accolades au repos : au blanc de la page sur l'étiquette safran ;
+     safran sur la page nue du thème sombre. Au survol : safran sur le bloc
+     d'encre du papier ; sur fond sombre le bloc est safran, et elles passent
+     au blanc de la page, comme le filet de la section — safran sur safran,
+     elles disparaissaient. */
+  --accolades-repos: var(--accolades-sur-safran);
+  --accolades-survol: var(--safran);
 }
 
 :root[saved-theme="dark"] {
   --bloc-repos: var(--light);
   --bloc-survol: var(--safran);
+  --accolades-sur-safran: var(--dark);
   --accolades-repos: var(--safran);
+  --accolades-survol: var(--accolades-sur-safran);
 }
 
 /* La sélection à la souris est du safran plein, texte en noir : la même
@@ -192,9 +201,11 @@ h6,
   color: var(--light);
 }
 
-/* Les accolades sont en safran dans les deux thèmes. C'est la seule entorse à
-   la règle « jamais en texte » : le logotype est une marque, pas une ligne à
-   lire, et deux signes gras à ce corps se reconnaissent sans se déchiffrer. */
+/* Les accolades sont en safran, sauf sur l'étiquette safran, où elles sont
+   au blanc de la page (`--accolades-repos` et `--accolades-survol`, en tête
+   de feuille). C'est la seule entorse à la règle « jamais en texte » : le
+   logotype est une marque, pas une ligne à lire, et deux signes gras à ce
+   corps se reconnaissent sans se déchiffrer. */
 .page-title .marque::before,
 .page-title .marque::after {
   color: var(--accolades-repos);
@@ -206,7 +217,7 @@ h6,
 .page-title:hover .marque::after,
 .page-title:focus-within .marque::before,
 .page-title:focus-within .marque::after {
-  color: var(--safran);
+  color: var(--accolades-survol);
 }
 
 .page-title .marque::before {
@@ -482,7 +493,7 @@ body[data-slug="index"] article {
 .callout[data-callout="rubriques"] li > a:hover::after,
 .callout[data-callout="rubriques"] li > a:focus-visible::before,
 .callout[data-callout="rubriques"] li > a:focus-visible::after {
-  color: var(--safran);
+  color: var(--accolades-survol);
 }
 
 /* L'alternance des rubriques : une sur deux est le bloc de nuit du survol —
@@ -511,7 +522,7 @@ body[data-slug="index"] article {
 .callout[data-callout="rubriques"] li:nth-child(even) > a:hover::after,
 .callout[data-callout="rubriques"] li:nth-child(even) > a:focus-visible::before,
 .callout[data-callout="rubriques"] li:nth-child(even) > a:focus-visible::after {
-  color: var(--accolades-repos);
+  color: var(--accolades-sur-safran);
 }
 
 /* Au survol, le bloc passe à la nuit et les accolades ressortent : comme le
