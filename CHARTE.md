@@ -172,9 +172,10 @@ Quatre règles :
    sans filet — et l'étiquette safran au survol, accolades crème, section
    cernée de crème.
    Quand plusieurs étiquettes se suivent — les rubriques de l'accueil, la
-   liste d'une rubrique, la première colonne du tableau comparatif — une
-   sur deux s'encre, bloc d'encre à texte papier (crème et noir sur le
-   sombre), et les deux s'échangent au survol : deux encres qui alternent
+   liste d'une rubrique, la première colonne du tableau comparatif, la
+   liste des projets sur l'accueil du catalogue — une sur deux s'encre,
+   bloc d'encre à texte papier (crème et noir sur le sombre), et les deux
+   s'échangent au survol : deux encres qui alternent
    font une affiche, une rangée toute safran faisait un aplat. Les liens du
    texte courant gardent une seule encre.
    Le bouton `{recherche}`, seul, garde le fond de la page et son cadre

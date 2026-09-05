@@ -2747,6 +2747,23 @@ body[data-slug="comparatif"] article tbody tr:nth-child(even) td:first-child a:f
   color: var(--sur-safran);
 }
 
+/* La liste « Tous les projets » de l'accueil du catalogue : vingt-cinq
+   étiquettes safran l'une sous l'autre faisaient un aplat, comme la colonne
+   du tableau. Une sur deux s'encre, et les deux s'échangent au survol ; les
+   descriptions qui suivent ne changent pas. Le titre de section ancre la
+   règle : il n'existe que sur cet accueil, et la liste le suit sans rien
+   entre les deux. */
+body[data-slug="index"] article h2#tous-les-projets + ul > li:nth-child(even) > a.internal {
+  background-color: var(--dark);
+  color: var(--light);
+}
+
+body[data-slug="index"] article h2#tous-les-projets + ul > li:nth-child(even) > a.internal:hover,
+body[data-slug="index"] article h2#tous-les-projets + ul > li:nth-child(even) > a.internal:focus-visible {
+  background-color: var(--safran);
+  color: var(--sur-safran);
+}
+
 /* --------------------------------------------------------------------------
    Bloc « Repères » : six appréciations, sous le chapeau
 
