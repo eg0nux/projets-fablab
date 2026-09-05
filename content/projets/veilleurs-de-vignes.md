@@ -2,7 +2,7 @@
 title: Veilleurs de vignes
 ---
 
-==Sentinelles antigel pour les vignerons. Depuis les gelées noires d'avril 2021, chaque printemps est une veille angoissée à Monbazillac comme en Pécharmant. Les participants fabriquent un réseau de sentinelles low-cost (température au ras des ceps, alerte téléphonique, balise lumineuse) installées chez trois ou quatre vignerons, complété par des gîtes à chauves-souris pour la lutte biologique contre les vers de la grappe. Le FabLab monte la garde avec la première filière du Bergeracois.==
+==Sentinelles antigel pour les vigneron-nes. Depuis les gelées noires d'avril 2021, chaque printemps est une veille angoissée à Monbazillac comme en Pécharmant. Les participant-es fabriquent un réseau de sentinelles low-cost (température au ras des ceps, alerte téléphonique, balise lumineuse) installées chez trois ou quatre vigneron-nes, complété par des gîtes à chauves-souris pour la lutte biologique contre les vers de la grappe. Le FabLab monte la garde avec la première filière du Bergeracois.==
 
 **Repères** : Originalité ★★★★★ · Accessibilité ★★★☆☆ · Polyvalence FabLab ★★★★☆ · Impact social ★★★★☆ · Ancrage territorial ★★★★★ · Coût matière ★★★☆☆
 
@@ -10,7 +10,7 @@ title: Veilleurs de vignes
 - Mettre la technique au service d'une urgence locale réelle et récente : le gel de printemps.
 - Faire découvrir la filière viti-vinicole, premier gisement d'emplois du Bergeracois, de la taille au chai et au commerce.
 - Apprendre l'électronique embarquée et la rigueur de la mesure : étalonnage, fiabilité, fausses alertes.
-- Créer un lien durable participants-vignerons : la sentinelle se relève, se répare, se raconte.
+- Créer un lien durable entre participant-es et vigneron-nes : la sentinelle se relève, se répare, se raconte.
 
 ## Ce que l'on fabrique
 - Sentinelles : sonde de température étalonnée sous mini-abri météo normalisé imprimé en 3D, microcontrôleur avec transmission (LoRa ou SMS selon la couverture), batterie et petit panneau solaire, boîtier étanche, mât.

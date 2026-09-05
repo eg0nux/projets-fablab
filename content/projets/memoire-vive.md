@@ -2,7 +2,7 @@
 title: Mémoire vive
 ---
 
-==Les bancs qui racontent. Le nom dit tout : la mémoire vive des machines, la mémoire vivante d'un territoire qui vieillit. Les participants fabriquent des bornes d'écoute solaires (un banc, un bouton, une voix) installées au marché couvert de Bergerac et dans les villages, puis collectent ce qu'elles diffuseront : souvenirs des derniers gabariers, du temps du tabac, de la Poudrerie, mots d'occitan, récits recueillis en EHPAD. Les aînés deviennent les auteurs ; les participants, leurs éditeurs et leurs fabricants.==
+==Les bancs qui racontent. Le nom dit tout : la mémoire vive des machines, la mémoire vivante d'un territoire qui vieillit. Les participant-es fabriquent des bornes d'écoute solaires (un banc, un bouton, une voix) installées au marché couvert de Bergerac et dans les villages, puis collectent ce qu'elles diffuseront : souvenirs des derniers gabariers, du temps du tabac, de la Poudrerie, mots d'occitan, récits recueillis en EHPAD. Les aîné-es deviennent les auteur-es ; les participant-es les éditent et les fabriquent.==
 
 **Repères** : Originalité ★★★★★ · Accessibilité ★★★☆☆ · Polyvalence FabLab ★★★★★ · Impact social ★★★★★ · Ancrage territorial ★★★★★ · Coût matière ★★☆☆☆
 
@@ -19,22 +19,22 @@ title: Mémoire vive
 - Signalétique des lieux d'écoute et trophée « Voix d'Or » (pavillon de gramophone stylisé, bois tourné et laiton).
 
 ## Partenaires à mobiliser
-- EHPAD et résidences autonomie du Bergeracois : les auteurs ; leurs animateurs comme co-pilotes des séances.
+- EHPAD et résidences autonomie du Bergeracois : les auteur-es ; leurs équipes d'animation comme co-pilotes des séances.
 - Musées et service patrimoine de la ville (mémoire du tabac, batellerie), société historique locale, archives départementales.
 - Une association occitane locale pour les mots et les chansons ; la radio associative pour la qualité sonore et la diffusion.
-- Mairie (marché couvert) et communes villageoises pour les emplacements ; anciens de la Poudrerie via les amicales.
+- Mairie (marché couvert) et communes villageoises pour les emplacements ; ancien-nes de la Poudrerie via les amicales.
 
 ## Métiers à faire découvrir
 Animateur en gérontologie, accompagnant éducatif et social, aide-soignant, technicien du son, archiviste et métiers du patrimoine, médiateur culturel. L'aide à la personne recrute massivement en Dordogne, département parmi les plus âgés de France : ce projet en est la porte d'entrée la plus douce.
 
 > [!quote] Le temps fort
-> L'inauguration au marché couvert, un samedi matin : la voix d'une ancienne raconte le tabac ou la rivière au milieu des étals, et l'auteure est là, entourée du groupe qui a fabriqué le banc. Le jury mixte aînés-participants pour la « Voix d'Or » scelle l'inversion des rôles.
+> L'inauguration au marché couvert, un samedi matin : la voix d'une ancienne raconte le tabac ou la rivière au milieu des étals, et l'auteure est là, entourée du groupe qui a fabriqué le banc. Le jury mixte aîné-es et participant-es pour la « Voix d'Or » scelle l'inversion des rôles.
 
 ## En pratique
 - **Budget matière indicatif** : 950 à 1 150 € (hors machines et encadrement).
 - **Saison idéale** : fabrication et collecte à la belle saison ; pose des bornes en extérieur par temps sec.
 
 > [!warning] Points de vigilance
-> - Consentement écrit des aînés (et des familles ou tuteurs le cas échéant), droit de retrait à tout moment, validation de chaque capsule par son auteur.
+> - Consentement écrit des aîné-es (et des familles ou des personnes en charge d'une tutelle le cas échéant), droit de retrait à tout moment, validation de chaque capsule par la personne qui l'a racontée.
 > - Rythme des personnes âgées : séances de 30 à 45 minutes, jamais plus de deux par jour, toujours avec l'animateur de la structure.
 > - Le projet côtoie la fin de vie : prévoir un temps d'échange encadré ; extérieur étanche, volume respectueux, convention d'entretien avec les communes.

@@ -10,7 +10,7 @@ title: Sur mesure
 - Faire découvrir la filière textile en pleine réindustrialisation (relocalisation, réemploi, loi AGEC).
 - Acquérir les gestes de base de la confection, très demandés par les ateliers et structures d'insertion textile.
 - Croiser artisanat et numérique : patronage assisté, broderie numérique, découpe laser sur tissu.
-- Produire des pièces finies, vendables ou utilisables, qui valorisent immédiatement leurs auteurs.
+- Produire des pièces finies, vendables ou utilisables, qui valorisent immédiatement celles et ceux qui les ont faites.
 
 ## Ce que l'on fabrique
 - Sacs, pochettes et trousses en bâche publicitaire réemployée (solide, imperméable, gratuit).
@@ -28,7 +28,7 @@ title: Sur mesure
 Couturier industriel, mécanicien en confection, retoucheur, modéliste, maroquinier, opérateur de tri textile, responsable d'atelier. La filière recrute et se réorganise autour du réemploi : les débouchés sont réels et locaux.
 
 > [!quote] Le temps fort
-> Le défilé (porté par les participants eux-mêmes ou des volontaires) ou la vente solidaire dont la recette va à une association choisie par le groupe. Les photos du shooting constituent un portfolio que chacun emporte.
+> Le défilé (porté par les participant-es ou par des volontaires) ou la vente solidaire dont la recette va à une association choisie par le groupe. Les photos du shooting constituent un portfolio que chacun-e emporte.
 
 ## En pratique
 - **Budget matière indicatif** : 250 à 950 € selon l'équipement déjà disponible

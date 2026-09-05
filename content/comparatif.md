@@ -2,38 +2,38 @@
 title: Tableau comparatif
 ---
 
-==Les vingt-quatre parcours notés sur six indicateurs de un à cinq segments (scores indicatifs, pour comparer et guider le choix). Deux indicateurs sont inversés pour que « plus de segments » signifie toujours « plus favorable » : l'accessibilité (cinq segments pour le plus facile à mener) et le coût matière (cinq segments pour le plus économique).==
+==Aucun de ces projets n'est meilleur qu'un autre : ils ne demandent ni le même atelier, ni le même budget, ni les mêmes partenaires. Six repères pour les situer les uns par rapport aux autres. Plus il y a de segments, plus c'est favorable : cinq segments en accessibilité, c'est le plus facile à mener ; cinq en coût matière, c'est le moins cher à fabriquer.==
 
 > [!note]
-> Projets classés par ordre alphabétique. La fiche complémentaire [[essaimer|Essaimer]] n'est pas notée ici. La colonne **Vol.** rappelle le volume d'origine (1 = génériques, 2 = ancrés Bergeracois, 3 = à hauteur d'atelier).
+> Projets classés par ordre alphabétique. [[essaimer|Essaimer]] n'est pas noté ici.
 
-| Projet | Vol. | Orig. | Access. | Polyv. | Impact | Ancrage | Coût |
-|---|:--:|:--:|:--:|:--:|:--:|:--:|:--:|
-| [[autonomie\|Autonomie]] | 1 | ★★★★★ | ★★★★☆ | ★★★☆☆ | ★★★★★ | ★★☆☆☆ | ★★★★★ |
-| [[basse-tension\|Basse tension]] | 1 | ★★★★☆ | ★★★☆☆ | ★★★★☆ | ★★★★☆ | ★★★☆☆ | ★★★☆☆ |
-| [[changer-de-braquet\|Changer de braquet]] | 2 | ★★★★☆ | ★★★☆☆ | ★★★★☆ | ★★★★★ | ★★★★☆ | ★☆☆☆☆ |
-| [[du-bout-des-doigts\|Du bout des doigts]] | 3 | ★★★★☆ | ★★★★☆ | ★★★★☆ | ★★★★★ | ★★★☆☆ | ★★★★☆ |
-| [[essaimer\|Essaimer]] | 1 | · | · | · | · | · | · |
-| [[faire-podium\|Faire Podium]] | 3 | ★★★★☆ | ★★★★☆ | ★★★★☆ | ★★★☆☆ | ★★★★☆ | ★★★★☆ |
-| [[grandeur-nature\|Grandeur nature]] | 3 | ★★★☆☆ | ★★★★☆ | ★★★☆☆ | ★★★★☆ | ★★★★☆ | ★★★☆☆ |
-| [[la-fresque-jouable\|La fresque jouable]] | 1 | ★★★★☆ | ★★★★☆ | ★★★★★ | ★★★☆☆ | ★★★★☆ | ★★★★☆ |
-| [[les-mains-negatives\|Les mains négatives]] | 2 | ★★★★★ | ★★★☆☆ | ★★★★★ | ★★★☆☆ | ★★★★★ | ★★★☆☆ |
-| [[les-veilleuses\|Les Veilleuses]] | 3 | ★★★★★ | ★★★★★ | ★★★☆☆ | ★★★★★ | ★★★☆☆ | ★★★★☆ |
-| [[l-herbier-des-trottoirs\|L'Herbier des trottoirs]] | 3 | ★★★★☆ | ★★★★★ | ★★☆☆☆ | ★★★★☆ | ★★★★☆ | ★★★★★ |
-| [[lumiere-sur-le-quartier\|Lumière sur le quartier]] | 1 | ★★★☆☆ | ★★★☆☆ | ★★★★☆ | ★★★★☆ | ★★★☆☆ | ★★★☆☆ |
-| [[manger-local\|Manger local]] | 1 | ★★★☆☆ | ★★★☆☆ | ★★★★☆ | ★★★★☆ | ★★★★☆ | ★★☆☆☆ |
-| [[memoire-vive\|Mémoire vive]] | 2 | ★★★★★ | ★★★☆☆ | ★★★★★ | ★★★★★ | ★★★★★ | ★★☆☆☆ |
-| [[ombres-et-merveilles\|Ombres et merveilles]] | 3 | ★★★★☆ | ★★★★☆ | ★★★★☆ | ★★★★☆ | ★★★★☆ | ★★★★☆ |
-| [[papiers-d-identite\|Papiers d'identité]] | 2 | ★★★★★ | ★★★☆☆ | ★★★★☆ | ★★★★☆ | ★★★★★ | ★★★☆☆ |
-| [[passe-a-ton-voisin\|Passe à ton voisin]] | 3 | ★★★☆☆ | ★★★★☆ | ★★★☆☆ | ★★★★☆ | ★★★★☆ | ★★★☆☆ |
-| [[radio-fab\|Radio Fab]] | 1 | ★★★★☆ | ★★☆☆☆ | ★★★★☆ | ★★★★☆ | ★★★☆☆ | ★★★☆☆ |
-| [[remonter-le-courant\|Remonter le courant]] | 2 | ★★★★★ | ★★☆☆☆ | ★★★★☆ | ★★★★☆ | ★★★★★ | ★★☆☆☆ |
-| [[reparer-la-nuit\|Réparer la nuit]] | 2 | ★★★★★ | ★★☆☆☆ | ★★★★★ | ★★★☆☆ | ★★★★☆ | ★★☆☆☆ |
-| [[reparer-le-vivant\|Réparer le vivant]] | 1 | ★★★★☆ | ★★★☆☆ | ★★★★★ | ★★★★☆ | ★★★☆☆ | ★★★☆☆ |
-| [[sous-la-halle\|Sous la halle]] | 3 | ★★★☆☆ | ★★★★☆ | ★★★☆☆ | ★★★★☆ | ★★★★★ | ★★★★★ |
-| [[sur-mesure\|Sur mesure]] | 1 | ★★★☆☆ | ★★★☆☆ | ★★★☆☆ | ★★★★☆ | ★★★☆☆ | ★★★★☆ |
-| [[tenir-debout\|Tenir debout]] | 2 | ★★★★★ | ★★☆☆☆ | ★★★★☆ | ★★★★☆ | ★★★★★ | ★★★☆☆ |
-| [[veilleurs-de-vignes\|Veilleurs de vignes]] | 2 | ★★★★★ | ★★★☆☆ | ★★★★☆ | ★★★★☆ | ★★★★★ | ★★★☆☆ |
+| Projet | Orig. | Access. | Polyv. | Impact | Ancrage | Coût |
+|---|:--:|:--:|:--:|:--:|:--:|:--:|
+| [[autonomie\|Autonomie]] | ★★★★★ | ★★★★☆ | ★★★☆☆ | ★★★★★ | ★★☆☆☆ | ★★★★★ |
+| [[basse-tension\|Basse tension]] | ★★★★☆ | ★★★☆☆ | ★★★★☆ | ★★★★☆ | ★★★☆☆ | ★★★☆☆ |
+| [[changer-de-braquet\|Changer de braquet]] | ★★★★☆ | ★★★☆☆ | ★★★★☆ | ★★★★★ | ★★★★☆ | ★☆☆☆☆ |
+| [[du-bout-des-doigts\|Du bout des doigts]] | ★★★★☆ | ★★★★☆ | ★★★★☆ | ★★★★★ | ★★★☆☆ | ★★★★☆ |
+| [[essaimer\|Essaimer]] | · | · | · | · | · | · |
+| [[faire-podium\|Faire Podium]] | ★★★★☆ | ★★★★☆ | ★★★★☆ | ★★★☆☆ | ★★★★☆ | ★★★★☆ |
+| [[grandeur-nature\|Grandeur nature]] | ★★★☆☆ | ★★★★☆ | ★★★☆☆ | ★★★★☆ | ★★★★☆ | ★★★☆☆ |
+| [[la-fresque-jouable\|La fresque jouable]] | ★★★★☆ | ★★★★☆ | ★★★★★ | ★★★☆☆ | ★★★★☆ | ★★★★☆ |
+| [[les-mains-negatives\|Les mains négatives]] | ★★★★★ | ★★★☆☆ | ★★★★★ | ★★★☆☆ | ★★★★★ | ★★★☆☆ |
+| [[les-veilleuses\|Les Veilleuses]] | ★★★★★ | ★★★★★ | ★★★☆☆ | ★★★★★ | ★★★☆☆ | ★★★★☆ |
+| [[l-herbier-des-trottoirs\|L'Herbier des trottoirs]] | ★★★★☆ | ★★★★★ | ★★☆☆☆ | ★★★★☆ | ★★★★☆ | ★★★★★ |
+| [[lumiere-sur-le-quartier\|Lumière sur le quartier]] | ★★★☆☆ | ★★★☆☆ | ★★★★☆ | ★★★★☆ | ★★★☆☆ | ★★★☆☆ |
+| [[manger-local\|Manger local]] | ★★★☆☆ | ★★★☆☆ | ★★★★☆ | ★★★★☆ | ★★★★☆ | ★★☆☆☆ |
+| [[memoire-vive\|Mémoire vive]] | ★★★★★ | ★★★☆☆ | ★★★★★ | ★★★★★ | ★★★★★ | ★★☆☆☆ |
+| [[ombres-et-merveilles\|Ombres et merveilles]] | ★★★★☆ | ★★★★☆ | ★★★★☆ | ★★★★☆ | ★★★★☆ | ★★★★☆ |
+| [[papiers-d-identite\|Papiers d'identité]] | ★★★★★ | ★★★☆☆ | ★★★★☆ | ★★★★☆ | ★★★★★ | ★★★☆☆ |
+| [[passe-a-ton-voisin\|Passe à ton voisin]] | ★★★☆☆ | ★★★★☆ | ★★★☆☆ | ★★★★☆ | ★★★★☆ | ★★★☆☆ |
+| [[radio-fab\|Radio Fab]] | ★★★★☆ | ★★☆☆☆ | ★★★★☆ | ★★★★☆ | ★★★☆☆ | ★★★☆☆ |
+| [[remonter-le-courant\|Remonter le courant]] | ★★★★★ | ★★☆☆☆ | ★★★★☆ | ★★★★☆ | ★★★★★ | ★★☆☆☆ |
+| [[reparer-la-nuit\|Réparer la nuit]] | ★★★★★ | ★★☆☆☆ | ★★★★★ | ★★★☆☆ | ★★★★☆ | ★★☆☆☆ |
+| [[reparer-le-vivant\|Réparer le vivant]] | ★★★★☆ | ★★★☆☆ | ★★★★★ | ★★★★☆ | ★★★☆☆ | ★★★☆☆ |
+| [[sous-la-halle\|Sous la halle]] | ★★★☆☆ | ★★★★☆ | ★★★☆☆ | ★★★★☆ | ★★★★★ | ★★★★★ |
+| [[sur-mesure\|Sur mesure]] | ★★★☆☆ | ★★★☆☆ | ★★★☆☆ | ★★★★☆ | ★★★☆☆ | ★★★★☆ |
+| [[tenir-debout\|Tenir debout]] | ★★★★★ | ★★☆☆☆ | ★★★★☆ | ★★★★☆ | ★★★★★ | ★★★☆☆ |
+| [[veilleurs-de-vignes\|Veilleurs de vignes]] | ★★★★★ | ★★★☆☆ | ★★★★☆ | ★★★★☆ | ★★★★★ | ★★★☆☆ |
 
 ## Lecture des indicateurs
 

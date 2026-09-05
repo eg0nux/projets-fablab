@@ -28,7 +28,7 @@ title: Du bout des doigts
 Auxiliaire de puériculture, CAP Accompagnant éducatif petite enfance, ATSEM, accompagnant éducatif et social, animateur en gérontologie, ergothérapeute et psychomotricien : deux filières en tension permanente, accessibles par des formations courtes.
 
 > [!quote] Le temps fort
-> Le jour des remises : voir une main de dix-huit mois et une main de quatre-vingt-huit ans faire exactement le même geste sur deux planches jumelles fabriquées par le groupe. Les professionnels présents ne s'y trompent pas, et le disent aux participants.
+> Le jour des remises : voir une main de dix-huit mois et une main de quatre-vingt-huit ans faire exactement le même geste sur deux planches jumelles fabriquées par le groupe. Les professionnel-les présent-es ne s'y trompent pas, et le disent aux participant-es.
 
 ## En pratique
 - **Budget matière indicatif** : 380 à 510 €.

@@ -21,14 +21,14 @@ title: La fresque jouable
 ## Partenaires à mobiliser
 - Médiathèque et ludothèque : expertise jeu, lieux de test et de diffusion.
 - Écoles et collèges (les classes-jurys) ; archives municipales et société d'histoire locale : la matière.
-- Boutique de jeux, association de joueurs, auteur ou illustrateur local : regard professionnel et pitchs métiers.
+- Boutique de jeux, association de joueurs et de joueuses, auteur ou illustrateur local : regard professionnel et pitchs métiers.
 - Office de tourisme : diffusion du jeu s'il porte sur le patrimoine.
 
 ## Métiers à faire découvrir
 Game designer, illustrateur-graphiste, ludothécaire, médiateur culturel, imprimeur, métiers de l'édition, animateur socio-culturel : un écosystème souvent invisible depuis les parcours d'insertion, et pourtant bien réel en région.
 
 > [!quote] Le temps fort
-> La soirée jeux publique de clôture, où familles, partenaires et joueurs découvrent les jeux animés par leurs auteurs. Double trophée possible : les enfants décernent le « Meeple d'Or » aux prototypes, les participants le décernent aux structures professionnelles venues pitcher.
+> La soirée jeux publique de clôture, où familles, partenaires, joueurs et joueuses découvrent les jeux animés par leurs auteur-es. Double trophée possible : les enfants décernent le « Meeple d'Or » aux prototypes, les participant-es le décernent aux structures professionnelles venues pitcher.
 
 ## En pratique
 - **Budget matière indicatif** : 400 à 500 €

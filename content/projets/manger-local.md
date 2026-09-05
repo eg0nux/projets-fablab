@@ -2,7 +2,7 @@
 title: Manger local
 ---
 
-==De la graine à l'assiette. Fabriquer l'équipement d'un potager nourricier (bacs, serre semi-automatisée avec arrosage piloté, séchoir solaire, poulailler) pour une cantine, une épicerie solidaire ou un jardin partagé, puis clore le parcours par un repas préparé et servi par les participants. Du bois au capteur d'humidité, et du plant à l'assiette.==
+==De la graine à l'assiette. Fabriquer l'équipement d'un potager nourricier (bacs, serre semi-automatisée avec arrosage piloté, séchoir solaire, poulailler) pour une cantine, une épicerie solidaire ou un jardin partagé, puis clore le parcours par un repas préparé et servi par les participant-es. Du bois au capteur d'humidité, et du plant à l'assiette.==
 
 **Repères** : Originalité ★★★☆☆ · Accessibilité ★★★☆☆ · Polyvalence FabLab ★★★★☆ · Impact social ★★★★☆ · Ancrage territorial ★★★★☆ · Coût matière ★★☆☆☆
 
@@ -28,7 +28,7 @@ title: Manger local
 Maraîcher, ouvrier agricole et agroéquipement, technicien paysagiste, animateur jardin, cuisinier de collectivité, agent polyvalent de restauration, commis : deux filières en tension, accessibles rapidement, présentes sur tout le territoire.
 
 > [!quote] Le temps fort
-> Le repas final, préparé et servi par les participants avec des produits locaux ; et, symboliquement, les premières récoltes ou aromates du jardin qu'ils viennent d'équiper. Servir les autres inverse une dernière fois les rôles : les accompagnés deviennent les hôtes, et le trophée « Fourchette d'Or » est remis.
+> Le repas final, préparé et servi par les participant-es avec des produits locaux ; et, symboliquement, les premières récoltes ou aromates du jardin qu'ils/elles viennent d'équiper. Servir les autres inverse une dernière fois les rôles : les accompagné-es deviennent les hôtes, et le trophée « Fourchette d'Or » est remis.
 
 ## En pratique
 - **Budget matière indicatif** : 700 à 1 200 € (le plus coûteux, mais le plus fédérateur)

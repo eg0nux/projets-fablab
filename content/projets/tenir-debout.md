@@ -28,7 +28,7 @@ title: Tenir debout
 Murailler, tailleur de pierre, maçon du bâti ancien, couvreur en lauze, technicien géomètre (le relevé 3D est son quotidien), guide du patrimoine. La restauration du patrimoine périgourdin manque cruellement de bras : les entreprises le disent à chaque chantier.
 
 > [!quote] Le temps fort
-> La marche inaugurale : élus, habitants et familles suivent les participants le long du sentier, jusqu'à l'ouvrage restauré. Chacun pose la main sur une pierre qu'il a placée, et la maquette 3D, à côté, prouve que le geste ancien et l'outil neuf tiennent ensemble. Comme le mur : sans ciment, par le bon agencement.
+> La marche inaugurale : élu-es, habitant-es et familles suivent les participant-es le long du sentier, jusqu'à l'ouvrage restauré. Chacun-e pose la main sur la pierre qu'il ou elle a placée, et la maquette 3D, à côté, prouve que le geste ancien et l'outil neuf tiennent ensemble. Comme le mur : sans ciment, par le bon agencement.
 
 ## En pratique
 - **Budget matière indicatif** : 600 à 850 €, hors prestation du murailler à budgéter à part (hors machines et encadrement).

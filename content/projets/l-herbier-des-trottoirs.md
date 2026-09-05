@@ -7,13 +7,13 @@ title: L'Herbier des trottoirs
 **Repères** : Originalité ★★★★☆ · Accessibilité ★★★★★ · Polyvalence FabLab ★★☆☆☆ · Impact social ★★★★☆ · Ancrage territorial ★★★★☆ · Coût matière ★★★★★
 
 ## Objectifs
-- Réussir le projet le plus simple techniquement du catalogue (deux planches et quatre boulons font une presse), mais une chaîne complète : collecter, identifier, conserver, exposer, guider.
+- Réussir un projet techniquement très simple (deux planches et quatre boulons font une presse), mais une chaîne complète : collecter, identifier, conserver, exposer, guider.
 - Réhabiliter le regard : il n'y a pas de « mauvaises herbes », il y a des pionnières ; la métaphore n'échappe à personne.
 - Découvrir les métiers des espaces verts et du paysage, qui recrutent partout et forment vite.
 - Cultiver l'attention et la patience : identifier une plante demande de ralentir, presser une fleur demande d'attendre.
 
 ## Ce que l'on fabrique
-- Une presse à fleurs par participant : deux planches gravées à son nom, quatre boulons papillon ; chacun repart avec la sienne.
+- Une presse à fleurs par participant-e : deux planches gravées à son nom, quatre boulons papillon ; chacun-e repart avec la sienne.
 - Les cadres vitrés de l'herbier collectif et ses cartels botaniques gravés (nom, lieu de collecte, date, collecteur).
 - La signalétique de trottoir : petites plaques ou marquages éphémères au pochoir (peinture temporaire homologuée), posés avec les espaces verts.
 - Le carnet de terrain relié du groupe (couverture gravée) et le trophée « Pétale d'Or ».
@@ -28,7 +28,7 @@ title: L'Herbier des trottoirs
 Jardinier des espaces verts, ouvrier paysagiste, agent d'entretien du paysage, mais aussi fleuriste et animateur nature : des métiers en recrutement constant, accessibles par des formations courtes.
 
 > [!quote] Le temps fort
-> La balade inversée du dernier jour : ceux qu'on guidait guident. Devant chaque plaque, un participant présente « sa » plante, herbier à l'appui, à un public d'habitants qui découvrent leur propre rue. Et chacun rentre chez soi avec sa presse gravée à son nom ; l'outil continue la pratique bien après les dix jours.
+> La balade inversée du dernier jour : celles et ceux qu'on guidait guident. Devant chaque plaque, un-e participant-e présente « sa » plante, herbier à l'appui, à un public d'habitant-es qui découvrent leur propre rue. Et chacun-e rentre chez soi avec sa presse gravée à son nom ; l'outil continue la pratique bien après les dix jours.
 
 ## En pratique
 - **Budget matière indicatif** : 320 à 400 €.

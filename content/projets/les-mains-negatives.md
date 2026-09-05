@@ -28,7 +28,7 @@ title: Les mains négatives
 Guide-conférencier, médiateur du patrimoine, animateur, scénographe, fac-similiste et mouleur-décorateur, agent d'accueil de site touristique. Le tourisme patrimonial est le premier employeur du département et recrute chaque saison.
 
 > [!quote] Le temps fort
-> La première ouverture publique : dans le noir, à la lampe, chaque participant guide un petit groupe devant la fresque et raconte les mains négatives, la sienne étant sur la paroi. Peu de dispositifs donnent une prise de parole aussi incarnée.
+> La première ouverture publique : dans le noir, à la lampe, chaque participant-e guide un petit groupe devant la fresque et raconte les mains négatives, la sienne étant sur la paroi. Peu de dispositifs donnent une prise de parole aussi incarnée.
 
 ## En pratique
 - **Budget matière indicatif** : 780 à 1 030 € (hors machines et encadrement).

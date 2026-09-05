@@ -22,7 +22,7 @@ title: Ombres et merveilles
 - La médiathèque : formation express au kamishibaï, fonds d'exemples, lieu de la représentation finale et dépositaire des butaïs.
 - Un conteur ou une compagnie locale : coaching de la voix et du rythme, regard bienveillant de professionnel.
 - Des écoles maternelles, un Relais Petite Enfance, un EHPAD : les publics de la tournée.
-- Une société d'histoire locale ou des anciens du territoire : la matière des histoires.
+- Une société d'histoire locale ou des ancien-nes du territoire : la matière des histoires.
 
 ## Métiers à faire découvrir
 Médiathécaire, animateur, ATSEM et métiers de la petite enfance, conteur et médiateur culturel, illustrateur : les médiathèques et les services enfance recrutent des profils à l'aise avec le récit et le groupe.
@@ -36,5 +36,5 @@ Médiathécaire, animateur, ATSEM et métiers de la petite enfance, conteur et m
 
 > [!warning] Points de vigilance
 > - Le trac se gère par les rôles (manipulateur, voix, lumière) : chacun choisit son exposition, personne n'est forcé seul en scène.
-> - Histoires originales ou du domaine public uniquement ; accord simple des intéressés si des souvenirs d'anciens nourrissent le récit.
+> - Histoires originales ou du domaine public uniquement ; accord simple des intéressés si des souvenirs d'ancien-nes nourrissent le récit.
 > - Des charnières solides et une malle calée : le matériel voyage beaucoup en deux jours.

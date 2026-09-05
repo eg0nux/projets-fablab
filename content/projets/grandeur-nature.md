@@ -28,7 +28,7 @@ title: Grandeur nature
 Animateur (BAFA, BPJEPS), agent d'animation territoriale, ludothécaire, métiers de l'événementiel local : un secteur qui recrute chaque saison et qui offre souvent le premier contrat des parcours de retour à l'emploi.
 
 > [!quote] Le temps fort
-> La fête de lancement : le parvis ou la halle se transforme en kermesse, les participants arbitrent les tournois, et la malle part le soir même pour sa première fête de village. Le jeu de l'oie du Bergeracois, lui, fait déjà parler les anciens : « la case du vieux pont, c'est moi qui l'ai peinte ».
+> La fête de lancement : le parvis ou la halle se transforme en kermesse, les participant-es arbitrent les tournois, et la malle part le soir même pour sa première fête de village. Le jeu de l'oie du Bergeracois, lui, fait déjà parler les ancien-nes : « la case du vieux pont, c'est moi qui l'ai peinte ».
 
 ## En pratique
 - **Budget matière indicatif** : 440 à 600 €.

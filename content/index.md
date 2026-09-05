@@ -1,16 +1,16 @@
 ---
 title: "Projets FabLab # 2026~2028"
-description: "Vingt-cinq parcours prêts à monter pour un FabLab : un groupe fabrique un objet réel, qui a une vraie destination, en rencontrant les acteurs du territoire."
+description: "Dix jours, un groupe, un objet qui part vivre ailleurs : vingt-cinq projets de fabrication menés avec les acteurs et actrices du territoire."
 ---
 
-==Un catalogue de vingt-cinq projets prêts à monter pour un FabLab : des parcours courts (dix jours sur deux semaines et demie) pensés pour la remobilisation et l'insertion. À chaque fois, un groupe fabrique un objet réel, qui a une vraie destination, en rencontrant les acteurs du territoire.==  
-==Tous suivent la même méthodologie (celle du modèle « Faire Récif »), mais changent de terrain : biodiversité, patrimoine, grand âge, énergie, mobilité, jeu, média, alimentation…==
+==Dix jours répartis sur deux semaines et demie, huit à douze personnes en parcours de remobilisation, et à l'arrivée, quelque chose qui existe et qui reste : un banc qui raconte le quartier, une lampe pour les nuits difficiles, un abri à pollinisateurs posé en bord de rivière. Rien qui finisse au placard : chaque objet quitte l'atelier pour un lieu qui l'attend, souvent pour quelqu'un qui l'a demandé.==  
+==D'un projet à l'autre, le cheminement est le même. Le territoire entre dans l'atelier, des professionnel-les viennent parler de leur métier, et les participant-es finissent par juger à leur tour : ils/elles remettent un trophée qu'ils/elles ont fabriqué. Ce qui change, c'est le terrain. Vingt-cinq terrains : la rivière, le patrimoine, les EHPAD, la nuit, le jeu, le vélo, la radio.==
 
 > [!rubriques]
 > - [la méthode](methode)
 > - [le comparatif](comparatif)
 
-**[[methode|La méthode]]** : les six invariants qui structurent ces parcours, et six questions pour choisir. **[[comparatif|Le tableau comparatif]]** : les projets notés sur six indicateurs (originalité, accessibilité, coût…). Chaque **fiche projet** suit le même plan : une accroche, des repères notés, les objectifs, ce que l'on fabrique, les partenaires et métiers à mobiliser, le temps fort du parcours, et les points pratiques (budget, saison, vigilance).
+**[[methode|La méthode]]** : ce qui fait tenir un parcours de dix jours, et six questions à se poser avant de choisir. **[[comparatif|Le tableau comparatif]]** : d'un coup d'œil, l'originalité, l'accessibilité, l'ancrage et le coût matière de chaque projet.
 
 Ces parcours sont pensés pour les activités FabLab du [CIDFF Dordogne](https://www.cidff24.fr), installées à l'[Atelier Partagé de La Traverse](https://www.latraverse-bergerac.fr/), à Bergerac, et pour les lieux où il se déplace. Ce qui y a déjà été fabriqué est présenté sur [fablab.egonux.com](https://fablab.egonux.com/).
 
@@ -45,4 +45,4 @@ Ces parcours sont pensés pour les activités FabLab du [CIDFF Dordogne](https:/
 ---
 
 > [!note] Document de travail
-> Les noms de projets et de trophées sont des propositions, à adapter librement. Le volume d'origine (1, 2 ou 3) reste indiqué dans le [[comparatif|tableau comparatif]].
+> Les noms de projets et de trophées sont des propositions, à adapter librement.

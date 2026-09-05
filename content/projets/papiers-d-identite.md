@@ -21,7 +21,7 @@ title: Papiers d'identité
 ## Partenaires à mobiliser
 - Le moulin de la Rouzique à Couze-et-Saint-Front, économusée du papier : visite fondatrice et parrainage technique.
 - Une papeterie ou cartonnerie industrielle du département pour le pitch filière et les débouchés.
-- Ressourcerie et friperies (le gisement de jeans) ; vignerons partenaires (les sarments).
+- Ressourcerie et friperies (le gisement de jeans) ; vigneron-nes partenaires (les sarments).
 - Un imprimeur local et, si possible, un artisan relieur ou graveur ; archives départementales pour l'histoire de la vallée.
 
 ## Métiers à faire découvrir

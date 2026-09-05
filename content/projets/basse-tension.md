@@ -9,7 +9,7 @@ title: Basse tension
 ## Objectifs
 - Rendre concrètes les notions d'énergie (kWh, isolation, ordres de grandeur) par la fabrication et la mesure.
 - Faire découvrir la filière de la rénovation énergétique, en tension dans tous les territoires.
-- Outiller les participants pour leur propre quotidien : beaucoup sont eux-mêmes concernés par la facture d'énergie.
+- Outiller les participant-es pour leur propre quotidien : beaucoup sont concerné-es par la facture d'énergie.
 - Apprendre à prouver : protocoles de test simples, relevés, restitution chiffrée.
 
 ## Ce que l'on fabrique
@@ -28,7 +28,7 @@ title: Basse tension
 Métiers de la rénovation énergétique : plaquiste, menuisier poseur, chauffagiste, électricien, façadier-isolateur ; conseiller énergie, auditeur, éco-concepteur, chargé de mission énergie-climat. Des parcours courts existent partout et les carnets de commandes sont pleins.
 
 > [!quote] Le temps fort
-> La restitution chiffrée : les participants présentent les courbes de leurs propres tests (« notre four est monté à 120 °C », « la marmite a gardé le plat à plus de 70 °C pendant deux heures »). La preuve par la mesure impressionne toujours les partenaires, et les participants eux-mêmes.
+> La restitution chiffrée : les participant-es présentent les courbes de leurs propres tests (« notre four est monté à 120 °C », « la marmite a gardé le plat à plus de 70 °C pendant deux heures »). La preuve par la mesure impressionne toujours les partenaires, et le groupe lui-même.
 
 ## En pratique
 - **Budget matière indicatif** : 550 à 800 €

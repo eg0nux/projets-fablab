@@ -2,7 +2,7 @@
 title: Radio Fab
 ---
 
-==Média fabriqué. Construire physiquement un studio radio-podcast (enceintes, panneaux acoustiques, supports micros, table, habillage), puis produire une série d'émissions où les participants interviewent des professionnels du territoire. L'objet et la parole dans le même parcours : on fabrique l'outil, puis on s'en sert pour se faire entendre.==
+==Média fabriqué. Construire physiquement un studio radio-podcast (enceintes, panneaux acoustiques, supports micros, table, habillage), puis produire une série d'émissions où les participant-es interviewent des professionnel-les du territoire. L'objet et la parole dans le même parcours : on fabrique l'outil, puis on s'en sert pour se faire entendre.==
 
 **Repères** : Originalité ★★★★☆ · Accessibilité ★★☆☆☆ · Polyvalence FabLab ★★★★☆ · Impact social ★★★★☆ · Ancrage territorial ★★★☆☆ · Coût matière ★★★☆☆
 
@@ -21,11 +21,11 @@ title: Radio Fab
 ## Partenaires à mobiliser
 - Radio associative locale : marraine technique et éditoriale, diffusion des émissions.
 - Journal local ou médiathèque : éducation aux médias, relais de diffusion.
-- Agence France Travail et mission locale : mise en relation avec les professionnels à interviewer.
-- Les invités eux-mêmes : artisans, entrepreneurs, agents publics du territoire, un vivier infini.
+- Agence France Travail et mission locale : mise en relation avec les professionnel-les à interviewer.
+- Les invité-es : artisans, entrepreneurs, agents publics du territoire, un vivier infini.
 
 ## Métiers à faire découvrir
-Technicien son, journaliste, animateur radio, monteur, podcasteur, community manager, médiateur numérique, plus tous les métiers des invités interviewés, ce qui fait de ce projet le plus « multiplicateur » du volume.
+Technicien son, journaliste, animateur radio, monteur, podcasteur, community manager, médiateur numérique, plus tous les métiers des invité-es interviewé-es : chaque émission ajoute un métier de plus à la liste.
 
 > [!quote] Le temps fort
 > L'émission finale en direct et en public, depuis le studio que le groupe a construit de ses mains. Les épisodes restent en ligne : c'est le seul projet dont le temps fort est réécoutable à volonté, et la remise du « Micro d'Or » se fait à l'antenne.

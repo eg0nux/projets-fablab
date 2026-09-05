@@ -2,7 +2,7 @@
 title: Faire Podium
 ---
 
-==La fabrique des trophées du territoire. Pendant dix jours, le FabLab devient la fabrique officielle des trophées, médailles et diplômes éco-conçus des clubs sportifs, des écoles et des associations du Bergeracois. Les commanditaires défilent, le carnet de commandes se remplit, la production s'organise ; et au dernier jour, retournement : ce sont les participants qui montent sur scène pour décerner leur propre prix au club le plus inspirant.==
+==La fabrique des trophées du territoire. Pendant dix jours, le FabLab devient la fabrique officielle des trophées, médailles et diplômes éco-conçus des clubs sportifs, des écoles et des associations du Bergeracois. Les commanditaires défilent, le carnet de commandes se remplit, la production s'organise ; et au dernier jour, retournement : ce sont les participant-es qui montent sur scène pour décerner leur propre prix au club le plus inspirant.==
 
 **Repères** : Originalité ★★★★☆ · Accessibilité ★★★★☆ · Polyvalence FabLab ★★★★☆ · Impact social ★★★☆☆ · Ancrage territorial ★★★★☆ · Coût matière ★★★★☆
 
@@ -16,7 +16,7 @@ title: Faire Podium
 - Un catalogue de cinq à six modèles standard personnalisables : trophées en bois découpé-gravé, coupes en contreplaqué empilé, socles.
 - Des médailles gravées à la laser avec rubans, des lots de badges, des diplômes et des affiches de palmarès.
 - Des gabarits et fichiers de reproduction pour que la fabrique continue après les dix jours.
-- Le trophée du projet lui-même, le « Fair-Play d'Or », décerné par les participants et non reçu par eux.
+- Le trophée du projet lui-même, le « Fair-Play d'Or », que les participant-es décernent au lieu de le recevoir.
 
 ## Partenaires à mobiliser
 - Les clubs sportifs du Bergeracois et l'office des sports : les commanditaires.
@@ -28,7 +28,7 @@ title: Faire Podium
 Opérateur laser et gravure, agent de production en petite série, métiers de l'événementiel, animateur sportif, vente et relation client : le projet fait toucher du doigt ce qu'est un atelier qui honore des commandes.
 
 > [!quote] Le temps fort
-> La cérémonie inversée : pour une fois, ce sont les « accompagnés » qui montent sur scène pour récompenser : discours, enveloppe, trophée. Ceux qui ont fabriqué les récompenses de tout le monde décernent enfin la leur. Et toute l'année, à chaque tournoi, leurs objets reparaissent sur les podiums du Bergeracois.
+> La cérémonie inversée : pour une fois, ce sont les « accompagné-es » qui montent sur scène pour récompenser : discours, enveloppe, trophée. Celles et ceux qui ont fabriqué les récompenses de tout le monde décernent enfin la leur. Et toute l'année, à chaque tournoi, leurs objets reparaissent sur les podiums du Bergeracois.
 
 ## En pratique
 - **Budget matière indicatif** : 360 à 420 € (une participation symbolique des clubs peut autofinancer une partie de la matière).

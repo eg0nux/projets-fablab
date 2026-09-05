@@ -2,7 +2,7 @@
 title: Lumière sur le quartier
 ---
 
-==Mobilier et signalétique urbaine. Les participants conçoivent et fabriquent du micro-mobilier urbain et de la signalétique pour un lieu réel de leur quartier, à la demande d'habitants, d'une mairie ou d'un bailleur social. Le quartier devient le client, le FabLab un bureau d'études et un atelier de production. Le résultat reste visible des années : chacun peut dire « ce banc, c'est moi ».==
+==Mobilier et signalétique urbaine. Les participant-es conçoivent et fabriquent du micro-mobilier urbain et de la signalétique pour un lieu réel de leur quartier, à la demande d'habitant-es, d'une mairie ou d'un bailleur social. Le quartier devient le client, le FabLab un bureau d'études et un atelier de production. Le résultat reste visible des années : chacun-e peut dire « ce banc, c'est moi ».==
 
 **Repères** : Originalité ★★★☆☆ · Accessibilité ★★★☆☆ · Polyvalence FabLab ★★★★☆ · Impact social ★★★★☆ · Ancrage territorial ★★★☆☆ · Coût matière ★★★☆☆
 
@@ -20,7 +20,7 @@ title: Lumière sur le quartier
 
 ## Partenaires à mobiliser
 - Mairie (services techniques, espaces verts, voirie) ou bailleur social : le commanditaire.
-- Conseil citoyen, centre social ou association d'habitants : l'expression du besoin.
+- Conseil citoyen, centre social ou association d'habitant-es : l'expression du besoin.
 - Entreprises locales de menuiserie et de métallerie : parrainage technique et pitchs métiers.
 - CAUE ou école de design/architecture proche : appui à la conception.
 
@@ -28,7 +28,7 @@ title: Lumière sur le quartier
 Menuisier-agenceur, métallier-serrurier, designer d'espace, paysagiste, agent technique de collectivité, conducteur de travaux, chargé de mission politique de la ville : autant de filières qui recrutent localement.
 
 > [!quote] Le temps fort
-> L'inauguration dans l'espace public, avec habitants, élus, presse locale et familles. Les participants présentent la démarche devant le mobilier qu'ils ont fabriqué et posé. Une prise de parole ancrée dans une preuve tangible.
+> L'inauguration dans l'espace public, avec habitant-es, élu-es, presse locale et familles. Les participant-es présentent la démarche devant le mobilier qu'ils/elles ont fabriqué et posé. Une prise de parole ancrée dans une preuve tangible.
 
 ## En pratique
 - **Budget matière indicatif** : 400 à 950 €

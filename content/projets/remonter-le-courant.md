@@ -29,7 +29,7 @@ title: Remonter le courant
 Technicien de rivière, agent d'entretien des milieux aquatiques, garde-pêche, pilote et batelier du tourisme fluvial, animateur nature, hydrologie et suivi de la qualité de l'eau : des métiers de terrain recrutés par les collectivités, les syndicats de rivière et les opérateurs touristiques de la vallée.
 
 > [!quote] Le temps fort
-> La mise à l'eau au vieux port de Bergerac, devant familles, partenaires et passants, puis la première donnée qui s'affiche en direct sur le tableau de bord. Le laboratoire reste amarré et continue de mesurer : le projet vit après les dix jours, et les participants peuvent revenir consulter « leur » rivière.
+> La mise à l'eau au vieux port de Bergerac, devant familles, partenaires et passants, puis la première donnée qui s'affiche en direct sur le tableau de bord. Le laboratoire reste amarré et continue de mesurer : le projet vit après les dix jours, et les participant-es peuvent revenir consulter « leur » rivière.
 
 ## En pratique
 - **Budget matière indicatif** : 800 à 1 250 € (hors machines et encadrement).

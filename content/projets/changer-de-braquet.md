@@ -14,7 +14,7 @@ title: Changer de braquet
 
 ## Ce que l'on fabrique
 - Remise en état d'une flotte de 10 à 15 vélos donnés : diagnostic, freinage, transmission, roulements, éclairage conforme, marquage.
-- Deux vélos-cargos assemblés sur plans libres à cadre boulonné (bois et acier standard, aucune soudure de cadre par les participants).
+- Deux vélos-cargos assemblés sur plans libres à cadre boulonné (bois et acier standard, aucune soudure de cadre par les participant-es).
 - Électrification de deux vélos avec des kits homologués 250 W ; support de charge et petite signalétique.
 - Station d'auto-réparation publique : structure robuste, outillage câblé antivol, pompe, QR codes vers des tutoriels ; trophée « Guidon d'Or ».
 
@@ -28,7 +28,7 @@ title: Changer de braquet
 Mécanicien cycle (certifications courtes très demandées), vendeur et technicien en magasin de cycles, réparateur itinérant, logistique du dernier kilomètre à vélo-cargo, métiers de la mobilité douce en collectivité. Les ateliers et magasins peinent à recruter partout en France, Dordogne comprise.
 
 > [!quote] Le temps fort
-> La balade inaugurale en peloton sur la véloroute, cargos en tête, jusqu'à la remise des premiers vélos de la vélothèque à leurs bénéficiaires, parfois des participants eux-mêmes. La station publique, elle, donne littéralement pignon sur rue au travail du groupe.
+> La balade inaugurale en peloton sur la véloroute, cargos en tête, jusqu'à la remise des premiers vélos de la vélothèque à leurs bénéficiaires, qui sont parfois des participant-es du parcours. La station publique, elle, donne littéralement pignon sur rue au travail du groupe.
 
 ## En pratique
 - **Budget matière indicatif** : 1 700 à 2 400 € (le plus coûteux des huit) ; version sans électrification : environ 1 000 à 1 500 € (hors machines et encadrement).
@@ -37,4 +37,4 @@ Mécanicien cycle (certifications courtes très demandées), vendeur et technici
 > [!warning] Points de vigilance
 > - Responsabilité du prêt : convention écrite, vélos contrôlés sur checklist, éclairage conforme, casques fournis.
 > - Électrification : kits homologués 250 W uniquement, jamais de débridage ; batteries stockées et chargées selon les consignes.
-> - Aucune soudure de cadre par les participants (cargos boulonnés sur plans éprouvés) ; anticiper qui gère la vélothèque dans la durée.
+> - Aucune soudure de cadre par les participant-es (cargos boulonnés sur plans éprouvés) ; anticiper qui gère la vélothèque dans la durée.

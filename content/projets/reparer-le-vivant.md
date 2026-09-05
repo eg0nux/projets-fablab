@@ -2,7 +2,7 @@
 title: Réparer le vivant
 ---
 
-==Biodiversité fabriquée. Fabriquer des refuges pour la faune locale (nichoirs, hôtels à insectes, gîtes à chauves-souris, abris à hérissons) instrumentés avec des capteurs simples, puis les installer avec des naturalistes et suivre les données dans le temps. Le bois rencontre l'électronique, et le FabLab se met au service du vivant qui entoure les participants.==
+==Biodiversité fabriquée. Fabriquer des refuges pour la faune locale (nichoirs, hôtels à insectes, gîtes à chauves-souris, abris à hérissons) instrumentés avec des capteurs simples, puis les installer avec des naturalistes et suivre les données dans le temps. Le bois rencontre l'électronique, et le FabLab se met au service du vivant qui entoure les participant-es.==
 
 **Repères** : Originalité ★★★★☆ · Accessibilité ★★★☆☆ · Polyvalence FabLab ★★★★★ · Impact social ★★★★☆ · Ancrage territorial ★★★☆☆ · Coût matière ★★★☆☆
 
@@ -20,7 +20,7 @@ title: Réparer le vivant
 
 ## Partenaires à mobiliser
 - LPO locale ou CPIE : expertise espèces, normes des refuges, sites d'installation.
-- Syndicat de rivière, commune (parcs), agriculteurs, fédérations de chasse et de pêche : les terrains.
+- Syndicat de rivière, commune (parcs), agriculteurs et agricultrices, fédérations de chasse et de pêche : les terrains.
 - Enseignant ou club d'électronique, autre FabLab : renfort sur la partie capteurs si besoin.
 - École primaire voisine : futur public des panneaux pédagogiques et du suivi.
 
@@ -28,7 +28,7 @@ title: Réparer le vivant
 Technicien de rivière, chargé d'études naturaliste, animateur nature, agent ONF ou garde du littoral, éco-garde, technicien bocage, métiers agricoles en transition agro-écologique : des métiers de terrain, souvent accessibles par des formations courtes.
 
 > [!quote] Le temps fort
-> La journée de pose en pleine nature, suivie de la remise du trophée « Nid d'Or ». Prolongement original : un tableau de bord des données de capteurs reste consultable, une occasion d'inviter les participants à revenir au FabLab après la formation et de garder le lien.
+> La journée de pose en pleine nature, suivie de la remise du trophée « Nid d'Or ». Prolongement original : un tableau de bord des données de capteurs reste consultable, une occasion d'inviter les participant-es à revenir au FabLab après la formation et de garder le lien.
 
 ## En pratique
 - **Budget matière indicatif** : 600 à 850 €
