@@ -7,12 +7,12 @@ title: La méthode
 > [!info] Format de référence
 > **10 jours** répartis sur 2,5 semaines · groupe de **8 à 12 participant-es** · fabrication au FabLab + pitchs de professionnel-les + trophée éco-conçu + évaluation multi-modale.
 
-Cette trame est celle de <abbr title="Dispositif pédagogique et professionnel immersif conçu par Cap Sciences avec Léo Lagrange Formation, lancé en 2025 en Nouvelle-Aquitaine : les tiers-lieux et les FabLabs y servent à former et sensibiliser aux métiers de la transition écologique (recyclage, réemploi, gestion des déchets, économie circulaire).">« Faire Récifs »</abbr>, éprouvée sur les métiers de la transition écologique. Les vingt-cinq projets la reprennent en changeant de terrain.
+Cette trame est celle de <span class="glose" tabindex="0">« Faire Récifs »<span>Dispositif pédagogique et professionnel immersif conçu par Cap Sciences avec Léo Lagrange Formation, lancé en 2025 en Nouvelle-Aquitaine : les tiers-lieux et les FabLabs y servent à former et sensibiliser aux métiers de la transition écologique (recyclage, réemploi, gestion des déchets, économie circulaire).</span></span>, éprouvée sur les métiers de la transition écologique. Les vingt-cinq projets la reprennent en changeant de terrain.
 
 ## Les six invariants
 
 ### 1. Un objet réel, une destination réelle
-On ne fabrique jamais un exercice. Chaque production quitte le FabLab pour vivre ailleurs : un banc posé dans le quartier, un nichoir en bord de rivière, une aide technique remise à la personne qui en a besoin. C'est cette destination qui crée l'exigence de qualité, la fierté et la trace durable.
+On ne fabrique jamais un exercice. Chaque production quitte le FabLab pour vivre ailleurs : un banc posé dans le quartier, un nichoir en bord de rivière, une aide technique remise à la personne qui en a besoin. C'est cette destination qui crée la fierté et la trace durable.
 
 ### 2. Le territoire comme salle de classe
 Les professionnel-les ne sont pas des intervenant-es ponctuel-les : ils/elles sont commanditaires, juré-es, invité-es ou bénéficiaires. Chaque projet organise des rencontres structurées avec les acteurs et actrices du territoire, sur le format éprouvé de la demi-journée de pitchs.

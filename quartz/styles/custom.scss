@@ -1743,6 +1743,76 @@ article > p:first-of-type abbr:focus > span {
 }
 
 /* --------------------------------------------------------------------------
+   Glose de corps de texte : un nom propre et ce qu'il recouvre
+
+   Certains noms ne disent rien à qui les lit pour la première fois : « Faire
+   Récifs » est un dispositif, pas une expression. La phrase le cite sans
+   s'alourdir, la glose au survol dit d'où il vient.
+
+   Même mobilier que la glose du sigle : papier, filet de 2 px, monospace.
+   Deux différences, dictées par la longueur du texte : il tient sur
+   plusieurs lignes au lieu d'une seule, et sa largeur est bornée à la
+   colonne de lecture.
+
+   L'ancrage est le paragraphe et non le mot, comme pour le sigle et pour la
+   même raison : un mot en fin de ligne pousserait la glose hors de la
+   colonne. Le crochet est un `<span>` et non un `<abbr>` : « Faire Récifs »
+   n'abrège rien, et l'attribut `title` natif doublerait la glose d'une
+   infobulle système hors charte. Le mot est rendu focalisable dans le
+   markdown et la glose répond au focus comme au survol : ces pages se lisent
+   aussi au doigt.
+   -------------------------------------------------------------------------- */
+article p:has(> .glose) {
+  position: relative;
+}
+
+.glose {
+  border-bottom: 1px dotted var(--gray);
+  cursor: help;
+}
+
+.glose > span {
+  position: absolute;
+  top: calc(100% + 0.5em);
+  left: 0;
+  z-index: 3;
+
+  max-width: min(66ch, 100%);
+  padding: 0.45em 0.6em 0.5em;
+  border: 2px solid var(--dark);
+  border-radius: 2px;
+  background-color: var(--light);
+  color: var(--dark);
+
+  font-family: var(--codeFont);
+  font-size: 0.72rem;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  line-height: 1.5;
+
+  opacity: 0;
+  transition: opacity 0.14s ease-out;
+  pointer-events: none;
+}
+
+.glose:hover > span,
+.glose:focus > span {
+  opacity: 1;
+}
+
+/* Sur papier rien ne se survole : la glose y flotterait sur le texte. */
+@media print {
+  .glose {
+    border-bottom: none;
+  }
+
+  .glose > span {
+    display: none;
+  }
+}
+
+/* --------------------------------------------------------------------------
    Exergue : le chapeau, un bloc d'encre plein
 
    La convention veut que chaque fiche s'ouvre sur deux ou trois lignes qui
