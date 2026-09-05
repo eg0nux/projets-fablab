@@ -98,11 +98,43 @@ async function _navigate(url: URL, isBack: boolean = false) {
   if (announcer.textContent !== title) {
     announcer.textContent = title
   }
-  announcer.dataset.persist = ""
-  html.body.appendChild(announcer)
+  if (!announcer.isConnected) {
+    document.body.appendChild(announcer)
+  }
 
-  // morph body
-  micromorph(document.body, html.body)
+  // Morpher #quartz-root, jamais le <body> entier. (Écart propre au site, à
+  // reporter à chaque montée de version de Quartz.)
+  //
+  // micromorph apparie les enfants d'un élément par rang. Or le <body> vivant
+  // n'a jamais tout à fait la composition de celui du HTML reçu : Cloudflare y
+  // injecte ses scripts (anti-spam des adresses, détection des robots) selon
+  // les cookies du visiteur, le premier se retire du DOM après avoir tourné,
+  // le second ajoute une iframe, et les prévisualisations s'y accrochent au
+  // survol. Sitôt que le vivant compte un enfant de moins que le reçu, la
+  // dernière balise <script> — postscript.js, ce routeur même — est recréée
+  // avec un « ?t= » et s'exécute une seconde fois : deux routeurs, deux
+  // événements « nav » par navigation, deux écouteurs sur chaque bouton, et la
+  // bascule de thème s'annulait elle-même jusqu'au rechargement suivant.
+  //
+  // Tout ce qui change d'une page à l'autre tient dans #quartz-root ; les
+  // scripts en fin de <body> sont les mêmes partout et déjà exécutés. Le
+  // <body> ne fait que reprendre les attributs du nouveau (data-slug, que lit
+  // getFullSlug), et ce que le morph du <body> balayait au passage — barre de
+  // chargement, prévisualisations — se retire à la main.
+  const root = document.getElementById("quartz-root")
+  const newRoot = html.getElementById("quartz-root")
+  if (!root || !newRoot) {
+    window.location.assign(url)
+    return
+  }
+  for (const { name } of Array.from(document.body.attributes)) {
+    if (!html.body.hasAttribute(name)) document.body.removeAttribute(name)
+  }
+  for (const { name, value } of Array.from(html.body.attributes)) {
+    document.body.setAttribute(name, value)
+  }
+  await micromorph(root, newRoot)
+  document.querySelectorAll(".navigation-progress, body > .popover").forEach((el) => el.remove())
 
   // scroll into place and add history
   if (!isBack) {
@@ -127,7 +159,6 @@ async function _navigate(url: URL, isBack: boolean = false) {
   }
 
   notifyNav(getFullSlug(window))
-  delete announcer.dataset.persist
 }
 
 async function navigate(url: URL, isBack: boolean = false) {
