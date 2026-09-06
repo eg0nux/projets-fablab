@@ -250,6 +250,11 @@ la ligne du titre, le bandeau de marques quand la fiche en a (voir §7).
   `==ainsi==` en premier paragraphe ;
 - les **sous-titres** en capitales sous leur barre de repérage, plus courte
   d'un niveau à l'autre ; le `####` derrière un filet ;
+- les **listes** : la puce est un trait safran de 2 px, le cran suivant des
+  barres de repérage ; les numéros s'écrivent `01`, `02`, en signalétique
+  grise ; au fil du texte, la liste est en gouttière, son texte aligné sur
+  les paragraphes et la marque dans la marge ; elle revient en retrait dans
+  un encadré, sur téléphone et sur la feuille ;
 - les **encadrés** à filet gauche, à l'encre ; safran pour ce qui alerte ;
   leur intitulé en étiquette safran ; italique pour le temps fort d'un
   parcours ; sans icône, sans fond ;

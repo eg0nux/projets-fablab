@@ -805,6 +805,126 @@ article h4 {
 }
 
 /* --------------------------------------------------------------------------
+   Listes : la barre et le zéro devant
+
+   Le rond du navigateur était le seul rond des deux sites. La puce est un
+   trait de 2 px sur 0,75 em, en safran, à mi-hauteur des minuscules : le
+   cran suivant des barres de repérage — 4 px sur 2 rem pour un ##, 3 px sur
+   1,25 rem pour un ###, 2 px sur 0,75 em pour un item. Un trait, pas un
+   fond : posé en `border`, il s'imprime sans qu'on coche « graphismes
+   d'arrière-plan », et passe au noir avec le reste de la palette.
+
+   Les listes numérotées portent leur rang en signalétique, « 01 », « 02 »,
+   en JetBrains Mono, petit et gris, comme le sommaire et le fil d'Ariane :
+   à chasse fixe, les numéros s'alignent d'eux-mêmes jusqu'à 99. Le compte
+   repart à 01 à chaque liste ; l'attribut `start` d'une liste qui partirait
+   d'ailleurs n'est pas lu (aucune sur les deux sites).
+
+   Au fil du texte, la liste est en gouttière : son texte s'aligne sur les
+   paragraphes et la marque sort dans la marge, comme le filet du ####. Elle
+   revient en retrait de 1,6 em partout où la marge manque : dans un encadré
+   (le trait mordrait sur le filet), sous un item, dans un aperçu au survol
+   ou dans le volet de recherche, sur téléphone (la colonne n'a que 1 rem de
+   marge) et sur la feuille imprimée (le texte part du bord de la zone
+   d'impression, seuls les titres y sont suspendus — voir le bloc
+   Impression).
+
+   Les marques passent par `li::before` et non par `::marker`, qui ne se
+   laisse ni dessiner ni placer. `list-style: none` retire à la liste sa
+   sémantique dans Safari ; le contenu du pseudo-élément — une espace sans
+   chasse, ou le numéro — la lui rend.
+
+   Les rubriques de l'accueil et les jauges des repères sont des listes
+   aussi, habillées plus loin : elles sont tenues à l'écart ici.
+   -------------------------------------------------------------------------- */
+
+/* Le retrait passe par une variable posée sur la liste elle-même : une
+   variable déclarée directement sur un élément bat celle qu'il hérite, quelle
+   que soit la spécificité. Sans cela, le `:not()` ci-dessous — qui compte
+   pour une classe — l'emportait sur la règle de gouttière, et toutes les
+   listes restaient en retrait. */
+article :is(ul, ol):not([data-callout="rubriques"] *, .reperes-liste) {
+  list-style: none;
+  padding-left: var(--retrait-liste, 1.6em);
+}
+
+/* Au fil du texte : en gouttière. */
+article > :is(ul, ol) {
+  --retrait-liste: 0;
+}
+
+/* Un second niveau reprend le retrait : sa marque se pose dans le texte du
+   premier, pas dans la marge de la page. */
+article :is(ul, ol) :is(ul, ol) {
+  --retrait-liste: 1.6em;
+}
+
+/* Là où la marge manque, la liste revient en retrait : l'aperçu au survol et
+   le volet de recherche n'ont pas de gouttière. */
+.popover-inner article > :is(ul, ol),
+.preview-inner article > :is(ul, ol) {
+  --retrait-liste: 1.6em;
+}
+
+/* Sur téléphone, la colonne n'a plus qu'un rem de marge. */
+@media (max-width: 800px) {
+  article > :is(ul, ol) {
+    --retrait-liste: 1.6em;
+  }
+}
+
+article ol {
+  counter-reset: item;
+}
+
+article ol > li {
+  counter-increment: item;
+}
+
+article li:not([data-callout="rubriques"] *, .reperes-liste *) {
+  position: relative;
+}
+
+/* La barre. Son bord droit à 0,5 em du texte, sa mi-hauteur sur celle des
+   minuscules : à 1 rem sur un interligne de 1,7, la ligne d'x passe à 0,9 em
+   du haut de la ligne. */
+article li:not([data-callout="rubriques"] *, .reperes-liste *)::before {
+  content: "\200B";
+  position: absolute;
+  right: calc(100% + 0.5em);
+  top: calc(0.9em - 1px);
+  width: 0.75em;
+  height: 0;
+  overflow: hidden;
+  border-top: 2px solid var(--safran);
+}
+
+/* Le zéro devant. La ligne du pseudo-élément doit valoir celle de l'item,
+   1,7 fois le corps de l'item, pour que le numéro pose sur la même ligne de
+   base que le texte. */
+article ol > li:not([data-callout="rubriques"] *, .reperes-liste *)::before {
+  content: counter(item, decimal-leading-zero);
+  right: calc(100% + 0.45em);
+  top: 0;
+  width: auto;
+  height: auto;
+  overflow: visible;
+  border: 0;
+  font-family: var(--codeFont);
+  font-size: 0.74em;
+  line-height: calc(1.7em / 0.74);
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+  color: var(--gray);
+}
+
+/* Un second niveau, s'il en vient un : la même marque, en gris. */
+article li li:not([data-callout="rubriques"] *, .reperes-liste *)::before {
+  border-top-color: var(--gray);
+  color: var(--gray);
+}
+
+/* --------------------------------------------------------------------------
    Métadonnées et table des matières : petites, monospace, effacées
    -------------------------------------------------------------------------- */
 
@@ -3296,6 +3416,13 @@ article code {
   /* Le `####` garde son filet, qui devient une encre. */
   article h4 {
     border-left-color: #000;
+  }
+
+  /* Les listes quittent la gouttière : le texte part du bord de la zone
+     d'impression et rien ne peut en sortir. La barre et le numéro passent
+     au noir avec la palette. */
+  article > :is(ul, ol) {
+    --retrait-liste: 1.6em;
   }
 
   /* Un titre ne reste pas seul en bas d'une page, et ne se coupe pas. */
