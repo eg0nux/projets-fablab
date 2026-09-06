@@ -136,8 +136,10 @@ safran reste aux accolades et aux liens.
 
 Deux encres à plat, comme une affiche sérigraphiée en deux passages : le
 **noir** et le **safran**, sur un papier crème. Pas de transparence, pas de
-dégradé, pas de bande de biais. Neuf variables Quartz, deux thèmes, déclarées
-dans `quartz.config.ts`.
+dégradé, pas de bande de biais — sauf une, le scotch du chapeau (§ 6), qui
+penche de cinq degrés parce qu'un adhésif posé à la main ne tombe jamais
+d'équerre. Neuf variables Quartz, deux thèmes, déclarées dans
+`quartz.config.ts`.
 
 | Variable        | Clair                  | Sombre          | Rôle                                                                                                                                    |
 | --------------- | ---------------------- | --------------- | --------------------------------------------------------------------------------------------------------------------------------------- |
@@ -247,7 +249,11 @@ la ligne du titre, le bandeau de marques quand la fiche en a (voir §7).
 
 - le **chapeau**, deux ou trois lignes en italique dans un bloc d'encre
   plein, texte au papier, qui dit à quoi sert la chose ; il s'écrit
-  `==ainsi==` en premier paragraphe ;
+  `==ainsi==` en premier paragraphe. Deux **scotchs** safran de 96 × 28 px le
+  tiennent par le coin haut-gauche et par le coin bas-droite, à cheval sur le
+  bord, parallèles et penchés de cinq degrés : la fiche vient d'être affichée
+  au mur de l'atelier. Ils rentrent à huit pixels sous 800 px, où la colonne
+  n'a plus qu'un rem de marge, et ne s'impriment pas ;
 - les **sous-titres** en capitales sous leur barre de repérage, plus courte
   d'un niveau à l'autre ; le `####` derrière un filet ;
 - les **listes** : la puce est un trait safran de 2 px, le cran suivant des
@@ -342,7 +348,8 @@ bandeau de fiche dit avec qui, pas grâce à qui.
 **Thème sombre** : la palette s'inverse — papier noir, encre crème — et le
 safran ne bouge pas : c'est le texte posé dessus qui suit, noir dans les deux
 thèmes. Les blocs s'inversent avec l'encre : le chapeau devient crème, texte
-noir. Tous les logos passent en blanc.
+noir, et ses deux scotchs restent safran — les seuls aplats colorés de la
+page, et ils n'en sont que plus nets. Tous les logos passent en blanc.
 
 **Mouvement réduit** : le soubresaut des logos s'arrête, mais garde son
 décalage chromatique ; la page 404 se fige de la même façon — le nombre garde
@@ -366,12 +373,14 @@ sur une feuille, on doit pouvoir dire « voir 2.3 ». La barre de repérage lui
 cède la place, elle disait la hiérarchie par sa longueur.
 
 Le reste suit : le filigrane du titre s'efface, le chapeau quitte son bloc
-d'encre pour un cadre, les étiquettes des liens tombent et leur texte se
-souligne, les adresses des liens externes s'écrivent entre parenthèses, les
-photos gardent leur habillage à 40 % — la figure dans la marge, le texte qui
-la contourne —, l'en-tête d'un tableau se répète d'une page à l'autre, un
-encadré replié ne s'imprime pas, et le document se ferme sur une ligne qui dit
-le titre de la fiche et son adresse.
+d'encre pour un cadre et perd ses scotchs — au noir ils feraient deux pavés
+collés au cadre, et sur une feuille la fiche n'a pas besoin qu'on la punaise
+—, les étiquettes des liens tombent et leur texte se souligne, les adresses
+des liens externes s'écrivent entre parenthèses, les photos gardent leur
+habillage à 40 % — la figure dans la marge, le texte qui la contourne —,
+l'en-tête d'un tableau se répète d'une page à l'autre, un encadré replié ne
+s'imprime pas, et le document se ferme sur une ligne qui dit le titre de la
+fiche et son adresse.
 
 **Rien ne compte sur un aplat** : le navigateur n'imprime pas les fonds tant
 qu'on n'a pas coché « graphismes d'arrière-plan », case décochée par défaut.

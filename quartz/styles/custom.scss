@@ -2169,6 +2169,7 @@ article p:has(> .glose) {
 /* L'italique est celle du temps fort : le chapeau raconte à quoi sert la
    fiche, il ne l'annonce pas. */
 article > p:first-of-type:has(.text-highlight) {
+  position: relative;
   background-color: var(--dark);
   color: var(--light);
   padding: 1.05em 1.25em;
@@ -2183,6 +2184,60 @@ article > p:first-of-type .text-highlight {
   color: inherit;
   padding: 0;
   border-radius: 0;
+}
+
+/* --------------------------------------------------------------------------
+   Le scotch : deux rubans safran sur le chapeau
+
+   Deux morceaux d'adhésif d'atelier, à cheval sur le coin haut-gauche et sur
+   le coin bas-droite : la fiche vient d'être affichée au mur. C'est le seul
+   biais de toute la charte — cinq degrés, assez pour qu'on le voie, pas assez
+   pour que le bloc paraisse tordu — et CHARTE.md le dit.
+
+   Le ruban n'est pas une image : deux aplats de la même encre que les liens,
+   à angles vifs, posés en pseudo-éléments. Le paragraphe leur sert de repère,
+   comme il sert déjà de repère à la glose des chapeaux qui en portent une ;
+   celle-ci monte à `z-index: 3` et passe donc par-dessus le ruban du bas.
+
+   Les deux rubans sont parallèles et non symétriques : en miroir ils feraient
+   un nœud papillon, dans le même sens ils viennent du même rouleau.
+
+   Le safran ne bouge pas d'un thème à l'autre : sur fond sombre le bloc passe
+   au crème et le texte au noir, les rubans restent les mêmes — les seuls
+   aplats colorés de la page, et ils n'en sont que plus nets.
+   -------------------------------------------------------------------------- */
+
+article > p:first-of-type:has(.text-highlight)::before,
+article > p:first-of-type:has(.text-highlight)::after {
+  content: "";
+  position: absolute;
+  width: 96px;
+  height: 28px;
+  background-color: var(--safran);
+  transform: rotate(-5deg);
+}
+
+article > p:first-of-type:has(.text-highlight)::before {
+  top: -13px;
+  left: -24px;
+}
+
+article > p:first-of-type:has(.text-highlight)::after {
+  bottom: -13px;
+  right: -24px;
+}
+
+/* Sur téléphone la colonne n'a plus qu'un rem de marge : un ruban qui sort de
+   vingt-quatre pixels passerait sous le bord de l'écran et ouvrirait un
+   défilement horizontal sur toute la page. Il rentre à huit, le geste tient. */
+@media (max-width: 800px) {
+  article > p:first-of-type:has(.text-highlight)::before {
+    left: -8px;
+  }
+
+  article > p:first-of-type:has(.text-highlight)::after {
+    right: -8px;
+  }
 }
 
 /* --------------------------------------------------------------------------
@@ -3442,6 +3497,14 @@ article code {
     color: #000;
     border: 2px solid #000;
     text-align: left;
+  }
+
+  /* Le scotch ne s'imprime pas. Une laser le rendrait en deux pavés noirs
+     collés au cadre, et il ne dirait rien que le cadre ne dise déjà : sur la
+     feuille, la fiche n'a pas besoin qu'on la punaise. */
+  article > p:first-of-type:has(.text-highlight)::before,
+  article > p:first-of-type:has(.text-highlight)::after {
+    display: none;
   }
 
   /* La photo garde son habillage à 40 % : c'est ce qui fait la page d'un
