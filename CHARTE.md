@@ -236,8 +236,12 @@ et son rail où la section courante est marquée en safran, puis les rétroliens
 
 **En-tête de page** : le fil d'Ariane en petites capitales grises, maillons
 séparés de chevrons, le titre en
-capitales sur son dièse en filigrane, la date et le temps de lecture en gris ; à droite, sur la ligne du
-titre, le bandeau de marques quand la fiche en a (voir §7).
+capitales sur son dièse en filigrane, la date et le temps de lecture en gris ;
+au bout de cette ligne, contre le bord droit de la colonne et sur les seules
+fiches, le **bouton d'impression** — une imprimante de trois traits, du gris de
+la ligne qu'elle termine, qui s'encre au survol, allume son voyant en safran et
+sort sa feuille d'un cran, avec sa glose « Imprimer la fiche » ; à droite, sur
+la ligne du titre, le bandeau de marques quand la fiche en a (voir §7).
 
 **Corps** :
 
@@ -333,14 +337,44 @@ noir. Tous les logos passent en blanc.
 **Mouvement réduit** : le soubresaut des logos s'arrête, mais garde son
 décalage chromatique ; la page 404 se fige de la même façon — le nombre garde
 son dédoublement, la déchirure une tranche, le semis de pixels sa position de
-départ. Ce sont les deux seules animations des sites.
+départ ; la feuille du bouton d'impression ne sort plus, mais le voyant
+s'allume. Ce sont les trois seules animations des sites, et la troisième est
+la seule qui réponde à un geste.
 
-**Impression** : les colonnes et le pied de page disparaissent, tout passe en
-noir, les barres de repérage restent et s'impriment en noir (elles portent la
-hiérarchie sur papier), le filigrane du titre s'efface, le chapeau quitte son bloc d'encre pour un cadre, les
-étiquettes des liens tombent et leur texte se souligne, les adresses des liens
-externes s'écrivent entre parenthèses. Une fiche punaisée
-près d'une machine est un usage réel.
+**Impression** : ce qui sort de l'imprimante n'est pas une capture du site,
+c'est un document technique.
+
+Les colonnes, le pied de page et le bouton lui-même disparaissent. La palette
+entière passe à l'encre sur blanc, thème sombre compris — sans quoi la fiche
+en sortait presque vide, son `--dark` y étant la couleur du papier. Le corps
+descend à 10,5 pt dans une colonne de 16,8 cm, marges de reliure comprises.
+
+Les sections se **numérotent**, `1.` puis `1.1`, le numéro dans un pavé de
+2,6 rem et le titre suspendu derrière, tous alignés sur une même verticale.
+C'est le seul ajout du papier à ce que dit l'écran, et il tient à une chose :
+sur une feuille, on doit pouvoir dire « voir 2.3 ». La barre de repérage lui
+cède la place, elle disait la hiérarchie par sa longueur.
+
+Le reste suit : le filigrane du titre s'efface, le chapeau quitte son bloc
+d'encre pour un cadre, les étiquettes des liens tombent et leur texte se
+souligne, les adresses des liens externes s'écrivent entre parenthèses, les
+photos gardent leur habillage à 40 % — la figure dans la marge, le texte qui
+la contourne —, l'en-tête d'un tableau se répète d'une page à l'autre, un
+encadré replié ne s'imprime pas, et le document se ferme sur une ligne qui dit
+le titre de la fiche et son adresse.
+
+**Rien ne compte sur un aplat** : le navigateur n'imprime pas les fonds tant
+qu'on n'a pas coché « graphismes d'arrière-plan », case décochée par défaut.
+Ce qui portait du sens par un fond le porte ici par un trait, un cadre ou un
+numéro ; les deux exceptions, les jauges du catalogue et les pastilles de code
+couleur, demandent le fond par `print-color-adjust`.
+
+Le bouton n'est posé que sur les **fiches** — un objet, une technique, un
+parcours. L'accueil, les pages de rubrique, « L'atelier », « La méthode » et le
+tableau comparatif se lisent à l'écran. Les règles d'impression, elles, valent
+pour toutes les pages : un Ctrl+P n'a pas à demander la permission.
+
+Une fiche punaisée près d'une machine est un usage réel.
 
 ## 9. Où ça vit
 
@@ -352,6 +386,9 @@ près d'une machine est un usage réel.
 | `quartz/components/PageTitle.tsx` | le logotype sur deux lignes | identique |
 | `quartz/components/Logos.tsx` | la maison | identique |
 | `quartz/components/Marques.tsx` | le partenaire d'un projet | fablab seulement |
+| `quartz/components/Imprimer.tsx` | le bouton d'impression, et la règle qui dit ce qu'est une fiche | identique |
+| `quartz/components/scripts/imprimer.inline.ts` | le clic, et le pied que la feuille emporte | identique |
+| `quartz/components/ContentMeta.tsx` | un import et une balise : le bouton au bout de la ligne de date ; à reporter à chaque montée de version | identique |
 | `quartz/components/scripts/popover.inline.ts` | un garde en tête du script : pas de prévisualisation au survol d'un lien de fichier, qui n'a rien à montrer et pèse lourd ; à reporter à chaque montée de version | identique |
 | `quartz/plugins/transformers/fabrication.ts` | la carte de fabrication | fablab seulement |
 | `quartz/plugins/transformers/reperes.ts` | les jauges du catalogue | lab seulement |

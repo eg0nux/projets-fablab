@@ -998,6 +998,147 @@ article h4 {
   letter-spacing: 0.01em;
 }
 
+/* --------------------------------------------------------------------------
+   Le bouton d'impression, à l'autre bout de la ligne de date
+
+   La ligne des métadonnées devient une réglette : la date et le temps de
+   lecture à gauche, l'imprimante contre le bord droit de la colonne. Les deux
+   bouts de la même ligne disent la même chose sous deux angles — ce que la
+   page coûte à lire, et ce qu'on peut en emporter.
+
+   Le dessin est dans `Imprimer.tsx`. Ici : la place, les deux encres, et le
+   cran que la feuille descend au survol. C'est la troisième animation des
+   deux sites, et la seule qui réponde à un geste.
+   -------------------------------------------------------------------------- */
+
+.content-meta {
+  display: flex;
+  align-items: center;
+}
+
+.content-meta > .imprimer {
+  margin-left: auto;
+}
+
+/* Quartz virgule tous ses segments sauf le dernier. Le bouton étant devenu ce
+   dernier, la virgule allait se poser après « 3 min de lecture ». */
+.content-meta[show-comma="true"]:has(> .imprimer) > *:nth-last-child(2) {
+  margin-right: 0;
+
+  &::after {
+    content: none;
+  }
+}
+
+.imprimer {
+  display: flex;
+  align-items: center;
+  /* Le crochet de l'infobulle. */
+  position: relative;
+  padding: 0;
+  border: none;
+  background: none;
+  color: var(--gray);
+  cursor: pointer;
+  transition: color 0.18s ease-out;
+}
+
+.imprimer svg {
+  display: block;
+}
+
+/* L'infobulle, dans le mobilier des deux autres gloses du site : papier,
+   filet de 2 px, monospace. Calée à droite et non à gauche — le bouton est
+   au bord de la colonne, une bulle alignée sur son bord gauche déborderait
+   dans la marge. Le `title` natif du SVG a été retiré pour elle : deux
+   infobulles pour un même bouton, dont une hors charte, c'était une de trop.
+
+   L'opacité plutôt que `display` : sur iOS un survol qui fait apparaître du
+   contenu retient le premier toucher, une transition d'opacité ne le retient
+   pas — le bouton reste donc cliquable du premier coup au doigt. */
+.imprimer::before {
+  content: "Imprimer la fiche";
+  position: absolute;
+  top: calc(100% + 0.4em);
+  right: 0;
+  z-index: 3;
+  width: max-content;
+
+  padding: 0.3em 0.55em 0.34em;
+  border: 2px solid var(--dark);
+  border-radius: 2px;
+  background-color: var(--light);
+  color: var(--dark);
+
+  font-family: var(--codeFont);
+  font-size: 0.72rem;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  line-height: 1.3;
+  text-transform: none;
+
+  opacity: 0;
+  transition: opacity 0.14s ease-out;
+  pointer-events: none;
+}
+
+.imprimer:hover::before,
+.imprimer:focus-visible::before {
+  opacity: 1;
+}
+
+/* Le fond de la feuille est la couleur du papier : c'est lui qui mange le bas
+   du bloc et ouvre la fente par où elle sort. */
+.imprimer .fond {
+  fill: var(--light);
+}
+
+/* Le voyant reste éteint tant qu'on ne demande rien. */
+.imprimer .voyant {
+  stroke: var(--lightgray);
+  transition: stroke 0.18s ease-out;
+}
+
+.imprimer .feuille {
+  transition: transform 0.18s ease-out;
+}
+
+.imprimer:hover,
+.imprimer:focus-visible {
+  color: var(--dark);
+}
+
+.imprimer:hover .voyant,
+.imprimer:focus-visible .voyant {
+  stroke: var(--secondary);
+}
+
+/* Un cran, pas une glissade : deux unités du dessin, soit moins de deux
+   pixels à l'écran. La feuille sort, elle ne tombe pas. */
+.imprimer:hover .feuille,
+.imprimer:focus-visible .feuille {
+  transform: translateY(2px);
+}
+
+.imprimer:focus-visible {
+  outline: 2px solid var(--secondary);
+  outline-offset: 3px;
+}
+
+/* Mouvement réduit : la feuille ne bouge plus, le voyant s'allume quand même.
+   Comme le soubresaut des logos, qui s'arrête en gardant son décalage. */
+@media (prefers-reduced-motion: reduce) {
+  .imprimer .feuille {
+    transition: none;
+  }
+
+  .imprimer:hover .feuille,
+  .imprimer:focus-visible .feuille {
+    transform: none;
+  }
+}
+
 /* Fil d'Ariane en capitales, petit et tout en gris, maillons séparés de
    chevrons (« › », réglé dans `quartz.layout.ts`) : même registre que
    /SOMMAIRE, il se lit comme un chemin, et un chemin n'a pas à crier — pas
@@ -2680,21 +2821,6 @@ article h4 {
   }
 }
 
-@media print {
-  article p:has(> img:only-child),
-  article p:has(> img:only-child) + p:has(> em:only-child) {
-    float: none;
-    width: 100%;
-    margin-left: 0;
-  }
-
-  article img {
-    break-inside: avoid;
-    max-height: 9cm;
-    width: auto;
-  }
-}
-
 /* --------------------------------------------------------------------------
    Tableau comparatif du catalogue : volume et colonnes d'appréciation
 
@@ -2869,13 +2995,73 @@ article code {
 }
 
 /* --------------------------------------------------------------------------
-   Impression : la fiche doit tenir sur papier, en noir et blanc
+   Impression : la fiche devient un document technique
 
    Ce bloc n'est pas un ornement : une fiche punaisée près d'une machine est
-   un usage réel, et une page qui s'imprime mal ne sera pas punaisée.
+   un usage réel, et une page qui s'imprime mal ne sera pas punaisée. Ce qui
+   sort de l'imprimante n'est donc pas une capture du site, c'est un autre
+   objet : une colonne unique, des marges de reliure, un texte plus petit
+   qu'à l'écran, des sections numérotées, et un pied qui dit d'où vient la
+   feuille.
+
+   Deux règles commandent le reste.
+
+   **Rien ne compte sur les aplats.** Le navigateur n'imprime pas les fonds
+   tant qu'on n'a pas coché « graphismes d'arrière-plan », case décochée par
+   défaut : tout ce qui portait du sens par un fond le porte ici par un
+   trait, un cadre ou un numéro. Restent deux aplats sans équivalent en
+   trait, les jauges du catalogue et les pastilles de code couleur ; ceux-là
+   demandent le fond par `print-color-adjust`, la seule déclaration qui passe
+   outre la case.
+
+   **Une seule encre.** Le safran s'imprime en gris sale : il passe au noir
+   partout, ou il disparaît.
    -------------------------------------------------------------------------- */
 
+/* A4, marges de reliure : de quoi tenir la feuille sans mordre sur le texte,
+   et une colonne de 16,8 cm. */
+@page {
+  size: A4;
+  margin: 1.9cm 2.1cm;
+}
+
+/* Le pied est écrit par le script au moment d'imprimer, et n'a rien à faire
+   à l'écran. */
+#impression-pied {
+  display: none;
+}
+
 @media print {
+  /* La feuille ne connaît qu'un thème.
+
+     Sans cela, une fiche imprimée depuis le thème sombre sortait presque
+     blanche : le `--dark` des titres, des cadres et du chapeau y est la
+     couleur du papier, et c'est elle qui serait passée sur la feuille. La
+     palette entière est donc ramenée à l'encre sur blanc, et le safran avec
+     elle — une imprimante en noir et blanc n'a pas de seconde encre à tenir.
+
+     En `!important` parce que Quartz émet ses variables après cette feuille,
+     et qu'un `:root` ne bat pas un `:root` : la surcharge doit gagner sur les
+     deux thèmes à la fois, sans courir après la spécificité. */
+  :root {
+    --light: #fff !important;
+    --lightgray: #999 !important;
+    --gray: #000 !important;
+    --darkgray: #000 !important;
+    --dark: #000 !important;
+    --secondary: #000 !important;
+    --tertiary: #000 !important;
+    --highlight: transparent !important;
+    --textHighlight: transparent !important;
+    /* Le texte posé sur une étiquette : son fond ne s'imprime pas, il ne
+       peut donc pas être le blanc de la page. Les accolades non plus. */
+    --sur-safran: #000 !important;
+    --accolades-repos: #000 !important;
+  }
+
+  /* Le mobilier du site ne suit pas sur le papier : il ne sert qu'à
+     naviguer, et une feuille ne se navigue pas. Le bouton d'impression s'en
+     va avec le reste — il a fait son travail. */
   .sidebar,
   .toc,
   .backlinks,
@@ -2883,13 +3069,32 @@ article code {
   .search,
   .darkmode,
   .explorer,
+  .imprimer,
   footer {
     display: none !important;
   }
 
+  /* Les colonnes latérales sont masquées, mais leur gouttière resterait
+     réservée : la colonne de lecture se retrouvait poussée d'un tiers de
+     page dès que le format d'impression dépassait 800 px de large. Sans
+     grille, le contenu s'écoule simplement. */
+  .page > #quartz-body {
+    display: block;
+    padding: 0;
+  }
+
+  .page,
   .center {
-    max-width: 100%;
+    max-width: none;
     margin: 0;
+  }
+
+  /* Tout le site est réglé en `rem` : cette seule déclaration recale
+     l'échelle entière, du titre à la légende. 10,5 pt donne le texte d'un
+     document technique — dense sans être petit — dans une colonne de 16,8 cm
+     qui tient les quatre-vingts caractères. */
+  html {
+    font-size: 10.5pt;
   }
 
   body,
@@ -2898,34 +3103,42 @@ article code {
     background: #fff;
   }
 
-  article h2 {
-    break-after: avoid;
+  /* Le texte reste au fer à gauche, et c'est un choix contre l'habitude :
+     un document technique se justifie, mais la justification ne vaut que si
+     le navigateur sait couper les mots. Or la césure dépend d'un dictionnaire
+     que Chrome installe en composant séparé et qui manque souvent — mesuré
+     ici, absent. Justifié sans césure, un paragraphe de quarante-cinq
+     caractères (la mesure à côté d'une photo habillée) s'ouvre en rivières,
+     ce qui se voit bien plus qu'un bord droit irrégulier.
+
+     `hyphens` reste demandé : là où le dictionnaire est présent, il régularise
+     ce bord sans rien coûter ailleurs.
+
+     Deux lignes de part et d'autre d'une coupure de page : une ligne seule en
+     haut d'une feuille se lit comme une erreur d'impression. */
+  article p,
+  article li {
+    hyphens: auto;
+    orphans: 2;
+    widows: 2;
   }
 
-  article h3,
-  article h4 {
-    break-after: avoid;
+  /* Le fil d'Ariane reste : sur la feuille, c'est le rayon d'où la fiche
+     sort. Il quitte son gris, qui s'imprimerait pâle. */
+  .breadcrumb-container,
+  .breadcrumb-container .breadcrumb-element p,
+  .breadcrumb-container .breadcrumb-element a,
+  .content-meta {
+    color: #000;
   }
 
-  article table,
-  .callout {
-    break-inside: avoid;
+  /* Le bouton parti, la ligne de date n'a plus de second bout à tenir. */
+  .content-meta {
+    display: block;
   }
 
-  .callout {
-    border-left: 3px solid #000;
-  }
-
-  /* Les barres de repérage restent : elles portent la hiérarchie sur papier,
-     là où les nuances de taille passent mal. En noir : le safran vire au
-     gris sale en noir et blanc, et une barre noire de 4 px s'imprime net. */
-  article h2::before,
-  article h3::before {
-    background-color: #000;
-  }
-
-  /* Le dièse en filigrane du titre, lui, disparaît : c'est un motif de fond,
-     et un aplat de cette taille mange une cartouche d'encre pour rien. */
+  /* Le dièse en filigrane du titre s'efface : c'est un motif de fond, et un
+     aplat de cette taille mange une cartouche pour rien. */
   h1.article-title::before {
     display: none;
   }
@@ -2934,20 +3147,206 @@ article code {
     padding-left: 0;
   }
 
+  /* Les sections se numérotent. C'est le seul ajout du papier à ce que dit
+     l'écran, et il tient à une chose : sur une feuille, on doit pouvoir dire
+     « voir 2.3 ». La barre de repérage disait la hiérarchie par sa longueur,
+     le numéro la dit par son rang, et plus précisément.
+
+     Le numéro tient dans un pavé de 2,6 rem, le même aux deux niveaux, et le
+     titre se suspend derrière : les intitulés s'alignent alors sur une seule
+     verticale quel que soit leur corps, et un titre long revient à la ligne
+     sous lui-même et non sous son numéro. */
+  article {
+    counter-reset: section;
+  }
+
+  article h2 {
+    counter-increment: section;
+    counter-reset: sous-section;
+  }
+
+  article h3 {
+    counter-increment: sous-section;
+  }
+
+  article h2,
+  article h3 {
+    padding-left: 2.6rem;
+    text-indent: -2.6rem;
+  }
+
+  article h2::before,
+  article h3::before {
+    display: inline-block;
+    width: 2.6rem;
+    /* `text-indent` est héritée, et un `inline-block` l'applique à sa propre
+       première ligne : sans cette remise à zéro, le numéro repartait des
+       2,6 rem de retrait négatif du titre et se dessinait dans la marge de
+       la feuille, hors de la page. Cherché longtemps. */
+    text-indent: 0;
+    height: auto;
+    margin: 0;
+    background: none;
+    font-weight: 400;
+    letter-spacing: 0.02em;
+  }
+
+  article h2::before {
+    content: counter(section) ".";
+  }
+
+  article h3::before {
+    content: counter(section) "." counter(sous-section);
+  }
+
+  /* Le `####` garde son filet, qui devient une encre. */
   article h4 {
     border-left-color: #000;
   }
 
+  /* Un titre ne reste pas seul en bas d'une page, et ne se coupe pas. */
+  article h1,
+  article h2,
+  article h3,
+  article h4 {
+    break-after: avoid;
+    break-inside: avoid;
+  }
+
   /* Le bloc d'encre du chapeau mangerait une cartouche pour rien : sur la
-     feuille il redevient un cadre, texte en noir. */
+     feuille il redevient un cadre, texte au noir. Il reste au fer à gauche :
+     justifié dans un cadre étroit, il ouvrirait des rivières. */
   article > p:first-of-type:has(.text-highlight) {
     background: none;
     color: #000;
     border: 2px solid #000;
+    text-align: left;
   }
 
-  /* Les étiquettes des liens ne s'impriment pas : le texte repasse en noir,
-     souligné, et l'adresse suit (plus bas). */
+  /* La photo garde son habillage à 40 % : c'est ce qui fait la page d'un
+     document technique — la figure dans la marge, le texte qui la contourne
+     — et c'est aussi ce qui économise le plus de papier. La règle du
+     téléphone, plus haut, la mettrait en pleine largeur : la feuille est
+     étroite elle aussi, mais elle n'a pas la même hauteur.
+
+     Le bloc image + légende ne se coupe pas d'une page à l'autre. */
+  article p:has(> img:only-child),
+  article p:has(> img:only-child) + p:has(> em:only-child) {
+    float: right;
+    clear: right;
+    width: 40%;
+    margin: 0.44rem 0 0 1.8rem;
+    break-inside: avoid;
+  }
+
+  article p:has(> img:only-child) + p:has(> em:only-child) {
+    margin-top: 0;
+    margin-bottom: 1.6em;
+  }
+
+  article img {
+    break-inside: avoid;
+    max-height: 8cm;
+  }
+
+  /* Une photo bornée en hauteur doit pouvoir rétrécir en largeur, sinon elle
+     s'écrase. Le bandeau de tête, lui, garde toute la sienne : son rapport
+     3:1 le tient déjà sous les six centimètres. */
+  article p:has(> img:only-child):not(:first-child) > img {
+    width: auto;
+    max-width: 100%;
+  }
+
+  /* Le filet de la légende passe du calque safran à une bordure d'encre : un
+     aplat de 4 px ne s'imprime pas, une bordure toujours. */
+  article p:has(> img:only-child) + p:has(> em:only-child) {
+    border-left: 3px solid #000;
+    padding-left: 0.5em;
+  }
+
+  article p:has(> img:only-child) + p:has(> em:only-child)::before {
+    display: none;
+  }
+
+  article p:has(> img:only-child) + p > em:only-child {
+    color: #000;
+  }
+
+  /* Un tableau long se coupe, mais jamais au milieu d'une ligne, et son
+     en-tête se répète sur la page suivante : sans quoi les colonnes perdent
+     leur nom.
+
+     La colonne imprimée fait 635 px, sous les 800 de la règle du téléphone,
+     qui passe la table en `display: block` et lui donne un ascenseur : sur
+     la feuille, cet ascenseur se dessinait en barre grise sous le tableau,
+     et un bloc n'a pas de groupe d'en-tête à répéter. La table redevient
+     donc une table. */
+  article table,
+  .table-container {
+    display: table;
+    overflow: visible;
+  }
+
+  article table {
+    font-size: 0.86rem;
+  }
+
+  article thead {
+    display: table-header-group;
+  }
+
+  article tr {
+    break-inside: avoid;
+  }
+
+  /* La zébrure est un aplat : elle ne s'imprime pas, et là où l'on coche les
+     graphismes d'arrière-plan elle sortirait bien plus sombre qu'à l'écran,
+     la palette du papier ayant durci les gris. Les filets suffisent à guider
+     l'œil d'une ligne à l'autre. */
+  article tbody tr:nth-child(even) {
+    background-color: transparent;
+  }
+
+  /* Le fond du code en ligne ne s'imprime pas non plus : un filet le
+     redessine, sinon un `LED_COUNT` au milieu d'une phrase ne se distingue
+     plus que par sa chasse. */
+  article code {
+    border: 1px solid #999;
+  }
+
+  /* Les encadrés : filet d'encre, et rien qui dépasse d'une page à l'autre. */
+  .callout {
+    break-inside: avoid;
+    border-left: 3px solid #000;
+  }
+
+  /* Un encadré replié n'a rien à montrer : sur la feuille il ne laisserait
+     qu'un intitulé sans suite. Il ne s'imprime pas — l'adresse au pied de
+     page mène à ce qu'il contient. */
+  .callout.is-collapsed {
+    display: none;
+  }
+
+  /* Un bloc de code ne défile pas sur du papier : il revient à la ligne, et
+     son ascenseur s'en va avec le reste du mobilier. */
+  pre,
+  pre > code {
+    overflow: visible;
+  }
+
+  pre {
+    border-color: #000;
+    break-inside: avoid;
+  }
+
+  pre > code > [data-line] {
+    white-space: pre-wrap;
+    word-break: break-word;
+  }
+
+  /* Les étiquettes des liens tombent : le texte repasse en noir, souligné, et
+     l'adresse suit. Le picto de lien sortant ne dit plus rien quand l'adresse
+     est écrite juste après. */
   article a:not([role="anchor"]):not([data-callout="rubriques"] a),
   article a.internal:not([role="anchor"]):not([data-callout="rubriques"] a) {
     background: none;
@@ -2956,8 +3355,41 @@ article code {
     text-decoration: underline;
   }
 
-  /* Codes couleur : le texte repasse en noir, la pastille garde sa teinte
-     imprimée en gris, elle continue de distinguer les lignes entre elles. */
+  article a.external .external-icon {
+    display: none;
+  }
+
+  /* Une étiquette sur deux s'encre : la liste d'une rubrique, celle des
+     projets du catalogue, la première colonne du tableau comparatif. Le texte
+     y est posé au blanc de la page, et le bloc noir qui le portait ne
+     s'imprime pas — la moitié des titres sortait donc en blanc sur blanc.
+     Tout revient à l'encre, et en `!important` : ces règles-là sont ancrées
+     sur un `data-slug` et une position, personne ne gagne ce concours de
+     spécificité sans y laisser sa lisibilité. */
+  article a,
+  article a:hover,
+  .page-listing a,
+  .page-listing a:hover {
+    color: #000 !important;
+    background-color: transparent !important;
+  }
+
+  article a[href^="http"]::after {
+    content: " (" attr(href) ")";
+    font-size: 0.72em;
+    color: #000;
+    word-break: break-all;
+    hyphens: none;
+  }
+
+  /* Sur papier rien ne se survole : ni infobulle de lien, ni glose. */
+  article a::before {
+    display: none;
+  }
+
+  /* Codes couleur : le texte repasse en noir, la pastille garde sa teinte —
+     c'est elle qui distingue les lignes entre elles, et elle ne se remplace
+     pas par un trait. */
   .code-couleur,
   .ligne-couleur td:first-child {
     color: #000;
@@ -2965,36 +3397,62 @@ article code {
 
   .code-couleur::before {
     border-color: #000;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
   }
 
-  /* L'adresse des liens externes, sinon perdue à l'impression */
-  article a[href^="http"]::after {
-    content: " (" attr(href) ")";
-    font-size: 0.75em;
-    color: #444;
-    word-break: break-all;
-  }
-
-  /* Sur papier rien ne se survole : pas d'infobulle de lien non plus. */
-  article a::before {
-    display: none;
-  }
-
-  /* Les jauges du catalogue : plein à l'encre, vide en filet clair ; la
-     comparaison tient encore sur une feuille en noir et blanc. */
+  /* Les jauges du catalogue : plein à l'encre, vide en gris clair. Même
+     raison — six jauges en regard ne se comparent qu'à condition de
+     s'imprimer. Le vide est un aplat et non un cadre : sur trois pixels de
+     haut, un filet d'un pixel ne laisse rien de blanc au milieu et le
+     segment vide se lit comme un plein. */
   .repere-jauge i {
     background-color: #ddd;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
   }
 
   .repere-jauge i.plein {
     background-color: #000;
   }
 
-  /* Le colophon et les rubriques en noir : ce sont des repères, pas des
-     nuances. */
+  /* Le colophon en noir : c'est un repère, pas une nuance. */
   article > p:last-of-type:has(> em:only-child):not(p:has(> img:only-child) + p) {
     color: #000;
     border-top-color: #000;
+    text-align: left;
+  }
+
+  /* Le pied du document : le titre de la fiche à gauche, son adresse à
+     droite. C'est ce qui fait qu'une feuille punaisée dit d'où elle vient,
+     et par où la reprendre.
+
+     Il ferme le document au lieu de se répéter sur chaque feuille. Le
+     répéter demanderait un `position: fixed`, et Chrome rogne à l'impression
+     tout ce qui déborde de la zone de page : posé dans la marge basse il
+     disparaissait, posé au ras du texte il chevauchait la dernière ligne de
+     chaque page. Essayé, mesuré, abandonné. La numérotation des pages, elle,
+     reste au navigateur : `@page` ne sait pas encore l'écrire.
+
+     L'adresse garde sa casse : une URL se lit en minuscules. */
+  #impression-pied {
+    display: flex;
+    justify-content: space-between;
+    gap: 1.5rem;
+    margin-top: 1.8rem;
+    padding-top: 0.3rem;
+    border-top: 1px solid #000;
+    break-inside: avoid;
+    font-family: var(--codeFont);
+    font-size: 0.68rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #000;
+  }
+
+  #impression-pied > span:last-child {
+    text-align: right;
+    text-transform: none;
   }
 }
 

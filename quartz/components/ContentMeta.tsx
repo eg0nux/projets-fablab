@@ -5,6 +5,12 @@ import { classNames } from "../util/lang"
 import { i18n } from "../i18n"
 import { JSX } from "preact"
 import style from "./styles/contentMeta.scss"
+// Écart au Quartz d'origine, à reporter à chaque montée de version : le
+// bouton d'impression termine la ligne de la date, à droite. Tout ce qu'il
+// est tient dans `Imprimer.tsx` ; il ne reste ici qu'un import et une balise.
+import ImprimerConstructor from "./Imprimer"
+
+const Imprimer = ImprimerConstructor()
 
 interface ContentMetaOptions {
   /**
@@ -23,7 +29,8 @@ export default ((opts?: Partial<ContentMetaOptions>) => {
   // Merge options with defaults
   const options: ContentMetaOptions = { ...defaultOptions, ...opts }
 
-  function ContentMetadata({ cfg, fileData, displayClass }: QuartzComponentProps) {
+  function ContentMetadata(props: QuartzComponentProps) {
+    const { cfg, fileData, displayClass } = props
     const text = fileData.text
 
     if (text) {
@@ -45,6 +52,7 @@ export default ((opts?: Partial<ContentMetaOptions>) => {
       return (
         <p show-comma={options.showComma} class={classNames(displayClass, "content-meta")}>
           {segments}
+          <Imprimer {...props} />
         </p>
       )
     } else {
@@ -53,6 +61,7 @@ export default ((opts?: Partial<ContentMetaOptions>) => {
   }
 
   ContentMetadata.css = style
+  ContentMetadata.afterDOMLoaded = Imprimer.afterDOMLoaded
 
   return ContentMetadata
 }) satisfies QuartzComponentConstructor
