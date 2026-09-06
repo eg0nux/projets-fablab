@@ -10,7 +10,7 @@ le noir et le safran, sur un papier crème. Elle remplace la charte « encre,
 papier et rouge » du 2026-08-30, dont elle garde le mobilier, les polices, le
 logotype et les signes.
 
-Il dit ce qui est décidé et pourquoi. Le *comment* est dans le code, commenté
+Il dit ce qui est décidé et pourquoi. Le _comment_ est dans le code, commenté
 en français : `quartz/styles/custom.scss` pour l'essentiel, les composants
 `PageTitle`, `Logos`, `Marques` et `Footer` pour le reste.
 
@@ -22,10 +22,10 @@ de `egonux.com` qui aligne les trois logotypes sans en hiérarchiser aucun.
 `{fablab}` est la marque de l'atelier. Elle se décline en deux sections, qui
 sont deux sites :
 
-| Site | Logotype | Ce qu'on y trouve |
-|---|---|---|
-| fablab.egonux.com | `{fablab}` `/DOC` | **ce qui a été fait** : les objets fabriqués, les techniques pour les refaire, les parcours menés |
-| lab.egonux.com | `{fablab}` `/PROJETS` | **ce qui pourrait se faire** : un catalogue de parcours à proposer, datés d'un millésime |
+| Site              | Logotype              | Ce qu'on y trouve                                                                                 |
+| ----------------- | --------------------- | ------------------------------------------------------------------------------------------------- |
+| fablab.egonux.com | `{fablab}` `/DOC`     | **ce qui a été fait** : les objets fabriqués, les techniques pour les refaire, les parcours menés |
+| lab.egonux.com    | `{fablab}` `/PROJETS` | **ce qui pourrait se faire** : un catalogue de parcours à proposer, datés d'un millésime          |
 
 C'est la seule différence affichée, et c'est voulu : même charte, même
 mobilier, même ton. Un lecteur qui passe de l'un à l'autre ne change pas de
@@ -75,13 +75,13 @@ entière.
 
 ### Déclinaisons
 
-| Version | Où | Fichier |
-|---|---|---|
-| **encadrée** | colonne de gauche de chaque page, images de partage | `logos/fablab-doc-clair.svg`, `-sombre`, et `fablab-projets-*` |
-| **libre**, sans cadre | accueil de egonux.com, documents, signatures | `logos/*-libre-*.svg` |
-| **gravure**, monochrome | découpe et gravure laser, tampon, sérigraphie | `logos/*-gravure.svg`, `-gravure-inverse` pour matériau sombre |
-| **réduction** `{}` | en dessous de 32 px | `logos/reduction-*.svg` |
-| **marque seule** `{fablab}` | quand la section n'a pas de sens : l'atelier lui-même, un objet gravé | `logos/fablab-clair.svg` et déclinaisons |
+| Version                     | Où                                                                    | Fichier                                                        |
+| --------------------------- | --------------------------------------------------------------------- | -------------------------------------------------------------- |
+| **encadrée**                | colonne de gauche de chaque page, images de partage                   | `logos/fablab-doc-clair.svg`, `-sombre`, et `fablab-projets-*` |
+| **libre**, sans cadre       | accueil de egonux.com, documents, signatures                          | `logos/*-libre-*.svg`                                          |
+| **gravure**, monochrome     | découpe et gravure laser, tampon, sérigraphie                         | `logos/*-gravure.svg`, `-gravure-inverse` pour matériau sombre |
+| **réduction** `{}`          | en dessous de 32 px                                                   | `logos/reduction-*.svg`                                        |
+| **marque seule** `{fablab}` | quand la section n'a pas de sens : l'atelier lui-même, un objet gravé | `logos/fablab-clair.svg` et déclinaisons                       |
 
 Les rubriques de l'accueil (`{techniques}`, `{objets}`, `{la méthode}`),
 côte à côte, et le bouton `{recherche}` sont rendus dans la même construction,
@@ -115,13 +115,13 @@ La charte tient à cinq signes de clavier, chacun avec un sens fixe. C'est ce
 qui donne aux deux sites leur unité sans recourir à la couleur ni à
 l'illustration.
 
-| Signe | Sens | Où on le voit |
-|---|---|---|
-| `{ }` | la marque, ce qui appartient à l'atelier | logotype, rubriques de l'accueil, bouton de recherche |
-| `/` | la section, le chemin | `/DOC`, `/PROJETS`, `/SOMMAIRE`, le fil d'Ariane |
-| `#` | la structure | dièse en filigrane derrière le titre de page, croisillon du millésime du catalogue, séparateurs du pied de page — et, sans être écrite, la barre de repérage au-dessus des sous-titres, qui dit le niveau à sa longueur |
-| `&` | la maison, deux structures qui font une chose ensemble | entre les logos du CIDFF et de La Traverse, en Cormorant italique |
-| `==` | la marque du chapeau, ce qu'on retient | le chapeau, qui s'écrit ainsi dans le markdown ; à l'écran c'est un bloc d'encre plein |
+| Signe | Sens                                                   | Où on le voit                                                                                                                                                                                                           |
+| ----- | ------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `{ }` | la marque, ce qui appartient à l'atelier               | logotype, rubriques de l'accueil, bouton de recherche                                                                                                                                                                   |
+| `/`   | la section, le chemin                                  | `/DOC`, `/PROJETS`, `/SOMMAIRE`, le fil d'Ariane                                                                                                                                                                        |
+| `#`   | la structure                                           | dièse en filigrane derrière le titre de page, croisillon du millésime du catalogue, séparateurs du pied de page — et, sans être écrite, la barre de repérage au-dessus des sous-titres, qui dit le niveau à sa longueur |
+| `&`   | la maison, deux structures qui font une chose ensemble | entre les logos du CIDFF et de La Traverse, en Cormorant italique                                                                                                                                                       |
+| `==`  | la marque du chapeau, ce qu'on retient                 | le chapeau, qui s'écrit ainsi dans le markdown ; à l'écran c'est un bloc d'encre plein                                                                                                                                  |
 
 Le `#` est safran quand il est écrit (croisillon du titre, pied de page), et
 safran pâli vers le papier quand il est un motif : le filigrane du titre de
@@ -139,17 +139,17 @@ Deux encres à plat, comme une affiche sérigraphiée en deux passages : le
 dégradé, pas de bande de biais. Neuf variables Quartz, deux thèmes, déclarées
 dans `quartz.config.ts`.
 
-| Variable | Clair | Sombre | Rôle |
-|---|---|---|---|
-| `light` | `#fbf6ec` papier crème | `#171311` | fond de page ; texte du chapeau |
-| `lightgray` | `#e4dbc9` | `#332d27` | filets, zébrure des tableaux, rail du sommaire |
-| `gray` | `#8a8176` | `#948a7d` | texte effacé : dates, fil d'Ariane, pied de page, `####` |
-| `darkgray` | `#33302a` | `#d8cfc1` | corps de texte |
-| `dark` | `#1a1613` encre | `#f5eee2` crème | titres, cadres, logotype, `&` ; bloc du chapeau ; survol des liens |
-| `secondary` | `#f26b1d` safran | le même | l'autre encre : étiquettes des liens et de la section, barres de repérage, filets d'alerte et de légende, jauge, croisillons, accolades |
-| `tertiary` | `#f26b1d` | le même | Quartz veut deux accents, la charte n'en a qu'un |
-| `highlight` | safran à 16 % | safran à 20 % | survols de Quartz hors charte (résultats de recherche) |
-| `textHighlight` | `#f26b1d` | le même | un `==surlignage==` hors chapeau, rare |
+| Variable        | Clair                  | Sombre          | Rôle                                                                                                                                    |
+| --------------- | ---------------------- | --------------- | --------------------------------------------------------------------------------------------------------------------------------------- |
+| `light`         | `#fbf6ec` papier crème | `#171311`       | fond de page ; texte du chapeau                                                                                                         |
+| `lightgray`     | `#e4dbc9`              | `#332d27`       | filets, zébrure des tableaux, rail du sommaire                                                                                          |
+| `gray`          | `#8a8176`              | `#948a7d`       | texte effacé : dates, fil d'Ariane, pied de page, `####`                                                                                |
+| `darkgray`      | `#33302a`              | `#d8cfc1`       | corps de texte                                                                                                                          |
+| `dark`          | `#1a1613` encre        | `#f5eee2` crème | titres, cadres, logotype, `&` ; bloc du chapeau ; survol des liens                                                                      |
+| `secondary`     | `#f26b1d` safran       | le même         | l'autre encre : étiquettes des liens et de la section, barres de repérage, filets d'alerte et de légende, jauge, croisillons, accolades |
+| `tertiary`      | `#f26b1d`              | le même         | Quartz veut deux accents, la charte n'en a qu'un                                                                                        |
+| `highlight`     | safran à 16 %          | safran à 20 %   | survols de Quartz hors charte (résultats de recherche)                                                                                  |
+| `textHighlight` | `#f26b1d`              | le même         | un `==surlignage==` hors chapeau, rare                                                                                                  |
 
 Quatre règles :
 
@@ -194,11 +194,11 @@ teintes apparaissent, et elles y sont assourdies vers le papier.
 
 ## 5. La typographie
 
-| Famille | Graisses | Emploi |
-|---|---|---|
-| **JetBrains Mono** | 400, 700 | titres, logotype, interface, signalétique en capitales espacées, code, tableaux d'en-tête, carte de fabrication |
-| **Literata** | 400, 400 italique, 600 | corps de texte, entrées du sommaire, tableaux |
-| **Cormorant Garamond** italique | 400, réduite au seul `&` | l'esperluette entre les logos de la maison, rien d'autre |
+| Famille                         | Graisses                 | Emploi                                                                                                          |
+| ------------------------------- | ------------------------ | --------------------------------------------------------------------------------------------------------------- |
+| **JetBrains Mono**              | 400, 700                 | titres, logotype, interface, signalétique en capitales espacées, code, tableaux d'en-tête, carte de fabrication |
+| **Literata**                    | 400, 400 italique, 600   | corps de texte, entrées du sommaire, tableaux                                                                   |
+| **Cormorant Garamond** italique | 400, réduite au seul `&` | l'esperluette entre les logos de la maison, rien d'autre                                                        |
 
 Toutes auto-hébergées dans `quartz/static/fonts/`, sous-ensembles latin et
 latin étendu. L'appariement mono / serif donne le contraste sans couleur : la
@@ -306,27 +306,27 @@ c'est un seuil.
 Les logos d'autrui répondent à trois questions différentes et n'occupent donc
 pas la même place.
 
-| Rang | Question | Où | Comment |
-|---|---|---|---|
-| **la maison** | qui porte l'atelier | colonne de droite, toutes les pages | `Logos.tsx` : CIDFF Dordogne `&` La Traverse, en noir, blanc sur fond sombre, soubresaut au survol |
+| Rang                          | Question                         | Où                                      | Comment                                                                                                                                        |
+| ----------------------------- | -------------------------------- | --------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
+| **la maison**                 | qui porte l'atelier              | colonne de droite, toutes les pages     | `Logos.tsx` : CIDFF Dordogne `&` La Traverse, en noir, blanc sur fond sombre, soubresaut au survol                                             |
 | **le partenaire d'un projet** | avec qui cette fiche a été faite | bandeau de fiche, sur la ligne du titre | `Marques.tsx` : le champ `partenaire` du frontmatter ; à gauche le pictogramme de situation (aides techniques), à droite le logo du partenaire |
-| **les soutiens** | grâce à qui | colophon, en fin de fiche | un paragraphe en italique, en texte, avec liens |
+| **les soutiens**              | grâce à qui                      | colophon, en fin de fiche               | un paragraphe en italique, en texte, avec liens                                                                                                |
 
 Les lieux ne sont pas un rang : La Traverse est déjà la maison, et un lieu se
 nomme dans le texte, avec la date.
 
 Inventaire au 2026-09-02 :
 
-| Structure | Rang | Fichier | État |
-|---|---|---|---|
-| CIDFF Dordogne | maison | `quartz/static/logo-cidff.svg` | en place |
-| La Traverse | maison | `quartz/static/logo-traverse.png` | en place |
-| APF France Handicap | partenaire | `quartz/static/logo-apf.svg` + pictos | en place |
-| École de la deuxième chance | partenaire | | **manque** : à ajouter dans `PARTENAIRES` (`Marques.tsx`) avec un SVG |
-| La Pelle aux Idées | partenaire | | **manque**, idem |
-| Le Fabulieu, La Force | lieu | | rien à prévoir : c'est un lieu, il se nomme dans le texte ; s'il devient co-porteur, il rejoint la maison |
-| Fondation Afnic | soutien | | texte seulement, en colophon |
-| Fondation groupe EDF | soutien | | texte seulement, en colophon |
+| Structure                   | Rang       | Fichier                               | État                                                                                                      |
+| --------------------------- | ---------- | ------------------------------------- | --------------------------------------------------------------------------------------------------------- |
+| CIDFF Dordogne              | maison     | `quartz/static/logo-cidff.svg`        | en place                                                                                                  |
+| La Traverse                 | maison     | `quartz/static/logo-traverse.png`     | en place                                                                                                  |
+| APF France Handicap         | partenaire | `quartz/static/logo-apf.svg` + pictos | en place                                                                                                  |
+| École de la deuxième chance | partenaire |                                       | **manque** : à ajouter dans `PARTENAIRES` (`Marques.tsx`) avec un SVG                                     |
+| La Pelle aux Idées          | partenaire |                                       | **manque**, idem                                                                                          |
+| Le Fabulieu, La Force       | lieu       |                                       | rien à prévoir : c'est un lieu, il se nomme dans le texte ; s'il devient co-porteur, il rejoint la maison |
+| Fondation Afnic             | soutien    |                                       | texte seulement, en colophon                                                                              |
+| Fondation groupe EDF        | soutien    |                                       | texte seulement, en colophon                                                                              |
 
 Si un financeur exige l'affichage de son logo, il prend place dans le
 colophon, en noir, à la hauteur du texte, jamais en tête de page : le
@@ -383,25 +383,25 @@ Une fiche punaisée près d'une machine est un usage réel.
 
 ## 9. Où ça vit
 
-| Fichier | Rôle | Jumeau sur l'autre site |
-|---|---|---|
-| `quartz/styles/custom.scss` | toute la charte | identique |
-| `quartz.config.ts` | palette, polices, titre de site | identique sauf `pageTitle` et `baseUrl` |
-| `quartz.layout.ts` | mobilier des pages | identique dans l'esprit ; fablab a le bandeau de marques et ses libellés de dossiers |
-| `quartz/components/PageTitle.tsx` | le logotype sur deux lignes | identique |
-| `quartz/components/Logos.tsx` | la maison | identique |
-| `quartz/components/Marques.tsx` | le partenaire d'un projet | fablab seulement |
-| `quartz/components/Imprimer.tsx` | le bouton d'impression, et la règle qui dit ce qu'est une fiche | identique |
-| `quartz/components/scripts/imprimer.inline.ts` | le clic, et le pied que la feuille emporte | identique |
-| `quartz/components/ContentMeta.tsx` | un import et une balise : le bouton au bout de la ligne de date ; à reporter à chaque montée de version | identique |
-| `quartz/components/scripts/popover.inline.ts` | un garde en tête du script : pas de prévisualisation au survol d'un lien de fichier, qui n'a rien à montrer et pèse lourd ; à reporter à chaque montée de version | identique |
-| `quartz/plugins/transformers/fabrication.ts` | la carte de fabrication | fablab seulement |
-| `quartz/plugins/transformers/reperes.ts` | les jauges du catalogue | lab seulement |
-| `quartz/plugins/emitters/folderPage.tsx` | le titre des pages de rubrique, sans le « Dossier : » de Quartz | identique |
-| `quartz/i18n/locales/fr-FR.ts` | les libellés : décompte des fiches, page 404 | identique |
-| `quartz/static/og-image.png` | image de partage | propre à chaque site : le logotype encadré sur papier crème, le domaine en dessous |
-| `logos/` | la famille de logotypes en tracés | fablab seulement, dossier de référence |
-| `CHARTE.md` | ce document | identique |
+| Fichier                                        | Rôle                                                                                                                                                              | Jumeau sur l'autre site                                                              |
+| ---------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------ |
+| `quartz/styles/custom.scss`                    | toute la charte                                                                                                                                                   | identique                                                                            |
+| `quartz.config.ts`                             | palette, polices, titre de site                                                                                                                                   | identique sauf `pageTitle` et `baseUrl`                                              |
+| `quartz.layout.ts`                             | mobilier des pages                                                                                                                                                | identique dans l'esprit ; fablab a le bandeau de marques et ses libellés de dossiers |
+| `quartz/components/PageTitle.tsx`              | le logotype sur deux lignes                                                                                                                                       | identique                                                                            |
+| `quartz/components/Logos.tsx`                  | la maison                                                                                                                                                         | identique                                                                            |
+| `quartz/components/Marques.tsx`                | le partenaire d'un projet                                                                                                                                         | fablab seulement                                                                     |
+| `quartz/components/Imprimer.tsx`               | le bouton d'impression, et la règle qui dit ce qu'est une fiche                                                                                                   | identique                                                                            |
+| `quartz/components/scripts/imprimer.inline.ts` | le clic, et le pied que la feuille emporte                                                                                                                        | identique                                                                            |
+| `quartz/components/ContentMeta.tsx`            | un import et une balise : le bouton au bout de la ligne de date ; à reporter à chaque montée de version                                                           | identique                                                                            |
+| `quartz/components/scripts/popover.inline.ts`  | un garde en tête du script : pas de prévisualisation au survol d'un lien de fichier, qui n'a rien à montrer et pèse lourd ; à reporter à chaque montée de version | identique                                                                            |
+| `quartz/plugins/transformers/fabrication.ts`   | la carte de fabrication                                                                                                                                           | fablab seulement                                                                     |
+| `quartz/plugins/transformers/reperes.ts`       | les jauges du catalogue                                                                                                                                           | lab seulement                                                                        |
+| `quartz/plugins/emitters/folderPage.tsx`       | le titre des pages de rubrique, sans le « Dossier : » de Quartz                                                                                                   | identique                                                                            |
+| `quartz/i18n/locales/fr-FR.ts`                 | les libellés : décompte des fiches, page 404                                                                                                                      | identique                                                                            |
+| `quartz/static/og-image.png`                   | image de partage                                                                                                                                                  | propre à chaque site : le logotype encadré sur papier crème, le domaine en dessous   |
+| `logos/`                                       | la famille de logotypes en tracés                                                                                                                                 | fablab seulement, dossier de référence                                               |
+| `CHARTE.md`                                    | ce document                                                                                                                                                       | identique                                                                            |
 
 Après un changement de charte : `npx quartz build` puis
 `node tools/versionner-assets.mjs`, sinon un cache continue de servir
