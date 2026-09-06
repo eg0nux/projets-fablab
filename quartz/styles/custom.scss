@@ -117,6 +117,21 @@ article {
   font-size: 1rem;
 }
 
+/* Ligatures discrétionnaires : « ct », « st » et « ch », la barre qui relie
+   deux lettres d'un même geste. Le navigateur ne les pose jamais d'office, il
+   faut les demander. Les fichiers servis par Google Fonts ne les contiennent
+   même pas : leur sous-ensemble ne retient que les fonctions obligatoires.
+   Les .woff2 de quartz/static/fonts sont donc regénérés depuis la Literata
+   complète, dessin pour dessin, avec `dlig` conservée — mille quatre cents
+   octets de plus sur le sous-ensemble latin.
+
+   Portée à l'article, là où Literata travaille. Les titres et le code sont en
+   JetBrains Mono, que la règle traverse sans effet : cette police n'a pas de
+   dlig, et ses ligatures de code relèvent de `calt`, laissée intacte. */
+article {
+  font-variant-ligatures: common-ligatures discretionary-ligatures;
+}
+
 /* --------------------------------------------------------------------------
    Titres en monospace ; la signature du régime fiche
 
