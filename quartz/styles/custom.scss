@@ -353,6 +353,29 @@ h6,
   content: "}";
 }
 
+/* Sur un téléphone, la rangée d'en-tête — menu, logotype, recherche, thème,
+   lecture — ne tenait pas dans les 343 px que laisse un écran de 375 : la
+   colonne de Quartz, en `auto`, s'élargissait à la mesure de son contenu, et
+   toute la page suivait, débordant de trente pixels à droite ; le chapeau et
+   les lignes de texte étaient coupés au bord de l'écran. Le bouton garde son
+   cadre et sa loupe, et perd son libellé : la loupe dit ce qu'il fait, et le
+   libellé revient dès qu'il y a la place — 480 px, ce qu'un téléphone en
+   paysage a déjà. Le SVG porte un `<title>`, le bouton garde donc son nom
+   pour les lecteurs d'écran. */
+@media (max-width: 480px) {
+  .search > .search-button {
+    padding: 0.55em;
+  }
+
+  .search > .search-button > p {
+    display: none;
+  }
+
+  .search > .search-button svg {
+    margin: 0;
+  }
+}
+
 /* Le champ de saisie, une fois la recherche ouverte, et le panneau de
    résultats sous lui : même trait de 2px à l'encre, mêmes angles vifs,
    même monospace que le bouton. Sélecteurs alignés sur ceux de Quartz,
@@ -645,6 +668,18 @@ body[data-slug="index"] .page > #quartz-body footer {
     flex-direction: row;
     padding: 0;
   }
+}
+
+/* Rien ne doit faire glisser la page de côté. Ce qui dépasse à droite est
+   rogné — une infobulle posée sous un lien en bout de ligne, le volet de
+   l'explorateur pendant qu'il coulisse — plutôt que d'ouvrir un défilement
+   horizontal sur du vide, ce que fait un téléphone dès qu'un élément, même
+   invisible, dépasse l'écran. `clip` et non `hidden` : `hidden` ferait de
+   la page un conteneur de défilement, et la colonne de gauche cesserait d'y
+   être collante. Les tableaux et les blocs de code gardent leur propre
+   défilement, à l'intérieur de la colonne. */
+.page {
+  overflow-x: clip;
 }
 
 /* --------------------------------------------------------------------------
@@ -991,6 +1026,22 @@ article h4 {
    Le geste remonte donc librement jusqu'à la liste qui défile vraiment. */
 .explorer-content ul {
   overscroll-behavior: auto;
+}
+
+/* Sur téléphone, Quartz pose le volet de l'explorateur en absolu dans la
+   colonne de gauche, à `left: 0` ; or cette colonne commence 16 px après le
+   bord de l'écran, dans le retrait de la grille. Le volet, large d'un écran,
+   partait donc 16 px trop à droite : il débordait d'autant, et laissait à
+   gauche une bande où l'on voyait la page en dessous — le dièse du titre,
+   notamment. Il est ramené au bord ; son retrait intérieur reprend les
+   16 px, pour que l'arborescence reste alignée sur le texte de la page. La
+   borne est celle de Quartz (800 px), où le volet devient ce coulissant. */
+@media (max-width: 800px) {
+  .explorer .explorer-content {
+    left: -1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
 }
 
 .content-meta {
@@ -1887,6 +1938,17 @@ article > p:first-of-type abbr:focus > span {
   opacity: 1;
 }
 
+/* Sur téléphone, la colonne est plus étroite que la glose sur une ligne :
+   elle passe à la ligne dans la largeur du chapeau, plutôt que d'être rognée
+   au bord de l'écran. */
+@media (max-width: 800px) {
+  article > p:first-of-type abbr > span {
+    white-space: normal;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+}
+
 /* Sur papier rien ne se survole : ni le filet d'appel, ni la glose. */
 @media print {
   article abbr {
@@ -2165,6 +2227,24 @@ article a.internal[data-slug$=".pdf"]::before {
 
 article a.internal[data-slug$=".docx"]::before {
   content: "document Word\Aà télécharger";
+}
+
+/* Au doigt, rien ne se survole : le premier toucher d'un lien le suit.
+   L'infobulle, invisible, occupait pourtant sa place, et un lien en bout de
+   ligne la posait au-delà du bord de l'écran : la page glissait de côté sur
+   du vide. Sur ces écrans, elle n'existe pas — ce qui règle aussi le premier
+   toucher retenu d'iOS, puisque plus rien n'apparaît au survol. */
+@media (hover: none) {
+  article a.external::before,
+  article a.internal[data-slug*="/files/"]::before,
+  article a.internal[data-slug*="/doc/"]::before,
+  article a.internal[data-slug$=".xcs"]::before,
+  article a.internal[data-slug$=".ino"]::before,
+  article a.internal[data-slug$=".stl"]::before,
+  article a.internal[data-slug$=".pdf"]::before,
+  article a.internal[data-slug$=".docx"]::before {
+    display: none;
+  }
 }
 
 article a.external:hover::before,
@@ -2670,6 +2750,9 @@ article img {
   aspect-ratio: auto;
   border: 2px solid var(--dark);
   border-radius: 2px;
+  /* Le cadre compris dans les 100 % : sans cela l'image dépassait la colonne
+     de 4 px, deux de chaque côté, et de la largeur de l'écran sur téléphone. */
+  box-sizing: border-box;
 }
 
 /* --------------------------------------------------------------------------
@@ -2819,6 +2902,17 @@ article h4 {
   & > [data-line]::before {
     content: none;
   }
+}
+
+/* Le contenu d'un encadré est une grille — c'est ainsi que Quartz anime le
+   repli — et un bloc de code y est une cellule : sa largeur minimale est
+   celle de sa plus longue ligne, et la grille s'élargissait à sa mesure,
+   1 230 px pour le listing du Pong, sous un encadré en `overflow: hidden`.
+   Sur téléphone, le listing était coupé net au bord de l'encadré, sans
+   défilement possible. La cellule peut maintenant être plus étroite que ses
+   lignes : c'est le `pre`, en `overflow-x: auto`, qui les fait défiler. */
+.callout-content > * {
+  min-width: 0;
 }
 
 /* --------------------------------------------------------------------------
