@@ -1077,16 +1077,48 @@ article li li:not([data-callout="rubriques"] *, .reperes-liste *)::before {
    pas d'enfant, page ou dossier vide, et saute les vraies rubriques, qui
    gardent leur encre de dossier. Le `of` compte les seules entrées retenues,
    sinon une rubrique intercalée décalerait l'alternance d'un cran. */
-.explorer-content ul ul li:nth-child(odd of :not(:has(> .folder-outer > ul > li))) > a:not(.active):not(:hover),
-.explorer-content ul ul li:nth-child(odd of :not(:has(> .folder-outer > ul > li))) > .folder-container div > a:not(.active):not(:hover),
-.explorer-content ul ul li:nth-child(odd of :not(:has(> .folder-outer > ul > li))) > .folder-container button > span {
+.explorer-content
+  ul
+  ul
+  li:nth-child(odd of :not(:has(> .folder-outer > ul > li)))
+  > a:not(.active):not(:hover),
+.explorer-content
+  ul
+  ul
+  li:nth-child(odd of :not(:has(> .folder-outer > ul > li)))
+  > .folder-container
+  div
+  > a:not(.active):not(:hover),
+.explorer-content
+  ul
+  ul
+  li:nth-child(odd of :not(:has(> .folder-outer > ul > li)))
+  > .folder-container
+  button
+  > span {
   color: var(--darkgray);
   opacity: 1;
 }
 
-.explorer-content ul ul li:nth-child(even of :not(:has(> .folder-outer > ul > li))) > a:not(.active):not(:hover),
-.explorer-content ul ul li:nth-child(even of :not(:has(> .folder-outer > ul > li))) > .folder-container div > a:not(.active):not(:hover),
-.explorer-content ul ul li:nth-child(even of :not(:has(> .folder-outer > ul > li))) > .folder-container button > span {
+.explorer-content
+  ul
+  ul
+  li:nth-child(even of :not(:has(> .folder-outer > ul > li)))
+  > a:not(.active):not(:hover),
+.explorer-content
+  ul
+  ul
+  li:nth-child(even of :not(:has(> .folder-outer > ul > li)))
+  > .folder-container
+  div
+  > a:not(.active):not(:hover),
+.explorer-content
+  ul
+  ul
+  li:nth-child(even of :not(:has(> .folder-outer > ul > li)))
+  > .folder-container
+  button
+  > span {
   color: var(--gray);
   opacity: 1;
 }
@@ -3169,7 +3201,12 @@ body[data-slug="index"] article h2#tous-les-projets + ul > li:nth-child(even) > 
 }
 
 body[data-slug="index"] article h2#tous-les-projets + ul > li:nth-child(even) > a.internal:hover,
-body[data-slug="index"] article h2#tous-les-projets + ul > li:nth-child(even) > a.internal:focus-visible {
+body[data-slug="index"]
+  article
+  h2#tous-les-projets
+  + ul
+  > li:nth-child(even)
+  > a.internal:focus-visible {
   background-color: var(--safran);
   color: var(--sur-safran);
 }
