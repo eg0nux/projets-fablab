@@ -68,7 +68,7 @@ export default {
     error: {
       title: "Introuvable",
       notFound: "Cette page existera peut-être dans le futur.",
-      home: "En attendant, je retourne dans le passé.",
+      home: "En attendant, je retourne dans le présent.",
     },
     folderContent: {
       folder: "Rubrique",

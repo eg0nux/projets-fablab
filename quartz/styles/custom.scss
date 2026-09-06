@@ -3081,15 +3081,33 @@ body[data-slug="404"] article::after {
   animation: erreur-pixels 0.7s steps(1, end) infinite;
 }
 
-/* Le texte et le lien de retour passent sous le semis, pas dessus. */
+/* Le lien de retour passe sous le semis, pas dessus. */
 body[data-slug="404"] article p,
 body[data-slug="404"] article > a {
   position: relative;
   z-index: 1;
 }
 
+/* La phrase prend l'étiquette du lien de retour — même boîte, même padding,
+   même hauteur — mais dans le blanc de la page : le papier crème sur le
+   thème clair, la nuit sur le sombre. Deux bandes l'une au-dessus de l'autre,
+   la neutre puis la safran. Celle-ci est opaque et passe par-dessus le semis
+   (z-index 3 contre 2 aux pixels morts) : la panne est autour de la phrase,
+   plus dedans — c'est la seule chose qui se lise encore.
+
+   La taille descend de 1,05 rem à 1 rem, celle du lien : à géométrie égale,
+   les deux bandes ont exactement la même hauteur. */
 body[data-slug="404"] article p {
-  font-size: 1.05rem;
+  /* La boîte se règle sur le texte et se recentre à la main : `inline-block`
+     l'aurait rangée sur la ligne du nombre, qui en est un lui aussi. */
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+  z-index: 3;
+  background-color: var(--light);
+  font-size: 1rem;
+  line-height: normal;
+  padding: 0.04em 0.32em 0.06em;
   font-style: italic;
   /* La ligne dérive à son tour, mais de deux pixels et trois fois moins
      souvent : la panne est dans le nombre, pas dans la phrase. */
@@ -3103,6 +3121,24 @@ body[data-slug="404"] article > a {
   display: inline-block;
   margin-top: 1.4rem;
   animation: erreur-secousse 1.1s steps(1, end) infinite;
+}
+
+/* La barre de fin d'article n'a rien à séparer ici : sous le 404, il n'y a
+   ni rétroliens ni suite, seulement le pied de page. Elle quitte donc le bas
+   de l'article et descend au ras du pied, juste au-dessus du « Créé avec
+   Quartz », où elle ferme la page au lieu de flotter au milieu du vide.
+
+   Le filet est repris en bordure du pied de page, au gris et à l'épaisseur
+   du `hr` qu'il remplace. Le pied cède un tiers de sa marge haute et le
+   reprend en retrait sous le filet : deux rem de part et d'autre. */
+body[data-slug="404"] .center > hr {
+  display: none;
+}
+
+body[data-slug="404"] footer {
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--lightgray);
 }
 
 /* Le tremblement : de courts déplacements et le dédoublement safran et encre
@@ -3323,6 +3359,28 @@ body[data-slug="404"] article > a {
 
   body[data-slug="404"] article::after {
     opacity: 0.55;
+  }
+
+  /* Sauf si on va la chercher : au survol du nombre, la panne repart, le
+     temps du geste. C'est la distinction que fait le réglage système —
+     un mouvement imposé à l'arrivée sur une page qu'on n'a pas demandée
+     d'un côté, un mouvement déclenché de l'autre. La phrase seule reste
+     immobile : c'est ce qu'on est venu lire. */
+  body[data-slug="404"] article h1:hover {
+    animation: erreur-secousse 0.7s steps(1, end) infinite;
+  }
+
+  body[data-slug="404"] article h1:hover::after {
+    animation:
+      erreur-tranches 1.1s steps(1, end) infinite,
+      erreur-reperage 0.7s steps(1, end) infinite;
+  }
+
+  /* Le semis repart avec le nombre. Il couvre tout l'article et ne peut pas
+     être atteint depuis le `:hover` du titre : `:has()` fait remonter la
+     condition à l'article, seul porteur du calque. */
+  body[data-slug="404"] article:has(h1:hover)::after {
+    animation: erreur-pixels 0.7s steps(1, end) infinite;
   }
 }
 
