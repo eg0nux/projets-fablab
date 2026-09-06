@@ -258,6 +258,11 @@ la ligne du titre, le bandeau de marques quand la fiche en a (voir §7).
 - le **bandeau**, quand une page s'ouvre sur une photo avant son premier
   titre : toute la largeur de la colonne, trois fois plus large que haut,
   même cadre et même légende que les photos ;
+- les **illustrations** (fablab) : un dessin ou une capture d'écran passés
+  par `tools/glitch.mjs`, tramés et glitchés dans les trois couleurs, halo et
+  dédoublement safran, lignes de balayage, tranches décalées, pixels morts,
+  la panne de la page 404 posée sur une image (l'écran de Pong, Tux en
+  coupe) ; même cadre et même légende que les photos ;
 - les **tableaux** à filets fins et zébrure très légère ;
 - la **carte de fabrication** (fablab) : machines, matériaux, temps, coût,
   dans un cadre, pictogramme par ligne ;
