@@ -12,21 +12,27 @@ Cette trame est celle de <span class="glose" tabindex="0">« Faire Récifs »<sp
 ## Les six invariants
 
 ### 1. Un objet réel, une destination réelle
+
 On ne fabrique jamais un exercice. Chaque production quitte le FabLab pour vivre ailleurs : un banc posé dans le quartier, un nichoir en bord de rivière, une aide technique remise à la personne qui en a besoin. C'est cette destination qui crée la fierté et la trace durable.
 
 ### 2. Le territoire comme salle de classe
+
 Les professionnel-les ne sont pas des intervenant-es ponctuel-les : ils/elles sont commanditaires, juré-es, invité-es ou bénéficiaires. Chaque projet organise des rencontres structurées avec les acteurs et actrices du territoire, sur le format éprouvé de la demi-journée de pitchs.
 
 ### 3. L'inversion des rôles
+
 La signature de la méthode : les participant-es ne sont pas seulement évalué-es, ils/elles évaluent à leur tour. Ils/elles construisent leur grille de critères, jugent des structures et décernent un trophée qu'ils/elles ont fabriqué. Cette posture d'expert-e restaure une position sociale valorisante.
 
 ### 4. Une évaluation multi-modale
+
 Quatre canaux se complètent, sans examen : la **production** (les objets, la capacité à expliquer la démarche), des **quizz** en début et fin de blocs, des **open badges** adossés à un arbre de compétences, et l'**accompagnement continu** de l'organisme de formation.
 
 ### 5. Un temps fort public
+
 Inauguration, défilé, émission en direct, repas servi, remise de trophées : chaque parcours se termine par un événement ouvert. Ce rendez-vous donne une échéance non négociable qui structure les dix jours, et une scène où les participant-es prennent la parole.
 
 ### 6. Des compétences transversales outillées
+
 Au-delà du geste technique, chaque projet fait travailler des compétences repérables et valorisables (communiquer, travailler en équipe, s'organiser, prendre des initiatives). Les badges et l'arbre de compétences en sont la traduction visible, mobilisable ensuite face à un employeur.
 
 ## Comment choisir

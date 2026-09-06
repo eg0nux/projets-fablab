@@ -7,6 +7,7 @@ description: "Dix jours, un groupe, un objet qui part vivre ailleurs : vingt-cin
 ==D'un projet à l'autre, le cheminement est le même. Le territoire entre dans l'atelier, des professionnel-les viennent parler de leur métier, et les participant-es finissent par juger à leur tour : ils/elles remettent un trophée qu'ils/elles ont fabriqué. Ce qui change, c'est le terrain. Vingt-cinq terrains : la rivière, le patrimoine, les EHPAD, la nuit, le jeu, le vélo, la radio.==
 
 > [!rubriques]
+>
 > - [la méthode](methode)
 > - [le comparatif](comparatif)
 

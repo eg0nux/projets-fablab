@@ -84,4 +84,6 @@ for (const f of fichiers) {
   }
 }
 
-console.log(`\n  ${renommages.size} ressource(s) versionnée(s), ${touchees}/${fichiers.length} page(s) mise(s) à jour.`)
+console.log(
+  `\n  ${renommages.size} ressource(s) versionnée(s), ${touchees}/${fichiers.length} page(s) mise(s) à jour.`,
+)
