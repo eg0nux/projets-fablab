@@ -1076,49 +1076,23 @@ article li li:not([data-callout="rubriques"] *, .reperes-liste *)::before {
    et non par un simple lien. L'alternance porte donc sur toute entrée qui n'a
    pas d'enfant, page ou dossier vide, et saute les vraies rubriques, qui
    gardent leur encre de dossier. Le `of` compte les seules entrées retenues,
-   sinon une rubrique intercalée décalerait l'alternance d'un cran. */
-.explorer-content
-  ul
-  ul
-  li:nth-child(odd of :not(:has(> .folder-outer > ul > li)))
-  > a:not(.active):not(:hover),
-.explorer-content
-  ul
-  ul
-  li:nth-child(odd of :not(:has(> .folder-outer > ul > li)))
-  > .folder-container
-  div
-  > a:not(.active):not(:hover),
-.explorer-content
-  ul
-  ul
-  li:nth-child(odd of :not(:has(> .folder-outer > ul > li)))
-  > .folder-container
-  button
-  > span {
+   sinon une rubrique intercalée décalerait l'alternance d'un cran.
+
+   Ces deux règles passent les cent colonnes et Prettier les éclaterait un
+   composant par ligne, où l'on ne verrait plus la parenté des trois
+   sélecteurs : elles gardent leur ligne, et le disent. */
+/* prettier-ignore */
+.explorer-content ul ul li:nth-child(odd of :not(:has(> .folder-outer > ul > li))) > a:not(.active):not(:hover),
+.explorer-content ul ul li:nth-child(odd of :not(:has(> .folder-outer > ul > li))) > .folder-container div > a:not(.active):not(:hover),
+.explorer-content ul ul li:nth-child(odd of :not(:has(> .folder-outer > ul > li))) > .folder-container button > span {
   color: var(--darkgray);
   opacity: 1;
 }
 
-.explorer-content
-  ul
-  ul
-  li:nth-child(even of :not(:has(> .folder-outer > ul > li)))
-  > a:not(.active):not(:hover),
-.explorer-content
-  ul
-  ul
-  li:nth-child(even of :not(:has(> .folder-outer > ul > li)))
-  > .folder-container
-  div
-  > a:not(.active):not(:hover),
-.explorer-content
-  ul
-  ul
-  li:nth-child(even of :not(:has(> .folder-outer > ul > li)))
-  > .folder-container
-  button
-  > span {
+/* prettier-ignore */
+.explorer-content ul ul li:nth-child(even of :not(:has(> .folder-outer > ul > li))) > a:not(.active):not(:hover),
+.explorer-content ul ul li:nth-child(even of :not(:has(> .folder-outer > ul > li))) > .folder-container div > a:not(.active):not(:hover),
+.explorer-content ul ul li:nth-child(even of :not(:has(> .folder-outer > ul > li))) > .folder-container button > span {
   color: var(--gray);
   opacity: 1;
 }
@@ -3200,13 +3174,11 @@ body[data-slug="index"] article h2#tous-les-projets + ul > li:nth-child(even) > 
   color: var(--light);
 }
 
+/* Même parti qu'à l'explorateur : les deux sélecteurs sont le même à un état
+   près, ils restent sur leur ligne pour qu'on le voie. */
+/* prettier-ignore */
 body[data-slug="index"] article h2#tous-les-projets + ul > li:nth-child(even) > a.internal:hover,
-body[data-slug="index"]
-  article
-  h2#tous-les-projets
-  + ul
-  > li:nth-child(even)
-  > a.internal:focus-visible {
+body[data-slug="index"] article h2#tous-les-projets + ul > li:nth-child(even) > a.internal:focus-visible {
   background-color: var(--safran);
   color: var(--sur-safran);
 }
