@@ -24,8 +24,8 @@ const config: QuartzConfig = {
     theme: {
       fontOrigin: "local",
       cdnCaching: true,
-      // Même appariement que fablab.egonux.com : titres et interface en
-      // JetBrains Mono, corps en Literata, serif dessinée pour la lecture
+      // Même appariement que fablab.egonux.com : titres, interface et liens
+      // en JetBrains Mono, corps en Literata, serif dessinée pour la lecture
       // longue à l'écran. Le contraste mono / serif tient sans couleur.
       typography: {
         header: "JetBrains Mono",

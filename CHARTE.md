@@ -201,11 +201,11 @@ teintes apparaissent, et elles y sont assourdies vers le papier.
 
 ## 5. La typographie
 
-| Famille                         | Graisses                 | Emploi                                                                                                          |
-| ------------------------------- | ------------------------ | --------------------------------------------------------------------------------------------------------------- |
-| **JetBrains Mono**              | 400, 700                 | titres, logotype, interface, signalétique en capitales espacées, code, tableaux d'en-tête, carte de fabrication |
-| **Literata**                    | 400, 400 italique, 600   | corps de texte, entrées du sommaire, tableaux                                                                   |
-| **Cormorant Garamond** italique | 400, réduite au seul `&` | l'esperluette entre les logos de la maison, rien d'autre                                                        |
+| Famille                         | Graisses                 | Emploi                                                                                                                                          |
+| ------------------------------- | ------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------- |
+| **JetBrains Mono**              | 400, 700                 | titres, logotype, interface, signalétique en capitales espacées, code, tableaux d'en-tête, carte de fabrication, étiquettes des liens (0,92 em) |
+| **Literata**                    | 400, 400 italique, 600   | corps de texte, entrées du sommaire, tableaux                                                                                                   |
+| **Cormorant Garamond** italique | 400, réduite au seul `&` | l'esperluette entre les logos de la maison, rien d'autre                                                                                        |
 
 Toutes auto-hébergées dans `quartz/static/fonts/`, sous-ensembles latin et
 latin étendu. L'appariement mono / serif donne le contraste sans couleur : la
@@ -284,9 +284,11 @@ la ligne du titre, le bandeau de marques quand la fiche en a (voir §7).
   dans un cadre, pictogramme par ligne ;
 - les **repères** (lab) : six appréciations en jauges segmentées, entre deux
   filets ; le tableau comparatif reprend la même jauge dans chaque cellule ;
-- les **liens** en étiquettes safran à angles vifs, texte au noir de la page,
-  une étiquette par fragment quand le lien passe à la ligne ; au survol
-  l'étiquette s'inverse en bloc d'encre ; jamais de lien coloré en texte ;
+- les **liens** en étiquettes safran à angles vifs, texte au noir de la page
+  et en JetBrains Mono 0,92 em — un lien est un objet du site, pas un mot de
+  la phrase —, une étiquette par fragment quand le lien passe à la ligne ; au
+  survol l'étiquette s'inverse en bloc d'encre ; la flèche du lien sortant
+  suit la couleur du texte ; jamais de lien coloré en texte ;
 - l'**infobulle des liens** : un lien qui sort du site ou qui livre un
   fichier le dit au survol et au focus, dans le mobilier de la glose du
   sigle ; deux lignes, ce que c'est puis ce qui va se passer : la nature du

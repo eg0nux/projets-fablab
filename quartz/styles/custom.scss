@@ -125,9 +125,10 @@ article {
    complète, dessin pour dessin, avec `dlig` conservée — mille quatre cents
    octets de plus sur le sous-ensemble latin.
 
-   Portée à l'article, là où Literata travaille. Les titres et le code sont en
-   JetBrains Mono, que la règle traverse sans effet : cette police n'a pas de
-   dlig, et ses ligatures de code relèvent de `calt`, laissée intacte. */
+   Portée à l'article, là où Literata travaille. Les titres, les liens et le
+   code sont en JetBrains Mono, que la règle traverse sans effet : cette
+   police n'a pas de dlig, et ses ligatures de code relèvent de `calt`,
+   laissée intacte. */
 article {
   font-variant-ligatures: common-ligatures discretionary-ligatures;
 }
@@ -2262,6 +2263,16 @@ article > p:first-of-type:has(.text-highlight)::after {
    thèmes — `--sur-safran`, déclaré en tête de fichier. Contraste 5,9:1 sur
    papier, 6,1:1 sur fond sombre.
 
+   L'étiquette est en JetBrains Mono, comme les titres, l'en-tête des tableaux
+   et le colophon : un lien n'est pas un mot de la phrase, c'est un objet du
+   site, et la monospace le dit sans réclamer une couleur de plus. Le corps
+   descend à 0,92 em, où la chasse fixe rend exactement la place que tenait
+   Literata ; au corps du texte elle prenait 12 % de large en plus et coupait
+   en deux les liens longs, qui sont ici des noms d'ateliers et de fichiers.
+   La graisse suit le texte, qui écrit ses liens en gras : 600, que JetBrains
+   Mono rend avec son fichier 700, le seul dont on dispose au-dessus du
+   romain.
+
    Avec `box-decoration-break: clone`, un lien qui passe à la ligne donne une
    étiquette par fragment, et sur ce site la moitié des liens sont des titres
    de fichiers ou d'ouvrages qui débordent.
@@ -2278,6 +2289,8 @@ article > p:first-of-type:has(.text-highlight)::after {
 article a:not([role="anchor"]):not([data-callout="rubriques"] a),
 article a.internal:not([role="anchor"]):not([data-callout="rubriques"] a) {
   color: var(--sur-safran);
+  font-family: var(--codeFont);
+  font-size: 0.92em;
   font-weight: inherit;
   background-color: var(--safran);
   background-image: none;
@@ -2313,6 +2326,28 @@ article a.internal.broken:not([role="anchor"]):not([data-callout="rubriques"] a)
   text-decoration: underline dotted;
   text-decoration-thickness: 1px;
   text-underline-offset: 0.22em;
+}
+
+/* La flèche du lien sortant suit la couleur du texte qui la précède. Quartz
+   peint son tracé en `--dark`, sans rapport avec l'état de l'étiquette : au
+   survol, quand celle-ci s'inverse en bloc d'encre, la flèche prenait la
+   couleur du fond et s'effaçait ; sur fond sombre au repos, elle restait
+   crème quand le texte passait au noir. `currentColor` la range derrière le
+   texte, dont la charte a déjà réglé les quatre états. Sa taille tient à
+   `1ex`, la hauteur d'x de la police du lien : elle suit donc l'étiquette
+   sans qu'on ait à la mesurer. */
+article a.external .external-icon > path {
+  fill: currentColor;
+}
+
+/* L'écart, lui, se reprend. Les 0,15 em de part et d'autre qu'hérite Quartz
+   collaient la flèche au texte — 2,2 px d'un côté, 6,9 px jusqu'au bord de
+   l'étiquette : en chasse fixe la dernière lettre a déjà donné sa pleine
+   gouttière, et la marge s'ajoutait à celle du remplissage. Tout passe donc à
+   gauche, et le remplissage de l'étiquette tient le côté droit : 4,4 px et
+   4,7 px, la flèche est posée entre les deux. */
+article a.external .external-icon {
+  margin: 0 0 0 0.3em;
 }
 
 /* --------------------------------------------------------------------------
