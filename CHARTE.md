@@ -296,7 +296,9 @@ la ligne du titre, le bandeau de marques quand la fiche en a (voir §7).
   fichier et « à télécharger », ou « site externe » et l'adresse ; rien à
   écrire dans les fiches, la règle lit l'extension et la classe du lien ;
 - le **colophon** : le dernier paragraphe, s'il est en italique, dit avec qui
-  et grâce à qui ; il passe en signalétique sous un filet ;
+  et grâce à qui ; il passe en signalétique sous un filet, et les liens qu'il
+  porte gardent leur étiquette mais reprennent le corps et la graisse de la
+  ligne — le paragraphe est déjà en monospace, il ne veut qu'un seul corps ;
 - les **pages de rubrique** (`/objets/`, `/techniques/`, `/projets/`) : le
   nom de la rubrique en titre, le décompte des fiches en signalétique, puis
   la liste — date en gris, titre en étiquette, safran et encre en alternance.

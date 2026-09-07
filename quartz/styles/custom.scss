@@ -2516,6 +2516,20 @@ article > p:last-of-type:has(> em:only-child):not(p:has(> img:only-child) + p) >
   font-style: normal;
 }
 
+/* Les liens du colophon gardent leur étiquette safran, mais reprennent le
+   corps et la graisse de la ligne. La règle des étiquettes d'article les
+   rétrécit de 0,92 em et les met au 700 : c'est juste au fil du texte, où
+   l'étiquette se détache d'une serif au corps de lecture. Ici le paragraphe
+   est déjà en signalétique — même monospace, 0,78 rem, une seule graisse —,
+   et le calcul se serait appliqué une deuxième fois : 11,5 px de lien dans
+   12,5 px de phrase, deux corps sur une ligne qui n'en veut qu'un. C'est le
+   seul endroit des deux sites où une étiquette tombe dans un contexte déjà
+   monospace : seize liens, huit fiches, toutes des lignes de mécénat. */
+article > p:last-of-type:has(> em:only-child):not(p:has(> img:only-child) + p) a {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
 /* --------------------------------------------------------------------------
    Tableaux : filets fins, zébrure très légère
 
