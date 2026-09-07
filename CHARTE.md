@@ -14,6 +14,10 @@ Il dit ce qui est décidé et pourquoi. Le _comment_ est dans le code, commenté
 en français : `quartz/styles/custom.scss` pour l'essentiel, les composants
 `PageTitle`, `Logos`, `Marques` et `Footer` pour le reste.
 
+**Elle est stabilisée depuis le 2026-09-07** : ce qui suit ne bouge plus sans
+décision prise à part, et ce qui reste ouvert est listé au § 10. Une retouche
+visuelle commence donc par une modification ici, pas dans la feuille de style.
+
 ## 1. Une maison, deux sites
 
 **ego/nux** est la maison : le domaine, le sigle en favicon, la page d'accueil
@@ -57,14 +61,15 @@ droit de la marque.
 
 Dans les pages, sur papier, le logotype est une étiquette safran pleine,
 texte à l'encre, accolades au papier, section cernée d'un filet fin à
-l'encre ; au survol il s'encre, texte papier, accolades safran. Sur fond sombre il est nu au repos —
-crème sur la page, accolades safran, section en étiquette — et devient
-l'étiquette safran au survol, accolades crème. Le trait de 2 px, de la
-couleur du bloc, reste
-le cadre de la version gravure : un trait de 0,08
-du corps, angles à 2 px, marges intérieures 0,3 em en haut, 0,5 em sur les
-côtés, 0,34 em en bas — celui du sommaire, des photos et de la carte de
-fabrication, où un trait de 2 px à l'encre veut dire « ceci est un bloc ».
+l'encre ; au survol il s'encre, texte papier, accolades safran. Sur fond
+sombre il est nu au repos — crème sur la page, accolades safran, section en
+étiquette — et devient l'étiquette safran au survol, accolades crème.
+
+Le cadre ne le quitte jamais : un trait de 2 px pris à la couleur du bloc,
+angles à 2 px, marges intérieures de 0,3 em en haut, 0,5 em sur les côtés,
+0,34 em en bas. C'est le trait du sommaire, des photos et de la carte de
+fabrication, où 2 px à l'encre veulent dire « ceci est un bloc » ; les tracés
+de `logos/` le reprennent à 0,08 du corps.
 
 Le logotype n'est pas une image : dans les pages, c'est du texte, et la
 feuille de style pose les accolades en pseudo-éléments. Le titre de site
@@ -429,9 +434,11 @@ l'ancienne feuille.
   Idées, en SVG monochrome de préférence.
 - **Le sort de lab.egonux.com** une fois le millésime passé : renommé pour
   dire son statut, ou absorbé dans la documentation comme axe `parcours/`.
-- **Deux vestiges** dans le dépôt fablab, `tools/accueil.mjs` et `wip/`, à
-  retirer quand la commande de build de Cloudflare Pages ne les appellera
-  plus.
+- **Un vestige** dans le dépôt fablab, `tools/accueil.mjs`, qui ne fait plus
+  rien : il n'est là que parce que la commande de build de Cloudflare Pages
+  l'appelle encore. Ramener cette commande à
+  `npx quartz build && node tools/versionner-assets.mjs` dans le tableau de
+  bord, puis supprimer le fichier — pas l'inverse, le déploiement échouerait.
 - **Les tracés de `logos/`** ont été passés à Sérigraphie sur les fichiers
   eux-mêmes, le script qui les avait produits n'étant pas dans le dépôt ; au
   prochain changement de construction, il faudra le réécrire.

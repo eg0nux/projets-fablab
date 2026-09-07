@@ -91,9 +91,9 @@
   border-radius: 0;
 }
 
-/* Hors de l'article, Quartz colore ses liens de `--secondary`, qui est
-   maintenant le safran : illisible en texte. Rétroliens et listes de dossier
-   repassent à l'encre ; l'explorateur et le sommaire ont leurs règles. */
+/* Hors de l'article, Quartz colore ses liens de `--secondary`, le safran :
+   illisible en texte. Rétroliens et listes de dossier repassent à l'encre ;
+   l'explorateur et le sommaire ont leurs règles. */
 .backlinks a,
 .page-listing a {
   color: var(--dark);
@@ -1053,8 +1053,8 @@ article li li:not([data-callout="rubriques"] *, .reperes-liste *)::before {
 }
 
 /* Les rubriques, à l'encre et en gras. Quartz les colore de `--secondary`,
-   qui est maintenant le safran : illisible en texte sur le papier. Le chevron
-   qui les ouvre passe à l'encre lui aussi. */
+   le safran : illisible en texte sur le papier. Le chevron qui les ouvre
+   passe à l'encre lui aussi. */
 .explorer .folder-container div > a,
 .explorer .folder-container div > a:hover,
 .explorer .folder-container button > span,
@@ -1398,7 +1398,7 @@ article li li:not([data-callout="rubriques"] *, .reperes-liste *)::before {
    qui traverse. Celle de Literata, dessinée pour le labeur, est une
    ponctuation. Ici le signe doit tenir seul entre deux logotypes.
 
-   En encre, pas en rouge : `--dark` est le noir du thème clair et la crème du
+   En encre, pas en safran : `--dark` est le noir du thème clair et la crème du
    thème sombre, donc le signe s'inverse tout seul. C'est la couleur des
    titres ; le safran reste aux accolades et aux liens.
 
@@ -1523,8 +1523,9 @@ article li li:not([data-callout="rubriques"] *, .reperes-liste *)::before {
 
 /* Le logotype du CIDFF est le seul en couleur de la rangée ; La Traverse est
    déjà dessiné en noir. Sur papier, ce turquoise et cet orange faisaient une
-   tache isolée, le seul endroit de la page où la couleur ne dit rien : le
-   rouge de la charte est ailleurs, réservé aux accents.
+   tache isolée, le seul endroit de la page où la couleur ne dit rien : la
+   seconde encre de la charte est ailleurs, réservée aux étiquettes et aux
+   filets.
 
    `brightness(0)` aplatit tout sur du noir en gardant la transparence ; c'est
    la première moitié de ce que fait déjà le thème sombre avant d'inverser.
@@ -1603,7 +1604,7 @@ article li li:not([data-callout="rubriques"] *, .reperes-liste *)::before {
 /* Le soubresaut réécrit entièrement le `filter` à chaque étape : sans une
    version claire de l'animation, les logos retomberaient à leur couleur
    d'origine dès le survol. Les décalages sont posés après l'inversion, ce qui
-   leur garde leur rouge et leur jaune. */
+   leur garde leur safran et leur encre. */
 :root[saved-theme="dark"] .logos .logo:hover img,
 :root[saved-theme="dark"] .logos .logo:focus-visible img {
   animation-name: soubresaut-clair;
@@ -1665,17 +1666,17 @@ article li li:not([data-callout="rubriques"] *, .reperes-liste *)::before {
    l'on est tombé, c'est le renseignement qui manquait le plus.
 
    La liste, elle, court le long d'un rail, et la section en cours de lecture
-   y est marquée d'un segment rouge plein. La position ne se devine plus à une
+   y est marquée d'un segment safran plein. La position ne se devine plus à une
    nuance de gris : elle se voit.
 
-   Jauge, pourcentage et repère sont posés par `scripts/sommaire.inline.ts` ; Quartz ne calcule ni l'un ni l'autre. Son `in-view` marque tout ce qui est
+   Jauge, pourcentage et repère sont posés par `scripts/sommaire.inline.ts` ;
+   Quartz ne calcule ni l'un ni l'autre. Son `in-view` marque tout ce qui est
    passé au-dessus du bas de la fenêtre, c'est-à-dire ce qui a été lu, jamais
    où l'on se trouve.
 
-   Note pour plus tard : les règles précédentes visaient `#toc-content`, un
-   identifiant qui n'existe pas : Quartz numérote les siens (`list-4`) et ne
-   laisse que la classe `toc-content`. Elles n'ont donc jamais rien fait, et
-   c'est la feuille de Quartz qu'on voyait à l'œuvre.
+   On vise le sommaire par sa classe, jamais par un identifiant : Quartz
+   numérote les siens (`list-4`) et ne laisse que `toc-content`. Une règle
+   écrite `#toc-content` ne toucherait rien.
    -------------------------------------------------------------------------- */
 
 .toc {
@@ -1988,8 +1989,8 @@ article li li:not([data-callout="rubriques"] *, .reperes-liste *)::before {
 
    Le mot est un sigle avant d'être un nom de lieu ; qui ne l'a jamais lu n'y
    voit qu'une marque. La glose au survol le décompose sans allonger la
-   phrase : les lettres reprises dans le sigle sortent en rouge, en capitales
-   et soulignées, le reste du mot suit en encre. La capitalisation est posée
+   phrase : les lettres reprises dans le sigle sortent en capitales grasses,
+   soulignées de safran, le reste du mot suit à l'encre. La capitalisation est posée
    en CSS, pas écrite dans le texte : comme les accolades du logotype, elle
    relève de la présentation, et la source reste lisible en clair.
 
@@ -2538,7 +2539,7 @@ article tbody tr:nth-child(even) {
 
    Encadré du filet de 2 px, celui du chapeau, du sommaire et des photos :
    c'est le trait qui, sur ce site, dit « ceci est un bloc ». Les intitulés
-   passent au rouge et le contenu à la monospace ; la carte d'identité se lit
+   passent en étiquette safran et le contenu à la monospace ; la carte se lit
    comme une plaque signalétique, pas comme du texte courant.
    -------------------------------------------------------------------------- */
 
@@ -3103,9 +3104,8 @@ article h4 {
    sinon la troisième colonne de toute table de réglages sur l'autre site. Le
    volume s'efface parce qu'il se lit en diagonale ; les colonnes de notes se
    comparent verticalement, en jauges — celles du bloc « Repères », posées
-   dans chaque cellule par le même transformer. Un doré tenait autrefois des
-   étoiles à distance du rouge d'accent ; avec deux encres à plat, une
-   troisième n'a plus sa place, et les étoiles non plus.
+   dans chaque cellule par le même transformer. Deux encres à plat, pas de
+   troisième : ni étoiles, ni teinte pour les tenir à distance.
    -------------------------------------------------------------------------- */
 
 body[data-slug="comparatif"] article tbody td:first-child {
@@ -3343,7 +3343,6 @@ article code {
   .sidebar,
   .toc,
   .backlinks,
-  .graph,
   .search,
   .darkmode,
   .explorer,
