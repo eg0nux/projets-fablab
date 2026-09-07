@@ -2269,9 +2269,14 @@ article > p:first-of-type:has(.text-highlight)::after {
    descend à 0,92 em, où la chasse fixe rend exactement la place que tenait
    Literata ; au corps du texte elle prenait 12 % de large en plus et coupait
    en deux les liens longs, qui sont ici des noms d'ateliers et de fichiers.
-   La graisse suit le texte, qui écrit ses liens en gras : 600, que JetBrains
-   Mono rend avec son fichier 700, le seul dont on dispose au-dessus du
-   romain.
+   La graisse est fixée, et c'est ce que `inherit` ratait : selon qu'une fiche
+   écrit `**[lien](…)**` ou `[lien](…)`, l'étiquette héritait de 600 ou de 400
+   — sur les quarante-sept pages des deux sites, cent deux liens dans un cas,
+   cinquante-six dans l'autre, et douze pages où les deux se côtoyaient. En
+   Literata l'écart passait inaperçu ; JetBrains Mono, qui n'a que le romain
+   et le 700, l'affiche. Une étiquette est une signalétique, pas une emphase :
+   elle porte partout la même graisse, le 700, seul gras dont la police
+   dispose.
 
    Avec `box-decoration-break: clone`, un lien qui passe à la ligne donne une
    étiquette par fragment, et sur ce site la moitié des liens sont des titres
@@ -2291,7 +2296,7 @@ article a.internal:not([role="anchor"]):not([data-callout="rubriques"] a) {
   color: var(--sur-safran);
   font-family: var(--codeFont);
   font-size: 0.92em;
-  font-weight: inherit;
+  font-weight: 700;
   background-color: var(--safran);
   background-image: none;
   text-decoration: none;
