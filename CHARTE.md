@@ -388,9 +388,26 @@ collés au cadre, et sur une feuille la fiche n'a pas besoin qu'on la punaise
 —, les étiquettes des liens tombent et leur texte se souligne, les adresses
 des liens externes s'écrivent entre parenthèses, les photos gardent leur
 habillage à 40 % — la figure dans la marge, le texte qui la contourne —,
-l'en-tête d'un tableau se répète d'une page à l'autre, un encadré replié ne
-s'imprime pas, et le document se ferme sur une ligne qui dit le titre de la
-fiche et son adresse.
+l'en-tête d'un tableau se répète d'une page à l'autre, et un encadré replié
+ne s'imprime pas.
+
+**Chaque feuille se ferme sur son pied** : le titre de la fiche à gauche, le
+numéro de page sur le total au centre, l'adresse à droite, en signalétique
+sous un filet. La feuille de style l'écrit elle-même dans la marge, et le
+navigateur, qui y imprimait d'office sa date, son titre et son « 1/4 »,
+s'efface. Firefox ne sait pas encore écrire dans la marge : il reçoit le pied
+en fin de document, et garde ses en-têtes tant qu'on ne décoche pas
+« Imprimer les en-têtes et pieds de page » dans sa boîte de dialogue.
+
+**Rien ne se coupe mal.** Une image et sa légende ne se séparent jamais ; un
+tableau court passe entier sur la page suivante, un tableau long se coupe
+entre deux lignes ; un titre emmène avec lui le bloc qui le suit ; un
+paragraphe ou un item de quatre lignes au plus ne laisse pas de ligne seule ;
+la carte de fabrication, les repères et les encadrés sont d'un seul tenant.
+C'est le script du bouton qui noue ces blocs au moment d'imprimer, parce que
+les navigateurs ne s'entendent que sur une chose, ne pas couper un bloc, et
+que Firefox ignore le reste : les veuves, les orphelines, et les titres à ne
+pas laisser seuls.
 
 **Rien ne compte sur un aplat** : le navigateur n'imprime pas les fonds tant
 qu'on n'a pas coché « graphismes d'arrière-plan », case décochée par défaut.
@@ -416,7 +433,7 @@ Une fiche punaisée près d'une machine est un usage réel.
 | `quartz/components/Logos.tsx`                  | la maison                                                                                                                                                         | identique                                                                            |
 | `quartz/components/Marques.tsx`                | le partenaire d'un projet                                                                                                                                         | fablab seulement                                                                     |
 | `quartz/components/Imprimer.tsx`               | le bouton d'impression, et la règle qui dit ce qu'est une fiche                                                                                                   | identique                                                                            |
-| `quartz/components/scripts/imprimer.inline.ts` | le clic, et le pied que la feuille emporte                                                                                                                        | identique                                                                            |
+| `quartz/components/scripts/imprimer.inline.ts` | le clic, le pied de la feuille, et les blocs noués pour ne pas se couper                                                                                          | identique                                                                            |
 | `quartz/components/ContentMeta.tsx`            | un import et une balise : le bouton au bout de la ligne de date ; à reporter à chaque montée de version                                                           | identique                                                                            |
 | `quartz/components/scripts/popover.inline.ts`  | un garde en tête du script : pas de prévisualisation au survol d'un lien de fichier, qui n'a rien à montrer et pèse lourd ; à reporter à chaque montée de version | identique                                                                            |
 | `quartz/plugins/transformers/fabrication.ts`   | la carte de fabrication                                                                                                                                           | fablab seulement                                                                     |

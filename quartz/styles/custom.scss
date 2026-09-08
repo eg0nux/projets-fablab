@@ -2500,9 +2500,15 @@ article a.internal[data-slug$=".docx"]:focus-visible::before {
 
    La légende d'une photo placée en fin de page est écartée : elle suit une
    image, et c'est sa règle propre qui la tient.
+
+   Au moment d'imprimer, le script peut nouer ce dernier paragraphe au pied
+   de la feuille dans un bloc `.impression-fin` (voir le bloc d'impression) :
+   le colophon n'est plus alors l'enfant direct de l'article, et la règle le
+   suit là-dedans pour qu'il reste un colophon sur le papier.
    -------------------------------------------------------------------------- */
 
-article > p:last-of-type:has(> em:only-child):not(p:has(> img:only-child) + p) {
+:is(article, .impression-fin)
+  > p:last-of-type:has(> em:only-child):not(p:has(> img:only-child) + p) {
   margin-top: 2.6em;
   padding-top: 0.9em;
   border-top: 1px solid var(--lightgray);
@@ -2512,7 +2518,9 @@ article > p:last-of-type:has(> em:only-child):not(p:has(> img:only-child) + p) {
   color: var(--gray);
 }
 
-article > p:last-of-type:has(> em:only-child):not(p:has(> img:only-child) + p) > em {
+:is(article, .impression-fin)
+  > p:last-of-type:has(> em:only-child):not(p:has(> img:only-child) + p)
+  > em {
   font-style: normal;
 }
 
@@ -2525,7 +2533,9 @@ article > p:last-of-type:has(> em:only-child):not(p:has(> img:only-child) + p) >
    12,5 px de phrase, deux corps sur une ligne qui n'en veut qu'un. C'est le
    seul endroit des deux sites où une étiquette tombe dans un contexte déjà
    monospace : seize liens, huit fiches, toutes des lignes de mécénat. */
-article > p:last-of-type:has(> em:only-child):not(p:has(> img:only-child) + p) a {
+:is(article, .impression-fin)
+  > p:last-of-type:has(> em:only-child):not(p:has(> img:only-child) + p)
+  a {
   font-size: inherit;
   font-weight: inherit;
 }
@@ -3351,14 +3361,70 @@ article code {
    -------------------------------------------------------------------------- */
 
 /* A4, marges de reliure : de quoi tenir la feuille sans mordre sur le texte,
-   et une colonne de 16,8 cm. */
+   et une colonne de 16,8 cm.
+
+   Le navigateur écrit d'office dans ces marges : la date et le titre en
+   haut, l'adresse et « 1/4 » en bas — ou, dans Firefox, le titre et
+   l'adresse en haut, « Page 1 sur 4 » et la date en bas. Rien de cela n'a sa
+   place sur une fiche : la date ne dit rien, l'adresse est déjà au pied, et
+   le tout est composé dans la police du système.
+
+   Depuis Chrome 131 et Safari 18.2, la feuille de style occupe elle-même les
+   cases de la marge, et le navigateur s'efface de chaque bord où elle
+   écrit. La case du haut reste vide : elle n'est là que pour lui prendre la
+   place. Les trois du bas composent le pied de chaque feuille — le titre de
+   la fiche, le numéro de page sur le total, l'adresse — dans le registre de
+   la signalétique, sous un filet, et à 0,45 cm sous le texte pour que la
+   dernière ligne d'une page pleine ne vienne pas s'y coller. Le titre et
+   l'adresse arrivent par deux variables que le script pose sur `<html>` au
+   moment d'imprimer ; les compteurs `page` et `pages`, eux, sont tenus par
+   le navigateur.
+
+   Firefox ne connaît pas ces cases (bug 1854974) : il les ignore, imprime
+   ses en-têtes tant qu'on ne décoche pas « Imprimer les en-têtes et pieds
+   de page » dans sa boîte de dialogue, et reçoit à la place le pied en fin
+   de document, plus bas dans le bloc d'impression. */
+@mixin pied-de-feuille {
+  vertical-align: top;
+  margin-top: 0.45cm;
+  padding-top: 0.3rem;
+  border-top: 1px solid #000;
+  font-family: var(--codeFont);
+  font-size: 0.68rem;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #000;
+}
+
 @page {
   size: A4;
   margin: 1.9cm 2.1cm;
+
+  @top-left {
+    content: "";
+  }
+
+  @bottom-left {
+    @include pied-de-feuille;
+    content: var(--impression-titre, "");
+  }
+
+  @bottom-center {
+    @include pied-de-feuille;
+    content: counter(page) " / " counter(pages);
+  }
+
+  @bottom-right {
+    @include pied-de-feuille;
+    content: var(--impression-adresse, "");
+    /* L'adresse garde sa casse : une URL se lit en minuscules. */
+    text-transform: none;
+  }
 }
 
-/* Le pied est écrit par le script au moment d'imprimer, et n'a rien à faire
-   à l'écran. */
+/* Le pied de fin de document est écrit par le script au moment d'imprimer,
+   là où la marge ne sait pas l'être, et n'a rien à faire à l'écran. */
 #impression-pied {
   display: none;
 }
@@ -3403,6 +3469,14 @@ article code {
   .imprimer,
   footer {
     display: none !important;
+  }
+
+  /* Le filet que Quartz pose entre l'article et le pied de page : le pied ne
+     s'imprime pas, le filet n'a plus rien à séparer. Il faisait pire que
+     rien — quand la fiche finissait au bas d'une page, Firefox ouvrait une
+     page blanche pour lui et ses marges. */
+  .center > hr {
+    display: none;
   }
 
   /* Les colonnes latérales sont masquées, mais leur gouttière resterait
@@ -3551,6 +3625,39 @@ article code {
     break-inside: avoid;
   }
 
+  /* Ce que le script noue ou marque au moment d'imprimer (voir
+     `imprimer.inline.ts`). Les navigateurs ne s'entendent que sur une
+     chose : ne pas couper un bloc marqué `break-inside: avoid`. Firefox
+     ignore le reste — le `break-after` des titres ci-dessus, les veuves et
+     les orphelines plus haut. D'où des blocs fabriqués pour lui, et qui ne
+     coûtent rien aux autres :
+
+     - `.impression-titre` : un titre et le bloc qui le suit, quand celui-ci
+       est court ; le titre ne reste plus seul au bas d'une page ;
+     - `.impression-court` : un paragraphe ou un item de quatre lignes au
+       plus, un tableau qui tient dans un tiers de page ; ils passent entiers
+       plutôt que de laisser une ligne seule. Les blocs longs se coupent
+       comme avant ;
+     - `.impression-tableau` : un tableau court et la phrase qui l'annonce,
+       quand elle est courte elle aussi ;
+     - `.impression-fin` : le dernier bloc de la fiche et le pied qui la
+       ferme, là où ce pied s'écrit en fin de document.
+
+     La figure, elle, a sa règle plus bas, avec les photos. */
+  .impression-titre,
+  .impression-court,
+  .impression-tableau,
+  .impression-fin {
+    break-inside: avoid;
+  }
+
+  /* La carte de fabrication et le bloc de repères sont courts par
+     construction : quatre lignes dans un cadre, qui se lisent d'un coup. */
+  .fabrication,
+  .reperes {
+    break-inside: avoid;
+  }
+
   /* Le bloc d'encre du chapeau mangerait une cartouche pour rien : sur la
      feuille il redevient un cadre, texte au noir. Il reste au fer à gauche :
      justifié dans un cadre étroit, il ouvrirait des rivières. */
@@ -3575,9 +3682,16 @@ article code {
      téléphone, plus haut, la mettrait en pleine largeur : la feuille est
      étroite elle aussi, mais elle n'a pas la même hauteur.
 
-     Le bloc image + légende ne se coupe pas d'une page à l'autre. */
+     À l'écran, l'image et sa légende sont deux paragraphes qui flottent l'un
+     sous l'autre. Sur la feuille, deux flottants ne se tiennent pas : quand
+     l'image tenait encore au bas d'une page, la légende partait seule en
+     haut de la suivante. Le script les noue donc, au moment d'imprimer, dans
+     une seule figure, `.impression-figure`, qui flotte à leur place et ne se
+     coupe pas. Les deux paragraphes gardent leur habillage de repli : sans
+     script, un Ctrl+P donne ce qu'il donnait. */
   article p:has(> img:only-child),
-  article p:has(> img:only-child) + p:has(> em:only-child) {
+  article p:has(> img:only-child) + p:has(> em:only-child),
+  .impression-figure {
     float: right;
     clear: right;
     width: 40%;
@@ -3585,9 +3699,37 @@ article code {
     break-inside: avoid;
   }
 
+  .impression-figure {
+    margin-bottom: 1.6em;
+  }
+
+  /* Dans la figure, les deux paragraphes cessent de flotter : c'est elle qui
+     flotte. Spécificité (0,2,3) et (0,2,7), au-dessus de l'habillage d'écran,
+     qui reste actif sur la feuille. */
+  article .impression-figure > p:has(> img:only-child),
+  article .impression-figure > p:has(> img:only-child) + p:has(> em:only-child) {
+    float: none;
+    clear: none;
+    width: 100%;
+    margin: 0;
+  }
+
   article p:has(> img:only-child) + p:has(> em:only-child) {
     margin-top: 0;
     margin-bottom: 1.6em;
+  }
+
+  /* Le bandeau — la photo qui ouvre une page avant son premier titre — garde
+     toute la largeur, et son cadrage, noué ou non. */
+  article > .impression-figure:first-child {
+    float: none;
+    width: 100%;
+    margin: 0 0 1.6em;
+  }
+
+  article > .impression-figure:first-child > p > img {
+    aspect-ratio: 3 / 1;
+    object-fit: cover;
   }
 
   article img {
@@ -3596,9 +3738,10 @@ article code {
   }
 
   /* Une photo bornée en hauteur doit pouvoir rétrécir en largeur, sinon elle
-     s'écrase. Le bandeau de tête, lui, garde toute la sienne : son rapport
-     3:1 le tient déjà sous les six centimètres. */
-  article p:has(> img:only-child):not(:first-child) > img {
+     s'écrase. Le bandeau, lui, garde toute la sienne : son rapport 3:1 le
+     tient déjà sous les six centimètres. */
+  article p:has(> img:only-child):not(:first-child) > img,
+  article .impression-figure:not(:first-child) > p > img {
     width: auto;
     max-width: 100%;
   }
@@ -3643,6 +3786,22 @@ article code {
 
   article tr {
     break-inside: avoid;
+  }
+
+  /* Quartz donne 75 px de largeur minimale à chaque cellule : sept colonnes
+     de jauges n'entraient plus dans les 16,8 cm, et le tableau comparatif
+     perdait ses deux dernières colonnes au bord de la feuille. Sur papier,
+     une cellule prend la largeur de ce qu'elle contient. La règle de Quartz
+     est à (0,1,2) ; celle-ci passe au-dessus. */
+  article .table-container :is(th, td) {
+    min-width: 0;
+  }
+
+  /* Un tableau court — c'est le script qui le dit, à la mesure de sa hauteur
+     — passe entier sur la page suivante au lieu de se couper après deux
+     lignes, et il reste avec la phrase qui l'annonce. */
+  .table-container {
+    break-before: avoid;
   }
 
   /* La zébrure est un aplat : elle ne s'imprime pas, et là où l'on coche les
@@ -3763,22 +3922,27 @@ article code {
   }
 
   /* Le colophon en noir : c'est un repère, pas une nuance. */
-  article > p:last-of-type:has(> em:only-child):not(p:has(> img:only-child) + p) {
+  :is(article, .impression-fin)
+    > p:last-of-type:has(> em:only-child):not(p:has(> img:only-child) + p) {
     color: #000;
     border-top-color: #000;
     text-align: left;
   }
 
-  /* Le pied du document : le titre de la fiche à gauche, son adresse à
-     droite. C'est ce qui fait qu'une feuille punaisée dit d'où elle vient,
+  /* Le pied en fin de document : le titre de la fiche à gauche, son adresse
+     à droite. C'est ce qui fait qu'une feuille punaisée dit d'où elle vient,
      et par où la reprendre.
 
-     Il ferme le document au lieu de se répéter sur chaque feuille. Le
-     répéter demanderait un `position: fixed`, et Chrome rogne à l'impression
-     tout ce qui déborde de la zone de page : posé dans la marge basse il
-     disparaissait, posé au ras du texte il chevauchait la dernière ligne de
-     chaque page. Essayé, mesuré, abandonné. La numérotation des pages, elle,
-     reste au navigateur : `@page` ne sait pas encore l'écrire.
+     Il ne sert plus qu'aux navigateurs qui ne savent pas écrire dans la
+     marge — Firefox, aujourd'hui. Là où `@page` sait le faire, le script ne
+     le pose pas : le même pied, numéro de page en plus, se répète alors au
+     bas de chaque feuille. Un `position: fixed` avait été essayé pour cela
+     et abandonné : Chrome rogne à l'impression tout ce qui déborde de la
+     zone de page.
+
+     Il ne se sépare pas de ce qui le précède — le script le noue au dernier
+     bloc de la fiche : seul en haut d'une dernière page, il ferait une
+     feuille pour une ligne.
 
      L'adresse garde sa casse : une URL se lit en minuscules. */
   #impression-pied {
@@ -3789,6 +3953,7 @@ article code {
     padding-top: 0.3rem;
     border-top: 1px solid #000;
     break-inside: avoid;
+    break-before: avoid;
     font-family: var(--codeFont);
     font-size: 0.68rem;
     letter-spacing: 0.06em;
