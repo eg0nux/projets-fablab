@@ -1,0 +1,5 @@
+# Les copies de production servies sur pages.dev ne doivent pas être indexées :
+# le site vit sur son domaine. Les adresses de déploiement (empreinte.projet.pages.dev)
+# portent déjà cet en-tête, ajouté par Cloudflare.
+https://:project.pages.dev/*
+  X-Robots-Tag: noindex
