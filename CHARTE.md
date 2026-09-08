@@ -313,7 +313,7 @@ de retour qu'en attendant on repart dans le passé. Même traitement sur
 egonux.com, dont la page est écrite à la main.
 
 **Pied de page** : une seule ligne, en capitales grises, mentions séparées
-d'un croisillon safran : Quartz, EcoIndex, contact, ego/nux.
+d'un croisillon safran : Quartz, EcoIndex, Florian C., ego/nux.
 
 **Accueil**, même structure sur les deux sites : le chapeau, puis les
 rubriques rendues au logotype (`> [!rubriques]` dans le markdown), puis
