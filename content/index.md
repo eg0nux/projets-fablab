@@ -42,8 +42,3 @@ Ces parcours sont pensés pour les activités FabLab du [CIDFF Dordogne](https:/
 - [[sur-mesure|Sur mesure]] : Textile, réemploi et confection
 - [[tenir-debout|Tenir debout]] : Pierre sèche & patrimoine 3D
 - [[veilleurs-de-vignes|Veilleurs de vignes]] : Sentinelles antigel
-
----
-
-> [!note] Document de travail
-> Les noms de projets et de trophées sont des propositions, à adapter librement.
