@@ -5,7 +5,7 @@ title: Tableau comparatif
 ==Aucun de ces projets n'est meilleur qu'un autre : ils ne demandent ni le même atelier, ni le même budget, ni les mêmes partenaires. Six repères pour les situer les uns par rapport aux autres. Plus il y a de barres, plus c'est favorable : cinq barres en accessibilité, c'est le plus facile à mener ; cinq en coût matière, c'est le moins cher à fabriquer.==
 
 > [!note]
-> Projets classés par ordre alphabétique. [[essaimer|Essaimer]] n'est pas noté ici.
+> Projets classés par ordre alphabétique.
 
 | Projet                                               | Orig. | Access. | Polyv. | Impact | Ancrage | Coût  |
 | ---------------------------------------------------- | :---: | :-----: | :----: | :----: | :-----: | :---: |
@@ -13,7 +13,7 @@ title: Tableau comparatif
 | [[basse-tension\|Basse tension]]                     | ★★★★☆ |  ★★★☆☆  | ★★★★☆  | ★★★★☆  |  ★★★☆☆  | ★★★☆☆ |
 | [[changer-de-braquet\|Changer de braquet]]           | ★★★★☆ |  ★★★☆☆  | ★★★★☆  | ★★★★★  |  ★★★★☆  | ★☆☆☆☆ |
 | [[du-bout-des-doigts\|Du bout des doigts]]           | ★★★★☆ |  ★★★★☆  | ★★★★☆  | ★★★★★  |  ★★★☆☆  | ★★★★☆ |
-| [[essaimer\|Essaimer]]                               |   ·   |    ·    |   ·    |   ·    |    ·    |   ·   |
+| [[essaimer\|Essaimer]]                               | ★★★☆☆ |  ★★★★★  | ★★☆☆☆  | ★★★★☆  |  ★★★★☆  | ★★★★★ |
 | [[faire-podium\|Faire Podium]]                       | ★★★★☆ |  ★★★★☆  | ★★★★☆  | ★★★☆☆  |  ★★★★☆  | ★★★★☆ |
 | [[grandeur-nature\|Grandeur nature]]                 | ★★★☆☆ |  ★★★★☆  | ★★★☆☆  | ★★★★☆  |  ★★★★☆  | ★★★☆☆ |
 | [[la-fresque-jouable\|La fresque jouable]]           | ★★★★☆ |  ★★★★☆  | ★★★★★  | ★★★☆☆  |  ★★★★☆  | ★★★★☆ |

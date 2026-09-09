@@ -4,7 +4,7 @@ title: Essaimer
 
 ==Abris à pollinisateurs et rucher pédagogique. Fabriquer tout ce qui accueille le petit peuple des pollinisateurs (hôtels à abeilles sauvages, ruches vitrées d'observation, ruche-tronc traditionnelle, signalétique) pour un rucher-école, un jardin partagé ou une école. Un apiculteur transmet le geste, le calme, l'observation d'un cadre derrière la vitre. Essaimer, pour une abeille, c'est quitter la ruche en groupe pour en fonder une autre ailleurs : exactement ce qu'on souhaite à celles et ceux qui repartent.==
 
-**Repères** : projet techniquement très accessible, non noté au [[comparatif|tableau comparatif]].
+**Repères** : Originalité ★★★☆☆ · Accessibilité ★★★★★ · Polyvalence FabLab ★★☆☆☆ · Impact social ★★★★☆ · Ancrage territorial ★★★★☆ · Coût matière ★★★★★
 
 ## Objectifs
 
