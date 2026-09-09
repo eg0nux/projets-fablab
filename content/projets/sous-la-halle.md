@@ -1,5 +1,6 @@
 ---
 title: Sous la halle
+portee: partout
 ---
 
 ==Ardoises, enseignes et présentoirs pour les marchés. Équiper les commerçants du marché couvert de Bergerac (la halle) et des marchés de villages : ardoises gravées, porte-étiquettes, présentoirs à gradins, caisses de présentation empilables, enseignes de stand. Dix jours pour rendre les étals plus beaux et découvrir de l'intérieur, dès l'aube, les métiers de bouche et du commerce de proximité, premiers recruteurs du quotidien.==

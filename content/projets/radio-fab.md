@@ -1,5 +1,6 @@
 ---
 title: Radio Fab
+portee: partout
 ---
 
 ==Média fabriqué. Construire physiquement un studio radio-podcast (enceintes, panneaux acoustiques, supports micros, table, habillage), puis produire une série d'émissions où les participant-es interviewent des professionnel-les du territoire. L'objet et la parole dans le même parcours : on fabrique l'outil, puis on s'en sert pour se faire entendre.==

@@ -1,7 +1,14 @@
 import { QuartzComponent, QuartzComponentConstructor, QuartzComponentProps } from "./types"
 import { classNames } from "../util/lang"
+// Écart au Quartz d'origine, à reporter à chaque montée de version : le
+// cartouche de portée termine la ligne du titre. Tout ce qu'il est tient dans
+// `Portee.tsx` ; il ne reste ici qu'un import et une balise.
+import PorteeConstructor from "./Portee"
 
-const ArticleTitle: QuartzComponent = ({ fileData, displayClass }: QuartzComponentProps) => {
+const Portee = PorteeConstructor()
+
+const ArticleTitle: QuartzComponent = (props: QuartzComponentProps) => {
+  const { fileData, displayClass } = props
   const title = fileData.frontmatter?.title
   if (title) {
     // Le croisillon employé comme séparateur prend le rouge des marqueurs de
@@ -17,6 +24,7 @@ const ArticleTitle: QuartzComponent = ({ fileData, displayClass }: QuartzCompone
             {m}
           </>
         ))}
+        <Portee {...props} />
       </h1>
     )
   } else {

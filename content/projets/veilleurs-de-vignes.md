@@ -1,5 +1,6 @@
 ---
 title: Veilleurs de vignes
+portee: bergeracois
 ---
 
 ==Sentinelles antigel pour les vigneron-nes. Depuis les gelées noires d'avril 2021, chaque printemps est une veille angoissée à Monbazillac comme en Pécharmant. Les participant-es fabriquent un réseau de sentinelles low-cost (température au ras des ceps, alerte téléphonique, balise lumineuse) installées chez trois ou quatre vigneron-nes, complété par des gîtes à chauves-souris pour la lutte biologique contre les vers de la grappe. Le FabLab monte la garde avec la première filière du Bergeracois.==

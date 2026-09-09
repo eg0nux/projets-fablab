@@ -1,5 +1,6 @@
 ---
 title: La fresque jouable
+portee: partout
 ---
 
 ==Jeu de société du territoire. Concevoir, fabriquer et éditer en petite série un jeu de société (ou un escape game portable) sur un thème local : l'eau du bassin, l'histoire industrielle de la ville, l'alimentation, une figure du patrimoine. Des classes d'école testent les prototypes et votent : les enfants deviennent le jury.==

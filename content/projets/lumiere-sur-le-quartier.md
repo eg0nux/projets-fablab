@@ -1,5 +1,6 @@
 ---
 title: Lumière sur le quartier
+portee: partout
 ---
 
 ==Mobilier et signalétique urbaine. Les participant-es conçoivent et fabriquent du micro-mobilier urbain et de la signalétique pour un lieu réel de leur quartier, à la demande d'habitant-es, d'une mairie ou d'un bailleur social. Le quartier devient le client, le FabLab un bureau d'études et un atelier de production. Le résultat reste visible des années : chacun-e peut dire « ce banc, c'est moi ».==

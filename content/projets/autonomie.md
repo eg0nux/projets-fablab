@@ -1,5 +1,6 @@
 ---
 title: Autonomie
+portee: partout
 ---
 
 ==Objets d'assistance sur mesure. Rencontrer des personnes en situation de handicap ou des personnes âgées, identifier avec elles des gestes du quotidien devenus difficiles, et fabriquer des aides techniques personnalisées, essentiellement en impression 3D. C'est le projet au sens le plus immédiat : l'objet change concrètement la vie de quelqu'un que l'on connaît désormais.==
@@ -36,7 +37,7 @@ Ergothérapeute, orthoprothésiste, aide-soignant, accompagnant éducatif et soc
 
 ## En pratique
 
-- **Budget matière indicatif** : 300 à 450 € (le budget le plus léger de tous les projets)
+- **Budget matière indicatif** : 300 à 450 €
 - **Saison idéale** : toute l'année (projet en intérieur, sans contrainte météo)
 
 > [!warning] Points de vigilance

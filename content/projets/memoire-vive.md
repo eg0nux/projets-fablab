@@ -1,5 +1,6 @@
 ---
 title: Mémoire vive
+portee: bergeracois
 ---
 
 ==Les bancs qui racontent. Le nom dit tout : la mémoire vive des machines, la mémoire vivante d'un territoire qui vieillit. Les participant-es fabriquent des bornes d'écoute solaires (un banc, un bouton, une voix) installées au marché couvert de Bergerac et dans les villages, puis collectent ce qu'elles diffuseront : souvenirs des derniers gabariers, du temps du tabac, de la Poudrerie, mots d'occitan, récits recueillis en EHPAD. Les aîné-es deviennent les auteur-es ; les participant-es les éditent et les fabriquent.==

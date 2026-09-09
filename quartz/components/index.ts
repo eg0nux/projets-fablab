@@ -14,6 +14,7 @@ import Sommaire from "./Sommaire"
 import TableOfContents from "./TableOfContents"
 import Explorer from "./Explorer"
 import TagList from "./TagList"
+import Portee from "./Portee"
 import Graph from "./Graph"
 import Backlinks from "./Backlinks"
 import Search from "./Search"
@@ -42,6 +43,7 @@ export {
   TableOfContents,
   Explorer,
   TagList,
+  Portee,
   Graph,
   Backlinks,
   Search,

@@ -1,5 +1,6 @@
 ---
 title: Essaimer
+portee: partout
 ---
 
 ==Abris à pollinisateurs et rucher pédagogique. Fabriquer tout ce qui accueille le petit peuple des pollinisateurs (hôtels à abeilles sauvages, ruches vitrées d'observation, ruche-tronc traditionnelle, signalétique) pour un rucher-école, un jardin partagé ou une école. Un apiculteur transmet le geste, le calme, l'observation d'un cadre derrière la vitre. Essaimer, pour une abeille, c'est quitter la ruche en groupe pour en fonder une autre ailleurs : exactement ce qu'on souhaite à celles et ceux qui repartent.==
@@ -36,7 +37,7 @@ Apiculteur et éleveur de reines, animateur nature et éducateur à l'environnem
 
 ## En pratique
 
-- **Budget matière indicatif** : 280 à 420 €
+- **Budget matière indicatif** : 280 à 420 € (le budget le plus léger de tous les projets)
 - **Saison idéale** : de la fin de l'hiver au printemps (les abeilles sauvages prospectent tôt, le parterre méllifère doit fleurir à temps)
 
 > [!warning] Points de vigilance

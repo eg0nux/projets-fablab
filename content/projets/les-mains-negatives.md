@@ -1,5 +1,6 @@
 ---
 title: Les mains négatives
+portee: bergeracois
 ---
 
 ==La grotte portative. La vallée de la Vézère est la capitale mondiale de la préhistoire, mais Lascaux reste hors de portée de bien des publics. Le groupe fabrique donc une grotte itinérante : un dôme géodésique démontable, une fresque collective peinte aux pigments faits maison, des mains négatives au pochoir (la toute première signature humaine), un jeu de lumière évoquant la flamme. Fil rouge : du biface à la fraiseuse, 400 000 ans de FabLab.==

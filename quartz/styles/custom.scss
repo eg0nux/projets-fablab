@@ -3327,6 +3327,54 @@ body[data-slug="index"] article h2#tous-les-projets + ul > li:nth-child(even) > 
 }
 
 /* --------------------------------------------------------------------------
+   Portée d'un parcours
+
+   Deux familles de projets : ceux qui se refont tels quels ailleurs, et ceux
+   qui tiennent à la Dordogne — sa vallée du papier, ses vignes, ses gabares,
+   son ciel noir. Le cartouche le dit au bout du titre, en signalétique :
+   JetBrains Mono 700, capitales espacées, petit corps.
+
+   Pas de bloc ni de cadre : les accolades du logotype, et deux mots. Elles
+   sont la marque de la maison, et un titre de fiche porte assez d'encre
+   comme ça — dix-sept étiquettes safran de plus sur vingt-cinq fiches
+   auraient fait un aplat. L'ancrage prend l'encre du titre, ce qui se
+   transpose reste au gris des mentions : le cas ordinaire ne s'annonce pas.
+   -------------------------------------------------------------------------- */
+
+.portee {
+  display: inline-block;
+  margin-left: 0.6em;
+  vertical-align: middle;
+}
+
+.portee-cartouche {
+  font-family: var(--codeFont);
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  line-height: 1.5;
+  color: var(--gray);
+}
+
+/* Quatrième entorse à « le safran n'est jamais un texte » : les mêmes
+   accolades que le logotype, et pour la même raison — un signe, pas une
+   ligne à lire. Voir CHARTE.md, § 4. */
+.portee-cartouche::before {
+  content: "{";
+  color: var(--safran);
+}
+
+.portee-cartouche::after {
+  content: "}";
+  color: var(--safran);
+}
+
+.portee-cartouche[data-portee="bergeracois"] {
+  color: var(--dark);
+}
+
+/* --------------------------------------------------------------------------
    Code
    -------------------------------------------------------------------------- */
 

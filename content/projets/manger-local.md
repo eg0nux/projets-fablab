@@ -1,5 +1,6 @@
 ---
 title: Manger local
+portee: partout
 ---
 
 ==De la graine à l'assiette. Fabriquer l'équipement d'un potager nourricier (bacs, serre semi-automatisée avec arrosage piloté, séchoir solaire, poulailler) pour une cantine, une épicerie solidaire ou un jardin partagé, puis clore le parcours par un repas préparé et servi par les participant-es. Du bois au capteur d'humidité, et du plant à l'assiette.==

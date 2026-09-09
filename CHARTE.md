@@ -164,10 +164,10 @@ Quatre règles :
    se lit pas : il n'est jamais la couleur d'une ligne à lire. Il est
    toujours un bloc, une barre ou un filet, et le texte posé sur lui est le
    noir de la page — `--sur-safran` dans la feuille : l'encre sur papier, le
-   fond lui-même sur thème sombre. Trois entorses, qui sont des marques et
-   non des lignes : les accolades du logotype, le croisillon du millésime, et
-   les intitulés racine de l'explorateur — les rayons — en gras et en
-   capitales. Le seul safran pâli est le dièse en filigrane du titre de page,
+   fond lui-même sur thème sombre. Quatre entorses, qui sont des marques
+   et non des lignes : les accolades du logotype et celles du cartouche de
+   portée, le croisillon du millésime, et les intitulés racine de
+   l'explorateur — les rayons — en gras et en capitales. Le seul safran pâli est le dièse en filigrane du titre de page,
    mélangé vers le papier, jamais transparent.
 2. **Le noir est un fond aussi.** Le chapeau est un bloc d'encre plein, texte
    au papier ; sur thème sombre le bloc est crème et le texte noir, `--dark`
@@ -243,7 +243,11 @@ et son rail où la section courante est marquée en safran, puis les rétroliens
 
 **En-tête de page** : le fil d'Ariane en petites capitales grises, maillons
 séparés de chevrons, le titre en
-capitales sur son dièse en filigrane, la date et le temps de lecture en gris ;
+capitales sur son dièse en filigrane, suivi sur le catalogue du **cartouche
+de portée** — `{bergeracois}` ou `{partout}`, petites capitales entre
+accolades safran, à l'encre quand le parcours tient au territoire et au gris
+quand il se transpose partout : le cas ordinaire ne s'annonce pas —, la date
+et le temps de lecture en gris ;
 au bout de cette ligne, contre le bord droit de la colonne et sur les seules
 fiches, le **bouton d'impression** — une imprimante de trois traits, du gris de
 la ligne qu'elle termine, qui s'encre au survol, allume son voyant en safran et
