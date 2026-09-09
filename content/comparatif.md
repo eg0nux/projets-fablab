@@ -2,7 +2,7 @@
 title: Tableau comparatif
 ---
 
-==Aucun de ces projets n'est meilleur qu'un autre : ils ne demandent ni le même atelier, ni le même budget, ni les mêmes partenaires. Six repères pour les situer les uns par rapport aux autres. Plus il y a de segments, plus c'est favorable : cinq segments en accessibilité, c'est le plus facile à mener ; cinq en coût matière, c'est le moins cher à fabriquer.==
+==Aucun de ces projets n'est meilleur qu'un autre : ils ne demandent ni le même atelier, ni le même budget, ni les mêmes partenaires. Six repères pour les situer les uns par rapport aux autres. Plus il y a de barres, plus c'est favorable : cinq barres en accessibilité, c'est le plus facile à mener ; cinq en coût matière, c'est le moins cher à fabriquer.==
 
 > [!note]
 > Projets classés par ordre alphabétique. [[essaimer|Essaimer]] n'est pas noté ici.
@@ -38,8 +38,8 @@ title: Tableau comparatif
 ## Lecture des indicateurs
 
 - **Originalité** : caractère inédit du concept.
-- **Accessibilité** : facilité de mise en œuvre (technique, encadrement, sécurité). _Indicateur inversé_ : cinq segments = le plus simple à mener.
+- **Accessibilité** : facilité de mise en œuvre (technique, encadrement, sécurité). _Indicateur inversé_ : cinq barres = le plus simple à mener.
 - **Polyvalence FabLab** : diversité des machines et apprentissages mobilisés (laser, 3D, électronique, couture, bois…).
 - **Impact social** : utilité directe pour des bénéficiaires et force de remobilisation.
 - **Ancrage territorial** : lien au patrimoine, aux acteurs et aux filières locales.
-- **Coût matière** : budget de fabrication. _Indicateur inversé_ : cinq segments = le plus économique (≈ 300 €), un seul = le plus coûteux (> 2 000 €).
+- **Coût matière** : budget de fabrication. _Indicateur inversé_ : cinq barres = le plus économique (≈ 300 €), une seule = le plus coûteux (> 2 000 €).
