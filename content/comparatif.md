@@ -38,8 +38,8 @@ title: Tableau comparatif
 ## Lecture des indicateurs
 
 - **Originalité** : caractère inédit du concept.
-- **Accessibilité** : facilité de mise en œuvre (technique, encadrement, sécurité). _Indicateur inversé_ : ★★★★★ = le plus simple à mener.
+- **Accessibilité** : facilité de mise en œuvre (technique, encadrement, sécurité). _Indicateur inversé_ : cinq segments = le plus simple à mener.
 - **Polyvalence FabLab** : diversité des machines et apprentissages mobilisés (laser, 3D, électronique, couture, bois…).
 - **Impact social** : utilité directe pour des bénéficiaires et force de remobilisation.
 - **Ancrage territorial** : lien au patrimoine, aux acteurs et aux filières locales.
-- **Coût matière** : budget de fabrication. _Indicateur inversé_ : ★★★★★ = le plus économique (≈ 300 €), ★☆☆☆☆ = le plus coûteux (> 2 000 €).
+- **Coût matière** : budget de fabrication. _Indicateur inversé_ : cinq segments = le plus économique (≈ 300 €), un seul = le plus coûteux (> 2 000 €).
