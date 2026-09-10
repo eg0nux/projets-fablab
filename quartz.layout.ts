@@ -12,18 +12,17 @@ const libelle = (node: { slugSegment: string; displayName: string }) => {
   if (node.slugSegment === "projets") node.displayName = "Projets"
 }
 
-// Ordre de l'explorateur : les pages avant les rayons. « La méthode » et le
-// tableau comparatif sont les deux pages du catalogue qu'on cherche le plus,
-// et le rayon « Projets », ouvert d'emblée comme ceux de fablab, les
-// repoussait sous le fondu du bas de la colonne. Mêmes contraintes de
+// Ordre de l'explorateur : les rayons avant les pages. Le catalogue, ce sont
+// les projets ; « La méthode » et le tableau comparatif se lisent après, une
+// fois qu'on a vu ce qu'ils servent à comparer. Mêmes contraintes de
 // sérialisation que `libelle`, et pas de fonction interne (esbuild
 // l'envelopperait dans un helper absent du navigateur).
 const ordre = (
   a: { isFolder: boolean; displayName: string },
   b: { isFolder: boolean; displayName: string },
 ) => {
-  const rangA = a.isFolder ? 1 : 0
-  const rangB = b.isFolder ? 1 : 0
+  const rangA = a.isFolder ? 0 : 1
+  const rangB = b.isFolder ? 0 : 1
   if (rangA !== rangB) return rangA - rangB
   return a.displayName.localeCompare(b.displayName, undefined, {
     numeric: true,
