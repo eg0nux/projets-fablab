@@ -687,20 +687,30 @@ body[data-slug="index"] .page > #quartz-body footer {
    Titre de page : le dièse en filigrane
 
    Le titre est en capitales, en gras, et son dièse est un motif de fond,
-   haut de deux lignes, dans un safran pâli : le seul endroit de la charte où
-   le safran n'est pas plein. Le titre est décalé vers la droite juste assez
-   pour que sa première lettre morde sur le dièse ; le chevauchement fait
-   tenir les deux ensemble — côte à côte, on lirait un symbole puis un titre
-   sans rapport. Les ## et ###, eux, portent une barre de repérage (plus
-   bas) : la hiérarchie se lit au signe pour la page, à la barre pour ses
-   sections.
+   haut de près de deux lignes, dans un safran pâli : le seul endroit de la
+   charte où le safran n'est pas plein. Le titre est décalé vers la droite
+   juste assez pour que sa première lettre morde sur le dièse ; le
+   chevauchement fait tenir les deux ensemble — côte à côte, on lirait un
+   symbole puis un titre sans rapport. Les ## et ###, eux, portent une barre
+   de repérage (plus bas) : la hiérarchie se lit au signe pour la page, à la
+   barre pour ses sections.
+
+   Le dièse repose sur la ligne de base du titre et monte au-dessus, jamais
+   en dessous : centré sur le titre, il descendait sur la ligne de date, et
+   le gris des deux premiers chiffres se perdait dans le safran pâli — on
+   lisait « J9 sept. » sur toute fiche. Il est posé en ligne, dans la boîte
+   du titre, sans largeur ni hauteur de ligne : sa ligne de base est alors
+   celle du titre, quelle que soit la police, et il n'écarte rien. Son corps
+   est calculé pour qu'il tienne entre le fil d'Ariane et la date : à 2,5
+   corps de titre, le dessin du dièse fait 1,8 corps de haut, la marge
+   au-dessus du titre en fait 2 — il s'arrête sous le fil d'Ariane.
 
    Le pâlissement est un mélange vers le papier, pas une transparence : la
    teinte est posée à plat, comme tout le reste, et elle suit le thème parce
    que `--light` en fait partie.
 
    Le dièse passe derrière le texte par `z-index: -1`, ce qui suppose que le
-   h1 n'ait pas de fond propre. Il est sorti du flux, donc il n'écarte rien.
+   h1 n'ait pas de fond propre.
 
    Le corps suit la largeur de la colonne, entre 1,35 et 1,75 rem : des
    capitales monospace à 1,75 rem tiennent trois lignes sur un téléphone pour
@@ -720,16 +730,19 @@ h1.article-title {
 
 h1.article-title::before {
   content: "#";
-  position: absolute;
-  left: -0.12em;
-  top: 50%;
-  transform: translateY(-50%);
+  display: inline-block;
+  width: 0;
+  line-height: 0;
+  vertical-align: baseline;
+  position: relative;
+  /* Ramené devant le retrait du titre (0,62 corps de titre, soit 0,25 du
+     sien), puis d'un dixième de plus, pour que la première lettre morde. */
+  left: -0.35em;
   z-index: -1;
 
   font-family: var(--headerFont);
   font-weight: 700;
-  font-size: 3em; /* environ deux lignes de titre */
-  line-height: 1;
+  font-size: 2.5em;
   color: color-mix(in srgb, var(--safran) 22%, var(--light));
 
   user-select: none;
@@ -3162,25 +3175,31 @@ article h4 {
 }
 
 /* --------------------------------------------------------------------------
-   Tableau comparatif du catalogue : volume et colonnes d'appréciation
+   Tableau comparatif du catalogue : le nom du parcours et six colonnes de
+   repères
 
-   Propre à lab.egonux.com, et délimité par sa page : la règle colorerait
-   sinon la troisième colonne de toute table de réglages sur l'autre site. Le
-   volume s'efface parce qu'il se lit en diagonale ; les colonnes de notes se
-   comparent verticalement, en jauges — celles du bloc « Repères », posées
-   dans chaque cellule par le même transformer. Deux encres à plat, pas de
-   troisième : ni étoiles, ni teinte pour les tenir à distance.
+   Propre à lab.egonux.com, et délimité par sa page : les règles
+   s'appliqueraient sinon à toute table de réglages sur l'autre site. Les
+   colonnes de notes se comparent verticalement, en jauges — celles du bloc
+   « Repères », posées dans chaque cellule par le même transformer. Deux
+   encres à plat, pas de troisième : ni étoiles, ni teinte pour les tenir à
+   distance.
+
+   Sous 1000 px, la colonne de lecture ne tient plus les sept colonnes : le
+   tableau ne montrait que le nom et la première jauge, les cinq autres
+   défilaient hors champ sans que rien le dise. Il se replie alors comme le
+   bloc « Repères » d'une fiche : une rangée par parcours, le nom en
+   étiquette sur toute la largeur, puis les six jauges en grille, chacune
+   précédée de son intitulé de colonne en signalétique — l'intitulé vient de
+   l'en-tête du tableau, que le transformer recopie dans `data-repere` sur
+   chaque cellule. Rien ne défile, tout se voit.
    -------------------------------------------------------------------------- */
 
 body[data-slug="comparatif"] article tbody td:first-child {
   font-weight: 600;
 }
 
-body[data-slug="comparatif"] article tbody td:nth-child(2) {
-  color: var(--gray);
-}
-
-body[data-slug="comparatif"] article tbody td:nth-child(n + 3) {
+body[data-slug="comparatif"] article tbody td:nth-child(n + 2) {
   white-space: nowrap;
 }
 
@@ -3225,6 +3244,68 @@ body[data-slug="comparatif"] article tbody tr:nth-child(even) td:first-child a:h
 body[data-slug="comparatif"] article tbody tr:nth-child(even) td:first-child a:focus-visible {
   background-color: var(--safran);
   color: var(--sur-safran);
+}
+
+/* Le repli en grille : sous 1000 px, chaque rangée devient un bloc. Les
+   éléments de tableau perdent leur affichage tabulaire ; l'en-tête, recopié
+   dans chaque cellule, n'a plus rien à dire. La zébrure d'une rangée sur
+   deux reste : elle sépare les parcours comme elle séparait les lignes. */
+@media screen and (max-width: 1000px) {
+  body[data-slug="comparatif"] article table {
+    display: block;
+    overflow: visible;
+  }
+
+  body[data-slug="comparatif"] article thead {
+    display: none;
+  }
+
+  body[data-slug="comparatif"] article tbody {
+    display: block;
+  }
+
+  body[data-slug="comparatif"] article tbody tr {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.35em 1.4em;
+    padding: 0.8em 0.7em 0.9em;
+    border-bottom: 1px solid var(--lightgray);
+  }
+
+  body[data-slug="comparatif"] article tbody td {
+    display: block;
+    height: auto;
+    padding: 0;
+    border-bottom: none;
+  }
+
+  body[data-slug="comparatif"] article tbody td:first-child {
+    grid-column: 1 / -1;
+    margin-bottom: 0.35em;
+  }
+
+  /* Une jauge et son intitulé : la ligne du bloc « Repères ». */
+  body[data-slug="comparatif"] article tbody td[data-repere] {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.6em;
+  }
+
+  body[data-slug="comparatif"] article tbody td[data-repere]::before {
+    content: attr(data-repere);
+    font-family: var(--codeFont);
+    font-size: 0.74rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--gray);
+  }
+}
+
+@media screen and (max-width: 560px) {
+  body[data-slug="comparatif"] article tbody tr {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 /* La liste « Tous les projets » de l'accueil du catalogue : vingt-cinq

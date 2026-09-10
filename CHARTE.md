@@ -130,7 +130,10 @@ l'illustration.
 
 Le `#` est safran quand il est écrit (croisillon du titre, pied de page), et
 safran pâli vers le papier quand il est un motif : le filigrane du titre de
-page, deux lignes de haut, mordu par la première lettre du titre. C'est le
+page, haut de près de deux lignes, mordu par la première lettre du titre.
+Il repose sur la ligne de base du titre et monte au-dessus d'elle, jamais en
+dessous : centré sur le titre, il descendait sur la ligne de date, dont les
+premiers chiffres se perdaient dans le pâli (décidé le 2026-09-10). C'est le
 seul safran qui ne soit pas plein. Les sous-titres n'affichent plus leurs
 dièses : leur niveau se lit à la barre de repérage posée au-dessus — 4 px sur
 2 rem pour un `##`, 3 px sur 1,25 rem pour un `###`, et un filet devant le
@@ -233,7 +236,11 @@ de fabrication, pourcentage du sommaire.
 lecture, puis l'explorateur ouvert, tout en capitales, les intitulés racine
 en safran et en gras, les rubriques imbriquées à l'encre, les entrées sans
 enfant d'un dossier (pages, et fiches logées dans un dossier) alternant le
-corps et le gris, la page courante en étiquette safran. La liste de l'explorateur défile
+corps et le gris, la page courante en étiquette safran. Une fiche logée dans
+un dossier — `objets/pong-led/index.md` avec son `img/` — est une page, pas
+un rayon : ni chevron, ni graisse de rubrique, et l'étiquette de page
+courante quand on y est ; Quartz en faisait un dossier, l'explorateur le
+corrige (décidé le 2026-09-10). La liste de l'explorateur défile
 sous la molette comme sous le pavé tactile : les sous-listes de dossiers ne
 retiennent plus le geste (voir le commentaire sur `overscroll-behavior`).
 
@@ -247,7 +254,12 @@ capitales sur son dièse en filigrane, suivi sur le catalogue du **cartouche
 de portée** — `{bergeracois}` ou `{partout}`, petites capitales entre
 accolades safran, à l'encre quand le parcours tient au territoire et au gris
 quand il se transpose partout : le cas ordinaire ne s'annonce pas —, la date
-et le temps de lecture en gris ;
+et le temps de lecture en gris. La date est celle qui a un sens pour la
+fiche : pour un objet, le mois de sa réalisation, `realise-le` dans le
+frontmatter, écrit sans le jour — « avril 2026 » ; pour le reste, le jour de
+la dernière modification d'après l'historique git. Quand cet historique n'est
+pas là (Cloudflare Pages clone sans lui), la page n'affiche pas de date
+plutôt que celle du déploiement (décidé le 2026-09-10) ;
 au bout de cette ligne, contre le bord droit de la colonne et sur les seules
 fiches, le **bouton d'impression** — une imprimante de trois traits, du gris de
 la ligne qu'elle termine, qui s'encre au survol, allume son voyant en safran et
@@ -287,7 +299,11 @@ la ligne du titre, le bandeau de marques quand la fiche en a (voir §7).
 - la **carte de fabrication** (fablab) : machines, matériaux, temps, coût,
   dans un cadre, pictogramme par ligne ;
 - les **repères** (lab) : six appréciations en jauges segmentées, entre deux
-  filets ; le tableau comparatif reprend la même jauge dans chaque cellule ;
+  filets ; le tableau comparatif reprend la même jauge dans chaque cellule,
+  et sous 1000 px, où sept colonnes ne tiennent plus, il se replie comme le
+  bloc : une rangée par parcours, le nom en étiquette puis les six jauges en
+  grille, chacune précédée de l'intitulé de sa colonne — rien ne défile hors
+  champ (décidé le 2026-09-10) ;
 - les **liens** en étiquettes safran à angles vifs, texte au noir de la page
   et en JetBrains Mono 700 à 0,92 em, la même graisse pour tous — un lien est
   un objet du site, pas un mot de la phrase, et une étiquette est une
@@ -438,7 +454,10 @@ Une fiche punaisée près d'une machine est un usage réel.
 | `quartz/components/Marques.tsx`                | le partenaire d'un projet                                                                                                                                         | fablab seulement                                                                     |
 | `quartz/components/Imprimer.tsx`               | le bouton d'impression, et la règle qui dit ce qu'est une fiche                                                                                                   | identique                                                                            |
 | `quartz/components/scripts/imprimer.inline.ts` | le clic, le pied de la feuille, et les blocs noués pour ne pas se couper                                                                                          | identique                                                                            |
-| `quartz/components/ContentMeta.tsx`            | un import et une balise : le bouton au bout de la ligne de date ; à reporter à chaque montée de version                                                           | identique                                                                            |
+| `quartz/components/ContentMeta.tsx`            | un import et une balise : le bouton au bout de la ligne de date ; et la précision de la date passée à `Date.tsx` ; à reporter à chaque montée de version          | identique                                                                            |
+| `quartz/plugins/transformers/lastmod.ts`       | la date d'une fiche : `realise-le` au mois près, et rien quand l'historique git est tronqué ; à reporter à chaque montée de version                              | identique                                                                            |
+| `quartz/components/Date.tsx`                   | une date au mois près s'écrit sans le jour ; `PageList.tsx` lui passe la précision comme `ContentMeta.tsx` ; à reporter à chaque montée de version               | identique                                                                            |
+| `quartz/components/scripts/explorer.inline.ts` | un dossier sans enfant est rendu comme une page ; à reporter à chaque montée de version                                                                          | identique                                                                            |
 | `quartz/components/scripts/popover.inline.ts`  | un garde en tête du script : pas de prévisualisation au survol d'un lien de fichier, qui n'a rien à montrer et pèse lourd ; à reporter à chaque montée de version | identique                                                                            |
 | `quartz/plugins/transformers/fabrication.ts`   | la carte de fabrication                                                                                                                                           | fablab seulement                                                                     |
 | `quartz/plugins/transformers/reperes.ts`       | les jauges du catalogue                                                                                                                                           | lab seulement                                                                        |
@@ -468,3 +487,8 @@ l'ancienne feuille.
 - **Les tracés de `logos/`** ont été passés à Sérigraphie sur les fichiers
   eux-mêmes, le script qui les avait produits n'étant pas dans le dépôt ; au
   prochain changement de construction, il faudra le réécrire.
+- **Les dates de fablab.** Cloudflare Pages construit sans historique git :
+  les objets portent leur mois (`realise-le`), mais les techniques, les pages
+  de rubrique et « L'atelier » restent sans date tant que la construction ne
+  passe pas par GitHub Actions avec l'historique complet, comme celle de
+  lab (`deploiement.yaml`, `fetch-depth: 0`).

@@ -141,13 +141,23 @@ function createFolderNode(
   }
 
   for (const child of node.children) {
-    const childNode = child.isFolder
+    const childNode = estUnRayon(child)
       ? createFolderNode(currentSlug, child, opts)
       : createFileNode(currentSlug, child)
     ul.appendChild(childNode)
   }
 
   return li
+}
+
+// Écart au Quartz d'origine, à reporter à chaque montée de version : une
+// fiche logée dans un dossier (`objets/pong-led/index.md`, avec son `img/`)
+// est un dossier pour Quartz, qui lui posait un chevron n'ouvrant sur rien,
+// la graisse des rubriques, et jamais l'étiquette de page courante — le
+// titre d'un dossier ne la reçoit pas. Un dossier sans enfant est une page :
+// il est rendu comme telle. Voir CHARTE.md, § 6.
+function estUnRayon(node: FileTrieNode): boolean {
+  return node.isFolder && node.children.length > 0
 }
 
 async function setupExplorer(currentSlug: FullSlug) {
@@ -215,7 +225,7 @@ async function setupExplorer(currentSlug: FullSlug) {
     // Create and insert new content
     const fragment = document.createDocumentFragment()
     for (const child of trie.children) {
-      const node = child.isFolder
+      const node = estUnRayon(child)
         ? createFolderNode(currentSlug, child, opts)
         : createFileNode(currentSlug, child)
 

@@ -120,10 +120,58 @@ function estEtiquette(n: RootContent): boolean {
   )
 }
 
+function texte(n: RootContent): string {
+  if (n.type === "text") return n.value
+  if (n.type === "element") return n.children.map(texte).join("")
+  return ""
+}
+
+// Le tableau comparatif se replie en grille sur les écrans étroits (voir
+// custom.scss) : chaque cellule de note reçoit l'intitulé de sa colonne
+// dans `data-repere`, et la feuille de style le pose devant la jauge. Une
+// cellule qui ne contient pas de note n'a rien à porter.
+function annoterColonnes(table: Element): void {
+  const entetes: string[] = []
+  const tbody: Element[] = []
+  for (const section of table.children) {
+    if (section.type !== "element") continue
+    for (const rangee of section.children) {
+      if (rangee.type !== "element" || rangee.tagName !== "tr") continue
+      if (section.tagName === "thead") {
+        for (const cellule of rangee.children) {
+          if (cellule.type === "element") entetes.push(texte(cellule).trim())
+        }
+      } else {
+        tbody.push(rangee)
+      }
+    }
+  }
+  for (const rangee of tbody) {
+    let colonne = 0
+    for (const cellule of rangee.children) {
+      if (cellule.type !== "element") continue
+      const seule = cellule.children.length === 1 ? cellule.children[0] : undefined
+      if (
+        seule &&
+        seule.type === "text" &&
+        /^[★☆]{2,}$/.test(seule.value.trim()) &&
+        entetes[colonne]
+      ) {
+        cellule.properties = { ...cellule.properties, dataRepere: entetes[colonne] }
+      }
+      colonne++
+    }
+  }
+}
+
 function parcourir(noeuds: RootContent[]): void {
   noeuds.forEach((n, i) => {
     if (n.type !== "element") return
     const e = n as Element
+
+    if (e.tagName === "table") {
+      annoterColonnes(e)
+    }
 
     if (e.tagName === "p" && e.children.length === 2 && estEtiquette(e.children[0])) {
       const suite = e.children[1]
