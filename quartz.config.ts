@@ -1,5 +1,6 @@
 import { QuartzConfig } from "./quartz/cfg"
 import * as Plugin from "./quartz/plugins"
+import { codeClair, codeSombre } from "./quartz/styles/code-serigraphie"
 
 /**
  * Quartz 4 Configuration
@@ -69,10 +70,12 @@ const config: QuartzConfig = {
       Plugin.CreatedModifiedDate({
         priority: ["frontmatter", "git", "filesystem"],
       }),
+      // Les listings aux encres de la charte, pas à celles d'un éditeur :
+      // voir quartz/styles/code-serigraphie.ts.
       Plugin.SyntaxHighlighting({
         theme: {
-          light: "one-light",
-          dark: "one-dark-pro",
+          light: codeClair,
+          dark: codeSombre,
         },
         keepBackground: false,
       }),

@@ -14,10 +14,14 @@ footer {
   }
 }
 
-/* Pastille EcoIndex : reprise du badge d'ecoindex.fr : disque plein, lettre
-   blanche en gras, vert #2e9b43 pour un A. Dessinée en CSS plutôt qu'en image
-   ou en SVG distant : afficher une bonne note ne doit rien coûter en poids ni
-   en requêtes. */
+/* Pastille EcoIndex : le badge d'ecoindex.fr, disque plein et lettre en gras,
+   ramené aux encres de la charte — disque safran, lettre au noir de la page,
+   comme une étiquette. Le vert du badge d'origine était une troisième encre
+   au pied de chaque page (CHARTE.md, § 4). La note se lit à la teinte : un A
+   est safran plein, et chaque cran en dessous pâlit le disque vers le papier,
+   d'un mélange et non d'une transparence. Dessinée en CSS plutôt qu'en image
+   ou en SVG distant : afficher une bonne note ne doit rien coûter en poids
+   ni en requêtes. */
 .ecoindex {
   display: inline-flex;
   align-items: center;
@@ -45,20 +49,31 @@ footer {
   /* l'interlettrage du pied de page décentrerait la lettre dans le disque */
   letter-spacing: 0;
   line-height: 1;
-  /* sans couleur déclarée pour la note, la pastille reste neutre plutôt que
-     d'afficher le vert d'une bonne note par défaut */
-  background: var(--lightgray);
-  color: var(--darkgray);
+  background: var(--secondary);
+  color: var(--sur-safran);
 }
 
-/* Couleurs relevées sur les badges d'ecoindex.fr. Les notes claires y passent
-   en encre foncée : le blanc n'y tiendrait pas la lisibilité. */
-.ecoindex-note[data-note="A"] {
-  background: #2e9b43;
-  color: #fff;
-}
-
+/* Sept notes, sept crans : A plein, G presque papier. */
 .ecoindex-note[data-note="B"] {
-  background: #34bc6e;
-  color: #052d33;
+  background: color-mix(in srgb, var(--secondary) 85%, var(--light));
+}
+
+.ecoindex-note[data-note="C"] {
+  background: color-mix(in srgb, var(--secondary) 70%, var(--light));
+}
+
+.ecoindex-note[data-note="D"] {
+  background: color-mix(in srgb, var(--secondary) 55%, var(--light));
+}
+
+.ecoindex-note[data-note="E"] {
+  background: color-mix(in srgb, var(--secondary) 40%, var(--light));
+}
+
+.ecoindex-note[data-note="F"] {
+  background: color-mix(in srgb, var(--secondary) 28%, var(--light));
+}
+
+.ecoindex-note[data-note="G"] {
+  background: color-mix(in srgb, var(--secondary) 16%, var(--light));
 }

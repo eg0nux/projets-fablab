@@ -130,11 +130,13 @@ l'illustration.
 
 Le `#` est safran quand il est écrit (croisillon du titre, pied de page), et
 safran pâli vers le papier quand il est un motif : le filigrane du titre de
-page, haut de près de deux lignes, mordu par la première lettre du titre.
-Il repose sur la ligne de base du titre et monte au-dessus d'elle, jamais en
-dessous : centré sur le titre, il descendait sur la ligne de date, dont les
-premiers chiffres se perdaient dans le pâli (décidé le 2026-09-10). C'est le
-seul safran qui ne soit pas plein. Les sous-titres n'affichent plus leurs
+page, à peine plus haut que les capitales du titre, mordu par sa première
+lettre. Il est posé sur la ligne de base du titre, un dixième de corps en
+dessous, et dépasse les capitales d'un quart : haut de deux lignes et centré,
+il descendait sur la ligne de date, dont les premiers chiffres se perdaient
+dans le pâli ; posé sur la ligne de base à deux lignes et demie, il s'étirait
+vers le haut (décidé le 2026-09-10). C'est le seul safran qui ne soit pas
+plein. Les sous-titres n'affichent plus leurs
 dièses : leur niveau se lit à la barre de repérage posée au-dessus — 4 px sur
 2 rem pour un `##`, 3 px sur 1,25 rem pour un `###`, et un filet devant le
 `####`. Le `&` est à l'encre : c'est la couleur des titres, et le
@@ -190,13 +192,22 @@ Quatre règles :
    texte courant gardent une seule encre.
    Le bouton `{recherche}`, seul, garde le fond de la page et son cadre
    d'encre dans les deux thèmes : c'est un outil, pas un rayon.
-3. **Les marques d'autrui passent en noir.** Le logo du CIDFF est le seul en
-   couleur ; il est ramené à l'encre par un filtre, et tous les logos passent
-   en blanc plein sur fond sombre. Sur ces pages, la couleur d'une marque ne
-   dit rien.
+3. **Les marques d'autrui passent en noir.** Les logos du CIDFF et de l'APF,
+   et le pictogramme de situation du bandeau de fiche, sont en couleur dans
+   leurs fichiers ; ils sont ramenés à l'encre par un filtre, et tous les
+   logos passent en blanc plein sur fond sombre. Sur ces pages, la couleur
+   d'une marque ne dit rien. La note EcoIndex du pied de page est une
+   étiquette : disque safran, lettre au noir de la page, plus le vert du
+   badge d'origine ; un A est plein, et chaque cran en dessous pâlit le
+   disque vers le papier (décidé le 2026-09-10).
 4. **Pas de troisième encre.** Le doré qui tenait les étoiles du tableau
    comparatif à distance du rouge n'a plus de raison d'être : les étoiles
-   sont devenues les jauges des repères, à l'encre.
+   sont devenues les jauges des repères, à l'encre. Les listings de code
+   n'ont pas de thème d'éditeur non plus : le corps du code à la couleur du
+   corps de texte, les mots-clés à l'encre et en gras, les noms de fonctions
+   et de types à l'encre, les commentaires au gris des mentions — le thème
+   « Sérigraphie » de `quartz/styles/code-serigraphie.ts` (décidé le
+   2026-09-10).
 
 Les codes couleur cités dans une fiche (les consignes Trotec, par exemple)
 s'affichent avec une pastille pastel : c'est le seul endroit où d'autres
@@ -231,12 +242,17 @@ de fabrication, pourcentage du sommaire.
 
 ## 6. Le mobilier de page
 
-**Colonne de gauche**, sur toutes les pages : le logotype encadré, le bouton
-`{recherche}` dans la même construction, la bascule de thème, le mode
-lecture, puis l'explorateur ouvert, tout en capitales, les intitulés racine
-en safran et en gras, les rubriques imbriquées à l'encre, les entrées sans
-enfant d'un dossier (pages, et fiches logées dans un dossier) alternant le
-corps et le gris, la page courante en étiquette safran. Une fiche logée dans
+**Colonne de gauche**, sur toutes les pages, y compris celles que Quartz rend
+par son gabarit de liste : le logotype encadré, le bouton `{recherche}` dans
+la même construction, la bascule de thème, le mode lecture, puis
+l'explorateur ouvert, rayons déployés d'emblée sur les deux sites, tout en
+capitales, les intitulés racine en safran et en gras, les rubriques
+imbriquées à l'encre, les entrées sans enfant d'un dossier (pages, et fiches
+logées dans un dossier) alternant le corps et le gris, la page courante en
+étiquette safran. Sur le catalogue, les pages précèdent le rayon : « La
+méthode » et le tableau comparatif en tête, puis « Projets » et ses
+vingt-cinq fiches, que la colonne ne peut pas toujours montrer en entier
+(décidé le 2026-09-10). Une fiche logée dans
 un dossier — `objets/pong-led/index.md` avec son `img/` — est une page, pas
 un rayon : ni chevron, ni graisse de rubrique, et l'étiquette de page
 courante quand on y est ; Quartz en faisait un dossier, l'explorateur le
@@ -260,6 +276,9 @@ frontmatter, écrit sans le jour — « avril 2026 » ; pour le reste, le jour d
 la dernière modification d'après l'historique git. Quand cet historique n'est
 pas là (Cloudflare Pages clone sans lui), la page n'affiche pas de date
 plutôt que celle du déploiement (décidé le 2026-09-10) ;
+la ligne de date est alignée sur la première lettre du titre, hors de
+l'emprise du dièse, et resserrée d'un tiers de corps vers lui (décidé le
+2026-09-10) ;
 au bout de cette ligne, contre le bord droit de la colonne et sur les seules
 fiches, le **bouton d'impression** — une imprimante de trois traits, du gris de
 la ligne qu'elle termine, qui s'encre au survol, allume son voyant en safran et
@@ -333,7 +352,8 @@ de retour qu'en attendant on repart dans le passé. Même traitement sur
 egonux.com, dont la page est écrite à la main.
 
 **Pied de page** : une seule ligne, en capitales grises, mentions séparées
-d'un croisillon safran : Quartz, EcoIndex, Florian C., ego/nux.
+d'un croisillon safran : Quartz, EcoIndex et sa note en pastille safran,
+Florian C., ego/nux.
 
 **Accueil**, même structure sur les deux sites : le chapeau, puis les
 rubriques rendues au logotype (`> [!rubriques]` dans le markdown), puis
@@ -447,8 +467,10 @@ Une fiche punaisée près d'une machine est un usage réel.
 | Fichier                                        | Rôle                                                                                                                                                              | Jumeau sur l'autre site                                                              |
 | ---------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------ |
 | `quartz/styles/custom.scss`                    | toute la charte                                                                                                                                                   | identique                                                                            |
+| `quartz/styles/code-serigraphie.ts`            | le thème des listings de code, aux encres de la charte                                                                                                            | identique                                                                            |
+| `quartz/components/styles/footer.scss`         | la pastille EcoIndex à l'encre                                                                                                                                    | identique                                                                            |
 | `quartz.config.ts`                             | palette, polices, titre de site                                                                                                                                   | identique sauf `pageTitle` et `baseUrl`                                              |
-| `quartz.layout.ts`                             | mobilier des pages                                                                                                                                                | identique dans l'esprit ; fablab a le bandeau de marques et ses libellés de dossiers |
+| `quartz.layout.ts`                             | mobilier des pages ; explorateur ouvert et trié sur les deux sites, mode lecture sur les deux gabarits                                                            | identique dans l'esprit ; fablab a le bandeau de marques et ses libellés de dossiers |
 | `quartz/components/PageTitle.tsx`              | le logotype sur deux lignes                                                                                                                                       | identique                                                                            |
 | `quartz/components/Logos.tsx`                  | la maison                                                                                                                                                         | identique                                                                            |
 | `quartz/components/Marques.tsx`                | le partenaire d'un projet                                                                                                                                         | fablab seulement                                                                     |

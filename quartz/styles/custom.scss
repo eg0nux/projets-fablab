@@ -686,24 +686,22 @@ body[data-slug="index"] .page > #quartz-body footer {
 /* --------------------------------------------------------------------------
    Titre de page : le dièse en filigrane
 
-   Le titre est en capitales, en gras, et son dièse est un motif de fond,
-   haut de près de deux lignes, dans un safran pâli : le seul endroit de la
-   charte où le safran n'est pas plein. Le titre est décalé vers la droite
-   juste assez pour que sa première lettre morde sur le dièse ; le
+   Le titre est en capitales, en gras, et son dièse est un motif de fond, à
+   peine plus haut que ses capitales, dans un safran pâli : le seul endroit
+   de la charte où le safran n'est pas plein. Le titre est décalé vers la
+   droite juste assez pour que sa première lettre morde sur le dièse ; le
    chevauchement fait tenir les deux ensemble — côte à côte, on lirait un
    symbole puis un titre sans rapport. Les ## et ###, eux, portent une barre
    de repérage (plus bas) : la hiérarchie se lit au signe pour la page, à la
    barre pour ses sections.
 
-   Le dièse repose sur la ligne de base du titre et monte au-dessus, jamais
-   en dessous : centré sur le titre, il descendait sur la ligne de date, et
-   le gris des deux premiers chiffres se perdait dans le safran pâli — on
-   lisait « J9 sept. » sur toute fiche. Il est posé en ligne, dans la boîte
-   du titre, sans largeur ni hauteur de ligne : sa ligne de base est alors
-   celle du titre, quelle que soit la police, et il n'écarte rien. Son corps
-   est calculé pour qu'il tienne entre le fil d'Ariane et la date : à 2,5
-   corps de titre, le dessin du dièse fait 1,8 corps de haut, la marge
-   au-dessus du titre en fait 2 — il s'arrête sous le fil d'Ariane.
+   Le dièse est posé en ligne, dans la boîte du titre, sans largeur ni
+   hauteur de ligne : sa ligne de base est celle du titre, quelle que soit la
+   police, et il n'écarte rien. Il descend d'un dixième de son corps sous la
+   ligne de base et monte d'un quart de capitale au-dessus d'elles : haut de
+   deux lignes et centré sur le titre, il mordait la ligne de date, dont les
+   premiers chiffres se perdaient dans le pâli (« J9 sept. ») ; posé sur la
+   ligne de base à deux lignes et demie, il s'étirait vers le haut.
 
    Le pâlissement est un mélange vers le papier, pas une transparence : la
    teinte est posée à plat, comme tout le reste, et elle suit le thème parce
@@ -717,10 +715,16 @@ body[data-slug="index"] .page > #quartz-body footer {
    « Générateur de mot de passe », et le titre écrasait sa page.
    -------------------------------------------------------------------------- */
 
+/* Le corps du titre est une variable : la ligne de date s'aligne sur sa
+   première lettre, et doit suivre le même calcul. */
+:root {
+  --titre-corps: clamp(1.35rem, 5.2vw, 1.75rem);
+}
+
 h1.article-title {
   position: relative;
   z-index: 0;
-  font-size: clamp(1.35rem, 5.2vw, 1.75rem);
+  font-size: var(--titre-corps);
   margin-top: 2rem;
   padding-left: 0.62em;
   text-transform: uppercase;
@@ -735,14 +739,15 @@ h1.article-title::before {
   line-height: 0;
   vertical-align: baseline;
   position: relative;
-  /* Ramené devant le retrait du titre (0,62 corps de titre, soit 0,25 du
-     sien), puis d'un dixième de plus, pour que la première lettre morde. */
-  left: -0.35em;
+  /* Ramené devant le retrait du titre (0,62 corps de titre, soit 0,41 du
+     sien), puis d'un peu plus, pour que la première lettre morde. */
+  left: -0.5em;
+  top: 0.1em;
   z-index: -1;
 
   font-family: var(--headerFont);
   font-weight: 700;
-  font-size: 2.5em;
+  font-size: 1.5em;
   color: color-mix(in srgb, var(--safran) 22%, var(--light));
 
   user-select: none;
@@ -1187,6 +1192,11 @@ article li li:not([data-callout="rubriques"] *, .reperes-liste *)::before {
 .content-meta {
   color: var(--gray);
   letter-spacing: 0.01em;
+  /* Alignée sur la première lettre du titre, pas sur le dièse : le retrait
+     du titre (0,62 de son corps) est repris ici. La ligne s'en trouve hors
+     de l'emprise du dièse, et remonte d'un tiers de corps vers le titre. */
+  padding-left: calc(0.62 * var(--titre-corps));
+  margin-top: -0.3em;
 }
 
 /* --------------------------------------------------------------------------
@@ -1935,6 +1945,10 @@ article li li:not([data-callout="rubriques"] *, .reperes-liste *)::before {
   margin: 0;
   border: none;
   border-radius: 0;
+  /* Les marques d'autrui passent en noir (CHARTE.md, § 4) : le logotype APF
+     bleu et orange et son pictogramme sont ramenés à l'encre, comme le
+     CIDFF dans la colonne. Le thème sombre les retourne en blanc plus bas. */
+  filter: brightness(0);
 }
 
 /* Le picto porte son infobulle : « handicap moteur », « déficience
@@ -3465,6 +3479,20 @@ article code {
   padding: 0.1em 0.3em;
 }
 
+/* Les listings suivent la charte du texte, pas un thème d'éditeur : le
+   thème « Sérigraphie » de `quartz/styles/code-serigraphie.ts` écrit le
+   corps à la couleur du corps, les mots-clés à l'encre et en gras, les
+   commentaires en gris. Shiki pose la graisse dans une variable par thème,
+   comme il le fait pour la couleur ; Quartz ne lit que la couleur, on lit
+   la graisse ici. */
+code[data-theme*=" "] span {
+  font-weight: var(--shiki-light-font-weight, normal);
+}
+
+:root[saved-theme="dark"] code[data-theme*=" "] span {
+  font-weight: var(--shiki-dark-font-weight, normal);
+}
+
 /* --------------------------------------------------------------------------
    Impression : la fiche devient un document technique
 
@@ -3679,6 +3707,12 @@ article code {
 
   h1.article-title {
     padding-left: 0;
+  }
+
+  /* Sans dièse, la ligne de date n'a plus de retrait à suivre. */
+  .content-meta {
+    padding-left: 0;
+    margin-top: 0;
   }
 
   /* Les sections se numérotent. C'est le seul ajout du papier à ce que dit

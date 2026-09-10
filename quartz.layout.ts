@@ -2,6 +2,35 @@ import { PageLayout, SharedLayout } from "./quartz/cfg"
 import { QuartzComponent } from "./quartz/components/types"
 import * as Component from "./quartz/components"
 
+// Libellé de l'explorateur : le dossier `projets` s'affiche « Projets ».
+//
+// **Le code doit rester à l'intérieur de la fonction.** L'explorateur ne
+// transporte pas ce code : il le sérialise avec `toString()` et le réévalue
+// dans le navigateur, où rien de la portée d'ici n'existe (voir le
+// quartz.layout.ts de fablab, qui a essuyé les plâtres).
+const libelle = (node: { slugSegment: string; displayName: string }) => {
+  if (node.slugSegment === "projets") node.displayName = "Projets"
+}
+
+// Ordre de l'explorateur : les pages avant les rayons. « La méthode » et le
+// tableau comparatif sont les deux pages du catalogue qu'on cherche le plus,
+// et le rayon « Projets », ouvert d'emblée comme ceux de fablab, les
+// repoussait sous le fondu du bas de la colonne. Mêmes contraintes de
+// sérialisation que `libelle`, et pas de fonction interne (esbuild
+// l'envelopperait dans un helper absent du navigateur).
+const ordre = (
+  a: { isFolder: boolean; displayName: string },
+  b: { isFolder: boolean; displayName: string },
+) => {
+  const rangA = a.isFolder ? 1 : 0
+  const rangB = b.isFolder ? 1 : 0
+  if (rangA !== rangB) return rangA - rangB
+  return a.displayName.localeCompare(b.displayName, undefined, {
+    numeric: true,
+    sensitivity: "base",
+  })
+}
+
 // L'accueil garde son titre et sa date (le catalogue est daté, c'est son
 // millésime), mais ni fil d'Ariane ni sommaire : comme sur fablab.egonux.com,
 // la colonne de droite n'y porte que les logos des structures, que la grille
@@ -50,13 +79,7 @@ export const defaultContentPageLayout: PageLayout = {
         { Component: Component.ReaderMode() },
       ],
     }),
-    Component.Explorer({
-      mapFn: (node) => {
-        if (node.slugSegment === "projets") {
-          node.displayName = "Projets"
-        }
-      },
-    }),
+    Component.Explorer({ mapFn: libelle, sortFn: ordre, folderDefaultState: "open" }),
   ],
   right: [
     // Le CIDFF Dordogne anime l'atelier numérique, La Traverse l'héberge :
@@ -87,15 +110,10 @@ export const defaultListPageLayout: PageLayout = {
           grow: true,
         },
         { Component: Component.Darkmode() },
+        { Component: Component.ReaderMode() },
       ],
     }),
-    Component.Explorer({
-      mapFn: (node) => {
-        if (node.slugSegment === "projets") {
-          node.displayName = "Projets"
-        }
-      },
-    }),
+    Component.Explorer({ mapFn: libelle, sortFn: ordre, folderDefaultState: "open" }),
   ],
   // Même mobilier que les pages de contenu : une page de dossier ne doit pas
   // perdre le logo ni le sommaire en chemin.
