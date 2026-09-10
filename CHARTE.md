@@ -120,13 +120,13 @@ La charte tient à cinq signes de clavier, chacun avec un sens fixe. C'est ce
 qui donne aux deux sites leur unité sans recourir à la couleur ni à
 l'illustration.
 
-| Signe | Sens                                                   | Où on le voit                                                                                                                                                                                                           |
-| ----- | ------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `{ }` | la marque, ce qui appartient à l'atelier               | logotype, rubriques de l'accueil, bouton de recherche                                                                                                                                                                   |
-| `/`   | la section, le chemin                                  | `/DOC`, `/PROJETS`, `/SOMMAIRE`, le fil d'Ariane                                                                                                                                                                        |
-| `#`   | la structure                                           | dièse en filigrane derrière le titre de page, croisillon du millésime du catalogue, séparateurs du pied de page — et, sans être écrite, la barre de repérage au-dessus des sous-titres, qui dit le niveau à sa longueur |
-| `&`   | la maison, deux structures qui font une chose ensemble | entre les logos du CIDFF et de La Traverse, en Cormorant italique                                                                                                                                                       |
-| `==`  | la marque du chapeau, ce qu'on retient                 | le chapeau, qui s'écrit ainsi dans le markdown ; à l'écran c'est un bloc d'encre plein                                                                                                                                  |
+| Signe | Sens                                                   | Où on le voit                                                                                                                                                                                                                                                |
+| ----- | ------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `{ }` | la marque, ce qui appartient à l'atelier               | logotype, rubriques de l'accueil, bouton de recherche                                                                                                                                                                                                        |
+| `/`   | la section, le chemin                                  | `/DOC`, `/PROJETS`, `/SOMMAIRE`, le fil d'Ariane                                                                                                                                                                                                             |
+| `#`   | la structure                                           | dièse en filigrane derrière le titre de page, croisillon du millésime du catalogue, séparateurs du pied de page, dont le dernier est un bouton (§ 6) — et, sans être écrite, la barre de repérage au-dessus des sous-titres, qui dit le niveau à sa longueur |
+| `&`   | la maison, deux structures qui font une chose ensemble | entre les logos du CIDFF et de La Traverse, en Cormorant italique                                                                                                                                                                                            |
+| `==`  | la marque du chapeau, ce qu'on retient                 | le chapeau, qui s'écrit ainsi dans le markdown ; à l'écran c'est un bloc d'encre plein                                                                                                                                                                       |
 
 Le `#` est safran quand il est écrit (croisillon du titre, pied de page), et
 safran pâli vers le papier quand il est un motif : le filigrane du titre de
@@ -207,7 +207,9 @@ Quatre règles :
    corps de texte, les mots-clés à l'encre et en gras, les noms de fonctions
    et de types à l'encre, les commentaires au gris des mentions — le thème
    « Sérigraphie » de `quartz/styles/code-serigraphie.ts` (décidé le
-   2026-09-10).
+   2026-09-10). Les trois thèmes secrets du croisillon caché (§ 6) ne sont
+   pas une troisième encre mais un jeu, hors charte par construction : ils
+   n'existent que pour qui les cherche.
 
 Les codes couleur cités dans une fiche (les consignes Trotec, par exemple)
 s'affichent avec une pastille pastel : c'est le seul endroit où d'autres
@@ -355,6 +357,37 @@ egonux.com, dont la page est écrite à la main.
 d'un croisillon safran : Quartz, EcoIndex et sa note en pastille safran,
 Florian C., ego/nux.
 
+**Le croisillon caché** (décidé le 2026-09-10) : le croisillon qui précède
+ego/nux est un bouton, sans autre signe que sa glose au survol et au focus,
+« Toc toc Neo. », dans le mobilier des gloses. Au clic, la page encaisse la
+panne de la 404 — la secousse, quelques blocs qui se déchirent, le semis de
+pixels morts — et le pied de page devient une rangée d'étiquettes : Thème,
+puis matrice, IBM 5155, dos, puis Retour. Survoler ou focaliser une
+étiquette essaie le thème sur la page, cliquer l'adopte, avec une secousse
+plus courte ; cliquer l'étiquette adoptée la retire, et la page revient au
+thème de la charte qu'elle avait ; Retour et Échap referment, ce qui est
+adopté reste. Les étiquettes sont celles du site, au corps et à la graisse
+du pied de page : cadre d'encre sur le papier, l'adoptée en bloc d'encre, le
+safran au survol. C'est un easter egg, comme la noix d'egonux.com : rien
+dans le contenu ne l'annonce. Cinq mises en scène ont été essayées sur
+planche — une pluie de signes, un terminal, un écran de BIOS, cette panne,
+un Minitel — et c'est la seule qui reste dans la charte : elle n'ajoute
+rien, elle détourne ce qui est déjà là.
+
+Papier et encre restent à la bascule soleil / lune. Les trois thèmes de la
+rangée sont hors charte, et c'est le jeu : matrice (le vert P1 du tube),
+IBM 5155 (l'ambre du tube d'un portable de 1984) et dos (le
+bleu, le jaune et le cyan des écrans en mode texte) se posent sur le thème
+sombre, dont ils gardent toutes les règles, et n'en changent que les encres,
+la police du corps — celle du code — et quelques accessoires d'écran :
+lignes de balayage, halo, curseur bloc au bout du titre, photos et logos
+teintés ; dos met les cadres en double filet. Le safran y devient l'accent
+du tube, et le texte posé dessus reste le noir de la page. Le choix est
+mémorisé dans le navigateur (`theme-secret`, et `theme-avant` pour le thème
+de Quartz auquel revenir) à côté de celui de Quartz, reposé avant le premier
+rendu comme lui, et la bascule soleil / lune en sort : elle ne connaît que
+papier et encre.
+
 **Accueil**, même structure sur les deux sites : le chapeau, puis les
 rubriques rendues au logotype (`> [!rubriques]` dans le markdown), puis
 quelques lignes qui disent d'où vient ce qu'on va lire et où est l'autre
@@ -406,14 +439,17 @@ décalage chromatique ; la page 404 se fige de la même façon — le nombre gar
 son dédoublement, la déchirure une tranche, le semis de pixels sa position de
 départ ; la feuille du bouton d'impression ne sort plus, mais le voyant
 s'allume. Ce sont les trois seules animations des sites, et la troisième est
-la seule qui réponde à un geste.
+la seule qui réponde à un geste. La panne du croisillon caché (§ 6) en est
+une quatrième, qui répond à un clic : elle se joue aussi sous mouvement
+réduit, et seul le curseur des thèmes secrets s'y fige.
 
 **Impression** : ce qui sort de l'imprimante n'est pas une capture du site,
 c'est un document technique.
 
 Les colonnes, le pied de page et le bouton lui-même disparaissent. La palette
-entière passe à l'encre sur blanc, thème sombre compris — sans quoi la fiche
-en sortait presque vide, son `--dark` y étant la couleur du papier. Le corps
+entière passe à l'encre sur blanc, thème sombre et thèmes secrets compris —
+sans quoi la fiche en sortait presque vide, son `--dark` y étant la couleur
+du papier. Le corps
 descend à 10,5 pt dans une colonne de 16,8 cm, marges de reliure comprises.
 
 Les sections se **numérotent**, `1.` puis `1.1`, le numéro dans un pavé de
@@ -464,30 +500,32 @@ Une fiche punaisée près d'une machine est un usage réel.
 
 ## 9. Où ça vit
 
-| Fichier                                        | Rôle                                                                                                                                                              | Jumeau sur l'autre site                                                              |
-| ---------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------ |
-| `quartz/styles/custom.scss`                    | toute la charte                                                                                                                                                   | identique                                                                            |
-| `quartz/styles/code-serigraphie.ts`            | le thème des listings de code, aux encres de la charte                                                                                                            | identique                                                                            |
-| `quartz/components/styles/footer.scss`         | la pastille EcoIndex à l'encre                                                                                                                                    | identique                                                                            |
-| `quartz.config.ts`                             | palette, polices, titre de site                                                                                                                                   | identique sauf `pageTitle` et `baseUrl`                                              |
-| `quartz.layout.ts`                             | mobilier des pages ; explorateur ouvert et trié sur les deux sites, mode lecture sur les deux gabarits                                                            | identique dans l'esprit ; fablab a le bandeau de marques et ses libellés de dossiers |
-| `quartz/components/PageTitle.tsx`              | le logotype sur deux lignes                                                                                                                                       | identique                                                                            |
-| `quartz/components/Logos.tsx`                  | la maison                                                                                                                                                         | identique                                                                            |
-| `quartz/components/Marques.tsx`                | le partenaire d'un projet                                                                                                                                         | fablab seulement                                                                     |
-| `quartz/components/Imprimer.tsx`               | le bouton d'impression, et la règle qui dit ce qu'est une fiche                                                                                                   | identique                                                                            |
-| `quartz/components/scripts/imprimer.inline.ts` | le clic, le pied de la feuille, et les blocs noués pour ne pas se couper                                                                                          | identique                                                                            |
-| `quartz/components/ContentMeta.tsx`            | un import et une balise : le bouton au bout de la ligne de date ; et la précision de la date passée à `Date.tsx` ; à reporter à chaque montée de version          | identique                                                                            |
-| `quartz/plugins/transformers/lastmod.ts`       | la date d'une fiche : `realise-le` au mois près, et rien quand l'historique git est tronqué ; à reporter à chaque montée de version                              | identique                                                                            |
-| `quartz/components/Date.tsx`                   | une date au mois près s'écrit sans le jour ; `PageList.tsx` lui passe la précision comme `ContentMeta.tsx` ; à reporter à chaque montée de version               | identique                                                                            |
-| `quartz/components/scripts/explorer.inline.ts` | un dossier sans enfant est rendu comme une page ; à reporter à chaque montée de version                                                                          | identique                                                                            |
-| `quartz/components/scripts/popover.inline.ts`  | un garde en tête du script : pas de prévisualisation au survol d'un lien de fichier, qui n'a rien à montrer et pèse lourd ; à reporter à chaque montée de version | identique                                                                            |
-| `quartz/plugins/transformers/fabrication.ts`   | la carte de fabrication                                                                                                                                           | fablab seulement                                                                     |
-| `quartz/plugins/transformers/reperes.ts`       | les jauges du catalogue                                                                                                                                           | lab seulement                                                                        |
-| `quartz/plugins/emitters/folderPage.tsx`       | le titre des pages de rubrique, sans le « Dossier : » de Quartz                                                                                                   | identique                                                                            |
-| `quartz/i18n/locales/fr-FR.ts`                 | les libellés : décompte des fiches, page 404                                                                                                                      | identique                                                                            |
-| `quartz/static/og-image.png`                   | image de partage                                                                                                                                                  | propre à chaque site : le logotype encadré sur papier crème, le domaine en dessous   |
-| `logos/`                                       | la famille de logotypes en tracés                                                                                                                                 | fablab seulement, dossier de référence                                               |
-| `CHARTE.md`                                    | ce document                                                                                                                                                       | identique                                                                            |
+| Fichier                                          | Rôle                                                                                                                                                              | Jumeau sur l'autre site                                                              |
+| ------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------ |
+| `quartz/styles/custom.scss`                      | toute la charte                                                                                                                                                   | identique                                                                            |
+| `quartz/styles/code-serigraphie.ts`              | le thème des listings de code, aux encres de la charte                                                                                                            | identique                                                                            |
+| `quartz/components/styles/footer.scss`           | la pastille EcoIndex à l'encre                                                                                                                                    | identique                                                                            |
+| `quartz.config.ts`                               | palette, polices, titre de site                                                                                                                                   | identique sauf `pageTitle` et `baseUrl`                                              |
+| `quartz.layout.ts`                               | mobilier des pages ; explorateur ouvert et trié sur les deux sites, mode lecture sur les deux gabarits                                                            | identique dans l'esprit ; fablab a le bandeau de marques et ses libellés de dossiers |
+| `quartz/components/PageTitle.tsx`                | le logotype sur deux lignes                                                                                                                                       | identique                                                                            |
+| `quartz/components/Logos.tsx`                    | la maison                                                                                                                                                         | identique                                                                            |
+| `quartz/components/Marques.tsx`                  | le partenaire d'un projet                                                                                                                                         | fablab seulement                                                                     |
+| `quartz/components/Imprimer.tsx`                 | le bouton d'impression, et la règle qui dit ce qu'est une fiche                                                                                                   | identique                                                                            |
+| `quartz/components/scripts/imprimer.inline.ts`   | le clic, le pied de la feuille, et les blocs noués pour ne pas se couper                                                                                          | identique                                                                            |
+| `quartz/components/Footer.tsx`                   | le pied de page, et le croisillon caché avec sa glose                                                                                                             | identique                                                                            |
+| `quartz/components/scripts/croisillon.inline.ts` | le sélecteur de thème caché : la panne, la rangée d'étiquettes, et le thème secret reposé avant le premier rendu                                                  | identique                                                                            |
+| `quartz/components/ContentMeta.tsx`              | un import et une balise : le bouton au bout de la ligne de date ; et la précision de la date passée à `Date.tsx` ; à reporter à chaque montée de version          | identique                                                                            |
+| `quartz/plugins/transformers/lastmod.ts`         | la date d'une fiche : `realise-le` au mois près, et rien quand l'historique git est tronqué ; à reporter à chaque montée de version                               | identique                                                                            |
+| `quartz/components/Date.tsx`                     | une date au mois près s'écrit sans le jour ; `PageList.tsx` lui passe la précision comme `ContentMeta.tsx` ; à reporter à chaque montée de version                | identique                                                                            |
+| `quartz/components/scripts/explorer.inline.ts`   | un dossier sans enfant est rendu comme une page ; à reporter à chaque montée de version                                                                           | identique                                                                            |
+| `quartz/components/scripts/popover.inline.ts`    | un garde en tête du script : pas de prévisualisation au survol d'un lien de fichier, qui n'a rien à montrer et pèse lourd ; à reporter à chaque montée de version | identique                                                                            |
+| `quartz/plugins/transformers/fabrication.ts`     | la carte de fabrication                                                                                                                                           | fablab seulement                                                                     |
+| `quartz/plugins/transformers/reperes.ts`         | les jauges du catalogue                                                                                                                                           | lab seulement                                                                        |
+| `quartz/plugins/emitters/folderPage.tsx`         | le titre des pages de rubrique, sans le « Dossier : » de Quartz                                                                                                   | identique                                                                            |
+| `quartz/i18n/locales/fr-FR.ts`                   | les libellés : décompte des fiches, page 404                                                                                                                      | identique                                                                            |
+| `quartz/static/og-image.png`                     | image de partage                                                                                                                                                  | propre à chaque site : le logotype encadré sur papier crème, le domaine en dessous   |
+| `logos/`                                         | la famille de logotypes en tracés                                                                                                                                 | fablab seulement, dossier de référence                                               |
+| `CHARTE.md`                                      | ce document                                                                                                                                                       | identique                                                                            |
 
 Après un changement de charte : `npx quartz build` puis
 `node tools/versionner-assets.mjs`, sinon un cache continue de servir

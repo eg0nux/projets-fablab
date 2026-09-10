@@ -2951,6 +2951,368 @@ footer a:hover {
 }
 
 /* --------------------------------------------------------------------------
+   Le croisillon caché : le sélecteur de thème derrière le # du pied de page
+
+   Le croisillon qui précède ego/nux est un bouton (`Footer.tsx`) ; sa glose
+   « Toc toc Neo. » reprend le mobilier des gloses du site — papier, filet
+   de 2 px, monospace à 0,72 rem — et se pose au-dessus du signe, comme sur
+   egonux.com. Au clic, `croisillon.inline.ts` fait encaisser à la page la
+   panne de la 404 et remplace les mentions du pied de page par une rangée
+   d'étiquettes. CHARTE.md, § 6.
+   -------------------------------------------------------------------------- */
+
+/* Le bouton est le croisillon : la feuille retire le sien devant ce li-là,
+   et le dessine sur le bouton — safran, gras, 0,9 em, même marge. */
+footer ul li:has(> .croisillon)::before {
+  content: none;
+}
+
+footer .croisillon {
+  position: relative;
+  margin: 0 0.6rem 0 0;
+  padding: 0;
+  border: 0;
+  background: none;
+  font: inherit;
+  font-weight: 700;
+  font-size: 0.9em;
+  letter-spacing: inherit;
+  line-height: inherit;
+  color: var(--safran);
+  cursor: pointer;
+  user-select: none;
+}
+
+footer .croisillon:focus-visible {
+  outline: 2px solid var(--safran);
+  outline-offset: 0.35em;
+  border-radius: 2px;
+}
+
+/* La glose, au-dessus du signe : le pied de page est en bas de page, et une
+   glose posée dessous serait rognée. Elle ne prend pas le clic. */
+footer .croisillon-glose {
+  position: absolute;
+  bottom: calc(100% + 0.5em);
+  left: 50%;
+  z-index: 3;
+  width: max-content;
+  transform: translateX(-50%);
+  padding: 0.3em 0.55em 0.34em;
+  border: 2px solid var(--dark);
+  border-radius: 2px;
+  background-color: var(--light);
+  color: var(--dark);
+  font-size: 0.72rem;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  line-height: 1.2;
+  text-transform: none;
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity 0.14s ease-out;
+  pointer-events: none;
+}
+
+footer .croisillon:hover .croisillon-glose,
+footer .croisillon:focus-visible .croisillon-glose {
+  opacity: 1;
+}
+
+/* La panne : la secousse de la 404 sur la page entière, quatre blocs qui se
+   déchirent, et le semis de pixels morts par-dessus tout, le temps que dit
+   `--panne-duree` (0,7 s à l'ouverture, 0,32 s quand on adopte un thème).
+   Les images-clés `erreur-*` sont celles de la 404, plus bas dans cette
+   feuille. Rien de tout cela ne s'arrête sous mouvement réduit : c'est un
+   clic qui l'a demandé, comme la feuille du bouton d'impression. */
+.page.en-panne {
+  animation: erreur-secousse var(--panne-duree, 0.7s) steps(1, end) 1;
+}
+
+.panne-tranche {
+  animation: panne-tranche 0.5s steps(1, end) 1;
+}
+
+@keyframes panne-tranche {
+  0% {
+    transform: translateX(var(--dx, 8px));
+    filter: drop-shadow(3px 0 #f26b1d);
+  }
+  30% {
+    transform: translateX(calc(var(--dx, 8px) * -0.6));
+    filter: drop-shadow(-3px 0 var(--dark));
+  }
+  55% {
+    transform: none;
+    filter: none;
+  }
+  70% {
+    transform: translateX(calc(var(--dx, 8px) * 0.4));
+    filter: drop-shadow(2px 0 #f26b1d);
+  }
+  100% {
+    transform: none;
+    filter: none;
+  }
+}
+
+.panne-semis {
+  position: fixed;
+  inset: 0;
+  z-index: 150;
+  pointer-events: none;
+  opacity: 0;
+  background-image:
+    radial-gradient(circle, var(--dark) 0 1px, transparent 1.2px),
+    radial-gradient(circle, var(--secondary) 0 1px, transparent 1.2px),
+    radial-gradient(circle, var(--dark) 0 1px, transparent 1.2px),
+    radial-gradient(circle, var(--tertiary) 0 1px, transparent 1.2px);
+  background-size:
+    41px 29px,
+    67px 43px,
+    53px 71px,
+    89px 37px;
+  animation: erreur-pixels var(--panne-duree, 0.7s) steps(1, end) 1;
+}
+
+/* La rangée : les mentions s'effacent, les étiquettes prennent leur place,
+   une à une et par pas — un glitch ne glisse pas, il saute. Croisillon
+   devant « Thème » et devant « Retour » seulement : les étiquettes sont une
+   rangée, pas des mentions. */
+footer.selecteur > p,
+footer.selecteur > ul:not(.themes) {
+  display: none;
+}
+
+footer .themes {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.6rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+footer .themes li.etiquette-li::before {
+  content: none;
+}
+
+footer .themes li {
+  animation: panne-apparition 0.36s steps(3, end) both;
+  animation-delay: calc(var(--rang, 0) * 55ms);
+}
+
+@keyframes panne-apparition {
+  0% {
+    visibility: hidden;
+    transform: translateX(6px);
+  }
+  50% {
+    visibility: visible;
+    transform: translateX(-4px);
+  }
+  100% {
+    visibility: visible;
+    transform: none;
+  }
+}
+
+/* Les étiquettes, au corps et à la graisse du pied de page : cadre d'encre
+   sur le papier, l'adoptée en bloc d'encre, le safran au survol et au
+   focus — l'étiquette du site, une fois de plus. */
+footer .themes .etiquette {
+  padding: 0.18em 0.5em 0.22em;
+  border: 2px solid var(--dark);
+  background: var(--light);
+  color: var(--dark);
+  font: inherit;
+  font-weight: 700;
+  letter-spacing: inherit;
+  text-transform: inherit;
+  line-height: 1.2;
+  cursor: pointer;
+}
+
+footer .themes .etiquette.actif {
+  background: var(--dark);
+  color: var(--light);
+}
+
+footer .themes .etiquette:hover,
+footer .themes .etiquette:focus-visible {
+  background: var(--safran);
+  border-color: var(--safran);
+  color: var(--sur-safran);
+  outline: none;
+}
+
+/* « Retour » est une mention comme les autres : gris, filet, encre au
+   survol. */
+footer .themes .retour {
+  padding: 0;
+  border: 0;
+  border-bottom: 1px solid color-mix(in srgb, var(--gray) 45%, transparent);
+  background: none;
+  color: var(--gray);
+  font: inherit;
+  letter-spacing: inherit;
+  text-transform: inherit;
+  cursor: pointer;
+}
+
+footer .themes .retour:hover,
+footer .themes .retour:focus-visible {
+  color: var(--dark);
+  border-bottom: 2px solid var(--safran);
+  outline: none;
+}
+
+/* --------------------------------------------------------------------------
+   Les thèmes secrets : matrice, IBM 5155, dos
+
+   Hors charte, par choix (CHARTE.md, § 4 et § 6). Chacun se pose par
+   `data-theme` sur <html> par-dessus le thème sombre de Quartz, dont il
+   garde toutes les règles : seules les neuf variables changent, plus la
+   police du corps, qui prend celle du code. Le safran devient l'accent du
+   tube, et `--sur-safran` reste le noir de la page. À l'écran seulement :
+   la feuille imprimée force sa palette en `!important` (plus bas) et n'a
+   que faire de lignes de balayage.
+
+   Les palettes portent les deux attributs, `saved-theme` et `data-theme` :
+   Quartz émet ses variables après cette feuille, sous `:root[saved-theme]`,
+   et à spécificité égale c'est lui qui gagnerait — un thème secret resterait
+   à l'encre sur fond sombre, avec ses lignes de balayage pour seul signe.
+   -------------------------------------------------------------------------- */
+@media screen {
+  :root[saved-theme][data-theme] {
+    --bodyFont: var(--codeFont);
+    color-scheme: dark;
+  }
+
+  :root[saved-theme][data-theme="matrice"] {
+    --light: #040805;
+    --lightgray: #0e2a15;
+    --gray: #2f9a4d;
+    --darkgray: #43d96c;
+    --dark: #8cffab;
+    --secondary: #00ff41;
+    --tertiary: #00ff41;
+    --highlight: rgba(0, 255, 65, 0.16);
+    --textHighlight: #00ff41;
+  }
+
+  :root[saved-theme][data-theme="ibm-5155"] {
+    --light: #0d0800;
+    --lightgray: #3a2600;
+    --gray: #a8760f;
+    --darkgray: #e8a220;
+    --dark: #ffd27a;
+    --secondary: #ffb000;
+    --tertiary: #ffb000;
+    --highlight: rgba(255, 176, 0, 0.16);
+    --textHighlight: #ffb000;
+  }
+
+  :root[saved-theme][data-theme="dos"] {
+    --light: #0000aa;
+    --lightgray: #3232c8;
+    --gray: #a8a8a8;
+    --darkgray: #d0d0d0;
+    --dark: #ffff55;
+    --secondary: #55ffff;
+    --tertiary: #55ffff;
+    --highlight: rgba(85, 255, 255, 0.2);
+    --textHighlight: #55ffff;
+  }
+
+  /* Lignes de balayage sur toute la page, au-dessus du contenu et sous le
+     semis de la panne. */
+  :root[data-theme] body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: 50;
+    pointer-events: none;
+    background: repeating-linear-gradient(0deg, rgba(0, 0, 0, 0.22) 0 1px, transparent 1px 3px);
+  }
+
+  /* Le halo du tube : un texte qui bave un peu, sauf sur les étiquettes et
+     le mobilier, où il brouillerait le noir. */
+  :root[data-theme="matrice"] body {
+    text-shadow: 0 0 6px rgba(0, 255, 65, 0.3);
+  }
+
+  :root[data-theme="ibm-5155"] body {
+    text-shadow: 0 0 6px rgba(255, 176, 0, 0.3);
+  }
+
+  :root[data-theme] article a,
+  :root[data-theme] .page-title,
+  :root[data-theme] .explorer,
+  :root[data-theme] .toc {
+    text-shadow: none;
+  }
+
+  /* Les photos passent au monochrome du tube ; les logos de la maison,
+     blancs sur le sombre, prennent sa teinte. */
+  :root[data-theme="matrice"] article img {
+    filter: grayscale(1) contrast(1.2) brightness(0.8) sepia(1) hue-rotate(72deg) saturate(3);
+  }
+
+  :root[data-theme="ibm-5155"] article img {
+    filter: grayscale(1) contrast(1.2) brightness(0.85) sepia(1) hue-rotate(-8deg) saturate(2.4);
+  }
+
+  :root[data-theme="dos"] article img {
+    filter: grayscale(1) contrast(1.6) brightness(0.9);
+  }
+
+  :root[data-theme="matrice"] .logos .logo img,
+  :root[data-theme="matrice"] .marques img {
+    filter: brightness(0) invert(0.62) sepia(1) saturate(9) hue-rotate(75deg) brightness(1.4);
+  }
+
+  :root[data-theme="ibm-5155"] .logos .logo img,
+  :root[data-theme="ibm-5155"] .marques img {
+    filter: brightness(0) invert(0.62) sepia(1) saturate(9) hue-rotate(-8deg) brightness(1.4);
+  }
+
+  /* Un curseur bloc au bout du titre : la page attend qu'on tape. Il cesse
+     de clignoter sous mouvement réduit, comme tout ce qui tourne seul. */
+  :root[data-theme] h1.article-title::after {
+    content: "";
+    display: inline-block;
+    width: 0.55em;
+    height: 0.95em;
+    margin-left: 0.18em;
+    vertical-align: -0.08em;
+    background: var(--dark);
+    animation: curseur-bloc 1s steps(1, end) infinite;
+  }
+
+  @keyframes curseur-bloc {
+    50% {
+      opacity: 0;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    :root[data-theme] h1.article-title::after {
+      animation: none;
+    }
+  }
+
+  /* DOS : les cadres au double filet des interfaces en mode texte. */
+  :root[data-theme="dos"] article img,
+  :root[data-theme="dos"] .toc,
+  :root[data-theme="dos"] .page-title {
+    border-style: double;
+    border-width: 4px;
+  }
+}
+
+/* --------------------------------------------------------------------------
    Photos
 
    Une fiche d'atelier montre autant qu'elle décrit : la photo d'un réglage
